@@ -1,3 +1,6 @@
+The mod idea is that it will resemple the original Tiberain Dawn, every thing that is EXTRA will and should be added as an option and set off by default. 
+
+
 This repository contains a bare development environment for creating a new mod/game on the [OpenRA](https://github.com/OpenRA/OpenRA) engine.
 
 These scripts and support files wrap and automatically manage a copy of the OpenRA game engine and common files during development, and generates Windows installers, macOS .app bundles, and Linux [AppImages](https://appimage.org/) for distribution.
