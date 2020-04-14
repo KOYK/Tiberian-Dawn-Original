@@ -210,14 +210,14 @@ SILO:
 		Queue: Building
 		Description: Stores processed Tiberium
 	Building:
-		Footprint: xx
-		Dimensions: 2,1
+		Footprint: xx ==
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 1500
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
-		HasMinibib: Yes
 	-WithSpriteBody:
 	WithResourceLevelSpriteBody:
 		Sequence: stages
@@ -484,8 +484,10 @@ HPAD:
 		SpawnOffset: 0,0
 		RequiresCondition: GDIHelipad
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
 	Health:
 		HP: 4000
 	RevealsShroud:
@@ -587,18 +589,18 @@ FIX:
 		Queue: Building
 		Description: Repairs vehicles
 	Building:
-		Footprint: _X_ xxx _X_
-		Dimensions: 3,3
+		Footprint: _x_ xxx =x= ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
 	Selectable:
-		Bounds: 64,34,0,3
-		DecorationBounds: 72,48
+		Bounds: 72,56
+		DecorationBounds: 73,72
 	SelectionDecorations:
 	Health:
 		HP: 4000
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
-		HasMinibib: Yes
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete
 	Reservable:

@@ -97,14 +97,10 @@ silo:
 		Length: *
 		Tick: 80
 		Offset: 0,-1
-	bib: mbSILO
+	bib: bib3
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
-		Offset: 0,1
+		Offset: 0,-1
 	icon: siloicnh.tem
 		AddExtension: False
 
@@ -274,6 +270,9 @@ hpad:
 		Start: 14
 		ZOffset: -1023
 		Tick: 800
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
 	make: hpadmake
 		Length: *
 		Tick: 80
@@ -300,14 +299,9 @@ fix:
 	make: fixmake
 		Length: 14
 		Tick: 60
-	bib: mbFIX
+	bib: bib2
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
-		Offset: 0,-9
 	icon: fixicnh.tem
 		AddExtension: False
 
