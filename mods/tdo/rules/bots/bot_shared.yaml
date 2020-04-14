@@ -1,0 +1,18 @@
+Player:
+	HarvesterBotModule:
+		RequiresCondition: enable-all-bot
+		HarvesterTypes: harv
+		RefineryTypes: proc
+		HarvesterEnemyAvoidanceRadius: 0c0
+	BuildingRepairBotModule:
+		RequiresCondition: enable-all-bot
+	CaptureManagerBotModule:
+        CapturingActorTypes: e6
+        CapturableStances: Enemy,Neutral,Ally
+        RequiresCondition: enable-all-bot
+    McvManagerBotModule:
+        RequiresCondition: enable-all-bot
+        McvTypes: mcv, mcv.nod, mcv.gdi
+        ConstructionYardTypes: fact, fact.nod, fact.gdi
+        McvFactoryTypes: weap,afld
+		RestrictMCVDeploymentFallbackToBase: True

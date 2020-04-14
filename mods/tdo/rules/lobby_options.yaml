@@ -1,0 +1,203 @@
+World:
+	Inherits: ^BaseWorld
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxVisible: False
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 2
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
+		TechLevelDropdownDescription: Select Tech Level
+		TechLevel: tl7
+	MPStartLocations:
+		SeparateTeamSpawnsCheckboxDisplayOrder: 6
+		SeparateTeamSpawnsCheckboxVisible: False
+		SeparateTeamSpawnsCheckboxEnabled: True
+	MapCreeps:
+		CheckboxLabel: Spawn Visceroids 
+		CheckboxDescription: Spawns Evil Visceroids Over Tiberium!
+		CheckboxEnabled: True
+		CheckboxLocked: False
+		CheckboxVisible: True
+	ActorSpawnManager@Vice:
+		Minimum: 1
+		Maximum: 8
+		SpawnInterval: 500
+		Actors: vice, vice, vice, vice
+		Owner: Creeps
+		Types: vice
+	SpawnMPUnits:
+		StartingUnitsClass: light
+		DropdownDisplayOrder: 0
+	MPStartUnits@mhq:
+		Class: MHQ
+		ClassName: MHQ
+		Factions: gdi, nod
+		BaseActor: mhq
+	MPStartUnits@mhqR:
+		Class: MHQR
+		ClassName: Reinforcements
+		Factions: gdi, nod
+		BaseActor: mhqr
+		SupportActors: mhq_cashremover
+	MPStartUnits@mcvonlygdi:
+		Class: none
+		ClassName: MCV Only
+		Factions: gdi
+		BaseActor: mcv.nod
+	MPStartUnits@mcvonlynod:
+		Class: none
+		ClassName: MCV Only
+		Factions: nod
+		BaseActor: mcv.nod
+	MPStartUnits@defaultgdia:
+		Class: light
+		ClassName: Light Support
+		Factions: gdi
+		BaseActor: mcv.gdi
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,jeep
+	MPStartUnits@defaultnoda:
+		Class: light
+		ClassName: Light Support
+		Factions: nod
+		BaseActor: mcv.nod
+		SupportActors: e1,e1,e1,e1,e1,e1,e3,e3,bggy
+	MPStartUnits@heavynoda:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: nod
+		BaseActor: mcv.nod
+		SupportActors: e1,e1,e1,e1,e3,e3,ltnk,ltnk,ftnk
+	MPStartUnits@heavynodb:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: nod
+		BaseActor: mcv.nod
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,e3,ftnk,ftnk
+	MPStartUnits@heavygdia:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: gdi
+		BaseActor: mcv.gdi
+		SupportActors: e1,e1,e1,e1,e3,e3,jeep,mtnk,mtnk
+	MPStartUnits@heavygdib:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: gdi
+		BaseActor: mcv.gdi
+		SupportActors: e1,e1,e1,e1,e1,e2,e2,e2,e3,e3,apc,mtnk
+Player:
+	ProvidesTechPrerequisite@TL1:
+		Name: 1
+		Prerequisites: tl1
+		Id: tl1
+	ProvidesTechPrerequisite@TL2:
+		Name: 2
+		Prerequisites: tl1, tl2
+		Id: tl2
+	ProvidesTechPrerequisite@TL3:
+		Name: 3
+		Prerequisites: tl1, tl2, tl3
+		Id: tl3
+	ProvidesTechPrerequisite@TL4:
+		Name: 4
+		Prerequisites: tl1, tl2, tl3, tl4
+		Id: tl4
+	ProvidesTechPrerequisite@TL5:
+		Name: 5
+		Prerequisites: tl1, tl2, tl3, tl4, tl5
+		Id: tl5
+	ProvidesTechPrerequisite@TL6:
+		Name: 6
+		Prerequisites: tl1, tl2, tl3, tl4, tl5, tl6
+		Id: tl6
+	ProvidesTechPrerequisite@TL7:
+		Name: 7
+		Prerequisites: tl1, tl2, tl3, tl4, tl5, tl6, tl7
+		Id: tl7
+	ConquestVictoryConditions:
+		Objective: Command And Conquer
+	DeveloperMode:
+		CheckboxDisplayOrder: 8
+		CheckboxLabel: Cheats
+	PlayerResources:
+		CashTickUpNotification: CashTickUp
+		CashTickDownNotification: CashTickDown
+		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000
+	Shroud:
+		FogCheckboxEnabled: False
+		FogCheckboxVisible: True
+		ExploredMapCheckboxEnabled: False
+		ExploredMapCheckboxVisible: True
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		ID: factundeploy
+		Label: Redeployable MCVs
+		Description: Allow undeploying Construction Yard.
+		Enabled: True
+		DisplayOrder: 7
+		Prerequisites: global-factundeploy
+	LobbyPrerequisiteCheckbox@HUSKS:
+		ID: husks
+		Label: Husks
+		Description: vehicles will turn into husks when they get destroyed
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteHusksEnabled
+	LobbyPrerequisiteCheckbox@LINEWALLS:
+		ID: linewalls
+		Label: Wall Line Build
+		Description: Allows more walls to be build in a line
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteLineWalls
+	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
+		ID: superweapons
+		Label: Super Weapons
+		Description: Allows the use of Nuclear Missile and Ion Cannon
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteSuperWeapons
+	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
+		ID: supplytruck
+		Label: Supply Truck
+		Description: Allows the use of Supply Trucks that can aid allies with money
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteSupplyTruck
+	LobbyPrerequisiteCheckbox@PRODUCTIONBAR:
+		ID: productionbar
+		Label: Production Bars
+		Description: Shows loading bars over producing buildings
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteProductionBar
+	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
+		ID: singleplayer
+		Label: Campaign Rules
+		Description: Campaign Color theme, Tech level, AI Boost, GDI Airstrike, Capturable Chinook
+		Enabled: False
+		Locked: True
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteSinglePlayer
+	LobbyPrerequisiteCheckbox@PUTSUX:
+		ID: putsux
+		Label: PUTSUX
+		Description: Gives orcas obelisk's laser weapon, not recomended
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisitePUTSUX

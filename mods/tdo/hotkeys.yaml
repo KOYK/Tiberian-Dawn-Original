@@ -1,0 +1,15 @@
+ProductionTypeBuilding: B
+	Description: Building Tab
+	Types: Production
+
+ProductionTypeVehicle: U
+	Description: Vehicle Tab
+	Types: Production
+
+ProductionTypeInfantry: N
+	Description: Infantry Tab
+	Types: Production
+
+PowerDown: X
+	Description: Power-down mode
+	Types: OrderGenerator

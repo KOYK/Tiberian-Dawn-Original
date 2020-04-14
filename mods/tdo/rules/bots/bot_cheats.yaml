@@ -1,0 +1,97 @@
+^Tank::
+	GrantConditionOnBotOwner@8:
+		Condition: rank-elite
+		Bots: 8
+	GrantConditionOnBotOwner@7:
+		Condition: rank-veteran-7
+		Bots: 7
+	GrantConditionOnBotOwner@6:
+		Condition: rank-veteran-6
+		Bots: 6
+	GrantConditionOnBotOwner@5:
+		Condition: rank-veteran-5
+		Bots: 5
+
+^Plane:
+	GrantConditionOnBotOwner@8:
+		Condition: rank-elite
+		Bots: 8
+	GrantConditionOnBotOwner@7:
+		Condition: rank-veteran-7
+		Bots: 7
+	GrantConditionOnBotOwner@6:
+		Condition: rank-veteran-6
+		Bots: 6
+	GrantConditionOnBotOwner@5:
+		Condition: rank-veteran-5
+		Bots: 5
+
+^Helicopter:
+	GrantConditionOnBotOwner@8:
+		Condition: rank-elite
+		Bots: 8
+	GrantConditionOnBotOwner@7:
+		Condition: rank-veteran-7
+		Bots: 7
+	GrantConditionOnBotOwner@6:
+		Condition: rank-veteran-6
+		Bots: 6
+	GrantConditionOnBotOwner@5:
+		Condition: rank-veteran-5
+		Bots: 5
+
+^Soldier:
+	GrantConditionOnBotOwner@8:
+		Condition: rank-elite
+		Bots: 8
+	GrantConditionOnBotOwner@7:
+		Condition: rank-veteran-7
+		Bots: 7
+	GrantConditionOnBotOwner@6:
+		Condition: rank-veteran-6
+		Bots: 6
+	GrantConditionOnBotOwner@5:
+		Condition: rank-veteran-5
+		Bots: 5
+
+FACT:
+	CashTrickler@FreeCreditsBot_8:
+		RequiresCondition: enable-8-bot
+		Interval: 750
+		Amount: 2000
+		ShowTicks: False
+	CashTrickler@FreeCreditsBot_7:
+		RequiresCondition: enable-7-bot
+		Interval: 750
+		Amount: 1500
+		ShowTicks: False
+	CashTrickler@FreeCreditsBot_6:
+		RequiresCondition: enable-6-bot
+		Interval: 750
+		Amount: 1000
+		ShowTicks: False
+	CashTrickler@FreeCreditsBot_5:
+		RequiresCondition: enable-5-bot
+		Interval: 750
+		Amount: 500
+		ShowTicks: False
+	GrantConditionOnBotOwner@8:
+		Condition: enable-8-bot
+		Bots: 8
+	GrantConditionOnBotOwner@7:
+		Condition: enable-7-bot
+		Bots: 7
+	GrantConditionOnBotOwner@6:
+		Condition: enable-6-bot
+		Bots: 6
+	GrantConditionOnBotOwner@5:
+		Condition: enable-5-bot
+		Bots: 5
+	GrantConditionOnBotOwner@All:
+		Condition: enable-all-bot
+		Bots: 1,2,3,4,5,6,7,8
+	ProvidesPrerequisite@BotOwner:
+		RequiresCondition: enable-all-bot
+		Prerequisite: BotOwner
+		ResetOnOwnerChange: True
+

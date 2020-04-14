@@ -1,0 +1,93 @@
+^BasePlayer:
+	AlwaysVisible:
+	Shroud:
+
+EditorPlayer:
+	Inherits: ^BasePlayer
+
+Player:
+	Inherits: ^BasePlayer
+	PlaceBuilding:
+		NewOptionsNotification: NewOptions
+		CannotPlaceNotification: BuildingCannotPlaceAudio
+	ClassicProductionQueue@Building:
+		Type: Building
+		LowPowerModifier: 300
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Defense:
+		Type: Defense
+		LowPowerModifier: 300
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Vehicle:
+		Group: Vehicle, Infantry
+		Type: Vehicle
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 75, 60, 50
+	ClassicProductionQueue@Infantry:
+		Group: Vehicle, Infantry
+		Type: Infantry
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Ship:
+		Type: Ship
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	TechTree:
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+		WinNotification: Win
+		LoseNotification: Lose
+		LeaveNotification: Leave
+	PowerManager:
+		SpeechNotification: LowPower
+	AllyRepair:
+	BaseAttackNotifier:
+	PlayerStatistics:
+	FrozenActorLayer:
+	PlaceBeacon:
+	GrantConditionOnPrerequisiteManager:
+	ResourceStorageWarning:
+	PlayerExperience:
+	ConditionManager:
