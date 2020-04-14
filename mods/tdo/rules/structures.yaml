@@ -99,7 +99,7 @@ NUKE:
 		BuildDuration: 330
 		Description: Generates power
 	Building:
-		Footprint: xX xx ==
+		Footprint: x_ xx ==
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
@@ -130,7 +130,7 @@ NUK2:
 		Queue: Building
 		Description: Provides more power, cheaper than the\nstandard Power Plant
 	Building:
-		Footprint: xX xx ==
+		Footprint: x_ xx ==
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
