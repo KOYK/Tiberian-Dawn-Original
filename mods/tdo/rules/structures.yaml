@@ -126,7 +126,7 @@ NUK2:
 		Prerequisite: anypower
 	Buildable:
 		BuildPaletteOrder: 80
-		Prerequisites: anyhq, ~tl5
+		Prerequisites: ~tl5
 		Queue: Building
 		Description: Provides more power, cheaper than the\nstandard Power Plant
 	Building:
