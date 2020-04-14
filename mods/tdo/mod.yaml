@@ -11,7 +11,6 @@ Packages:
 	~^Content/cnc/movies
 	.
 	$tdo: tdo
-	$tda: tda
 	./mods/common: common
 	~speech.mix
 	~conquer.mix
