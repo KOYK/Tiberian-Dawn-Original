@@ -770,11 +770,16 @@
 
 ^TechBuilding:
 	Inherits: ^CivBuilding
+	ConditionManager:
 	OwnerLostAction:
 		Action: ChangeOwner
 	CaptureManager:
+	GrantConditionOnPrerequisite:
+		Condition: CapturableCon
+		Prerequisites: TechBuildingsEnabled
 	Capturable:
 		Types: building
+		RequiresCondition: CapturableCon
 	CaptureNotification:
 		Notification: CivilianBuildingCaptured
 	RepairableBuilding:
