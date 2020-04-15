@@ -886,6 +886,7 @@ OBLI:
 		RequiresCondition: !lowpower
 	Power:
 		Amount: -150
+	ProvidesPrerequisite@buildingname:
 
 GTWR:
 	Inherits: ^Defense
