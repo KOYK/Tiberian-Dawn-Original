@@ -201,3 +201,12 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: PrerequisitePUTSUX
+	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
+		ID: techB
+		Label: Tech buildings
+		Description: Enables ability to capture tech buildings
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: TechBuildingsEnabled
