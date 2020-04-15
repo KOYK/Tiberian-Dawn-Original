@@ -126,7 +126,7 @@ NUK2:
 		Prerequisite: anypower
 	Buildable:
 		BuildPaletteOrder: 80
-		Prerequisites: ~tl5
+		Prerequisites: fact, anypower, ~tl5
 		Queue: Building
 		Description: Provides more power, cheaper than the\nstandard Power Plant
 	Building:
@@ -458,13 +458,19 @@ HPAD:
 		Name: Helipad
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: proc, ~tl6
+		Prerequisites: barracks, ~tl6
 		Queue: Building
-		Description: Produces, rearms and\nrepairs helicopters
+		Description: Produces and rearms helicopters
 	ProductionBar:
 		ProductionType: Aircraft
 		Color: 00FFDF
 		RequiresCondition: ProductionBarEnabled
+	ProvidesPrerequisite@NodHelipad:
+		RequiresCondition: NodHelipad
+		Prerequisite: OwnerNod
+	ProvidesPrerequisite@GDIHelipad:
+		RequiresCondition: GDIHelipad
+		Prerequisite: OwnerGDI
 	GrantConditionOnFaction@Nod:
 		Condition: NodHelipad
 		Factions: nod
@@ -500,10 +506,6 @@ HPAD:
 	Production:
 		Produces: Vehicle
 	Reservable:
-	RepairsUnits:
-		HpPerStep: 1000
-		PlayerExperience: 25
-		StartRepairingNotification: Repairing
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete
 	Power:
@@ -582,7 +584,7 @@ FIX:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Repair Facility
+		Name: Repair Bay
 	ProximityExternalCondition:
 		Condition: OnPad
 		Range: 1c0
