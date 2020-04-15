@@ -248,6 +248,18 @@
 	GrantConditionOnPrerequisite@HUSKS:
 		Prerequisites: PrerequisiteHusksEnabled
 		Condition: HusksEnabled
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: OnPad || NearWall
+	ProximityExternalCondition@REPAIRING:
+		Condition: Repairing
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	ExternalCondition@ONPAD:
+		Condition: OnPad
+	ExternalCondition@NearWall:
+		Condition: NearWall
 	Huntable:
 	Buildable:
 		Queue: Vehicle
@@ -303,6 +315,18 @@
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: Aircraft
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: OnPad && !airborne || NearWall && !airborne
+	ProximityExternalCondition@REPAIRING:
+		Condition: Repairing
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	ExternalCondition@ONPAD:
+		Condition: OnPad
+	ExternalCondition@NearWall:
+		Condition: NearWall
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
@@ -363,6 +387,12 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
 	Huntable:
+	#Note I sould look if the sell value changes based on health, also look at vehicles, ELoyros
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: NearWall
+	ExternalCondition@NearWall:
+		Condition: NearWall
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: Soldier
