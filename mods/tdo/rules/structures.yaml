@@ -583,6 +583,16 @@ FIX:
 		Cost: 1200
 	Tooltip:
 		Name: Repair Facility
+	ProximityExternalCondition:
+		Condition: OnPad
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: !Repairing
+	ExternalCondition@REPAIRING:
+		Condition: Repairing
 	Buildable:
 		BuildPaletteOrder: 60
 		Prerequisites: anypower, ~tl5
@@ -997,6 +1007,10 @@ SBAG:
 		Types: sandbag
 	WithWallSpriteBody:
 		Type: sandbag
+	ProximityExternalCondition@SELLABLE:
+		Condition: NearWall
+		Range: 1c255
+	ConditionManager:
 
 CYCL:
 	Inherits: ^Wall
@@ -1019,6 +1033,10 @@ CYCL:
 		Types: chain
 	WithWallSpriteBody:
 		Type: chain
+	ProximityExternalCondition@SELLABLE:
+		Condition: NearWall
+		Range: 1c255
+	ConditionManager:
 
 BRIK:
 	Inherits: ^Wall
