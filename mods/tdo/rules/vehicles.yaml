@@ -354,14 +354,14 @@ MLRS:
 	Valued:
 		Cost: 750
 	Tooltip:
-		Name: SSM Launcher
+		Name: SSM launcher
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 70
 		Prerequisites: obli, ~tl7, afld
 		Queue: Vehicle
-		Description: Powerful anti-air unit.\nCannot attack Ground units.
+		Description: Powerful Long range unit.\nCannot attack Air units.
 	Mobile:
 		Speed: 90
 		TurnSpeed: 5
@@ -713,7 +713,7 @@ MSAM:
 		BuildPaletteOrder: 50
 		Prerequisites: advhq, vehicleproduction, ~!SinglePlayer
 		Queue: Vehicle
-		Description: Long range rocket artillery.\n  Strong vs all Ground units.
+		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
 	Mobile:
 		TurnSpeed: 5
 		Speed: 90

@@ -31,6 +31,7 @@ Packages:
 	tdo|bits/ss
 	tdo|uibits
 	tdo|conquer
+	tdo|conquer/highres
 
 MapFolders:
 	tdo|maps: System
