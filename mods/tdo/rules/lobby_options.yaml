@@ -194,7 +194,7 @@ Player:
 		Prerequisites: PrerequisiteSinglePlayer
 	LobbyPrerequisiteCheckbox@PUTSUX:
 		ID: putsux
-		Label: PUTSUX
+		Label: PATSUX
 		Description: Gives orcas obelisk's laser weapon, not recomended
 		Enabled: False
 		Locked: False
@@ -202,7 +202,7 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: PrerequisitePUTSUX
 	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
-		ID: techB
+		ID: techb
 		Label: Tech buildings
 		Description: Enables ability to capture tech buildings
 		Enabled: False
@@ -210,3 +210,12 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: TechBuildingsEnabled
+	LobbyPrerequisiteCheckbox@ENGINEERSP:
+		ID: engineersp
+		Label: Engineer Repair
+		Description: Enables snigleplayer ability of engineers to repair buildings
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: EngineerSP

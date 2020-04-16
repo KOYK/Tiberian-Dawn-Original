@@ -171,8 +171,8 @@ E6:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: barracks, ~tl3
-		Description: Damages and captures enemy structures.\n  Repairs destroyed vehicles\n  Unarmed
+		Prerequisites: barracks, ~EngineerSP, ~tl3
+		Description: Captures enemy structures.\n  Repairs Damaged buildings\n  Unarmed
 	Mobile:
 		Speed: 40
 	Health:
@@ -194,6 +194,16 @@ E6:
 		PlayerExperience: 50
 	Selectable:
 		Priority: 5
+		Class: e6
+
+E6_MP:
+	Inherits@OriginalActor: E6
+	RenderSprites:
+		Image: e6
+	-EngineerRepair:
+	Buildable:
+		Prerequisites: barracks, ~tl3, ~!EngineerSP, ~!SinglePlayer
+		Description: Damages and captures enemy structures.\n  Unarmed
 
 RMBO:
 	Inherits: ^Soldier
