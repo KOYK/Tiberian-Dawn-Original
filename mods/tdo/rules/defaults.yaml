@@ -821,7 +821,13 @@
 	RevealsShroud:
 		Range: 3c0
 	Tooltip:
-		ShowOwnerRow: True
+		GenericName: Building
+		ShowOwnerRow: false
+		GenericStancePrefix: True
+		AllyPrefix: Allied
+		NeutralPrefix: Civilian
+		EnemyPrefix: Enemy
+		GenericVisibility: Ally, Enemy, Neutral
 	MapEditorData:
 		Categories: Tech building
 	WithBuildingRepairDecoration:
