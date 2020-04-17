@@ -12,7 +12,7 @@ FACT:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 4000
+		HP: 400
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -103,7 +103,7 @@ NUKE:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 2000
+		HP: 200
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -134,7 +134,7 @@ NUK2:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 3000
+		HP: 300
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -166,7 +166,7 @@ PROC:
 		Dimensions: 3,4
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 4500
+		HP: 450
 	RevealsShroud:
 		Range: 4c0
 	Refinery:
@@ -214,7 +214,7 @@ SILO:
 		Dimensions: 2,2
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 1500
+		HP: 150
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -263,7 +263,7 @@ PYLE:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 4000
+		HP: 400
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -311,7 +311,7 @@ HAND:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 4000
+		HP: 400
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -364,7 +364,7 @@ WEAP:
 		DecorationBounds: 72,64,0,-16
 	SelectionDecorations:
 	Health:
-		HP: 2000
+		HP: 200
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -407,11 +407,11 @@ AFLD:
 		Color: 3AA730
 		RequiresCondition: ProductionBarEnabled
 	Building:
-		Footprint: XXXX xxxx ====
+		Footprint: XXXX xxx= ====
 		Dimensions: 4,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 5000
+		HP: 500
 	RevealsShroud:
 		Range: 5c0
 	RallyPoint:
@@ -495,7 +495,7 @@ HPAD:
 		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
-		HP: 4000
+		HP: 400
 	RevealsShroud:
 		Range: 3c0
 	Exit@1:
@@ -553,7 +553,7 @@ HQ:
 	WithSpriteBody:
 		PauseOnCondition: lowpower
 	Health:
-		HP: 5000
+		HP: 500
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -609,7 +609,7 @@ FIX:
 		DecorationBounds: 73,72
 	SelectionDecorations:
 	Health:
-		HP: 4000
+		HP: 400
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -658,7 +658,7 @@ EYE:
 	WithSpriteBody:
 		PauseOnCondition: lowpower
 	Health:
-		HP: 5000
+		HP: 500
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -717,7 +717,7 @@ TMPL:
 		DecorationBounds: 72,68,0,-12
 	SelectionDecorations:
 	Health:
-		HP: 10000
+		HP: 1000
 	RevealsShroud:
 		Range: 4c0
 	NukePower:
@@ -773,7 +773,7 @@ GUN:
 		Description: Basic Anti-Tank base defense.\n  Strong vs Tanks, vehicles\n  Weak vs Infantry
 	Building:
 	Health:
-		HP: 2000
+		HP: 200
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -826,7 +826,7 @@ SAM:
 		Footprint: xx
 		Dimensions: 2,1
 	Health:
-		HP: 2000
+		HP: 200
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -870,7 +870,7 @@ OBLI:
 		DecorationBounds: 22,44,0,-10
 	SelectionDecorations:
 	Health:
-		HP: 2000
+		HP: 200
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -918,7 +918,7 @@ GTWR:
 		Description: Basic defensive structure.\n  Strong vs Infantry\n  Weak vs Tanks
 	Building:
 	Health:
-		HP: 2000
+		HP: 200
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -959,7 +959,7 @@ ATWR:
 		DecorationBounds: 22,48,0,-12
 	SelectionDecorations:
 	Health:
-		HP: 3000
+		HP: 300
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -1056,7 +1056,7 @@ BRIK:
 		BuildDurationModifier: 40
 		Description: Stops infantry and most tanks.\nBlocks some projectiles.
 	Health:
-		HP: 2500
+		HP: 250
 	Armor:
 		Type: Heavy
 	BlocksProjectiles:

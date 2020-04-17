@@ -7,7 +7,7 @@ V19:
 		Footprint: x
 		Dimensions: 1,1
 	Health:
-		HP: 80000
+		HP: 200
 	Tooltip:
 		Name: Oil Derrick
 	TooltipDescription@ally:
@@ -43,7 +43,7 @@ HOSP:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 250000
+		HP: 200
 	Tooltip:
 		Name: Hospital
 	TooltipDescription@ally:
@@ -79,7 +79,7 @@ BIO:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 250000
+		HP: 300
 	Tooltip:
 		Name: Biological Lab
 	TooltipDescription@ally:
@@ -130,7 +130,9 @@ MISS:
 		Footprint: xxx xxx
 		Dimensions: 3,2
 	Tooltip:
-		Name: Tech Center
+		Name: Technology Center
+	Health:
+		HP: 200
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000

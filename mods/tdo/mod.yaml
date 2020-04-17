@@ -11,6 +11,7 @@ Packages:
 	~^Content/cnc/movies
 	.
 	$tdo: tdo
+	#$example: example
 	./mods/common: common
 	~speech.mix
 	~conquer.mix
@@ -91,6 +92,7 @@ Chrome:
 Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
+	#example|OpenRA.Mods.Example.dll
 
 ChromeLayout:
 	tdo|chrome/ingame-player.yaml

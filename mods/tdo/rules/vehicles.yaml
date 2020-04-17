@@ -21,7 +21,7 @@ PVICE:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Huntable:
 	Health:
-		HP: 1500
+		HP: 150
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -94,7 +94,7 @@ FTNK:
 	#In C&C speed was 18
 	#In TDO speed is 180/2=90 its still faster than the original, needs more work
 	Health:
-		HP: 3000
+		HP: 300
 	Repairable:
 		HpPerStep: 2046
 	Armor:
@@ -136,7 +136,7 @@ STNK:
 		TurnSpeed: 5
 		Speed: 150
 	Health:
-		HP: 1100
+		HP: 110
 	Repairable:
 		HpPerStep: 758
 	Armor:
@@ -188,7 +188,7 @@ LTNK:
 		TurnSpeed: 5
 		Speed: 90
 	Health:
-		HP: 3000
+		HP: 300
 	Repairable:
 		HpPerStep: 2273
 	Armor:
@@ -232,7 +232,7 @@ MTNK:
 		TurnSpeed: 5
 		Speed: 90
 	Health:
-		HP: 4000
+		HP: 400
 	Repairable:
 		HpPerStep: 2557
 	Armor:
@@ -280,7 +280,7 @@ HTNK:
 		Speed: 60
 		TurnSpeed: 5
 	Health:
-		HP: 6000
+		HP: 600
 	Repairable:
 		HpPerStep: 2637
 	Armor:
@@ -326,7 +326,7 @@ MHQ:
 	Tooltip:
 		Name: Mobile HQ
 	Health:
-		HP: 1100
+		HP: 110
 	Armor:
 		Type: Light
 	Mobile:
@@ -366,7 +366,7 @@ MLRS:
 		Speed: 90
 		TurnSpeed: 5
 	Health:
-		HP: 1200
+		HP: 120
 	Repairable:
 		HpPerStep: 1364
 	Armor:
@@ -425,7 +425,7 @@ ARTY:
 		TurnSpeed: 2
 		Speed: 60
 	Health:
-		HP: 750
+		HP: 75
 	Repairable:
 		HpPerStep: 569
 	Armor:
@@ -483,7 +483,7 @@ HARV:
 		TurnSpeed: 5
 		Speed: 60
 	Health:
-		HP: 6000
+		HP: 600
 	Repairable:
 		HpPerStep: 2537
 	Armor:
@@ -523,7 +523,7 @@ MCV:
 		Speed: 60
 		Locomotor: heavywheeled
 	Health:
-		HP: 6000
+		HP: 600
 	Repairable:
 		HpPerStep: 2182
 	Armor:
@@ -593,7 +593,7 @@ JEEP:
 		TurnSpeed: 10
 		Speed: 150
 	Health:
-		HP: 1500
+		HP: 150
 	Repairable:
 		HpPerStep: 1819
 	Armor:
@@ -636,7 +636,7 @@ BGGY:
 		TurnSpeed: 10
 		Speed: 150
 	Health:
-		HP: 1400
+		HP: 140
 	Repairable:
 		HpPerStep: 1819
 	Armor:
@@ -680,7 +680,7 @@ BIKE:
 		Speed: 200
 		Locomotor: bike
 	Health:
-		HP: 1600
+		HP: 160
 	Repairable:
 		HpPerStep: 1000
 	Armor:
@@ -718,7 +718,7 @@ MSAM:
 		TurnSpeed: 5
 		Speed: 90
 	Health:
-		HP: 1000
+		HP: 100
 	Repairable:
 		HpPerStep: 546
 	Armor:
@@ -781,7 +781,7 @@ APC:
 		Speed: 175
 		RequiresCondition: !notmobile
 	Health:
-		HP: 2000
+		HP: 200
 	Repairable:
 		HpPerStep: 1440
 	Armor:
@@ -873,7 +873,7 @@ MHQR:
 	Tooltip:
 		Name: Mobile HQ
 	Health:
-		HP: 20000
+		HP: 110
 	Armor:
 		Type: Light
 	Mobile:
@@ -965,7 +965,7 @@ TRUCK:
 	Selectable:
 		Priority: 6
 	Health:
-		HP: 11000
+		HP: 75
 	Armor:
 		Type: Light
 	Mobile:

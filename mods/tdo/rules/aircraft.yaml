@@ -20,7 +20,7 @@ TRAN:
 		AltitudeVelocity: 0c100
 		Repulsable: true
 	Health:
-		HP: 900
+		HP: 90
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -76,7 +76,7 @@ HELI:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
 	Health:
-		HP: 1250
+		HP: 125
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -131,7 +131,7 @@ ORCA:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
 	Health:
-		HP: 1200
+		HP: 125
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -219,7 +219,7 @@ A10:
 	Valued:
 		Cost: 800
 	#Health:
-	#	HP: 600
+	#	HP: 60
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 200

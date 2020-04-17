@@ -904,7 +904,7 @@
 	FrozenUnderFog:
 	ScriptTriggers:
 	Health:
-		HP: 10000
+		HP: 100
 	MapEditorData:
 		Categories: Wall
 	LineBuild:

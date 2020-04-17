@@ -16,7 +16,7 @@ E1:
 	Mobile:
 		Speed: 40
 	Health:
-		HP: 500
+		HP: 50
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -44,7 +44,7 @@ E2:
 	Mobile:
 		Speed: 50
 	Health:
-		HP: 500
+		HP: 50
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -79,7 +79,7 @@ E3:
 	Mobile:
 		Speed: 30
 	Health:
-		HP: 250
+		HP: 25
 	AutoTarget:
 		ScanRadius: 6
 	Armament:
@@ -111,7 +111,7 @@ E4:
 	Mobile:
 		Speed: 50
 	Health:
-		HP: 700
+		HP: 70
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -145,7 +145,7 @@ E5:
 		Speed: 40
 		Locomotor: chem
 	Health:
-		HP: 700
+		HP: 70
 	AutoTarget:
 		ScanRadius: 4
 	Armament:
@@ -176,7 +176,7 @@ E6:
 	Mobile:
 		Speed: 40
 	Health:
-		HP: 250
+		HP: 25
 	Passenger:
 		PipType: Yellow
 	EngineerRepair:
@@ -228,7 +228,7 @@ RMBO:
 	Guard:
 		Voice: Move
 	Health:
-		HP: 800
+		HP: 80
 	Passenger:
 		PipType: Red
 		Voice: Move
@@ -265,57 +265,57 @@ RMBO:
 C1:
 	Inherits: ^CivInfantry
 	Inherits@armed: ^ArmedCivilian
-		HP: 250
+		HP: 25
 
 C2:
 	Inherits: ^CivInfantry
-		HP: 50
+		HP: 5
 
 C3:
 	Inherits: ^CivInfantry
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
-		HP: 50
+		HP: 5
 
 C4:
 	Inherits: ^CivInfantry
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 	Health:
-		HP: 50
+		HP: 5
 
 C5:
 	Inherits: ^CivInfantry
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 	Health:
-		HP: 50
+		HP: 5
 
 C6:
 	Inherits: ^CivInfantry
 	Health:
-		HP: 50
+		HP: 5
 
 C7:
 	Inherits: ^CivInfantry
 	Inherits@armed: ^ArmedCivilian
 	Health:
-		HP: 50
+		HP: 5
 
 C8:
 	Inherits: ^CivInfantry
 	Health:
-		HP: 50
+		HP: 5
 
 C9:
 	Inherits: ^CivInfantry
 	Health:
-		HP: 50
+		HP: 5
 
 C10:
 	Inherits: ^CivInfantry
 	Health:
-		HP: 500
+		HP: 50
 
 MOEBIUS:
 	Inherits: ^CivInfantry
@@ -325,7 +325,7 @@ MOEBIUS:
 	Tooltip:
 		Name: Dr. Moebius
 	Health:
-		HP: 500
+		HP: 50
 
 DELPHI:
 	Inherits: ^CivInfantry
@@ -334,11 +334,11 @@ DELPHI:
 	Tooltip:
 		Name: Agent Delphi
 	Health:
-		HP: 250
+		HP: 25
 
 CHAN:
 	Inherits: ^CivInfantry
 	Tooltip:
 		Name: Dr. Chan
 	Health:
-		HP: 250
+		HP: 25
