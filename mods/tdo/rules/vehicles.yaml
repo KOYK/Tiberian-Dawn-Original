@@ -128,7 +128,7 @@ STNK:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 90
-		Prerequisites: anyhq, ~tl5, afld
+		Prerequisites: ~anyhq, ~tl5, ~afld
 		Queue: Vehicle
 		Description: Long-range missile tank that can cloak.\nCan attack Aircraft.\nHas weak armor. Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry.
 	Mobile:
@@ -179,7 +179,7 @@ LTNK:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 40
-		Prerequisites: ~tl3, afld
+		Prerequisites: ~tl3, ~afld
 		Queue: Vehicle
 		BuildDuration: 1020
 		BuildDurationModifier: 40
@@ -225,7 +225,7 @@ MTNK:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 40
-		Prerequisites: ~tl3, weap
+		Prerequisites: ~tl3, ~weap
 		Queue: Vehicle
 		Description: General-Purpose GDI Tank.\n  Strong vs Tanks, Vehicles\n  Weak vs Infantry
 	Mobile:
@@ -272,7 +272,7 @@ HTNK:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 60
-		Prerequisites: fix, ~tl5, weap
+		Prerequisites: ~fix, ~tl5, ~weap
 		Queue: Vehicle
 		Description: Heavily armored GDI Tank.\nCan attack Aircraft.\n  Strong vs Everything
 	Mobile:
@@ -359,7 +359,7 @@ MLRS:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 70
-		Prerequisites: obli, ~tl7, afld
+		Prerequisites: ~obli, ~tl7, ~afld
 		Queue: Vehicle
 		Description: Powerful Long range unit.\nCannot attack Air units.
 	Mobile:
@@ -418,7 +418,7 @@ ARTY:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 60
-		Prerequisites: ~tl6, afld
+		Prerequisites: ~tl6, ~afld
 		Queue: Vehicle
 		Description: Long-range artillery.\n  Strong vs Infantry, Vehicles and Buildings
 	Mobile:
@@ -462,7 +462,7 @@ HARV:
 		GenericName: Harvester
 	Buildable:
 		BuildPaletteOrder: 10
-		Prerequisites: proc, ~tl2, ~!mhqr
+		Prerequisites: ~vehicleproduction, ~proc, ~tl2, ~!mhqr
 		Queue: Vehicle
 		BuildDuration: 1680
 		BuildDurationModifier: 40
@@ -552,7 +552,7 @@ MCV.NOD:
 		Image: mcv
 	Buildable:
 		BuildPaletteOrder: 100
-		Prerequisites: tmpl, ~afld
+		Prerequisites: ~tmpl, ~afld
 	SpawnActorOnDeath:
 		Actor: MCVNOD.Husk
 	Transforms:
@@ -565,7 +565,7 @@ MCV.GDI:
 		Image: mcv
 	Buildable:
 		BuildPaletteOrder: 100
-		Prerequisites: eye, ~weap
+		Prerequisites: ~eye, ~weap
 	SpawnActorOnDeath:
 		Actor: MCVGDI.Husk
 	Transforms:
@@ -586,7 +586,7 @@ JEEP:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 20
-		Prerequisites: weap, ~tl2
+		Prerequisites: ~weap, ~tl2
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
@@ -629,7 +629,7 @@ BGGY:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 20
-		Prerequisites: afld, ~tl4
+		Prerequisites: ~afld, ~tl4
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
@@ -672,7 +672,7 @@ BIKE:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: afld, ~tl2
+		Prerequisites: ~afld, ~tl2
 		Queue: Vehicle
 		Description: Fast scout vehicle, armed with\nrockets.\nCan attack Aircraft.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
@@ -711,7 +711,7 @@ MSAM:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: advhq, vehicleproduction, ~!SinglePlayer
+		Prerequisites: ~advhq, ~vehicleproduction, ~!SinglePlayer
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
 	Mobile:
@@ -754,7 +754,7 @@ MSAM_SINGLEPLAYER:
 		Class: msam
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: eye, ~tl7, weap, ~SinglePlayer
+		Prerequisites: ~eye, ~tl7, ~weap, ~SinglePlayer
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
 
@@ -771,7 +771,7 @@ APC:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: barracks, vehicleproduction, ~tl4, ~!SinglePlayer
+		Prerequisites: ~barracks, ~vehicleproduction, ~tl4, ~!SinglePlayer
 		Queue: Vehicle
 		BuildDuration: 938
 		BuildDurationModifier: 40
@@ -812,7 +812,7 @@ APC_SINGLEPLAYER:
 		Class: apc
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: pyle, weap, ~tl4, ~SinglePlayer
+		Prerequisites: ~pyle, ~weap, ~tl4, ~SinglePlayer
 	SpawnActorOnDeath:
 		Actor: APC.Husk
 
@@ -956,7 +956,7 @@ TRUCK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 35
-		Prerequisites: vehicleproduction, ~PrerequisiteSupplyTruck
+		Prerequisites: ~vehicleproduction, ~PrerequisiteSupplyTruck
 		Description: Transports cash to other players.\n  Unarmed
 	Valued:
 		Cost: 500

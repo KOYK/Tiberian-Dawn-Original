@@ -12,7 +12,7 @@ FACT:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 400
+		HP: 800
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -94,7 +94,7 @@ NUKE:
 		Prerequisite: anypower
 	Buildable:
 		BuildPaletteOrder: 10
-		Prerequisites: fact, ~tl1
+		Prerequisites: ~fact, ~tl1
 		Queue: Building
 		BuildDuration: 330
 		Description: Generates power
@@ -103,7 +103,7 @@ NUKE:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 200
+		HP: 400
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -126,7 +126,7 @@ NUK2:
 		Prerequisite: anypower
 	Buildable:
 		BuildPaletteOrder: 80
-		Prerequisites: fact, anypower, ~tl5
+		Prerequisites: ~fact, ~anypower, ~tl5
 		Queue: Building
 		Description: Provides more power, cheaper than the\nstandard Power Plant
 	Building:
@@ -134,7 +134,7 @@ NUK2:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 300
+		HP: 600
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -158,7 +158,7 @@ PROC:
 		Name: Tiberium Refinery
 	Buildable:
 		BuildPaletteOrder: 20
-		Prerequisites: anypower, ~tl1
+		Prerequisites: ~anypower, ~tl1
 		Queue: Building
 		Description: Processes raw Tiberium\ninto useable resources
 	Building:
@@ -166,7 +166,7 @@ PROC:
 		Dimensions: 3,4
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 450
+		HP: 900
 	RevealsShroud:
 		Range: 4c0
 	Refinery:
@@ -206,7 +206,7 @@ SILO:
 		Name: Tiberium Silo
 	Buildable:
 		BuildPaletteOrder: 35
-		Prerequisites: proc, ~tl1
+		Prerequisites: ~proc, ~tl1
 		Queue: Building
 		Description: Stores processed Tiberium
 	Building:
@@ -214,7 +214,7 @@ SILO:
 		Dimensions: 2,2
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 150
+		HP: 300
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -251,7 +251,7 @@ PYLE:
 		Name: Barracks
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: anypower, ~GDIConstructionYard, ~tl1
+		Prerequisites: ~anypower, ~GDIConstructionYard, ~tl1
 		Queue: Building
 		Description: Trains infantry
 	ProductionBar:
@@ -263,7 +263,7 @@ PYLE:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 400
+		HP: 800
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -299,7 +299,7 @@ HAND:
 		Name: Hand of Nod
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: anypower, ~NodConstructionYard, ~tl1
+		Prerequisites: ~anypower, ~NodConstructionYard, ~tl1
 		Queue: Building
 		Description: Trains infantry
 	ProductionBar:
@@ -311,7 +311,7 @@ HAND:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 400
+		HP: 800
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -348,7 +348,7 @@ WEAP:
 		Prerequisite: vehicleproduction
 	Buildable:
 		BuildPaletteOrder: 40
-		Prerequisites: proc, ~GDIConstructionYard, ~tl2
+		Prerequisites: ~proc, ~GDIConstructionYard, ~tl2
 		Queue: Building
 		Description: Produces vehicles
 	ProductionBar:
@@ -364,7 +364,7 @@ WEAP:
 		DecorationBounds: 72,64,0,-16
 	SelectionDecorations:
 	Health:
-		HP: 200
+		HP: 400
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -399,7 +399,7 @@ AFLD:
 		Prerequisite: vehicleproduction
 	Buildable:
 		BuildPaletteOrder: 40
-		Prerequisites: proc, ~NodConstructionYard, ~tl2
+		Prerequisites: ~proc, ~NodConstructionYard, ~tl2
 		Queue: Building
 		Description: Provides a dropzone\nfor vehicle reinforcements
 	ProductionBar:
@@ -411,7 +411,7 @@ AFLD:
 		Dimensions: 4,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 500
+		HP: 1000
 	RevealsShroud:
 		Range: 5c0
 	RallyPoint:
@@ -458,7 +458,7 @@ HPAD:
 		Name: Helipad
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: barracks, ~tl6
+		Prerequisites: ~barracks, ~tl6
 		Queue: Building
 		Description: Produces and rearms helicopters
 	ProductionBar:
@@ -495,7 +495,7 @@ HPAD:
 		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
-		HP: 400
+		HP: 800
 	RevealsShroud:
 		Range: 3c0
 	Exit@1:
@@ -539,7 +539,7 @@ HQ:
 		Prerequisite: anyhq
 	Buildable:
 		BuildPaletteOrder: 70
-		Prerequisites: proc, ~tl2, ~GDIConstructionYard
+		Prerequisites: ~proc, ~tl2, ~GDIConstructionYard
 		Queue: Building
 		Description: Provides radar and Air Strike support power.\nUnlocks higher-tech units and buildings.\nRequires power to operate.
 	Building:
@@ -553,7 +553,7 @@ HQ:
 	WithSpriteBody:
 		PauseOnCondition: lowpower
 	Health:
-		HP: 500
+		HP: 1000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -571,7 +571,7 @@ HQNod:
 	Tooltip:
 		Name: Communications Center
 	Buildable:
-		Prerequisites: proc, ~tl2, ~NodConstructionYard
+		Prerequisites: ~proc, ~tl2, ~NodConstructionYard
 	RenderSprites:
 		Image: hq
 
@@ -597,7 +597,7 @@ FIX:
 		Condition: Repairing
 	Buildable:
 		BuildPaletteOrder: 60
-		Prerequisites: anypower, ~tl5
+		Prerequisites: ~anypower, ~tl5
 		Queue: Building
 		Description: Repairs vehicles
 	Building:
@@ -609,7 +609,7 @@ FIX:
 		DecorationBounds: 73,72
 	SelectionDecorations:
 	Health:
-		HP: 400
+		HP: 800
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -644,7 +644,7 @@ EYE:
 		Prerequisite: advhq
 	Buildable:
 		BuildPaletteOrder: 100
-		Prerequisites: anyhq, ~tl7, ~GDIConstructionYard
+		Prerequisites: ~anyhq, ~tl7, ~GDIConstructionYard
 		Queue: Building
 		Description: Provides radar and Orbital Ion Cannon support power.\nUnlocks Mammoth Tank and Commando.\nRequires power to operate.
 	Building:
@@ -658,7 +658,7 @@ EYE:
 	WithSpriteBody:
 		PauseOnCondition: lowpower
 	Health:
-		HP: 500
+		HP: 1000
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -705,7 +705,7 @@ TMPL:
 		Prerequisite: advhq
 	Buildable:
 		BuildPaletteOrder: 100
-		Prerequisites: anyhq, ~tl7, ~NodConstructionYard
+		Prerequisites: ~anyhq, ~tl7, ~NodConstructionYard
 		Queue: Building
 		Description: Provides Nuclear Strike support power.\nUnlocks Stealth Tank, Chem. Warrior and Obelisk of Light.\nRequires power to operate.
 	Building:
@@ -717,7 +717,7 @@ TMPL:
 		DecorationBounds: 72,68,0,-12
 	SelectionDecorations:
 	Health:
-		HP: 1000
+		HP: 2000
 	RevealsShroud:
 		Range: 4c0
 	NukePower:
@@ -766,14 +766,14 @@ GUN:
 		Name: Turret
 	Buildable:
 		BuildPaletteOrder: 45
-		Prerequisites: barracks, ~NodConstructionYard, ~tl2
+		Prerequisites: ~barracks, ~NodConstructionYard, ~tl2
 		Queue: Building
 		BuildDuration: 1440
 		BuildDurationModifier: 40
 		Description: Basic Anti-Tank base defense.\n  Strong vs Tanks, vehicles\n  Weak vs Infantry
 	Building:
 	Health:
-		HP: 200
+		HP: 400
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -817,7 +817,7 @@ SAM:
 		Name: SAM Site
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: hand, ~NodConstructionYard, ~tl6
+		Prerequisites: ~hand, ~NodConstructionYard, ~tl6
 		Queue: Building
 		BuildDuration: 1700
 		BuildDurationModifier: 40
@@ -826,7 +826,7 @@ SAM:
 		Footprint: xx
 		Dimensions: 2,1
 	Health:
-		HP: 200
+		HP: 400
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -860,7 +860,7 @@ OBLI:
 		Name: Obelisk of Light
 	Buildable:
 		BuildPaletteOrder: 60
-		Prerequisites: anyhq, ~tl4, ~NodConstructionYard
+		Prerequisites: ~anyhq, ~tl4, ~NodConstructionYard
 		Queue: Building
 		BuildDuration: 3120
 		BuildDurationModifier: 40
@@ -870,7 +870,7 @@ OBLI:
 		DecorationBounds: 22,44,0,-10
 	SelectionDecorations:
 	Health:
-		HP: 200
+		HP: 400
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -911,14 +911,14 @@ GTWR:
 		Name: Guard Tower
 	Buildable:
 		BuildPaletteOrder: 40
-		Prerequisites: barracks, ~GDIConstructionYard, ~tl2
+		Prerequisites: ~barracks, ~GDIConstructionYard, ~tl2
 		Queue: Building
 		BuildDuration: 1440
 		BuildDurationModifier: 40
 		Description: Basic defensive structure.\n  Strong vs Infantry\n  Weak vs Tanks
 	Building:
 	Health:
-		HP: 200
+		HP: 400
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -949,7 +949,7 @@ ATWR:
 		Name: Advanced Guard Tower
 	Buildable:
 		BuildPaletteOrder: 60
-		Prerequisites: anyhq, ~tl4, ~GDIConstructionYard
+		Prerequisites: ~anyhq, ~tl4, ~GDIConstructionYard
 		Queue: Building
 		BuildDuration: 2880
 		BuildDurationModifier: 40
@@ -959,7 +959,7 @@ ATWR:
 		DecorationBounds: 22,48,0,-12
 	SelectionDecorations:
 	Health:
-		HP: 300
+		HP: 600
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -998,7 +998,7 @@ SBAG:
 		Name: Sandbag Barrier
 	Buildable:
 		BuildPaletteOrder: 20
-		Prerequisites: fact, ~!PrerequisiteLineWalls, ~tl2
+		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl2
 		Queue: Building
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
@@ -1024,7 +1024,7 @@ CYCL:
 		Name: Chain Link Barrier
 	Buildable:
 		BuildPaletteOrder: 20
-		Prerequisites: fact, ~!PrerequisiteLineWalls, ~tl5
+		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl5
 		Queue: Building
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Armor:
@@ -1050,13 +1050,13 @@ BRIK:
 		Name: Concrete Barrier
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: fact, ~!PrerequisiteLineWalls, ~tl7
+		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl7
 		Queue: Building
 		BuildDuration: 500
 		BuildDurationModifier: 40
 		Description: Stops infantry and most tanks.\nBlocks some projectiles.
 	Health:
-		HP: 250
+		HP: 500
 	Armor:
 		Type: Heavy
 	BlocksProjectiles:
@@ -1078,7 +1078,7 @@ SBAG_LINE:
 	RenderSprites:
 		Image: sbag
 	Buildable:
-		Prerequisites: fact, ~PrerequisiteLineWalls, ~tl2
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl2
 
 CYCL_LINE:
 	Inherits@OriginalActor: CYCL
@@ -1086,7 +1086,7 @@ CYCL_LINE:
 	RenderSprites:
 		Image: cycl
 	Buildable:
-		Prerequisites: fact, ~PrerequisiteLineWalls, ~tl5
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl5
 
 BRIK_LINE:
 	Inherits@OriginalActor: BRIK
@@ -1094,7 +1094,7 @@ BRIK_LINE:
 	RenderSprites:
 		Image: brik
 	Buildable:
-		Prerequisites: fact, ~PrerequisiteLineWalls, ~tl7
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl7
 
 BARRACKS:
 	AlwaysVisible:
