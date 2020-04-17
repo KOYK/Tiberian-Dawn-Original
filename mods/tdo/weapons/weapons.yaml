@@ -1,43 +1,48 @@
 #Versus none, wood, light, heavy, concrete.
 
-# [Weapons]
-# 0=Sniper
-# 1=Chaingun
-# 2=Pistol
-# 3=Rifle
-# 4=Rocket
-# 5=InfantryFlamer
-# 6=TankFlamer
-# 7=ChemSpray
-# 8=Grenade
-# 9=LightCannon
-# 10=MediumCannon
-# 11=HeavyCannon
-# 12=TurretCannon
-# 13=MammothTusk
-# 14=MLRSMissile
-# 15=ArtilleryShell
-# 16=Machinegun
-# 17=BoatMissile
-# 18=AGTMissile
-# 19=Napalm
-# 20=LASER
-# 21=SAMMissile
-# 22=HonestJohn
-# 23=DinoGore
-# 24=DinoChew
+# [Weapons]				[Projectiles]		[Warhead]			[Versus]
+# 0=Sniper				InvisibleSniper		HollowPoint			256,8,8,8,8
+# 1=Chaingun			InvisibleHeavy		HiExplosive			224,192,144,64,256
+# 2=Pistol				Invisible			SmallArms			256,128,144,64,64
+# 3=Rifle				Invisible			SmallArms			256,128,144,64,64
+# 4=Rocket				HeatSeeker			ArmorPiercing		64,192,192,256,128
+# 5=InfantryFlamer		FlameBurst			Fire				224,256,176,64,128
+# 6=TankFlamer			FlameBurst			Fire				224,256,176,64,128
+# 7=ChemSpray			ChemBurst			HiExplosive			224,192,144,64,256
+# 8=Grenade				Bomb				HiExplosive			224,192,144,64,256
+# 9=LightCannon			Cannon				ArmorPiercing		64,192,192,256,128
+# 10=MediumCannon		Cannon				ArmorPiercing		64,192,192,256,128
+# 11=HeavyCannon		Cannon				ArmorPiercing		64,192,192,256,128
+# 12=TurretCannon		Cannon				ArmorPiercing		64,192,192,256,128
+# 13=MammothTusk		HeatSeeker2			HiExplosive			224,192,144,64,256
+# 14=MLRSMissile		HeatSeeker3			HiExplosive			224,192,144,64,256
+# 15=ArtilleryShell		Ballistic			HiExplosive			224,192,144,64,256
+# 16=Machinegun			Invisible			SmallArms			256,128,144,64,64
+# 17=BoatMissile		HeatSeeker2			HiExplosive			224,192,144,64,256
+# 18=AGTMissile			HeatSeeker2			HiExplosive			224,192,144,64,256
+# 19=Napalm				Bomblet				Fire				224,256,176,64,128
+# 20=LASER				LaserShot			SUPER				256,256,256,256,256
+# 21=SAMMissile			BigHeatSeeker		ArmorPiercing		64,192,192,256,128
+# 22=HonestJohn			FlameMissile		Fire				224,256,176,64,128
+# 23=DinoGore			Gore				DinoBite2			256,192,128,32,8
+# 24=DinoChew			Chew				DinoBite1			256,192,128,32,8
+
+#ELoyros, Note On versus: It seems it is based on %
+#C&C a miniguner kills with 6 hits an other miniguner.
+#openra the same but with versus 100 while in C&C is 256.
+#therefor 256 is 100%. I have to make a formula on this.
 
 # Commando's Sniper Rifle
 Sniper:
 	Report: ramgun2.aud
 	ValidTargets: Ground, Infantry
 	InvalidTargets: Vehicle, Water, Structure, Wall, Husk
-	ReloadDelay: 50
+	ReloadDelay: 40
 	Range: 5c50
 	Projectile: Bullet
 		Speed: 5c682
 	Warhead@1Dam: SpreadDamage
-		Spread: 42
+		Spread: 4
 		Damage: 125
 		ValidTargets: Infantry
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
@@ -51,7 +56,7 @@ Chaingun:
 	Projectile: Bullet
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
-		Spread: 683
+		Spread: 6
 		Damage: 25
 		Versus:
 			None: 100
@@ -84,11 +89,11 @@ Rifle:
 	InvalidTargets: Wall
 	Report: mgun2.aud
 	Warhead@1Dam: SpreadDamage
-		Spread: 128
+		Spread: 2
 		Damage: 15
 		InvalidTargets: Wall
 		Versus:
-			None: 150
+			None: 100
 			Wood: 30
 			Light: 40
 			Heavy: 10
@@ -119,10 +124,10 @@ Rocket:
 		Damage: 30
 		ValidTargets: Ground, Air
 		Versus:
-			None: 28
-			Wood: 116
-			Light: 140
-			Heavy: 140
+			None: 64
+			Wood: 100
+			Light: 100
+			Heavy: 100
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -165,11 +170,11 @@ TankFlamer:
 # chemwarrior/visceroid chemical spray
 ChemSpray:
 	Inherits: ^FlameWeapon
-	ReloadDelay: 65
-	Range: 3c0
+	ReloadDelay: 70
+	Range: 2c0
 	InvalidTargets:
 	Warhead@1Dam: SpreadDamage
-		Spread: 256
+		Spread: 6
 		Damage: 80
 		InvalidTargets:
 		Versus:
@@ -185,8 +190,8 @@ ChemSpray:
 # Grenade
 Grenade:
 	Inherits: ^BallisticWeapon
-	ReloadDelay: 50
-	Range: 4c0
+	ReloadDelay: 60
+	Range: 3c25
 	Report: toss1.aud
 	Projectile: Bullet
 		Speed: 140
@@ -195,7 +200,7 @@ Grenade:
 		Inaccuracy: 813
 		Image: BOMB
 	Warhead@1Dam: SpreadDamage
-		Spread: 341
+		Spread: 6
 		Damage: 50
 		Versus:
 			None: 100
@@ -209,7 +214,7 @@ Grenade:
 # Light Tank gun
 LightCannon:
 	Inherits: ^BallisticWeapon
-	ReloadDelay: 30
+	ReloadDelay: 60
 	Range: 4c0
 	Report: tnkfire3.aud
 	Projectile: Bullet
@@ -225,12 +230,14 @@ LightCannon:
 # Medium Tank gun
 MediumCannon:
 	Inherits: ^BallisticWeapon
+	ReloadDelay: 50
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 
 # Mammoth tank gun
 HeavyCannon:
 	Inherits: ^BallisticWeapon
+	ReloadDelay: 80
 	Burst: 2
 	BurstDelays: 8
 	Warhead@1Dam: SpreadDamage
@@ -239,7 +246,7 @@ HeavyCannon:
 # Turret gun
 TurretCannon:
 	Inherits: ^BallisticWeapon
-	ReloadDelay: 20
+	ReloadDelay: 60
 	Range: 6c0
 	Projectile: Bullet
 		Speed: 853
@@ -254,7 +261,7 @@ TurretCannon:
 # Mammoth tank missiles
 MammothTusk:
 	Inherits: Rocket
-	ReloadDelay: 45
+	ReloadDelay: 80
 	Range: 5c0
 	Report: rocket1.aud
 	Burst: 2
@@ -264,7 +271,7 @@ MammothTusk:
 		Speed: 341
 		RangeLimit: 6c0
 	Warhead@1Dam: SpreadDamage
-		Spread: 298
+		Spread: 6
 		Damage: 75
 		Versus:
 			None: 44
@@ -279,7 +286,7 @@ MammothTusk:
 # MLRS Missile
 MLRSMissile:
 	Inherits: Rocket
-	ReloadDelay: 100
+	ReloadDelay: 80
 	Range: 11c0
 	MinRange: 3c0
 	Burst: 4
@@ -300,7 +307,7 @@ MLRSMissile:
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Damage: 75
-		Spread: 683
+		Spread: 6
 		ValidTargets: Ground
 		Versus:
 			None: 24
@@ -325,7 +332,7 @@ ArtilleryShell:
 		Inaccuracy: 1c256
 		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
-		Spread: 341
+		Spread: 6
 		Damage: 150
 		Versus:
 			None: 150
@@ -342,6 +349,7 @@ MachineGun:
 	Inherits: Rifle
 	Burst: 5
 	Report: mgun11.aud
+	ReloadDelay: 30
 	Warhead@1Dam: SpreadDamage
 		Damage: 15
 		Versus:
@@ -364,7 +372,7 @@ BoatMissile:
 		Speed: 170
 		RangeLimit: 9c614
 	Warhead@1Dam: SpreadDamage
-		Spread: 256
+		Spread: 6
 		Damage: 60
 		Versus:
 			None: 90
@@ -381,7 +389,7 @@ BoatMissile:
 #AGTMissile:
 TowerMissile:
 	Inherits: Rocket
-	ReloadDelay: 15
+	ReloadDelay: 40
 	Range: 7c0
 	Report: rocket2.aud
 	ValidTargets: Ground
@@ -391,7 +399,7 @@ TowerMissile:
 		RangeLimit: 8c409
 	Warhead@1Dam: SpreadDamage
 		Damage: 60
-		Spread: 683
+		Spread: 6
 		ValidTargets: Ground
 		Versus:
 			None: 48
@@ -403,7 +411,7 @@ TowerMissile:
 		Explosions: med_frag
 TowerAAMissile:
 	Inherits: Rocket
-	ReloadDelay: 15
+	ReloadDelay: 40
 	Range: 8c0
 	Report: rocket2.aud
 	ValidTargets: Air
@@ -415,7 +423,7 @@ TowerAAMissile:
 		Inaccuracy: 0
 	Warhead@1Dam: SpreadDamage
 		Damage: 60
-		Spread: 682
+		Spread: 6
 		ValidTargets: Air
 		Versus:
 			None: 140
@@ -429,7 +437,7 @@ TowerAAMissile:
 # A-10's Napalm drop
 Napalm:
 	Inherits: ^FlameWeapon
-	ReloadDelay: 4
+	ReloadDelay: 20
 	Range: 2c0
 	Burst: 2
 	BurstDelays: 2
@@ -467,7 +475,7 @@ Vulcan:
 
 # Obelisk LASER
 LASER:
-	ReloadDelay: 40
+	ReloadDelay: 90
 	Range: 7c512
 	Report: obelray1.aud
 	Projectile: LaserZap
@@ -487,7 +495,7 @@ LASER:
 # SAM Missile
 SAMMissile:
 	Inherits: Rocket
-	ReloadDelay: 20
+	ReloadDelay: 50
 	Range: 10c0
 	Report: rocket2.aud
 	ValidTargets: Air
@@ -547,7 +555,7 @@ DinoChew:
 ##################################################################################
 HeliAGGun:
 	#Inherits: ^HeavyMG
-	ReloadDelay: 20
+	ReloadDelay: 50
 	Burst: 2
 	BurstDelays: 0
 	Range: 4c0

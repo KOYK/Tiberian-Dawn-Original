@@ -464,10 +464,11 @@
 		CrushSound: squish2.aud
 	Guardable:
 	SelfHealing@HOSPITAL:
-		Step: 500
-		Delay: 100
+		Step: 0
+		PercentageStep: 10
+		Delay: 250
 		HealIfBelow: 100
-		DamageCooldown: 125
+		DamageCooldown: 250
 		RequiresCondition: hospitalheal
 	GrantConditionOnPrerequisite@HOSPITAL:
 		Condition: hospital
@@ -681,7 +682,7 @@
 	Armor:
 		Type: Wood
 	Health:
-		HP: 40000
+		HP: 400
 	Building:
 		Dimensions: 1,1
 		Footprint: x
@@ -725,10 +726,12 @@
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	RepairableBuilding:
-		RepairPercent: 40
-		RepairStep: 1400
-		PlayerExperience: 15
+		RepairPercent: 20
+		RepairInterval: 24
+		RepairStep: 7
+		PlayerExperience: 1
 		RepairingNotification: Repairing
+		RepairBonuses: 100, 100, 100, 100, 100, 100, 100, 100, 100
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -774,9 +777,11 @@
 	Inherits: ^Building
 	-ConditionManager:
 	Tooltip:
-		GenericName: Civilian Building
-		GenericStancePrefix: false
 		ShowOwnerRow: false
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		EnemyPrefix: Enemy
+		GenericVisibility: Enemy, Neutral
 	FrozenUnderFog:
 	MapEditorData:
 		Categories: Civilian building
@@ -790,9 +795,11 @@
 		Footprint: x
 	WithSpriteBody:
 	Tooltip:
-		GenericName: Civilian Building (Destroyed)
-		GenericStancePrefix: false
 		ShowOwnerRow: false
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		EnemyPrefix: Enemy
+		GenericVisibility: Enemy, Neutral
 	FrozenUnderFog:
 	ScriptTriggers:
 	MapEditorData:
@@ -821,13 +828,11 @@
 	RevealsShroud:
 		Range: 3c0
 	Tooltip:
-		GenericName: Building
 		ShowOwnerRow: false
 		GenericStancePrefix: True
-		AllyPrefix: Allied
 		NeutralPrefix: Civilian
 		EnemyPrefix: Enemy
-		GenericVisibility: Ally, Enemy, Neutral
+		GenericVisibility: Enemy, Neutral
 	MapEditorData:
 		Categories: Tech building
 	WithBuildingRepairDecoration:
@@ -904,7 +909,7 @@
 	FrozenUnderFog:
 	ScriptTriggers:
 	Health:
-		HP: 100
+		HP: 200
 	MapEditorData:
 		Categories: Wall
 	LineBuild:
@@ -937,7 +942,7 @@
 	RadarColorFromTerrain:
 		Terrain: Tree
 	Health:
-		HP: 50000
+		HP: 5000
 	Armor:
 		Type: Wood
 	Targetable:
@@ -1036,7 +1041,7 @@
 	Inherits@1: ^SpriteActor
 	Interactable:
 	Health:
-		HP: 14000
+		HP: 140
 	Armor:
 		Type: Light
 	HiddenUnderFog:
@@ -1077,7 +1082,7 @@
 ^LightHusk:
 	Inherits: ^Husk
 	Health:
-		HP: 2000
+		HP: 20
 
 ^HelicopterHusk:
 	Inherits: ^CommonHuskDefaults
@@ -1107,7 +1112,7 @@
 		RequiresForceFire: yes
 		TargetTypes: Ground, Water
 	Health:
-		HP: 60000
+		HP: 600
 	Armor:
 		Type: Heavy
 	SoundOnDamageTransition:
