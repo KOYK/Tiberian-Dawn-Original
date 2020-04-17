@@ -247,7 +247,7 @@ GameSpeeds:
 		OrderLatency: 6
 
 ColorValidator:
-	TeamColorPresets: ffc9ca, f50606, 98331f, f57606, f7bb06, f861a4, da06f3, ddb8ff, 06f739, cef7b2, 200738, 280df6, 2f86f2, 76d2f8, 34ba93, 000000
+	TeamColorPresets: F40000, A4A4BC, F5D378, D47810, 007070, FCFC54, 29D0D0, 8126C0, 1D6914, 814A19, 2A4BD7, 9DAFFF, A8FF00, 575757, E2E2E2, 2B2B2B
 
 ModContent:
 	InstallPromptMessage: Tiberian Dawn requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2007 C&C Gold freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
