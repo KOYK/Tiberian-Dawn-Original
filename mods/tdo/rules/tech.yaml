@@ -3,19 +3,18 @@ V19:
 	Selectable:
 		Bounds: 24,24
 	CashTrickler:
+		Amount: 700
+		Interval: 750
+		ShowTicks: false
+		InitialDelay: 750
 	Building:
 		Footprint: x
 		Dimensions: 1,1
 	Health:
-		HP: 200
+		HP: 400
 	Tooltip:
 		Name: Oil Derrick
-	TooltipDescription@ally:
-		Description: Provides additional funds.
-		ValidStances: Ally
-	TooltipDescription@other:
-		Description: Capture to receive additional funds.
-		ValidStances: Neutral, Enemy
+		AllyPrefix: Oil Derrick
 	SpawnActorOnDeath:
 		Actor: V19.Husk
 
@@ -31,7 +30,8 @@ V19.Husk:
 		Footprint: x
 		Dimensions: 1,1
 	Tooltip:
-		Name: Oil Derrick (Destroyed)
+		Name: Oil Derrick
+		AllyPrefix: Oil Derrick
 
 HOSP:
 	Inherits: ^TechBuilding
@@ -43,15 +43,10 @@ HOSP:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 200
+		HP: 400
 	Tooltip:
 		Name: Hospital
-	TooltipDescription@ally:
-		Description: Provides infantry with self-healing.
-		ValidStances: Ally
-	TooltipDescription@other:
-		Description: Capture to enable self-healing for infantry.
-		ValidStances: Neutral, Enemy
+		AllyPrefix: Hospital
 	SpawnActorOnDeath:
 		Actor: HOSP.Husk
 	WithBuildingBib:
@@ -66,7 +61,8 @@ HOSP.Husk:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
-		Name: Hospital (Destroyed)
+		Name: Hospital
+		AllyPrefix: Hospital
 	WithBuildingBib:
 		HasMinibib: Yes
 
@@ -79,15 +75,10 @@ BIO:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 300
+		HP: 600
 	Tooltip:
-		Name: Biological Lab
-	TooltipDescription@ally:
-		Description: Produces Bio-Lab units.
-		ValidStances: Ally
-	TooltipDescription@other:
-		Description: Capture to produce Bio-Lab units.
-		ValidStances: Neutral, Enemy
+		Name: Biolab
+		AllyPrefix: Biolab
 	Exit@1:
 		SpawnOffset: 0,-426,0
 		ExitCell: 0,-1
@@ -119,7 +110,8 @@ BIO.Husk:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
-		Name: Biological Lab (Destroyed)
+		Name: Biolab
+		AllyPrefix: Biolab
 
 MISS:
 	Inherits: ^CivBuilding
@@ -131,8 +123,9 @@ MISS:
 		Dimensions: 3,2
 	Tooltip:
 		Name: Technology Center
+		AllyPrefix: Technology Center
 	Health:
-		HP: 200
+		HP: 400
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
