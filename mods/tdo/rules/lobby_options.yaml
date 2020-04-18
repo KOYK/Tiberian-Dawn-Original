@@ -1,20 +1,45 @@
 World:
 	Inherits: ^BaseWorld
 	MapBuildRadius:
+		AllyBuildRadiusCheckboxLabel: Build near Allies
+		AllyBuildRadiusCheckboxDescription: Allies can build near each other bases.
+		BuildRadiusCheckboxLabel: Limit Build Area
+		BuildRadiusCheckboxDescription: Limits structure placement to areas around Construction Yards.
+		BuildRadiusCheckboxVisible: False
+		AllyBuildRadiusCheckboxVisible: True
 		AllyBuildRadiusCheckboxDisplayOrder: 4
 		BuildRadiusCheckboxDisplayOrder: 5
 		BuildRadiusCheckboxEnabled: False
-		BuildRadiusCheckboxVisible: False
+		BuildRadiusCheckboxLocked: True
+		AllyBuildRadiusCheckboxEnabled: False
+		AllyBuildRadiusCheckboxLocked: False
 	MapOptions:
-		ShortGameCheckboxDisplayOrder: 2
-		TechLevelDropdownDisplayOrder: 2
-		GameSpeedDropdownDisplayOrder: 3
+		ShortGameCheckboxLabel:	Short Game
+		ShortGameCheckboxDescription: If enabled, players with no Base buildings or MCV lose the game.
+		ShortGameCheckboxVisible: True
+		ShortGameCheckboxDisplayOrder: 0
+		TechLevelDropdownLabel:	Tech Level
 		TechLevelDropdownDescription: Select Tech Level
+		TechLevelDropdownDisplayOrder: 0
+		GameSpeedDropdownLabel:	Game Speed
+		GameSpeedDropdownDescription: You can't change speed while in-game
+		GameSpeedDropdownDisplayOrder: 0
+		GameSpeed: default
+		GameSpeedDropdownLocked: False
+		GameSpeedDropdownVisible: True
 		TechLevel: tl7
+		TechLevelDropdownLocked: False
+		TechLevelDropdownVisible: True
+		ShortGameCheckboxEnabled: False
+		ShortGameCheckboxLocked: False
 	MPStartLocations:
+		InitialExploreRange: 5c0
+		SeparateTeamSpawnsCheckboxLabel: Separate Team Spawns
+		SeparateTeamSpawnsCheckboxDescription: Teamed up players whith random starting location will spawn near allies
+		SeparateTeamSpawnsCheckboxEnabled: False
+		SeparateTeamSpawnsCheckboxLocked: False
+		SeparateTeamSpawnsCheckboxVisible: True
 		SeparateTeamSpawnsCheckboxDisplayOrder: 6
-		SeparateTeamSpawnsCheckboxVisible: False
-		SeparateTeamSpawnsCheckboxEnabled: True
 	MapCreeps:
 		CheckboxLabel: Spawn Visceroids 
 		CheckboxDescription: Spawns Evil Visceroids Over Tiberium!
@@ -29,8 +54,12 @@ World:
 		Owner: Creeps
 		Types: vice
 	SpawnMPUnits:
-		StartingUnitsClass: light
+		DropdownLabel: Unit Count
+		DropdownDescription: Set the starting units
+		DropdownVisible: True
 		DropdownDisplayOrder: 0
+		StartingUnitsClass: light
+		DropdownLocked: False
 	MPStartUnits@mhq:
 		Class: MHQ
 		ClassName: MHQ
@@ -123,9 +152,16 @@ Player:
 		CheckboxDisplayOrder: 8
 		CheckboxLabel: Cheats
 	PlayerResources:
+		DefaultCashDropdownLabel: Starting Credits
+		DefaultCashDropdownDescription: Set starting funds for all players.
+		InsufficientFundsNotificationDelay: 750
 		CashTickUpNotification: CashTickUp
 		CashTickDownNotification: CashTickDown
 		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000
+		DefaultCashDropdownVisible: True
+		DefaultCash: 5000
+		DefaultCashDropdownLocked: False
+		#InsufficientFundsNotification: 
 	Shroud:
 		FogCheckboxEnabled: False
 		FogCheckboxVisible: True

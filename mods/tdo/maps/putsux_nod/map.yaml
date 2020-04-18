@@ -1,6 +1,6 @@
 MapFormat: 11
-RequiresMod: ra
-Title: PUTSUX Nod
+RequiresMod: tdo
+Title: PATSUX Nod
 Author: KOYK
 Tileset: DESERT
 MapSize: 62,72
@@ -67,9 +67,6 @@ Actors:
 		TurretFacing: 174
 		Facing: 174
 		Location: 45,2
-	Actor37: miss
-		Owner: Neutral
-		Location: 25,3
 	Actor38: split2
 		Owner: Neutral
 		Location: 53,3
@@ -787,9 +784,6 @@ Actors:
 	Actor239: t04
 		Owner: Neutral
 		Location: 14,35
-	Actor240: bio
-		Owner: Neutral
-		Location: 5,37
 	Actor241: t09
 		Owner: Neutral
 		Location: 23,37
@@ -1721,14 +1715,10 @@ Actors:
 		Owner: Multi0
 		Facing: 0
 		Location: 9,58
-	Actor441: stnk
-		Owner: Multi0
-		Facing: 255
-		Location: 11,58
 	Actor442: stnk
 		Owner: Multi0
-		Facing: 0
 		Location: 13,58
+		Facing: 0
 	Actor443: wood
 		Owner: Creeps
 		Location: 50,58
@@ -1749,11 +1739,6 @@ Actors:
 	Actor449: wood
 		Owner: Creeps
 		Location: 60,58
-	Actor452: mtnk
-		Owner: Multi0
-		Facing: 255
-		TurretFacing: 69
-		Location: 10,59
 	Actor453: rmbo
 		Owner: Multi0
 		SubCell: 3
@@ -1784,11 +1769,6 @@ Actors:
 		TurretFacing: 0
 		Facing: 255
 		Location: 11,59
-	Actor458: mtnk
-		Owner: Multi0
-		Facing: 255
-		TurretFacing: 183
-		Location: 12,59
 	Actor459: wood
 		Owner: Creeps
 		Location: 50,59
@@ -1928,10 +1908,6 @@ Actors:
 		Owner: Multi0
 		Location: 11,61
 		Facing: 255
-	Actor450: tran
-		Owner: Multi0
-		Location: 11,60
-		Facing: 255
 	Actor451: split2
 		Owner: Neutral
 		Location: 11,15
@@ -1970,5 +1946,159 @@ Actors:
 		Owner: Multi2
 		Location: 3,64
 		Facing: 92
-Rules: ra|rules/campaign-tooltips.yaml, rules.yaml
+	Actor441: tran
+		Owner: Multi0
+		Location: 11,58
+		Facing: 0
+	Actor450: ltnk
+		Owner: Multi0
+		Location: 13,60
+		TurretFacing: 0
+		Facing: 255
+	Actor452: ltnk
+		Owner: Multi0
+		Location: 9,60
+		TurretFacing: 0
+		Facing: 255
+	Actor458: stnk
+		Owner: Multi0
+		Location: 11,56
+		Facing: 255
+	Actor508: rock1
+		Owner: Neutral
+		Location: 3,63
+	Actor509: rock3
+		Owner: Neutral
+		Location: 21,37
+	Actor510: t18
+		Owner: Neutral
+		Location: 1,61
+	Actor511: t08
+		Owner: Neutral
+		Location: 4,65
+	Actor512: t08.husk
+		Owner: Neutral
+		Location: 3,60
+	Actor513: t08
+		Owner: Neutral
+		Location: 22,65
+	Actor514: t18
+		Owner: Neutral
+		Location: 29,31
+	Actor515: t08
+		Owner: Neutral
+		Location: 28,33
+	Actor516: rock3
+		Owner: Neutral
+		Location: 30,32
+	Actor517: rock5
+		Owner: Neutral
+		Location: 4,60
+	Actor518: t09
+		Owner: Neutral
+		Location: 4,61
+	Actor519: v23
+		Owner: Neutral
+		Location: 4,58
+	Actor520: v32
+		Owner: Neutral
+		Location: 2,58
+	Actor521: e1
+		Owner: Neutral
+		Location: 2,59
+		SubCell: 3
+		Facing: 170
+		TurretFacing: 170
+		Stance: HoldFire
+	Actor522: c8
+		Owner: Neutral
+		Location: 4,59
+		SubCell: 3
+		Facing: 92
+	Actor523: miss
+		Owner: Neutral
+		Location: 5,37
+	Actor524: bio
+		Owner: Neutral
+		Location: 26,3
+	Actor525: cycl
+		Owner: Neutral
+		Location: 28,5
+	Actor526: cycl
+		Owner: Neutral
+		Location: 28,4
+	Actor527: cycl
+		Owner: Neutral
+		Location: 28,3
+	Actor528: cycl
+		Owner: Neutral
+		Location: 28,2
+	Actor529: cycl
+		Owner: Neutral
+		Location: 27,2
+	Actor530: cycl
+		Owner: Neutral
+		Location: 26,2
+	Actor533: cycl
+		Owner: Neutral
+		Location: 25,5
+	Actor534: cycl
+		Owner: Neutral
+		Location: 26,5
+	Actor535: cycl
+		Owner: Neutral
+		Location: 27,5
+	Actor536: cycl
+		Owner: Neutral
+		Location: 25,2
+	Actor538: cycl_line
+		Owner: Neutral
+		Location: 25,3
+	Actor539: arco
+		Owner: Neutral
+		Location: 25,3
+	Actor531: cycl_line
+		Owner: Neutral
+		Location: 25,4
+	Actor532: sbag
+		Owner: Neutral
+		Location: 8,39
+	Actor537: sbag
+		Owner: Neutral
+		Location: 8,38
+	Actor540: sbag
+		Owner: Neutral
+		Location: 7,39
+	Actor541: sbag
+		Owner: Neutral
+		Location: 4,39
+	Actor542: sbag
+		Owner: Neutral
+		Location: 4,38
+	Actor543: sbag
+		Owner: Neutral
+		Location: 5,39
+	Actor544: sbag
+		Owner: Neutral
+		Location: 8,36
+	Actor545: sbag
+		Owner: Neutral
+		Location: 7,36
+	Actor546: sbag
+		Owner: Neutral
+		Location: 8,37
+	Actor547: sbag
+		Owner: Neutral
+		Location: 4,36
+	Actor548: sbag
+		Owner: Neutral
+		Location: 4,37
+	Actor550: sbag
+		Owner: Neutral
+		Location: 6,36
+	Actor549: hosp
+		Location: 51,63
+		Faction: nod
+		Owner: Multi1
+Rules: tdo|rules/campaign-tooltips.yaml, rules.yaml
 Sequences: sequences.yaml

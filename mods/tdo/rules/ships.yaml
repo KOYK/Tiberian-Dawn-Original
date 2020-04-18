@@ -9,7 +9,7 @@ BOAT:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 7000
+		HP: 700
 	Armor:
 		Type: Heavy
 	TDGunboat:
@@ -66,7 +66,7 @@ LST:
 		Speed: 150
 		RequiresCondition: !notmobile
 	Health:
-		HP: 4000
+		HP: 400
 	Armor:
 		Type: Heavy
 	RevealsShroud:

@@ -73,6 +73,7 @@ MCV.Husk:
 
 MHQR:
 	Interactable:
+	-Buildable:
 	Targetable:
 		TargetTypes: Null
 	DamageMultiplier:
@@ -126,3 +127,75 @@ World:
 	-CrateSpawner:
 	ObjectivesPanel:
 		PanelName: MISSION_OBJECTIVES
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxEnabled: False
+		AllyBuildRadiusCheckboxLocked: True
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 2
+		ShortGameCheckboxEnabled: False
+		ShortGameCheckboxLocked: True
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
+		TechLevelDropdownDescription: Select Tech Level
+		TechLevel: tl7
+		TechLevelDropdownLocked: True
+	MapCreeps:
+		CheckboxEnabled: True
+		CheckboxLocked: True
+		CheckboxVisible: True
+	ActorSpawnManager@Vice:
+		Minimum: 1
+		Maximum: 2
+		SpawnInterval: 2500
+		Actors: vice, vice, vice, vice
+		Owner: Creeps
+		Types: vice
+	-MPStartUnits@mhq:
+	-MPStartUnits@mhqR:
+	-MPStartUnits@mcv_only_gdi:
+	-MPStartUnits@mcv_only_nod:
+	-MPStartUnits@default_gdi_a:
+	-MPStartUnits@default_nod_a:
+	-MPStartUnits@heavy_nod_a:
+	-MPStartUnits@heavy_nod_b:
+	-MPStartUnits@heavy_gdi_a:
+	-MPStartUnits@heavy_gdi_b:
+
+Player:
+	Shroud:
+		FogCheckboxEnabled: False
+		FogCheckboxVisible: True
+		FogCheckboxLocked: True
+		ExploredMapCheckboxEnabled: False
+		ExploredMapCheckboxVisible: True
+		ExploredMapCheckboxLocked: True
+	PlayerResources:
+		DefaultCash: 5000
+		DefaultCashDropdownLocked: True
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		Enabled: False
+		Locked: True
+	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
+		Enabled: True
+		Locked: True
+	LobbyPrerequisiteCheckbox@PUTSUX:
+		Enabled: True
+		Locked: True
+	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
+		Enabled: True
+		Locked: True
+	LobbyPrerequisiteCheckbox@ENGINEERSP:
+		Enabled: True
+		Locked: True
+	LobbyPrerequisiteCheckbox@HUSKS:
+		Enabled: False
+		Locked: True
+	LobbyPrerequisiteCheckbox@LINEWALLS:
+		Enabled: False
+		Locked: True
+	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
+		Enabled: True
+		Locked: True
+	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
+		Enabled: False
+		Locked: True

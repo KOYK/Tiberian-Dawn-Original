@@ -387,7 +387,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
 	Huntable:
-	#Note I sould look if the sell value changes based on health, also look at vehicles, ELoyros
+	#Note I should look if the sell value changes based on health, also look at vehicles, ELoyros
 	Sellable:
 		RefundPercent: 30
 		RequiresCondition: NearWall
