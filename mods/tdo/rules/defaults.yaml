@@ -242,6 +242,21 @@
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 
+^DamagedOnLowPower:
+	GrantConditionOnPrerequisite@GLOBALLPDAMAGE:
+		Condition: global-lpdamage
+		Prerequisites: global-lpdamage
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	SelfHealing@LOWPOWER:
+		Step: 0
+		PercentageStep: -1
+		Delay: 1500
+		HealIfBelow: 101
+		DamageCooldown: 0
+		RequiresCondition: lowpower && global-lpdamage
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
@@ -669,6 +684,7 @@
 ^Building:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
+	Inherits@3: ^DamagedOnLowPower
 	Inherits@shape: ^1x1Shape
 	Huntable:
 	OwnerLostAction:
