@@ -170,14 +170,14 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
 		ID: factundeploy
 		Label: Redeployable MCVs
-		Description: Allow undeploying Construction Yard.
+		Description: Allow undeploying Construction Yard
 		Enabled: True
 		DisplayOrder: 7
 		Prerequisites: global-factundeploy
 	LobbyPrerequisiteCheckbox@HUSKS:
 		ID: husks
 		Label: Husks
-		Description: vehicles will turn into husks when they get destroyed
+		Description: Vehicles will turn into husks when they get destroyed
 		Enabled: False
 		Locked: False
 		Visible: True
@@ -255,3 +255,12 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: EngineerSP
+	LobbyPrerequisiteCheckbox@GLOBALLPDAMAGE:
+		ID: lpdamage
+		Label: Low Power Damage
+		Description: Buildings get damaged while low on power
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: global-lpdamage
