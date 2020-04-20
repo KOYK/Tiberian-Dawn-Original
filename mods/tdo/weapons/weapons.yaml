@@ -31,6 +31,8 @@
 #C&C a miniguner kills with 6 hits an other miniguner.
 #openra the same but with versus 100 while in C&C is 256.
 #therefor 256 is 100%. I have to make a formula on this.
+#Update: well it seems Nyerguds has already documented this!
+#http://nyerguds.arsaneus-design.com/cnc95upd/inirules/old/warheads_percentages.ini
 
 # Commando's Sniper Rifle
 Sniper:
