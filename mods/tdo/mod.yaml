@@ -13,6 +13,7 @@ Packages:
 	$tdo: tdo
 	#$example: example
 	./mods/common: common
+	./mods/cnc
 	~speech.mix
 	~conquer.mix
 	~sounds.mix
@@ -36,6 +37,7 @@ Packages:
 
 MapFolders:
 	tdo|maps: System
+	tdo|maps/singleplayer: System
 
 Rules:
 	tdo|rules/misc.yaml
@@ -198,7 +200,7 @@ Fonts:
 		Size: 48
 
 Missions:
-	./mods/tdo/missions.yaml
+	tdo|missions.yaml
 
 MapGrid:
 	TileSize: 24,24
