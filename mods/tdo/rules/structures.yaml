@@ -1,3 +1,5 @@
+#Nyerguds Told me that the HP values of the structures only, have duble the HP that it is shown on the exported data, So if Nuke has 200HP its actually 400HP
+
 FACT:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
@@ -14,7 +16,7 @@ FACT:
 	Health:
 		HP: 800
 	Armor:
-		Type: Wood
+		Type: 1
 	RevealsShroud:
 		Range: 3c0
 	Production:
@@ -104,6 +106,8 @@ NUKE:
 		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 400
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -135,6 +139,8 @@ NUK2:
 		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 600
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -167,6 +173,8 @@ PROC:
 		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 900
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 4c0
 	Refinery:
@@ -215,6 +223,8 @@ SILO:
 		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 300
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 2c0
 	WithBuildingBib:
@@ -264,6 +274,8 @@ PYLE:
 		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 800
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -312,6 +324,8 @@ HAND:
 		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 800
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -365,6 +379,8 @@ WEAP:
 	SelectionDecorations:
 	Health:
 		HP: 400
+	Armor:
+		Type: 2
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -407,7 +423,7 @@ AFLD:
 		Color: 3AA730
 		RequiresCondition: ProductionBarEnabled
 	Building:
-		Footprint: XXXX xxx= ====
+		Footprint: XXXX xxxx ====
 		Dimensions: 4,3
 		LocalCenterOffset: 0,-512,0
 	Health:
@@ -496,6 +512,8 @@ HPAD:
 	WithBuildingBib:
 	Health:
 		HP: 800
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 3c0
 	Exit@1:
@@ -554,6 +572,8 @@ HQ:
 		PauseOnCondition: lowpower
 	Health:
 		HP: 1000
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -610,6 +630,8 @@ FIX:
 	SelectionDecorations:
 	Health:
 		HP: 800
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -659,6 +681,8 @@ EYE:
 		PauseOnCondition: lowpower
 	Health:
 		HP: 1000
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 10c0
 	WithBuildingBib:
@@ -718,6 +742,8 @@ TMPL:
 	SelectionDecorations:
 	Health:
 		HP: 2000
+	Armor:
+		Type: 2
 	RevealsShroud:
 		Range: 4c0
 	NukePower:
@@ -775,7 +801,7 @@ GUN:
 	Health:
 		HP: 400
 	Armor:
-		Type: Heavy
+		Type: 3
 	RevealsShroud:
 		Range: 5c0
 	WithBuildingBib:
@@ -828,7 +854,7 @@ SAM:
 	Health:
 		HP: 400
 	Armor:
-		Type: Heavy
+		Type: 3
 	RevealsShroud:
 		Range: 3c0
 	Turreted:
@@ -872,7 +898,7 @@ OBLI:
 	Health:
 		HP: 400
 	Armor:
-		Type: Heavy
+		Type: 2
 	RevealsShroud:
 		Range: 5c0
 	WithBuildingBib:
@@ -919,6 +945,8 @@ GTWR:
 	Building:
 	Health:
 		HP: 400
+	Armor:
+		Type: 1
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
@@ -961,7 +989,7 @@ ATWR:
 	Health:
 		HP: 600
 	Armor:
-		Type: Heavy
+		Type: 2
 	RevealsShroud:
 		Range: 4c0
 	WithBuildingBib:
@@ -1001,8 +1029,6 @@ SBAG:
 		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl2
 		Queue: Building
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
-	Armor:
-		Type: Light
 	LineBuild:
 		NodeTypes: sandbag
 	LineBuildNode:
@@ -1027,8 +1053,6 @@ CYCL:
 		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl5
 		Queue: Building
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
-	Armor:
-		Type: Light
 	LineBuild:
 		NodeTypes: chain
 	LineBuildNode:
@@ -1057,8 +1081,6 @@ BRIK:
 		Description: Stops infantry and most tanks.\nBlocks some projectiles.
 	Health:
 		HP: 500
-	Armor:
-		Type: Heavy
 	BlocksProjectiles:
 	Crushable:
 		CrushClasses: heavywall

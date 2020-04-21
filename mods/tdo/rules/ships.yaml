@@ -11,7 +11,7 @@ BOAT:
 	Health:
 		HP: 700
 	Armor:
-		Type: Heavy
+		Type: 3
 	TDGunboat:
 		Speed: 40
 	RevealsShroud:
@@ -68,7 +68,7 @@ LST:
 	Health:
 		HP: 400
 	Armor:
-		Type: Heavy
+		Type: 2
 	RevealsShroud:
 		Range: 3c0
 	WithFacingSpriteBody:

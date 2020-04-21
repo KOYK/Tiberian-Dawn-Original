@@ -378,6 +378,8 @@ V37:
 	Building:
 		Footprint: __xx_ ___xx
 		Dimensions: 5,2
+	Health:
+		HP: 600
 	MapEditorData:
 		RequireTilesets: DESERT
 	Tooltip:

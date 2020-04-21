@@ -363,6 +363,8 @@ ARCO:
 		Dimensions: 2,1
 	SpawnActorOnDeath:
 		Actor: ARCO.Husk
+	Health:
+		HP: 200
 	Tooltip:
 		Name: Oil Pump
 		ShowOwnerRow: True
@@ -378,7 +380,7 @@ ARCO.Husk:
 BARB:
 	Inherits: ^Wall
 	Armor:
-		Type: Light
+		Type: 2
 	Tooltip:
 		Name: Barbwire Fence
 	LineBuild:
@@ -391,7 +393,7 @@ BARB:
 WOOD:
 	Inherits: ^Wall
 	Armor:
-		Type: Wood
+		Type: 1
 	Tooltip:
 		Name: Wooden Fence
 	LineBuild:
