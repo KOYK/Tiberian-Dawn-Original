@@ -23,7 +23,7 @@ PVICE:
 	Health:
 		HP: 150
 	Armor:
-		Type: Wood
+		Type: 1
 	RevealsShroud:
 		Range: 4c0
 	Mobile:
@@ -60,8 +60,8 @@ PVICE:
 		Voice: Move
 	Guardable:
 	DamagedByTerrain:
-		Damage: -100
-		DamageInterval: 4
+		Damage: -1
+		DamageInterval: 25
 		DamageTypes: TiberiumDeath
 		Terrain: Tiberium, BlueTiberium
 	Voiced:
@@ -98,7 +98,7 @@ FTNK:
 	Repairable:
 		HpPerStep: 2046
 	Armor:
-		Type: Heavy
+		Type: 3
 	RevealsShroud:
 		Range: 4c0
 	Armament:
@@ -140,7 +140,7 @@ STNK:
 	Repairable:
 		HpPerStep: 758
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 4c0
 	Cloak:
@@ -192,7 +192,7 @@ LTNK:
 	Repairable:
 		HpPerStep: 2273
 	Armor:
-		Type: Heavy
+		Type: 3
 	RevealsShroud:
 		Range: 3c0
 	Turreted:
@@ -236,7 +236,7 @@ MTNK:
 	Repairable:
 		HpPerStep: 2557
 	Armor:
-		Type: Heavy
+		Type: 3
 	RevealsShroud:
 		Range: 3c0
 	Turreted:
@@ -284,7 +284,7 @@ HTNK:
 	Repairable:
 		HpPerStep: 2637
 	Armor:
-		Type: Heavy
+		Type: 3
 	RevealsShroud:
 		Range: 4c0
 	WithSpriteTurret:
@@ -328,7 +328,7 @@ MHQ:
 	Health:
 		HP: 110
 	Armor:
-		Type: Light
+		Type: 2
 	Mobile:
 		TurnSpeed: 5
 		Speed: 90
@@ -370,7 +370,7 @@ MLRS:
 	Repairable:
 		HpPerStep: 1364
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 4c0
 	Turreted:
@@ -402,7 +402,7 @@ MLRS:
 		EffectiveOwnerFromOwner: true
 		RequiresCondition: HusksEnabled
 	ReloadAmmoPool:
-		Delay: 45
+		Delay: 300
 		Count: 1
 
 ARTY:
@@ -429,7 +429,7 @@ ARTY:
 	Repairable:
 		HpPerStep: 569
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 4c0
 	Armament:
@@ -487,7 +487,7 @@ HARV:
 	Repairable:
 		HpPerStep: 2537
 	Armor:
-		Type: Heavy
+		Type: 2
 	RevealsShroud:
 		Range: 2c0
 	SpawnActorOnDeath:
@@ -527,7 +527,7 @@ MCV:
 	Repairable:
 		HpPerStep: 2182
 	Armor:
-		Type: Heavy
+		Type: 2
 	RevealsShroud:
 		Range: 6c0
 	Transforms:
@@ -597,7 +597,7 @@ JEEP:
 	Repairable:
 		HpPerStep: 1819
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 2c0
 	Turreted:
@@ -640,7 +640,7 @@ BGGY:
 	Repairable:
 		HpPerStep: 1819
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 2c0
 	Turreted:
@@ -684,7 +684,7 @@ BIKE:
 	Repairable:
 		HpPerStep: 1000
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 2c0
 	Armament:
@@ -722,22 +722,19 @@ MSAM:
 	Repairable:
 		HpPerStep: 546
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 255
 		Offset: -256,0,128
 	Armament@PRIMARY:
+		Name: primary
 		Weapon: MLRSMissile
 		LocalOffset: 213,128,0, 213,-128,0
-	Armament@SECONDARY:
-		Name: secondary
-		Weapon: MLRSMissile
-		LocalOffset: 213,-128,0, 213,128,0
 	AttackFrontal:
 		TargetFrozenActors: True
-		ForceFireIgnoresActors: True
+		ForceFireIgnoresActors: False
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
@@ -785,7 +782,7 @@ APC:
 	Repairable:
 		HpPerStep: 1440
 	Armor:
-		Type: Heavy
+		Type: 3
 	RevealsShroud:
 		Range: 4c0
 	Armament:
@@ -824,6 +821,8 @@ STEG:
 		Name: Stegosaurus
 	Armament:
 		Weapon: tail
+	Health:
+		HP: 600
 	WithDeathAnimation:
 		DeathSequencePalette: terrain
 		DeathPaletteIsPlayerPalette: false
@@ -834,6 +833,8 @@ TREX:
 	Inherits: ^DINO
 	Tooltip:
 		Name: Tyrannosaurus rex
+	Health:
+		HP: 750
 	Armament:
 		Weapon: teeth
 	Selectable:
@@ -847,6 +848,8 @@ TRIC:
 	Inherits: ^DINO
 	Tooltip:
 		Name: Triceratops
+	Health:
+		HP: 700
 	Armament:
 		Weapon: horn
 	SelectionDecorations:
@@ -859,6 +862,8 @@ RAPT:
 	Inherits: ^DINO
 	Tooltip:
 		Name: Velociraptor
+	Health:
+		HP: 180
 	Armament:
 		Weapon: claw
 	Buildable:
@@ -875,7 +880,7 @@ MHQR:
 	Health:
 		HP: 110
 	Armor:
-		Type: Light
+		Type: 2
 	Mobile:
 		Speed: 90
 	RevealsShroud:
@@ -967,7 +972,7 @@ TRUCK:
 	Health:
 		HP: 75
 	Armor:
-		Type: Light
+		Type: 2
 	Mobile:
 		Speed: 60
 	RevealsShroud:

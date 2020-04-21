@@ -22,7 +22,7 @@ TRAN:
 	Health:
 		HP: 90
 	Armor:
-		Type: Light
+		Type: 2
 	RevealsShroud:
 		Range: 0c0
 		Type: GroundPosition
@@ -78,7 +78,7 @@ HELI:
 	Health:
 		HP: 125
 	Armor:
-		Type: Light
+		Type: 3
 	RevealsShroud:
 		Range: 0c0
 		Type: GroundPosition
@@ -133,7 +133,7 @@ ORCA:
 	Health:
 		HP: 125
 	Armor:
-		Type: Light
+		Type: 3
 	RevealsShroud:
 		Range: 0c0
 		Type: GroundPosition

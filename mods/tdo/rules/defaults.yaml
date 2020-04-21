@@ -357,7 +357,7 @@
 	Selectable:
 		Bounds: 24,24
 	Repairable:
-		RepairActors: hpad
+		RepairActors: fix
 	Aircraft:
 		LandWhenIdle: true
 		AirborneCondition: airborne
@@ -416,7 +416,7 @@
 		DeathTypes: DefaultDeath
 	Health:
 	Armor:
-		Type: None
+		Type: 0
 	RevealsShroud:
 		Range: 5c0
 	Mobile:
@@ -581,9 +581,9 @@
 	OwnerLostAction:
 		Action: Kill
 	Health:
-		HP: 100000
+		HP: 400
 	Armor:
-		Type: Wood
+		Type: 3
 	Buildable:
 		Queue: Biolab
 		BuildPaletteOrder: 50
@@ -696,7 +696,7 @@
 	Targetable:
 		TargetTypes: Ground, C4, Structure
 	Armor:
-		Type: Wood
+		Type: 1
 	Health:
 		HP: 400
 	Building:
@@ -798,6 +798,10 @@
 		NeutralPrefix: Civilian
 		EnemyPrefix: Enemy
 		GenericVisibility: Enemy, Neutral
+	Armor:
+		Type: 1
+	Health:
+		HP: 400
 	FrozenUnderFog:
 	MapEditorData:
 		Categories: Civilian building
@@ -926,6 +930,8 @@
 	ScriptTriggers:
 	Health:
 		HP: 200
+	Armor:
+		Type: 2 
 	MapEditorData:
 		Categories: Wall
 	LineBuild:
@@ -960,7 +966,7 @@
 	Health:
 		HP: 5000
 	Armor:
-		Type: Wood
+		Type: 1
 	Targetable:
 		TargetTypes: Trees
 	WithDamageOverlay@SmallBurn:
@@ -1059,7 +1065,7 @@
 	Health:
 		HP: 140
 	Armor:
-		Type: Light
+		Type: 2
 	HiddenUnderFog:
 		Type: CenterPosition
 		AlwaysVisibleStances: None
@@ -1130,7 +1136,7 @@
 	Health:
 		HP: 600
 	Armor:
-		Type: Heavy
+		Type: 3
 	SoundOnDamageTransition:
 		DamagedSounds: xplos.aud
 		DestroyedSounds: xplobig4.aud
