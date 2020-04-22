@@ -113,7 +113,7 @@ ChromeLayout:
 	common|chrome/ingame-debug.yaml
 	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-infochat.yaml
-	common|chrome/mainmenu.yaml
+	tdo|chrome/mainmenu.yaml
 	common|chrome/settings.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml
@@ -155,11 +155,11 @@ Translations:
 	tdo|languages/english.yaml
 
 Hotkeys:
-	tdo|common/hotkeys/game.yaml
-	tdo|common/hotkeys/observer.yaml
-	tdo|common/hotkeys/production-common.yaml
-	tdo|common/hotkeys/supportpowers.yaml
-	tdo|common/hotkeys/viewport.yaml
+	tdo|chrome/hotkeys/game.yaml
+	tdo|chrome/hotkeys/observer.yaml
+	tdo|chrome/hotkeys/production-common.yaml
+	tdo|chrome/hotkeys/supportpowers.yaml
+	tdo|chrome/hotkeys/viewport.yaml
 	tdo|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen
@@ -173,30 +173,30 @@ ServerTraits:
 	LobbySettingsNotification
 
 ChromeMetrics:
-	tdo|common/metrics.yaml
+	tdo|chrome/metrics.yaml
 	tdo|metrics.yaml
 
 Fonts:
 	Tiny:
-		Font: tdo|common/FreeSans.ttf
+		Font: tdo|chrome/FreeSans.ttf
 		Size: 10
 	TinyBold:
-		Font: tdo|common/FreeSansBold.ttf
+		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 10
 	Small:
-		Font: tdo|common/FreeSans.ttf
+		Font: tdo|chrome/FreeSans.ttf
 		Size: 12
 	Regular:
-		Font: tdo|common/FreeSans.ttf
+		Font: tdo|chrome/FreeSans.ttf
 		Size: 14
 	Bold:
-		Font: tdo|common/FreeSansBold.ttf
+		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 14
 	MediumBold:
-		Font: tdo|common/FreeSansBold.ttf
+		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 18
 	BigBold:
-		Font: tdo|common/FreeSansBold.ttf
+		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 24
 	Title:
 		Font: tdo|ZoodRangmah.ttf
