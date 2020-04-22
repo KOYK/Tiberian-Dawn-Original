@@ -477,7 +477,7 @@ HARV:
 		BaleLoadDelay: 12
 		BaleUnloadDelay: 6
 		SearchFromProcRadius: 25
-		SearchFromOrderRadius: 15
+		SearchFromHarvesterRadius: 15
 		EmptyCondition: no-tiberium
 	Mobile:
 		TurnSpeed: 5
@@ -776,7 +776,7 @@ APC:
 	Mobile:
 		TurnSpeed: 5
 		Speed: 175
-		RequiresCondition: !notmobile
+		PauseOnCondition: !(!notmobile)
 	Health:
 		HP: 200
 	Repairable:

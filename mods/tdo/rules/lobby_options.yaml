@@ -14,14 +14,14 @@ World:
 		AllyBuildRadiusCheckboxEnabled: False
 		AllyBuildRadiusCheckboxLocked: False
 	MapOptions:
-		ShortGameCheckboxLabel:	Short Game
+		ShortGameCheckboxLabel: Short Game
 		ShortGameCheckboxDescription: If enabled, players with no Base buildings or MCV lose the game.
 		ShortGameCheckboxVisible: True
 		ShortGameCheckboxDisplayOrder: 0
-		TechLevelDropdownLabel:	Tech Level
+		TechLevelDropdownLabel: Tech Level
 		TechLevelDropdownDescription: Select Tech Level
 		TechLevelDropdownDisplayOrder: 0
-		GameSpeedDropdownLabel:	Game Speed
+		GameSpeedDropdownLabel: Game Speed
 		GameSpeedDropdownDescription: You can't change speed while in-game
 		GameSpeedDropdownDisplayOrder: 0
 		GameSpeed: default
@@ -41,7 +41,7 @@ World:
 		SeparateTeamSpawnsCheckboxVisible: True
 		SeparateTeamSpawnsCheckboxDisplayOrder: 6
 	MapCreeps:
-		CheckboxLabel: Spawn Visceroids 
+		CheckboxLabel: Spawn Visceroids
 		CheckboxDescription: Spawns Evil Visceroids Over Tiberium!
 		CheckboxEnabled: True
 		CheckboxLocked: False

@@ -1,6 +1,6 @@
 Metadata:
 	Title: Tiberian Dawn Original
-	Version: playtest-20190209
+	Version: Release-20200202
 	Website: https://www.openra.net
 	WebIcon32: https://www.openra.net/images/icons/cnc_32x32.png
 
@@ -38,6 +38,7 @@ Packages:
 MapFolders:
 	tdo|maps: System
 	tdo|maps/singleplayer: System
+	~^maps/tdo/release-20200202: User
 
 Rules:
 	tdo|rules/misc.yaml
@@ -97,47 +98,49 @@ Assemblies:
 	#example|OpenRA.Mods.Example.dll
 
 ChromeLayout:
-	tdo|chrome/ingame-player.yaml
+	common|chrome/ingame.yaml
+	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-fmvplayer.yaml
+	common|chrome/ingame-info.yaml
+	common|chrome/ingame-infoscripterror.yaml
+	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-infoobjectives.yaml
+	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-menu.yaml
 	tdo|chrome/ingame-observer.yaml
-	tdo|common/chrome/ingame.yaml
-	tdo|common/chrome/ingame-chat.yaml
-	tdo|common/chrome/ingame-fmvplayer.yaml
-	tdo|common/chrome/ingame-info.yaml
-	tdo|common/chrome/ingame-infoscripterror.yaml
-	tdo|common/chrome/ingame-infobriefing.yaml
-	tdo|common/chrome/ingame-infoobjectives.yaml
-	tdo|common/chrome/ingame-infostats.yaml
-	tdo|common/chrome/ingame-menu.yaml
-	tdo|common/chrome/ingame-observerstats.yaml
-	tdo|common/chrome/ingame-perf.yaml
-	tdo|common/chrome/ingame-debug.yaml
-	tdo|common/chrome/ingame-infochat.yaml
-	tdo|common/chrome/mainmenu.yaml
-	tdo|common/chrome/settings.yaml
-	tdo|common/chrome/credits.yaml
-	tdo|common/chrome/lobby.yaml
-	tdo|common/chrome/lobby-mappreview.yaml
-	tdo|common/chrome/lobby-players.yaml
-	tdo|common/chrome/lobby-options.yaml
-	tdo|common/chrome/lobby-music.yaml
-	tdo|common/chrome/lobby-servers.yaml
-	tdo|common/chrome/lobby-kickdialogs.yaml
-	tdo|common/chrome/color-picker.yaml
-	tdo|common/chrome/map-chooser.yaml
-	tdo|common/chrome/multiplayer-browser.yaml
-	tdo|common/chrome/multiplayer-browserpanels.yaml
-	tdo|common/chrome/multiplayer-createserver.yaml
-	tdo|common/chrome/multiplayer-directconnect.yaml
-	tdo|common/chrome/connection.yaml
-	tdo|common/chrome/replaybrowser.yaml
-	tdo|common/chrome/dropdowns.yaml
-	tdo|common/chrome/musicplayer.yaml
-	tdo|common/chrome/tooltips.yaml
-	tdo|common/chrome/assetbrowser.yaml
-	tdo|common/chrome/missionbrowser.yaml
-	tdo|common/chrome/confirmation-dialogs.yaml
-	tdo|common/chrome/editor.yaml
-	tdo|common/chrome/playerprofile.yaml
+	tdo|chrome/ingame-player.yaml
+	common|chrome/ingame-perf.yaml
+	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debuginfo.yaml
+	common|chrome/ingame-infochat.yaml
+	common|chrome/mainmenu.yaml
+	common|chrome/settings.yaml
+	common|chrome/credits.yaml
+	common|chrome/lobby.yaml
+	common|chrome/lobby-mappreview.yaml
+	common|chrome/lobby-players.yaml
+	common|chrome/lobby-options.yaml
+	common|chrome/lobby-music.yaml
+	common|chrome/lobby-servers.yaml
+	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/color-picker.yaml
+	common|chrome/map-chooser.yaml
+	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-browserpanels.yaml
+	common|chrome/multiplayer-createserver.yaml
+	common|chrome/multiplayer-directconnect.yaml
+	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	common|chrome/gamesave-browser.yaml
+	tdo|chrome/gamesave-loading.yaml
+	common|chrome/dropdowns.yaml
+	common|chrome/musicplayer.yaml
+	common|chrome/tooltips.yaml
+	common|chrome/assetbrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
+	common|chrome/editor.yaml
+	common|chrome/playerprofile.yaml
 	
 Voices:
 	tdo|audio/voices.yaml

@@ -199,7 +199,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 
 ^AutoTargetAir:
 	AutoTarget:
@@ -226,7 +226,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 
 ^AcceptsCloakCrate:
 	Cloak:
@@ -359,7 +359,6 @@
 	Repairable:
 		RepairActors: fix
 	Aircraft:
-		LandWhenIdle: true
 		AirborneCondition: airborne
 		CruisingCondition: cruising
 		CanHover: True
@@ -369,6 +368,8 @@
 		MoveIntoShroud: false
 		Repulsable: false
 		TakeOffOnCreation: false
+		CanSlide: True
+		IdleBehavior: Land
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:
@@ -931,7 +932,7 @@
 	Health:
 		HP: 200
 	Armor:
-		Type: 2 
+		Type: 2
 	MapEditorData:
 		Categories: Wall
 	LineBuild:
@@ -1114,6 +1115,7 @@
 	Aircraft:
 		CanHover: True
 		VTOL: true
+		CanSlide: True
 	FallsToEarth:
 		Spins: True
 		Moves: False

@@ -242,9 +242,9 @@ Player:
 			harv: 8
 	McvManagerBotModule:
 		RequiresCondition: enable-cabal-ai || enable-watson-ai || enable-hal9001-ai
-        McvTypes: mcv, mcv.nod, mcv.gdi
-        ConstructionYardTypes: fact, fact.nod, fact.gdi
-        McvFactoryTypes: weap,afld
+		McvTypes: mcv, mcv.nod, mcv.gdi
+		ConstructionYardTypes: fact, fact.nod, fact.gdi
+		McvFactoryTypes: weap,afld
 		RestrictMCVDeploymentFallbackToBase: True
 	SquadManagerBotModule@watson:
 		RequiresCondition: enable-watson-ai

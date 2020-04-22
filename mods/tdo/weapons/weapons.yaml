@@ -131,7 +131,7 @@ Rocket:
 		TrailImage: smokey
 		ContrailColor: 666F7B
 		ContrailLength: 10
-		ContrailWidth : 10
+		ContrailWidth: 10
 		Speed: 298
 		RangeLimit: 7c204
 	Warhead@1Dam: SpreadDamage

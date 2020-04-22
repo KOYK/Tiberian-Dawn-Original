@@ -11,7 +11,6 @@ TRAN:
 		Prerequisites: ~hpad, ~tl6
 		Description: Fast Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
-		LandWhenIdle: true
 		TurnToLand: true
 		InitialFacing: 1
 		TurnSpeed: 5
@@ -19,6 +18,7 @@ TRAN:
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
 		AltitudeVelocity: 0c100
 		Repulsable: true
+		IdleBehavior: Land
 	Health:
 		HP: 90
 	Armor:
@@ -147,7 +147,7 @@ ORCA:
 		LocalOffset: 427,-171,-213, 427,171,-213
 		PauseOnCondition: !ammo
 		RequiresCondition: !PUTSUXEnabled
-	Armament@PUTSUX
+	Armament@PUTSUX:
 		RequiresCondition: PUTSUXEnabled
 		Weapon: Laser
 	AttackCharges:

@@ -73,7 +73,7 @@ Container@PLAYER_WIDGETS:
 					Background: command-button
 					DisableKeySound: true
 					TooltipText: Force Move
-					TooltipDesc: Selected units will move to the desired location\n - Default activity for the target is suppressed\n - Vehicles will attempt to crush enemies at the target location\n - Units entering transports will consider nearby alternatives\n - Chrono Tanks will teleport towards the target location\n\nLeft-click icon then right-click on target.\nHold {(Alt)} to activate temporarily while commanding units.
+					TooltipDesc: Selected units will move to the desired location\n - Default activity for the target is suppressed\n - Vehicles will attempt to crush enemies at the target location\n - Helicopters will land at the target location\n - Chrono Tanks will teleport towards the target location\n\nLeft-click icon then right-click on target.\nHold {(Alt)} to activate temporarily while commanding units.
 					TooltipContainer: TOOLTIP_CONTAINER
 					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
 					Children:
@@ -410,17 +410,17 @@ Container@PLAYER_WIDGETS:
 				Label@GAME_TIMER:
 					Logic: GameTimerLogic
 					X: 3
-					Y: 263
+					Y: 264
 					Width: PARENT_RIGHT
-					Height: 22
+					Height: 23
 					Align: Center
 					Font: TinyBold
 				LabelWithTooltip@CASH:
 					Logic: IngameCashCounterLogic
 					X: 35
-					Y: 262
+					Y: 264
 					Width: 50
-					Height: 22
+					Height: 23
 					Font: Bold
 					Text: {0}
 					TooltipContainer: TOOLTIP_CONTAINER
@@ -428,9 +428,9 @@ Container@PLAYER_WIDGETS:
 				LabelWithTooltip@POWER:
 					Logic: IngamePowerCounterLogic
 					X: PARENT_RIGHT - WIDTH - 30
-					Y: 262
+					Y: 264
 					Width: 50
-					Height: 22
+					Height: 23
 					Align: Right
 					Font: Bold
 					Text: {0}
@@ -439,7 +439,7 @@ Container@PLAYER_WIDGETS:
 					Children:
 						Image@POWER_ICON:
 							X: PARENT_RIGHT + 4
-							Y: 5
+							Y: 3
 							ImageCollection: power-icons
 							ImageName: power-normal
 		Container@SIDEBAR_PRODUCTION:
@@ -508,17 +508,17 @@ Container@PLAYER_WIDGETS:
 									X: 6
 									Y: 6
 									ImageCollection: production-icons
-						ProductionTypeButton@VEHICLE:
+						ProductionTypeButton@DEFENSE:
 							Logic: AddFactionSuffixLogic
 							Y: 31
 							Width: 28
 							Height: 28
 							VisualHeight: 0
 							Background: sidebar-button
-							TooltipText: Units
+							TooltipText: Defense
 							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Vehicle
-							Key: ProductionTypeVehicle
+							ProductionGroup: Defense
+							Key: ProductionTypeDefense
 							Children:
 								Image@ICON:
 									X: 6
@@ -531,10 +531,58 @@ Container@PLAYER_WIDGETS:
 							Height: 28
 							VisualHeight: 0
 							Background: sidebar-button
-							TooltipText: Naval
+							TooltipText: Infantry
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Infantry
 							Key: ProductionTypeInfantry
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: production-icons
+						ProductionTypeButton@VEHICLE:
+							Logic: AddFactionSuffixLogic
+							Y: 93
+							Width: 28
+							Height: 28
+							VisualHeight: 0
+							Background: sidebar-button
+							TooltipText: Vehicles
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Vehicle
+							Key: ProductionTypeVehicle
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: production-icons
+						ProductionTypeButton@AIRCRAFT:
+							Logic: AddFactionSuffixLogic
+							Y: 124
+							Width: 28
+							Height: 28
+							VisualHeight: 0
+							Background: sidebar-button
+							TooltipText: Aircraft
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Aircraft
+							Key: ProductionTypeAircraft
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: production-icons
+						ProductionTypeButton@NAVAL:
+							Logic: AddFactionSuffixLogic
+							Y: 155
+							Width: 28
+							Height: 28
+							VisualHeight: 0
+							Background: sidebar-button
+							TooltipText: Naval
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Ship
+							Key: ProductionTypeNaval
 							Children:
 								Image@ICON:
 									X: 6
