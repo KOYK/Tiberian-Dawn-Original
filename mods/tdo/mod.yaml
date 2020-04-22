@@ -180,27 +180,35 @@ Fonts:
 	Tiny:
 		Font: tdo|chrome/FreeSans.ttf
 		Size: 10
+		Ascender: 8
 	TinyBold:
 		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 10
+		Ascender: 8
 	Small:
 		Font: tdo|chrome/FreeSans.ttf
 		Size: 12
+		Ascender: 8
 	Regular:
 		Font: tdo|chrome/FreeSans.ttf
 		Size: 14
+		Ascender: 8
 	Bold:
 		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 14
+		Ascender: 8
 	MediumBold:
 		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 18
+		Ascender: 8
 	BigBold:
 		Font: tdo|chrome/FreeSansBold.ttf
 		Size: 24
+		Ascender: 8
 	Title:
 		Font: tdo|ZoodRangmah.ttf
 		Size: 48
+		Ascender: 8
 
 Missions:
 	tdo|missions.yaml
