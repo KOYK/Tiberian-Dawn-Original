@@ -687,6 +687,7 @@
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^DamagedOnLowPower
 	Inherits@shape: ^1x1Shape
+	ActorPreviewPlaceBuildingPreview:
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -899,6 +900,7 @@
 ^Wall:
 	Inherits@1: ^SpriteActor
 	Inherits@shape: ^1x1Shape
+	ActorPreviewPlaceBuildingPreview:
 	Interactable:
 		Bounds: 24,24
 	CombatDebugOverlay:
