@@ -14,7 +14,7 @@ TRAN:
 		TurnToLand: true
 		InitialFacing: 1
 		TurnSpeed: 5
-		Speed: 150
+		Speed: 90
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
 		AltitudeVelocity: 0c100
 		Repulsable: true
@@ -71,7 +71,7 @@ HELI:
 		Description: Helicopter Gunship with Chainguns.\n  Strong vs Infantry, Light Vehicles and\n  Aircraft\n  Weak vs Tanks
 	Aircraft:
 		TurnSpeed: 4
-		Speed: 200
+		Speed: 120
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -126,7 +126,7 @@ ORCA:
 		Description: Helicopter Gunship with AG Missiles.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry
 	Aircraft:
 		TurnSpeed: 4
-		Speed: 200
+		Speed: 120
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -186,7 +186,7 @@ C17:
 		Cost: 800
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 200
+		Speed: 120
 		Repulsable: False
 		MaximumPitch: 36
 	HiddenUnderFog:
@@ -222,7 +222,7 @@ A10:
 	#	HP: 60
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 200
+		Speed: 120
 		Repulsable: False
 	AttackBomber:
 		Armaments: gun, bombs
