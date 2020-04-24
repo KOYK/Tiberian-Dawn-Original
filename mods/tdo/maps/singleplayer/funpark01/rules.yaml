@@ -48,27 +48,5 @@ OLDLST:
 		Types: disabled
 	Interactable:
 
-TREX:
-	Health:
-		HP: 75000
-	Mobile:
-		Speed: 34
-	AutoTarget:
-		ScanRadius: 5
-
-TRIC:
-	Health:
-		HP: 70000
-	Mobile:
-		Speed: 18
-	AutoTarget:
-		ScanRadius: 5
-
-STEG:
-	Health:
-		HP: 60000
-	Mobile:
-		Speed: 32
-
 ^DINO:
 	MustBeDestroyed:
