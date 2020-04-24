@@ -28,7 +28,7 @@ PVICE:
 		Range: 4c0
 	Mobile:
 		Voice: Move
-		Speed: 90
+		Speed: 54
 		Locomotor: critter
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
@@ -90,9 +90,7 @@ FTNK:
 		Description: Heavily armored flame-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Tanks
 	Mobile:
 		TurnSpeed: 5
-		Speed: 90
-	#In C&C speed was 18
-	#In TDO speed is 180/2=90 its still faster than the original, needs more work
+		Speed: 54
 	Health:
 		HP: 300
 	Repairable:
@@ -134,7 +132,7 @@ STNK:
 	Mobile:
 		Locomotor: heavywheeled
 		TurnSpeed: 5
-		Speed: 150
+		Speed: 90
 	Health:
 		HP: 110
 	Repairable:
@@ -186,7 +184,7 @@ LTNK:
 		Description: Fast, light tank.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
 		TurnSpeed: 5
-		Speed: 90
+		Speed: 54
 	Health:
 		HP: 300
 	Repairable:
@@ -230,7 +228,7 @@ MTNK:
 		Description: General-Purpose GDI Tank.\n  Strong vs Tanks, Vehicles\n  Weak vs Infantry
 	Mobile:
 		TurnSpeed: 5
-		Speed: 90
+		Speed: 54
 	Health:
 		HP: 400
 	Repairable:
@@ -277,7 +275,7 @@ HTNK:
 		Description: Heavily armored GDI Tank.\nCan attack Aircraft.\n  Strong vs Everything
 	Mobile:
 		Locomotor: heavytracked
-		Speed: 60
+		Speed: 36
 		TurnSpeed: 5
 	Health:
 		HP: 600
@@ -331,7 +329,7 @@ MHQ:
 		Type: 2
 	Mobile:
 		TurnSpeed: 5
-		Speed: 90
+		Speed: 54
 	RevealsShroud:
 		Range: 5c0
 	WithIdleOverlay@SPINNER:
@@ -363,7 +361,7 @@ MLRS:
 		Queue: Vehicle
 		Description: Powerful Long range unit.\nCannot attack Air units.
 	Mobile:
-		Speed: 90
+		Speed: 54
 		TurnSpeed: 5
 	Health:
 		HP: 120
@@ -423,7 +421,7 @@ ARTY:
 		Description: Long-range artillery.\n  Strong vs Infantry, Vehicles and Buildings
 	Mobile:
 		TurnSpeed: 2
-		Speed: 60
+		Speed: 36
 	Health:
 		HP: 75
 	Repairable:
@@ -481,7 +479,7 @@ HARV:
 		EmptyCondition: no-tiberium
 	Mobile:
 		TurnSpeed: 5
-		Speed: 60
+		Speed: 36
 	Health:
 		HP: 600
 	Repairable:
@@ -520,7 +518,7 @@ MCV:
 		DecorationBounds: 36,36
 	Mobile:
 		TurnSpeed: 5
-		Speed: 60
+		Speed: 36
 		Locomotor: heavywheeled
 	Health:
 		HP: 600
@@ -591,7 +589,7 @@ JEEP:
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
 		TurnSpeed: 10
-		Speed: 150
+		Speed: 90
 	Health:
 		HP: 150
 	Repairable:
@@ -634,7 +632,7 @@ BGGY:
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
 		TurnSpeed: 10
-		Speed: 150
+		Speed: 90
 	Health:
 		HP: 140
 	Repairable:
@@ -677,7 +675,7 @@ BIKE:
 		Description: Fast scout vehicle, armed with\nrockets.\nCan attack Aircraft.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
 		TurnSpeed: 10
-		Speed: 200
+		Speed: 120
 		Locomotor: bike
 	Health:
 		HP: 160
@@ -716,7 +714,7 @@ MSAM:
 		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
 	Mobile:
 		TurnSpeed: 5
-		Speed: 90
+		Speed: 54
 	Health:
 		HP: 100
 	Repairable:
@@ -775,7 +773,7 @@ APC:
 		Description: Armed infantry transport.\nCan attack Aircraft.\n  Strong vs Vehicles\n  Weak vs Infantry
 	Mobile:
 		TurnSpeed: 5
-		Speed: 175
+		Speed: 105
 		PauseOnCondition: !(!notmobile)
 	Health:
 		HP: 200
@@ -821,6 +819,8 @@ STEG:
 		Name: Stegosaurus
 	Armament:
 		Weapon: tail
+	Mobile:
+		Speed: 24
 	Health:
 		HP: 600
 	WithDeathAnimation:
@@ -837,6 +837,8 @@ TREX:
 		HP: 750
 	Armament:
 		Weapon: teeth
+	Mobile:
+		Speed: 54
 	Selectable:
 		Bounds: 48,36,2,1
 		DecorationBounds: 52,38
@@ -852,6 +854,8 @@ TRIC:
 		HP: 700
 	Armament:
 		Weapon: horn
+	Mobile:
+		Speed: 24
 	SelectionDecorations:
 	Buildable:
 		Description: Quadruped with large bony frill and three horns
@@ -866,6 +870,8 @@ RAPT:
 		HP: 180
 	Armament:
 		Weapon: claw
+	Mobile:
+		Speed: 120
 	Buildable:
 		Description: Bipedal with enlarged sickle-shaped claw on each hindfoot
 
@@ -882,7 +888,7 @@ MHQR:
 	Armor:
 		Type: 2
 	Mobile:
-		Speed: 90
+		Speed: 54
 	RevealsShroud:
 		Range: 5c0
 	WithIdleOverlay@SPINNER:
@@ -974,7 +980,7 @@ TRUCK:
 	Armor:
 		Type: 2
 	Mobile:
-		Speed: 60
+		Speed: 24
 	RevealsShroud:
 		Range: 2c0
 	DeliversCash:

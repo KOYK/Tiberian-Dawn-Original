@@ -1342,5 +1342,4 @@ Actors:
 		Location: 5,47
 		Owner: Neutral
 
-
 Rules: tdo|rules/campaign-maprules.yaml, tdo|rules/campaign-tooltips.yaml, tdo|rules/campaign-palettes.yaml, rules.yaml

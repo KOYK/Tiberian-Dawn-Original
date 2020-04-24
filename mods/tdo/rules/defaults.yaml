@@ -546,7 +546,7 @@
 		Name: Civilian
 		GenericVisibility: None
 	Mobile:
-		Speed: 50
+		Speed: 30
 	Health:
 		HP: 50
 	RevealsShroud:

@@ -321,17 +321,17 @@ MLRSMissile:
 	Report: rocket1.aud
 	ValidTargets: Ground, Air
 	TargetActorCenter: true
-	Projectile: Bullet
+	Projectile: Missile
 		Blockable: false
 		Image: DRAGON
 		Shadow: true
 		TrailImage: smokey
-		Inaccuracy: 853
+		Inaccuracy: 800
 		LaunchAngle: 62
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Damage: 75
-		Spread: 6
+		Spread: 150
 		ValidTargets: Ground, Air
 		Versus:
 			0: 87

@@ -14,7 +14,12 @@ E1:
 		Prerequisites: ~barracks, ~tl1
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles
 	Mobile:
-		Speed: 40
+		Speed: 24
+		#TD speed is 8
+		#took 0.14.07 seconds to reach 8 cells (starting from cell 0 total 9 cells)
+		#same speed in openra resaults in 0.41.70 seconds.
+		#doing 3*8=24 the speed was 0.13.45 in openra.
+		#tried TerrainSpeeds but the % never came close.
 	Health:
 		HP: 50
 	AutoTarget:
@@ -42,7 +47,7 @@ E2:
 		Prerequisites: ~pyle, ~tl2
 		Description: Fast infantry armed with grenades. \n  Strong vs Buildings, slow-moving targets
 	Mobile:
-		Speed: 50
+		Speed: 30
 	Health:
 		HP: 50
 	AutoTarget:
@@ -77,7 +82,7 @@ E3:
 		Prerequisites: ~barracks, ~tl2
 		Description: Anti-tank/Anti-aircraft infantry. \n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
 	Mobile:
-		Speed: 30
+		Speed: 18
 	Health:
 		HP: 25
 	AutoTarget:
@@ -109,7 +114,7 @@ E4:
 		BuildAtProductionType: Soldier
 		Description: Advanced Anti-infantry unit.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks
 	Mobile:
-		Speed: 50
+		Speed: 30
 	Health:
 		HP: 70
 	AutoTarget:
@@ -142,7 +147,7 @@ E5:
 		Prerequisites: ~tmpl, ~tl7, ~hand
 		Description: Advanced general-purpose infantry.\n  Strong vs all Ground units
 	Mobile:
-		Speed: 40
+		Speed: 24
 		Locomotor: chem
 	Health:
 		HP: 70
@@ -174,7 +179,7 @@ E6:
 		Prerequisites: ~barracks, ~EngineerSP, ~tl3
 		Description: Captures enemy structures.\n  Repairs Damaged buildings\n  Unarmed
 	Mobile:
-		Speed: 40
+		Speed: 24
 	Health:
 		HP: 25
 	Passenger:
@@ -223,7 +228,7 @@ RMBO:
 		BuildDurationModifier: 40
 		Description: Elite sniper infantry unit.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles
 	Mobile:
-		Speed: 50
+		Speed: 30
 		Voice: Move
 	Guard:
 		Voice: Move
