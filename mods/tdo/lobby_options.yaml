@@ -148,13 +148,12 @@ World:
 		Factions: nod
 		BaseActor: mhq
 		SupportActors: ltnk,bggy,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,bike,rmbo,arty,msam,msam,bike,e5,e5,e5,e5,e5,rmbo,rmbo,rmbo,		apc,apc,apc,mlrs,mlrs,mlrs,stnk,stnk,stnk,stnk
-	MPStartUnits@mhq_Nod_Dino:
+	MPStartUnits@mhq_Dino:
 		Class: Dino
 		ClassName: MHQ With Dinosaurs 
 		Factions: nod,gdi
 		BaseActor: mhq
 		SupportActors: tric,tric,tric,tric,trex,trex,trex,trex,steg,steg,steg,steg,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt
-
 	MPStartUnits@mhq_gdi_5:
 		Class: 5
 		ClassName: MHQ With 5 Units
