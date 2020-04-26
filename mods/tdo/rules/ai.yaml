@@ -89,12 +89,21 @@ Player:
 		ExcessPowerIncrement: 30
 		ExcessPowerIncreaseThreshold: 5
 		ConstructionYardTypes: fact
+		NewProductionCashThreshold: 10000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes: pyle,hand
 		VehiclesFactoryTypes: weap,afld
 		ProductionTypes: pyle,hand,weap,afld,hpad
 		SiloTypes: silo
+		BuildingDelays:
+			fix: 7500
+			pyle: 1500
+			hand: 1500
+			hpad: 1500
+			gtwr: 1500
+			gun: 1500
+			sam: 1500
 		BuildingLimits:
 			proc: 4
 			pyle: 3
@@ -131,6 +140,7 @@ Player:
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
 		ExcessPowerIncreaseThreshold: 4
+		NewProductionCashThreshold: 10000
 		ConstructionYardTypes: fact
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
@@ -138,6 +148,14 @@ Player:
 		VehiclesFactoryTypes: weap,afld
 		ProductionTypes: pyle,hand,weap,afld,hpad
 		SiloTypes: silo
+		BuildingDelays:
+			fix: 7500
+			pyle: 1500
+			hand: 1500
+			hpad: 1500
+			gtwr: 1500
+			gun: 1500
+			sam: 1500
 		BuildingLimits:
 			proc: 4
 			pyle: 3
@@ -175,12 +193,21 @@ Player:
 		ExcessPowerIncrement: 30
 		ExcessPowerIncreaseThreshold: 4
 		ConstructionYardTypes: fact
+		NewProductionCashThreshold: 10000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes: pyle,hand
 		VehiclesFactoryTypes: weap,afld
 		ProductionTypes: pyle,hand,weap,afld,hpad
 		SiloTypes: silo
+		BuildingDelays:
+			fix: 7500
+			pyle: 1500
+			hand: 1500
+			hpad: 1500
+			gtwr: 1500
+			gun: 1500
+			sam: 1500
 		BuildingLimits:
 			proc: 4
 			pyle: 4
@@ -219,6 +246,23 @@ Player:
 	UnitBuilderBotModule@cabal:
 		RequiresCondition: enable-cabal-ai
 		UnitQueues: Vehicle, Infantry, Aircraft
+		UnitDelays:
+			e1: 1500
+			e2: 1500
+			e3: 1500
+			e4: 1500
+			heli: 1500
+			orca: 1500
+			bggy: 4500
+			bike: 4500
+			ltnk: 4500
+			ftnk: 4500
+			arty: 4500
+			stnk: 4500
+			jeep: 4500
+			mtnk: 4500
+			msam: 4500
+			htnk: 4500
 		UnitsToBuild:
 			e1: 65
 			e2: 25
@@ -254,6 +298,23 @@ Player:
 	UnitBuilderBotModule@watson:
 		RequiresCondition: enable-watson-ai
 		UnitQueues: Vehicle, Infantry, Aircraft
+		UnitDelays:
+			e1: 1500
+			e2: 1500
+			e3: 1500
+			e4: 1500
+			heli: 1500
+			orca: 1500
+			bggy: 4500
+			bike: 4500
+			ltnk: 4500
+			ftnk: 4500
+			arty: 4500
+			stnk: 4500
+			jeep: 4500
+			mtnk: 4500
+			msam: 4500
+			htnk: 4500
 		UnitsToBuild:
 			e1: 65
 			e2: 30
@@ -283,6 +344,23 @@ Player:
 	UnitBuilderBotModule@hal9001:
 		RequiresCondition: enable-hal9001-ai
 		UnitQueues: Vehicle, Infantry, Aircraft
+		UnitDelays:
+			e1: 1500
+			e2: 1500
+			e3: 1500
+			e4: 1500
+			heli: 1500
+			orca: 1500
+			bggy: 4500
+			bike: 4500
+			ltnk: 4500
+			ftnk: 4500
+			arty: 4500
+			stnk: 4500
+			jeep: 4500
+			mtnk: 4500
+			msam: 4500
+			htnk: 4500
 		UnitsToBuild:
 			e1: 65
 			e2: 30
