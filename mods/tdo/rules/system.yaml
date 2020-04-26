@@ -1515,8 +1515,8 @@ Player:
 	Husk:
 		AllowedTerrain: Clear, Rough, Road, Tiberium, BlueTiberium, Beach
 	Burns:
-		Damage: 100
-		Interval: 6
+		Damage: 1
+		Interval: 8
 	Targetable:
 		RequiresForceFire: yes
 		TargetTypes: Ground, Husk
@@ -1540,7 +1540,7 @@ Player:
 ^LightHusk:
 	Inherits: ^Husk
 	Health:
-		HP: 20
+		HP: 100
 
 ^HelicopterHusk:
 	Inherits: ^CommonHuskDefaults

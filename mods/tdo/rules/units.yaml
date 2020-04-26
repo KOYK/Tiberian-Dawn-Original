@@ -1514,7 +1514,7 @@ E6:
 		SabotageThreshold: 55
 		PlayerExperience: 50
 	Captures@CAPTURES:
-		CaptureTypes: building
+		CaptureTypes: building, husk
 		PlayerExperience: 50
 	Captures@CHINOOK:
 		CaptureTypes: chinook
