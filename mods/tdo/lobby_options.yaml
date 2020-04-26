@@ -60,11 +60,6 @@ World:
 		DropdownDisplayOrder: 0
 		StartingUnitsClass: light
 		DropdownLocked: False
-	MPStartUnits@mhq:
-		Class: MHQ
-		ClassName: MHQ
-		Factions: gdi, nod
-		BaseActor: mhq
 	MPStartUnits@mhqR:
 		Class: MHQR
 		ClassName: Reinforcements
@@ -117,6 +112,86 @@ World:
 		Factions: gdi
 		BaseActor: mcv.gdi
 		SupportActors: e1,e1,e1,e1,e1,e2,e2,e2,e3,e3,apc,mtnk
+	MPStartUnits@mhq_Nod_5:
+		Class: 5
+		ClassName: MHQ With 5 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,ltnk,e1,e1,e3
+	MPStartUnits@mhq_Nod_10:
+		Class: 10
+		ClassName: MHQ With 10 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,e3,ltnk,bggy,e1
+	MPStartUnits@mhq_Nod_20:
+		Class: 20
+		ClassName: MHQ With 20 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1
+	MPStartUnits@mhq_Nod_30:
+		Class: 30
+		ClassName: MHQ With 30 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,bike,rmbo,arty,msam
+	MPStartUnits@mhq_Nod_40:
+		Class: 40
+		ClassName: MHQ With 40 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,stnk,rmbo,arty,msam,msam,bike,e5,e5,e5,e5,e5,rmbo,rmbo,rmbo
+	MPStartUnits@mhq_Nod_50:
+		Class: 50
+		ClassName: MHQ With 50 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,bike,rmbo,arty,msam,msam,bike,e5,e5,e5,e5,e5,rmbo,rmbo,rmbo,		apc,apc,apc,mlrs,mlrs,mlrs,stnk,stnk,stnk,stnk
+	MPStartUnits@mhq_Nod_Dino:
+		Class: Dino
+		ClassName: MHQ With Dinosaurs 
+		Factions: nod,gdi
+		BaseActor: mhq
+		SupportActors: tric,tric,tric,tric,trex,trex,trex,trex,steg,steg,steg,steg,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt
+
+	MPStartUnits@mhq_gdi_5:
+		Class: 5
+		ClassName: MHQ With 5 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,e2,e1,e1,e3
+	MPStartUnits@mhq_gdi_10:
+		Class: 10
+		ClassName: MHQ With 10 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e1,e2,e2,e3,mtnk,jeep,e1
+	MPStartUnits@mhq_gdi_20:
+		Class: 20
+		ClassName: MHQ With 20 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e1,e2,e2,e2,mtnk,jeep,e1,mlrs,mlrs,e3,mtnk,mtnk,e1,e1,e1,e1,e1
+	MPStartUnits@mhq_gdi_30:
+		Class: 30
+		ClassName: MHQ With 30 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e1,e3,e3,mtnk,jeep,e1,mlrs,mlrs,e3,mtnk,mtnk,e1,e1,e1,e1,e1,e3,e3,htnk,e1,e1,jeep,apc,apc,rmbo,mlrs,apc
+	MPStartUnits@mhq_gdi_40:
+		Class: 40
+		ClassName: MHQ With 40 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e3,e3,e3,mtnk,jeep,e1,mlrs,mlrs,e3,mtnk,mtnk,e1,e1,e1,e1,e1,htnk,htnk,htnk,e1,e1,jeep,mtnk,mtnk,rmbo,mlrs,msam,msam,mtnk,e2,e2,e2,e2,e2,rmbo,rmbo,rmbo
+	MPStartUnits@mhq_gdi_50:
+		Class: 50
+		ClassName: MHQ With 50 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e3,e3,e3,mtnk,jeep,e1,mlrs,mlrs,apc,mtnk,mtnk,e1,e1,e1,e1,e1,htnk,htnk,htnk,e1,e1,jeep,apc,apc,rmbo,mlrs,msam,msam,apc,e2,e2,e2,e2,e2,rmbo,rmbo,rmbo,		apc,apc,apc,mlrs,mlrs,mlrs,jeep,jeep,mtnk,mtnk
+
 Player:
 	ProvidesTechPrerequisite@TL1:
 		Name: 1

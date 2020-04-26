@@ -1088,14 +1088,11 @@ TRAN:
 		Prerequisites: ~hpad, ~tl6
 		Description: Fast Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
-		TurnToLand: true
+		TurnToLand: True
 		InitialFacing: 1
 		TurnSpeed: 5
 		Speed: 90
-		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
-		AltitudeVelocity: 0c100
-		Repulsable: true
-		IdleBehavior: Land
+		AltitudeVelocity: 0c43
 	Health:
 		HP: 90
 	Armor:

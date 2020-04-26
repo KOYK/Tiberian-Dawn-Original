@@ -795,14 +795,16 @@ Player:
 		AirborneCondition: airborne
 		CruisingCondition: cruising
 		CanHover: True
-		TakeOffOnResupply: false
-		VTOL: true
+		VTOL: True
 		InitialFacing: 224
-		MoveIntoShroud: false
-		Repulsable: false
-		TakeOffOnCreation: false
+		MoveIntoShroud: False
+		Repulsable: True
+		TakeOffOnCreation: False
+		TakeOffOnResupply: False
 		CanSlide: True
 		IdleBehavior: Land
+		Crushes: crate
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:
