@@ -418,6 +418,8 @@ barb:
 	damaged-idle:
 		Start: 16
 		Length: 16
+	icon: barbicnh.tem
+		AddExtension: False
 
 wood:
 	idle:
@@ -425,6 +427,8 @@ wood:
 	damaged-idle:
 		Start: 16
 		Length: 16
+	icon: woodicnh.tem
+		AddExtension: False
 
 gun:
 	idle:

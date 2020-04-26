@@ -41,23 +41,13 @@ MapFolders:
 	~^maps/tdo/release-20200202: User
 
 Rules:
-	tdo|rules/misc.yaml
+	tdo|rules/system.yaml
 	tdo|rules/ai.yaml
-	tdo|rules/player.yaml
-	tdo|rules/world.yaml
-	tdo|rules/palettes.yaml
-	tdo|rules/defaults.yaml
 	tdo|rules/structures.yaml
-	tdo|rules/infantry.yaml
-	tdo|rules/vehicles.yaml
+	tdo|rules/units.yaml
 	tdo|rules/trees.yaml
-	tdo|rules/civilian.yaml
-	tdo|rules/civilian-desert.yaml
-	tdo|rules/tech.yaml
-	tdo|rules/ships.yaml
-	tdo|rules/aircraft.yaml
 	tdo|rules/husks.yaml
-	tdo|rules/lobby_options.yaml
+	tdo|lobby_options.yaml
 
 Sequences:
 	tdo|sequences/structures.yaml
@@ -78,13 +68,7 @@ TileSets:
 	tdo|tilesets/jungle.yaml
 
 Weapons:
-	tdo|weapons/weapons.yaml
-	# tdo|weapons/explosions.yaml
-	# tdo|weapons/ballistics.yaml
-	# tdo|weapons/missiles.yaml
-	# tdo|weapons/other.yaml
-	# tdo|weapons/smallcaliber.yaml
-	# tdo|weapons/superweapons.yaml
+	tdo|rules/weapons.yaml
 
 Cursors:
 	tdo|cursors.yaml
@@ -155,11 +139,11 @@ Translations:
 	tdo|languages/english.yaml
 
 Hotkeys:
-	tdo|chrome/hotkeys/game.yaml
-	tdo|chrome/hotkeys/observer.yaml
-	tdo|chrome/hotkeys/production-common.yaml
-	tdo|chrome/hotkeys/supportpowers.yaml
-	tdo|chrome/hotkeys/viewport.yaml
+	common|hotkeys/game.yaml
+	common|hotkeys/observer.yaml
+	common|hotkeys/production-common.yaml
+	common|hotkeys/supportpowers.yaml
+	common|hotkeys/viewport.yaml
 	tdo|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen
@@ -178,37 +162,37 @@ ChromeMetrics:
 
 Fonts:
 	Tiny:
-		Font: tdo|chrome/FreeSans.ttf
+		Font: common|FreeSans.ttf
 		Size: 10
 		Ascender: 8
 	TinyBold:
-		Font: tdo|chrome/FreeSansBold.ttf
+		Font: common|FreeSansBold.ttf
 		Size: 10
 		Ascender: 8
 	Small:
-		Font: tdo|chrome/FreeSans.ttf
+		Font: common|FreeSans.ttf
 		Size: 12
-		Ascender: 8
+		Ascender: 9
 	Regular:
-		Font: tdo|chrome/FreeSans.ttf
+		Font: common|FreeSans.ttf
 		Size: 14
-		Ascender: 8
+		Ascender: 11
 	Bold:
-		Font: tdo|chrome/FreeSansBold.ttf
+		Font: common|FreeSansBold.ttf
 		Size: 14
-		Ascender: 8
+		Ascender: 11
 	MediumBold:
-		Font: tdo|chrome/FreeSansBold.ttf
+		Font: common|FreeSansBold.ttf
 		Size: 18
-		Ascender: 8
+		Ascender: 14
 	BigBold:
-		Font: tdo|chrome/FreeSansBold.ttf
+		Font: common|FreeSansBold.ttf
 		Size: 24
-		Ascender: 8
+		Ascender: 18
 	Title:
 		Font: tdo|ZoodRangmah.ttf
 		Size: 48
-		Ascender: 8
+		Ascender: 26
 
 Missions:
 	tdo|missions.yaml
@@ -286,10 +270,10 @@ ModContent:
 			TestFiles: ^Content/cnc/scores-covertops.mix
 			Sources: covertops, covertops-linux, tfd, origin
 	Downloads:
-		tdo|installer/downloads.yaml
+		cnc|installer/downloads.yaml
 	Sources:
-		tdo|installer/covertops.yaml
-		tdo|installer/firstdecade.yaml
-		tdo|installer/gdi95.yaml
-		tdo|installer/nod95.yaml
-		tdo|installer/origin.yaml
+		cnc|installer/covertops.yaml
+		cnc|installer/firstdecade.yaml
+		cnc|installer/gdi95.yaml
+		cnc|installer/nod95.yaml
+		cnc|installer/origin.yaml

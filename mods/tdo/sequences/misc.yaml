@@ -75,6 +75,19 @@ resources:
 			JUNGLE: TEMPERAT
 			SNOW: TEMPERAT
 
+shroud:
+	Defaults:
+		Length: 12
+	typea: shadow
+	typeb: shadow
+		Start: 12
+	typec: shadow
+		Start: 24
+	typed: shadow
+		Start: 36
+	full: fullshroud
+		Length: 1
+
 fb4:
 	idle:
 		Length: 4
@@ -391,19 +404,6 @@ moveflsh:
 		Length: *
 		Tick: 80
 		ZOffset: 2047
-
-shroud:
-	Defaults:
-		Length: 12
-	typea: shadow
-	typeb: shadow
-		Start: 12
-	typec: shadow
-		Start: 24
-	typed: shadow
-		Start: 36
-	full: fullshroud
-		Length: 1
 
 # Note: The order of smudges and craters determines
 # the index that is mapped to them in maps

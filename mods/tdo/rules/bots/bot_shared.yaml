@@ -3,7 +3,7 @@ Player:
 		RequiresCondition: enable-all-bot
 		HarvesterTypes: harv
 		RefineryTypes: proc
-		HarvesterEnemyAvoidanceRadius: 0c0
+		HarvesterEnemyAvoidanceRadius: 8c0
 	BuildingRepairBotModule:
 		RequiresCondition: enable-all-bot
 	CaptureManagerBotModule:
@@ -12,7 +12,9 @@ Player:
         RequiresCondition: enable-all-bot
     McvManagerBotModule:
         RequiresCondition: enable-all-bot
-        McvTypes: mcv, mcv.nod, mcv.gdi
-        ConstructionYardTypes: fact, fact.nod, fact.gdi
+        McvTypes: mcv
+        ConstructionYardTypes: fact,fact.nod,,fact.gdi
         McvFactoryTypes: weap,afld
 		RestrictMCVDeploymentFallbackToBase: True
+		MinimumConstructionYardCount: 1
+		ScanForNewMcvInterval: 50

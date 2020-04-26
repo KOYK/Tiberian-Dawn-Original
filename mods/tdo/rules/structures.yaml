@@ -1,5 +1,49 @@
 #Nyerguds Told me that the HP values of the structures only, have duble the HP that it is shown on the exported data, So if Nuke has 200HP its actually 400HP
 
+BARRACKS:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Infantry Production
+	Buildable:
+		Description: Infantry Production
+
+VEHICLEPRODUCTION:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Vehicle Production
+	Buildable:
+		Description: Vehicle Production
+
+ANYPOWER:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Description: Power Plant
+
+ANYHQ:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: a communications center
+	Buildable:
+		Description: a communications center
+
+ADVHQ:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: a technology center
+	Buildable:
+		Description: a technology center
+
+#===========================================================
+#							BASE-BUILDINGS
+#===========================================================
+
 FACT:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
@@ -781,6 +825,10 @@ TMPL:
 		Amount: -150
 	ProvidesPrerequisite@buildingname:
 
+#===========================================================
+#							BASE-DEFENSE
+#===========================================================
+
 GUN:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
@@ -869,6 +917,7 @@ SAM:
 	AttackPopupTurreted:
 		RequiresCondition: !build-incomplete
 		PauseOnCondition: lowpower
+		ClosedDamageMultiplier: 50
 	WithMuzzleOverlay:
 	-RenderDetectionCircle:
 	Power:
@@ -1016,6 +1065,10 @@ ATWR:
 	Power:
 		Amount: -20
 
+#===========================================================
+#							WALLS
+#===========================================================
+
 SBAG:
 	Inherits: ^Wall
 	Valued:
@@ -1039,6 +1092,13 @@ SBAG:
 		Condition: NearWall
 		Range: 1c255
 	ConditionManager:
+SBAG_LINE:
+	Inherits@OriginalActor: SBAG
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: sbag
+	Buildable:
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl2
 
 CYCL:
 	Inherits: ^Wall
@@ -1063,6 +1123,13 @@ CYCL:
 		Condition: NearWall
 		Range: 1c255
 	ConditionManager:
+CYCL_LINE:
+	Inherits@OriginalActor: CYCL
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: cycl
+	Buildable:
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl5
 
 BRIK:
 	Inherits: ^Wall
@@ -1093,23 +1160,6 @@ BRIK:
 		Types: concrete
 	WithWallSpriteBody:
 		Type: concrete
-
-SBAG_LINE:
-	Inherits@OriginalActor: SBAG
-	Inherits@LineBuild: ^LineBuild
-	RenderSprites:
-		Image: sbag
-	Buildable:
-		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl2
-
-CYCL_LINE:
-	Inherits@OriginalActor: CYCL
-	Inherits@LineBuild: ^LineBuild
-	RenderSprites:
-		Image: cycl
-	Buildable:
-		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl5
-
 BRIK_LINE:
 	Inherits@OriginalActor: BRIK
 	Inherits@LineBuild: ^LineBuild
@@ -1118,42 +1168,712 @@ BRIK_LINE:
 	Buildable:
 		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl7
 
-BARRACKS:
-	AlwaysVisible:
-	Interactable:
+BARB:
+	Inherits: ^Wall
 	Tooltip:
-		Name: Infantry Production
+		Name: Barbwire Fence
+	LineBuild:
+		NodeTypes: barbwire
+	LineBuildNode:
+		Types: barbwire
+	WithWallSpriteBody:
+		Type: barbwire
+	Valued:
+		Cost: 25
+	CustomSellValue:
+		Value: 12
 	Buildable:
-		Description: Infantry Production
+		BuildPaletteOrder: 20
+		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
+		Queue: Building
+		Description: Stops infantry.\nCan be crushed by tanks.
+BARB_LINE:
+	Inherits@OriginalActor: BARB
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: barb
+	Buildable:
+		Prerequisites: ~disabled, ~PrerequisiteLineWalls, ~tl3
 
-VEHICLEPRODUCTION:
-	AlwaysVisible:
-	Interactable:
+WOOD:
+	Inherits: ^Wall
 	Tooltip:
-		Name: Vehicle Production
+		Name: Wooden Fence
+	LineBuild:
+		NodeTypes: woodfence
+	LineBuildNode:
+		Types: woodfence
+	WithWallSpriteBody:
+		Type: woodfence
+	Valued:
+		Cost: 25
+	CustomSellValue:
+		Value: 12
 	Buildable:
-		Description: Vehicle Production
+		BuildPaletteOrder: 20
+		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
+		Queue: Building
+		Description: Stops infantry.\nCan be crushed by tanks.
+WOOD_LINE:
+	Inherits@OriginalActor: WOOD
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: wood
+	Buildable:
+		Prerequisites: ~disabled, ~PrerequisiteLineWalls, ~tl1
+#Added walls for map authors
 
-ANYPOWER:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Power Plant
-	Buildable:
-		Description: Power Plant
+#===========================================================
+#							TECH-BUILDINGS
+#===========================================================
 
-ANYHQ:
-	AlwaysVisible:
-	Interactable:
+V19:
+	Inherits: ^TechBuilding
+	Selectable:
+		Bounds: 24,24
+	CashTrickler:
+		Amount: 700
+		Interval: 750
+		ShowTicks: false
+		InitialDelay: 750
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 400
 	Tooltip:
-		Name: a communications center
-	Buildable:
-		Description: a communications center
+		Name: Oil Derrick
+		AllyPrefix: Oil Derrick
+	SpawnActorOnDeath:
+		Actor: V19.Husk
 
-ADVHQ:
-	AlwaysVisible:
-	Interactable:
+HOSP:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+		Priority: 0
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
 	Tooltip:
-		Name: a technology center
+		Name: Hospital
+		AllyPrefix: Hospital
+	SpawnActorOnDeath:
+		Actor: HOSP.Husk
+	WithBuildingBib:
+		HasMinibib: Yes
+	ProvidesPrerequisite@buildingname:
+
+BIO:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 600
+	Tooltip:
+		Name: Biolab
+		AllyPrefix: Biolab
+	Exit@1:
+		SpawnOffset: 0,-426,0
+		ExitCell: 0,-1
+	Production:
+		Produces: Biolab
+	ProductionQueue:
+		Type: Biolab
+		Group: Infantry
+		LowPowerModifier: 30000
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Biolab
+	RallyPoint:
+		Offset: -1,-1
+	SpawnActorOnDeath:
+		Actor: BIO.Husk
+	ProvidesPrerequisite@buildingname:
+
+MISS:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Technology Center
+		AllyPrefix: Technology Center
+	Health:
+		HP: 400
 	Buildable:
-		Description: a technology center
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	Valued:
+		Cost: 2000
+	WithBuildingBib:
+		HasMinibib: Yes
+	WithMakeAnimation:
+	SpawnActorOnDeath:
+		Actor: MISS.Husk
+	ProvidesPrerequisite@buildingname:
+
+#===========================================================
+#							CIVILIAN-BUILDINGS
+#===========================================================
+
+V01:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -768, -597
+			BottomRight: 896, 683
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Church
+	SpawnActorOnDeath:
+		Actor: V01.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+
+V02:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 597
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V02.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Han's and Gretel's
+
+V03:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
+		Type: Rectangle
+			TopLeft: -1024, -597
+			BottomRight: 1024, 597
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V03.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Hewitt's House
+
+V04:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
+		Type: Rectangle
+			TopLeft: -683, -432
+			BottomRight: 683, 683
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V04.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Ricktor's House
+
+V05:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V05.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Gretchkin's house
+
+V06:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V06.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: The Barn
+
+V07:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V07.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Damon's Pub
+
+V08:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V08.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Fran's House
+
+V09:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V09.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Music Factory
+
+V10:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V10.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Toymaker's
+
+V11:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V11.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Ludwig's House
+
+V12:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V12.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Haystacks
+
+V13:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V13.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Haystacks
+
+V14:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V14.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Wheat Field
+
+V15:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V15.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Fallow Field
+
+V16:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V16.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Corn Field
+
+V17:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V17.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Celery Field
+
+V18:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V18.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Potato Field
+
+ARCO:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: ARCO.Husk
+	Health:
+		HP: 200
+	Tooltip:
+		Name: Oil Pump
+		ShowOwnerRow: True
+
+BRIDGE1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 165
+		DestroyedTemplate: 166
+	Building:
+		Footprint: ____ ____ ____ ____
+		Dimensions: 4,4
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 2,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 0,2
+	Interactable:
+		Bounds: 96,96
+
+BRIDGE2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 167
+		DestroyedTemplate: 168
+	Building:
+		Footprint: _____ _____ _____ _____ _____
+		Dimensions: 5,5
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 0,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 2,2
+	Interactable:
+		Bounds: 120,120
+
+BRIDGE3:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 169
+		DestroyedTemplate: 170
+	Building:
+		Footprint: ______ ______ ______ ______ ______
+		Dimensions: 6,5
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 3,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 1,2
+	Interactable:
+		Bounds: 144,120
+
+BRIDGE4:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 171
+		DestroyedTemplate: 172
+	Building:
+		Footprint: ______ ______ ______ ______
+		Dimensions: 6,4
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 1,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 3,2
+	Interactable:
+		Bounds: 144,96
+
+BRIDGEHUT:
+	AlwaysVisible:
+	Building:
+		Footprint: __ __
+		Dimensions: 2,2
+	LegacyBridgeHut:
+	Targetable:
+		TargetTypes: BridgeHut, C4
+	Interactable:
+		Bounds: 48,48
+
+#===========================================================
+#							CIVILIAN-BUILDINGS-DESERT
+#===========================================================
+
+V20:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 896
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V20.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Sala's House
+
+V21:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 840,-512,0, 420,0,0, 840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 0
+	HitShape@WELL:
+		TargetableOffsets: -770,512,0
+		Type: Rectangle
+			TopLeft: 0, 0
+			BottomRight: 1024, 598
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V21.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Abdul's House
+
+V22:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V22.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Pablo's Wicked Pub
+
+V23:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V23.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Village Well
+
+V24:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -630,-512,0, 0,0,0, -630,256,0, 420,-512,0
+		Type: Rectangle
+			TopLeft: -1024, -683
+			BottomRight: 640, 853
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V24.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Camel Trader
+
+V25:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,-128,0, 420,512,0
+		Type: Rectangle
+			TopLeft: -683, -683
+			BottomRight: 1024, 512
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Church
+	SpawnActorOnDeath:
+		Actor: V25.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+
+V26:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V26.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Ali's House
+
+V27:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V27.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Trader Ted's
+
+V28:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V28.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Menelik's House
+
+V29:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V29.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Prestor John's House
+
+V30:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V30.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Village Well
+
+V31:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V31.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Witch Doctor's Hut
+
+V32:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V32.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Rikitikitembo's Hut
+
+V33:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V33.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Roarke's Hut
+
+V34:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V34.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Mubasa's Hut
+
+V35:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V35.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Aksum's Hut
+
+V36:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V36.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Mambo's Hut
+
+V37:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
+	SpawnActorOnDeath:
+		Actor: V37.Husk
+	Building:
+		Footprint: __xx_ ___xx
+		Dimensions: 5,2
+	Health:
+		HP: 600
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: The Studio

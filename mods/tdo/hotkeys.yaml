@@ -10,6 +10,6 @@ ProductionTypeInfantry: N
 	Description: Infantry Tab
 	Types: Production
 
-PowerDown: X
-	Description: Power-down mode
-	Types: OrderGenerator
+#PowerDown: X
+#	Description: Power-down mode
+#	Types: OrderGenerator

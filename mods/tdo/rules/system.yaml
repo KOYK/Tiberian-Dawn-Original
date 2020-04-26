@@ -1,3 +1,436 @@
+^BaseWorld:
+	AlwaysVisible:
+	Inherits: ^Palettes
+	ScreenMap:
+	ActorMap:
+	Selection:
+	MusicPlaylist:
+		VictoryMusic: win1
+		DefeatMusic: nod_map1
+	DebugVisualizations:
+	TerrainRenderer:
+	TerrainGeometryOverlay:
+	ShroudRenderer:
+		ShroudVariants: typea, typeb, typec, typed
+		FogVariants: typea, typeb, typec, typed
+		OverrideFullShroud: full
+		OverrideFullFog: full
+	Locomotor@FOOT:
+		Name: foot
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+				PathingCost: 300
+			BlueTiberium: 100
+				PathingCost: 300
+			Beach: 100
+	Locomotor@CHEM:
+		Name: chem
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@WHEELED:
+		Name: wheeled
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@BIKE:
+		Name: bike
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@HEAVYWHEELED:
+		Name: heavywheeled
+		Crushes: crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@TRACKED:
+		Name: tracked
+		Crushes: wall, crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@HEAVYTRACKED:
+		Name: heavytracked
+		Crushes: wall, heavywall, crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@NAVAL:
+		Name: naval
+		Crushes: crate
+		TerrainSpeeds:
+			Water: 100
+	Locomotor@LANDINGCRAFT:
+		Name: lcraft
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Water: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+			River: 100
+	Locomotor@CRITTER:
+		Name: critter
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Faction@Random:
+		Name: Any
+		InternalName: Random
+		RandomFactionMembers: gdi, nod
+		Description: Random Faction\nA random faction will be chosen when the game starts.
+	Faction@gdi:
+		Name: GDI
+		InternalName: gdi
+		Description: Global Defense Initiative\nThe GDI is an international military branch of the United Nations tasked\nwith keeping world peace. Commanding the combined forces of the world's\nmost powerful nations, they possess an unmatched arsenal of high-tech weaponry.
+	Faction@nod:
+		Name: Nod
+		InternalName: nod
+		Description: Brotherhood of Nod\nThe Brotherhood is a religious cult centered around their leader Kane\nand the alien substance Tiberium. They utilize stealth technology\nand guerilla tactics to defeat those who oppose them.
+	ResourceType@green-tib:
+		Type: Tiberium
+		Name: Tiberium
+		PipColor: Green
+		ResourceType: 1
+		Palette: staticterrain
+		TerrainType: Tiberium
+		Sequences: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
+		MaxDensity: 12
+		ValuePerUnit: 35
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: true
+	ResourceType@blue-tib:
+		Type: BlueTiberium
+		Name: Tiberium
+		PipColor: Blue
+		ResourceType: 2
+		Palette: bluetiberium
+		TerrainType: BlueTiberium
+		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
+		MaxDensity: 12
+		ValuePerUnit: 60
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: true
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	DebugVisualizationCommands:
+	PlayerCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	LegacyBridgeLayer:
+		Bridges: bridge1, bridge2, bridge3, bridge4
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	DomainIndex:
+	SmudgeLayer@SCORCH:
+		Type: Scorch
+		Sequence: scorches
+		SmokePercentage: 50
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Sequence: craters
+	ResourceLayer:
+	ResourceClaimLayer:
+	WarheadDebugOverlay:
+	CustomTerrainDebugOverlay:
+	SpawnMapActors:
+	CreateMPPlayers:
+	CrateSpawner:
+		Minimum: 1
+		Maximum: 6
+		SpawnInterval: 3000
+		WaterChance: 0
+		InitialSpawnDelay: 1500
+		CheckboxDisplayOrder: 1
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	RadarPings:
+	LoadWidgetAtGameStart:
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+	LoadWidgetAtGameStart:
+
+^BasePlayer:
+	AlwaysVisible:
+	Shroud:
+
+EditorPlayer:
+	Inherits: ^BasePlayer
+
+Player:
+	Inherits: ^BasePlayer
+	PlaceBuilding:
+		NewOptionsNotification: NewOptions
+		CannotPlaceNotification: BuildingCannotPlaceAudio
+	ClassicProductionQueue@Building:
+		Type: Building
+		DisplayOrder: 0
+		LowPowerModifier: 300
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Defense:
+		Type: Defense
+		DisplayOrder: 1
+		LowPowerModifier: 300
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle
+		DisplayOrder: 3
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 75, 60, 50
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+		DisplayOrder: 2
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Ship:
+		Type: Ship
+		DisplayOrder: 5
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft
+		DisplayOrder: 4
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+	TechTree:
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+		WinNotification: Win
+		LoseNotification: Lose
+		LeaveNotification: Leave
+	PowerManager:
+		SpeechNotification: LowPower
+	AllyRepair:
+	BaseAttackNotifier:
+	PlayerStatistics:
+	FrozenActorLayer:
+	PlaceBeacon:
+	GrantConditionOnPrerequisiteManager:
+	ResourceStorageWarning:
+	PlayerExperience:
+	ConditionManager:
+
+^Palettes:
+	PaletteFromFile@terrain-desert:
+		Name: terrain
+		Tileset: DESERT
+		Filename: desert.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-winter:
+		Name: terrain
+		Tileset: WINTER
+		Filename: winter.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-snow:
+		Name: terrain
+		Tileset: SNOW
+		Filename: snow.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-temperat:
+		Name: terrain
+		Tileset: TEMPERAT
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-jungle:
+		Name: terrain
+		Tileset: JUNGLE
+		Filename: jungle.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-desert:
+		Name: staticterrain
+		Tileset: DESERT
+		Filename: desert.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-winter:
+		Name: staticterrain
+		Tileset: WINTER
+		Filename: winter.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-snow:
+		Name: staticterrain
+		Tileset: SNOW
+		Filename: snow.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-temperat:
+		Name: staticterrain
+		Tileset: TEMPERAT
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-jungle:
+		Name: staticterrain
+		Tileset: JUNGLE
+		Filename: jungle.pal
+		ShadowIndex: 4
+	PaletteFromFile@chrome:
+		Name: chrome
+		Filename: temperat.pal
+		ShadowIndex: 3
+		AllowModifiers: false
+		CursorPalette: true
+	PaletteFromFile@beaconposter:
+		Name: beaconposter
+		Filename: temperat.pal
+		ShadowIndex: 3
+	PaletteFromFile@effect:
+		Name: effect
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@colorpicker:
+		Name: colorpicker
+		Filename: temperat.pal
+		ShadowIndex: 4
+		AllowModifiers: false
+	PaletteFromRGBA@shadow:
+		Name: shadow
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromRGBA@cloak:
+		Name: cloak
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromRGBA@highlight:
+		Name: highlight
+		R: 255
+		G: 255
+		B: 255
+		A: 128
+	PaletteFromRGBA@moveflash:
+		Name: moveflash
+		R: 255
+		G: 255
+		B: 255
+		A: 64
+	PaletteFromRGBA@disabled:
+		Name: disabled
+		R: 0
+		G: 0
+		B: 0
+		A: 180
+	ShroudPalette@shroud:
+		Name: shroud
+	ShroudPalette@fog:
+		Name: fog
+		Fog: true
+	FixedColorPalette@BlueTiberium:
+		Base: terrain
+		Name: bluetiberium
+		Color: 89BAFF
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+	PlayerColorPalette:
+		BasePalette: terrain
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+	PlayerHighlightPalette:
+	MenuPaletteEffect:
+		MenuEffect: Desaturated
+	CloakPaletteEffect:
+	FlashPaletteEffect:
+	RotationPaletteEffect@water:
+		ExcludePalettes: effect, chrome
+		RotationBase: 32
+
 ^ExistsInWorld:
 	AppearsOnRadar:
 	UpdatesPlayerStatistics:
@@ -1191,3 +1624,148 @@
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: lowpower
 		Palette: disabled
+
+CRATE.plain:
+	Inherits: ^Crate
+	ScriptTriggers:
+
+CRATE:
+	Inherits: ^Crate
+	Crate:
+		Lifetime: 240
+	GiveCashCrateAction:
+		Amount: 1000
+		SelectionShares: 20
+		UseCashTick: yes
+	RevealMapCrateAction:
+		SelectionShares: 1
+		Sequence: reveal-map
+	ExplodeCrateAction@fire:
+		Weapon: Napalm.Crate
+		SelectionShares: 5
+	GrantExternalConditionCrateAction@cloak:
+		SelectionShares: 5
+		Sequence: cloak
+		Condition: cloak-crate-collected
+	GiveMcvCrateAction:
+		SelectionShares: 0
+		NoBaseSelectionShares: 50
+		Units: mcv
+	ExplodeCrateAction:
+		Weapon: Atomic
+		SelectionShares: 1
+	GiveUnitCrateAction:
+		Units: vice
+		Owner: Creeps
+		SelectionShares: 10
+	LevelUpCrateAction:
+		Levels: 4
+		SelectionShares: 12
+
+WCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Wooden Crate
+
+SCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Steel Crate
+
+mpspawn:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (multiplayer player starting point)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
+waypoint:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (waypoint for scripted behavior)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+
+fact.colorpicker:
+	Inherits: FACT
+	-Buildable:
+	-MapEditorData:
+	RenderSprites:
+		Image: fact
+		Palette: colorpicker
+
+CAMERA:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+CAMERA.small:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals small area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+FLARE:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: smokland
+		Palette: terrain
+	WithSpriteBody:
+		StartSequence: open
+	HiddenUnderFog:
+		Type: CenterPosition
+	Tooltip:
+		Name: Flare
+		ShowOwnerRow: false
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	Interactable:

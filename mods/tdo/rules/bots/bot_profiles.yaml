@@ -1,53 +1,46 @@
 Player:
 	ModularBot@1:
-		Name: (1) Tutor
+		Name: Very Easy
 		Type: 1
+	ModularBot@2:
+		Name: Easy
+		Type: 2
+	ModularBot@3:
+		Name: Normal
+		Type: 3
+	ModularBot@4:
+		Name: Hard
+		Type: 4
+	ModularBot@5:
+		Name: Very Hard
+		Type: 5
+	ModularBot@6:
+		Name: Impossible
+		Type: 6
+	ModularBot@7:
+		Name: Nightmare
+		Type: 7
 	GrantConditionOnBotOwner@1:
 		Condition: enable-1-bot
 		Bots: 1
-	ModularBot@2:
-		Name: (2) Very Easy
-		Type: 2
 	GrantConditionOnBotOwner@2:
 		Condition: enable-2-bot
 		Bots: 2
-	ModularBot@3:
-		Name: (3) Easy
-		Type: 3
 	GrantConditionOnBotOwner@3:
 		Condition: enable-3-bot
 		Bots: 3
-	ModularBot@4:
-		Name: (4) Normal
-		Type: 4
 	GrantConditionOnBotOwner@4:
 		Condition: enable-4-bot
 		Bots: 4
-	ModularBot@5:
-		Name: (5) Hard
-		Type: 5
 	GrantConditionOnBotOwner@5:
 		Condition: enable-5-bot
-		Bots: 
-	ModularBot@6:
-		Name: (6) Very Hard
-		Type: 6
+		Bots: 5
 	GrantConditionOnBotOwner@6:
 		Condition: enable-6-bot
 		Bots: 6
-	ModularBot@7:
-		Name: (7) Impossible
-		Type: 7
 	GrantConditionOnBotOwner@7:
 		Condition: enable-7-bot
 		Bots: 7
-	ModularBot@8:
-		Name: (8) Nightmare
-		Type: 8
-	GrantConditionOnBotOwner@8:
-		Condition: enable-8-bot
-		Bots: 8
-
 	GrantConditionOnBotOwner@All:
 		Condition: enable-all-bot
-		Bots: 1,2,3,4,5,6,7,8
+		Bots: 1,2,3,4,5,6,7

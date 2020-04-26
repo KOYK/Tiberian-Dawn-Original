@@ -3,10 +3,10 @@ Player:
 		RequiresCondition: enable-1-bot
 		BuildingQueues: Building.Nod,Building.Nodda,Building.GDI
 		DefenseQueues: Defence.Nod,Defence.Nodda,Defence.GDI
-		MinimumExcessPower: 30
-		MaximumExcessPower: 150
-		ExcessPowerIncrement: 30
-		ExcessPowerIncreaseThreshold: 5
+		MinimumExcessPower: 1
+		MaximumExcessPower: 5
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 0
 		MaxResourceCellsToCheck: 5
 		NewProductionCashThreshold: 5000
 		MaximumFailedPlacementAttempts: 1
@@ -98,8 +98,7 @@ Player:
 		IdleBaseUnitsMaximum: 1000
         UnitsToBuild:
 			harv: 100
-			harv_boost_on: 100
-			harv_boost_off: 100
+			harv_arcade: 100
 			research_adv_nuke: 90
 			research_stl_harv: 90
 			research_arm_harv: 20
@@ -128,8 +127,7 @@ Player:
 			orca: 0
         UnitLimits:
 			harv: 4
-			harv_boost_on: 4
-			harv_boost_off: 4
+			harv_arcade: 4
 			research_adv_nuke: 1
 			research_stl_harv: 1
 			research_arm_harv: 1
@@ -158,7 +156,7 @@ Player:
 			orca: 0
 	SquadManagerBotModule@1:
 		RequiresCondition: enable-1-bot
-		ExcludeFromSquadsTypes: mcv, harv, harv_boost_on, harv_boost_off, mov, e6, mech, medi, specops, truk, mhq
+		ExcludeFromSquadsTypes: mcv, harv, harv_arcade, mov, e6, mech, medi, specops, truk, mhq
 		SquadSize: 1000
 	#=====================================================================================================================================
 	#[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -262,8 +260,7 @@ Player:
 		IdleBaseUnitsMaximum: 3
         UnitsToBuild:
 			harv: 100
-			harv_boost_on: 100
-			harv_boost_off: 100
+			harv_arcade: 100
 			research_adv_nuke: 90
 			research_stl_harv: 90
 			research_arm_harv: 20
@@ -293,8 +290,7 @@ Player:
 			orca: 0
         UnitLimits:
 			harv: 4
-			harv_boost_on: 4
-			harv_boost_off: 4
+			harv_arcade: 4
 			research_adv_nuke: 1
 			research_stl_harv: 1
 			research_arm_harv: 1
@@ -324,7 +320,7 @@ Player:
 			orca: 0
 	SquadManagerBotModule@2:
 		RequiresCondition: enable-2-bot
-		ExcludeFromSquadsTypes: mcv, harv, harv_boost_on, harv_boost_off, mov, e6, mech, medi, specops, truk, mhq
+		ExcludeFromSquadsTypes: mcv, harv, harv_arcade, mov, e6, mech, medi, specops, truk, mhq
 		SquadSize: 5
 	#=====================================================================================================================================
 	#[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -428,8 +424,7 @@ Player:
 		IdleBaseUnitsMaximum: 3
         UnitsToBuild:
 			harv: 100
-			harv_boost_on: 100
-			harv_boost_off: 100
+			harv_arcade: 100
 			research_adv_nuke: 90
 			research_stl_harv: 90
 			research_arm_harv: 20
@@ -460,8 +455,7 @@ Player:
 			orca: 0
         UnitLimits:
 			harv: 4
-			harv_boost_on: 4
-			harv_boost_off: 4
+			harv_arcade: 4
 			research_adv_nuke: 1
 			research_stl_harv: 1
 			research_arm_harv: 1
@@ -492,7 +486,7 @@ Player:
 			orca: 0
 	SquadManagerBotModule@3:
 		RequiresCondition: enable-3-bot
-		ExcludeFromSquadsTypes: mcv, harv, harv_boost_on, harv_boost_off, mov, e6, mech, medi, specops, truk, mhq
+		ExcludeFromSquadsTypes: mcv, harv, harv_arcade, mov, e6, mech, medi, specops, truk, mhq
 		SquadSize: 15
 	#=====================================================================================================================================
 	#[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -596,8 +590,7 @@ Player:
 		IdleBaseUnitsMaximum: 10
         UnitsToBuild:
 			harv: 100
-			harv_boost_on: 100
-			harv_boost_off: 100
+			harv_arcade: 100
 			research_adv_nuke: 90
 			research_stl_harv: 90
 			research_arm_harv: 20
@@ -628,8 +621,7 @@ Player:
 			orca: 0
         UnitLimits:
 			harv: 4
-			harv_boost_on: 4
-			harv_boost_off: 4
+			harv_arcade: 4
 			research_adv_nuke: 1
 			research_stl_harv: 1
 			research_arm_harv: 1
@@ -660,7 +652,7 @@ Player:
 			orca: 1
 	SquadManagerBotModule@4:
 		RequiresCondition: enable-4-bot
-		ExcludeFromSquadsTypes: mcv, harv, harv_boost_on, harv_boost_off, mov, e6, mech, medi, specops, truk, mhq
+		ExcludeFromSquadsTypes: mcv, harv, harv_arcade, mov, e6, mech, medi, specops, truk, mhq
 		SquadSize: 50
 	#=====================================================================================================================================
 	#[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -764,8 +756,7 @@ Player:
 		IdleBaseUnitsMaximum: 10
         UnitsToBuild:
 			harv: 100
-			harv_boost_on: 100
-			harv_boost_off: 100
+			harv_arcade: 100
 			research_adv_nuke: 90
 			research_stl_harv: 90
 			research_arm_harv: 20
@@ -798,8 +789,7 @@ Player:
 			orca: 0
         UnitLimits:
 			harv: 12
-			harv_boost_on: 12
-			harv_boost_off: 12
+			harv_arcade: 12
 			research_adv_nuke: 1
 			research_stl_harv: 1
 			research_arm_harv: 1
@@ -832,7 +822,7 @@ Player:
 			orca: 6
 	SquadManagerBotModule@5:
 		RequiresCondition: enable-5-bot
-		ExcludeFromSquadsTypes: mcv, harv, harv_boost_on, harv_boost_off, mov, e6, mech, medi, specops, truk, mhq
+		ExcludeFromSquadsTypes: mcv, harv, harv_arcade, mov, e6, mech, medi, specops, truk, mhq
 		SquadSize: 70
 	#=====================================================================================================================================
 	#[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -936,8 +926,7 @@ Player:
 		IdleBaseUnitsMaximum: 10
         UnitsToBuild:
 			harv: 100
-			harv_boost_on: 100
-			harv_boost_off: 100
+			harv_arcade: 100
 			research_adv_nuke: 90
 			research_stl_harv: 90
 			research_arm_harv: 20
@@ -972,8 +961,7 @@ Player:
 			f22: 1
         UnitLimits:
 			harv: 12
-			harv_boost_on: 12
-			harv_boost_off: 12
+			harv_arcade: 12
 			research_adv_nuke: 1
 			research_stl_harv: 1
 			research_arm_harv: 1
@@ -1008,14 +996,14 @@ Player:
 			orca: 6
 	SquadManagerBotModule@6:
 		RequiresCondition: enable-6-bot
-		ExcludeFromSquadsTypes: mcv, harv, harv_boost_on, harv_boost_off, mov, e6, mech, medi, specops, truk, mhq
+		ExcludeFromSquadsTypes: mcv, harv, harv_arcade, mov, e6, mech, medi, specops, truk, mhq
 		SquadSize: 90
 	#=====================================================================================================================================
 	#[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 	#=====================================================================================================================================
 
-	BaseBuilderBotModule@8:
-		RequiresCondition: enable-8-bot
+	BaseBuilderBotModule@7:
+		RequiresCondition: enable-7-bot
 		BuildingQueues: Building.Nod,Building.Nodda,Building.GDI
 		DefenseQueues: Defence.Nod,Defence.Nodda,Defence.GDI
 		MinimumExcessPower: 1
@@ -1113,14 +1101,13 @@ Player:
 			hgate.bot: 1000
 		BuildingDelays:
 			tgd: 1500
-    UnitBuilderBotModule@8:
-        RequiresCondition: enable-8-bot
+    UnitBuilderBotModule@7:
+        RequiresCondition: enable-7-bot
         UnitQueues: Vehicle.Nod,Vehicle.Nodda,Vehicle.GDI,Infantry.Nod,Infantry.Nodda,Infantry.GDI,Aircraft.Nod, Aircraft.GDI,Aircraft.Nodda,Research.Nod,Research.GDI
-		IdleBaseUnitsMaximum: 10
+		IdleBaseUnitsMaximum: 100
         UnitsToBuild:
 			harv: 100
-			harv_boost_on: 100
-			harv_boost_off: 100
+			harv_arcade: 100
 			research_adv_nuke: 90
 			research_stl_harv: 90
 			research_arm_harv: 20
@@ -1157,8 +1144,7 @@ Player:
 			f22: 1
         UnitLimits:
 			harv: 5
-			harv_boost_on: 5
-			harv_boost_off: 5
+			harv_arcade: 5
 			research_adv_nuke: 1
 			research_stl_harv: 1
 			research_arm_harv: 1
@@ -1193,7 +1179,8 @@ Player:
 			heli: 6
 			f22: 6
 			orca: 6
-	SquadManagerBotModule@8:
-		RequiresCondition: enable-8-bot
-		ExcludeFromSquadsTypes: mcv, harv, harv_boost_on, harv_boost_off, mov, e6, mech, medi, specops, truk, mrj
-		SquadSize: 30
+	SquadManagerBotModule@7:
+		RequiresCondition: enable-7-bot
+		ExcludeFromSquadsTypes: mcv, harv, harv_arcade, mov, e6, mech, medi, specops, truk, mrj
+		SquadSize: 2
+		SquadSizeRandomBonus: 3

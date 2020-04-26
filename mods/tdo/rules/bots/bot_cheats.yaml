@@ -1,83 +1,81 @@
-^Tank::
-	GrantConditionOnBotOwner@8:
-		Condition: rank-elite
-		Bots: 8
+^Tank:
 	GrantConditionOnBotOwner@7:
-		Condition: rank-veteran-7
+		Condition: rank-elite
 		Bots: 7
 	GrantConditionOnBotOwner@6:
-		Condition: rank-veteran-6
+		Condition: rank-veteran-3
 		Bots: 6
 	GrantConditionOnBotOwner@5:
-		Condition: rank-veteran-5
+		Condition: rank-veteran-2
 		Bots: 5
+	GrantConditionOnBotOwner@4:
+		Condition: rank-veteran-1
+		Bots: 4
 
 ^Plane:
-	GrantConditionOnBotOwner@8:
-		Condition: rank-elite
-		Bots: 8
 	GrantConditionOnBotOwner@7:
-		Condition: rank-veteran-7
+		Condition: rank-elite
 		Bots: 7
 	GrantConditionOnBotOwner@6:
-		Condition: rank-veteran-6
+		Condition: rank-veteran-3
 		Bots: 6
 	GrantConditionOnBotOwner@5:
-		Condition: rank-veteran-5
+		Condition: rank-veteran-2
 		Bots: 5
+	GrantConditionOnBotOwner@4:
+		Condition: rank-veteran-1
+		Bots: 4
 
 ^Helicopter:
-	GrantConditionOnBotOwner@8:
-		Condition: rank-elite
-		Bots: 8
 	GrantConditionOnBotOwner@7:
-		Condition: rank-veteran-7
+		Condition: rank-elite
 		Bots: 7
 	GrantConditionOnBotOwner@6:
-		Condition: rank-veteran-6
+		Condition: rank-veteran-3
 		Bots: 6
 	GrantConditionOnBotOwner@5:
-		Condition: rank-veteran-5
+		Condition: rank-veteran-2
 		Bots: 5
+	GrantConditionOnBotOwner@4:
+		Condition: rank-veteran-1
+		Bots: 4
 
 ^Soldier:
-	GrantConditionOnBotOwner@8:
-		Condition: rank-elite
-		Bots: 8
 	GrantConditionOnBotOwner@7:
-		Condition: rank-veteran-7
+		Condition: rank-elite
 		Bots: 7
 	GrantConditionOnBotOwner@6:
-		Condition: rank-veteran-6
+		Condition: rank-veteran-3
 		Bots: 6
 	GrantConditionOnBotOwner@5:
-		Condition: rank-veteran-5
+		Condition: rank-veteran-2
 		Bots: 5
+	GrantConditionOnBotOwner@4:
+		Condition: rank-veteran-1
+		Bots: 4
 
-FACT:
-	CashTrickler@FreeCreditsBot_8:
-		RequiresCondition: enable-8-bot
-		Interval: 750
-		Amount: 2000
-		ShowTicks: False
-	CashTrickler@FreeCreditsBot_7:
+HARV:
+	HarvesterResourceMultiplier@FreeCreditsBot_7:
 		RequiresCondition: enable-7-bot
-		Interval: 750
-		Amount: 1500
-		ShowTicks: False
-	CashTrickler@FreeCreditsBot_6:
+		Modifier: 200
+	HarvesterResourceMultiplier@FreeCreditsBot_6:
 		RequiresCondition: enable-6-bot
-		Interval: 750
-		Amount: 1000
-		ShowTicks: False
-	CashTrickler@FreeCreditsBot_5:
+		Modifier: 160
+	HarvesterResourceMultiplier@FreeCreditsBot_5:
 		RequiresCondition: enable-5-bot
-		Interval: 750
-		Amount: 500
-		ShowTicks: False
-	GrantConditionOnBotOwner@8:
-		Condition: enable-8-bot
-		Bots: 8
+		Modifier: 140
+	HarvesterResourceMultiplier@FreeCreditsBot_4:
+		RequiresCondition: enable-4-bot
+		Modifier: 120
+	HarvesterResourceMultiplier@FreeCreditsBot_3:
+		RequiresCondition: enable-3-bot
+		Modifier: 100
+	HarvesterResourceMultiplier@FreeCreditsBot_2:
+		RequiresCondition: enable-2-bot
+		Modifier: 80
+	HarvesterResourceMultiplier@FreeCreditsBot_1:
+		RequiresCondition: enable-1-bot
+		Modifier: 60
 	GrantConditionOnBotOwner@7:
 		Condition: enable-7-bot
 		Bots: 7
@@ -87,11 +85,22 @@ FACT:
 	GrantConditionOnBotOwner@5:
 		Condition: enable-5-bot
 		Bots: 5
+	GrantConditionOnBotOwner@4:
+		Condition: enable-4-bot
+		Bots: 4
+	GrantConditionOnBotOwner@3:
+		Condition: enable-3-bot
+		Bots: 3
+	GrantConditionOnBotOwner@2:
+		Condition: enable-2-bot
+		Bots: 2
+	GrantConditionOnBotOwner@1:
+		Condition: enable-1-bot
+		Bots: 1
 	GrantConditionOnBotOwner@All:
 		Condition: enable-all-bot
-		Bots: 1,2,3,4,5,6,7,8
+		Bots: 1,2,3,4,5,6,7
 	ProvidesPrerequisite@BotOwner:
 		RequiresCondition: enable-all-bot
 		Prerequisite: BotOwner
 		ResetOnOwnerChange: True
-

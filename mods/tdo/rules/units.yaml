@@ -342,7 +342,41 @@ MHQ:
 	MustBeDestroyed:
 		RequiredForShortGame: true
 
-#[LST]
+LST:
+	Inherits: ^Ship
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Landing Craft
+	Buildable:
+		Queue: Vehicle.GDI
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	Mobile:
+		Locomotor: lcraft
+		InitialFacing: 0
+		TurnSpeed: 4
+		Speed: 90
+		PauseOnCondition: !(!notmobile)
+	Health:
+		HP: 400
+	Armor:
+		Type: 2
+	RevealsShroud:
+		Range: 3c0
+	WithFacingSpriteBody:
+	Selectable:
+		Bounds: 48,48
+	WithRoof:
+	WithCargo:
+		DisplayTypes: Infantry, Vehicle
+		LocalOffset: 390,-256,0, 390,256,0, 0,0,0, -390,-256,0, -390,256,0
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PipCount: 5
+		PassengerFacing: 0
+		LoadingCondition: notmobile
 
 MLRS:
 	Inherits: ^Tank
@@ -811,7 +845,56 @@ APC_SINGLEPLAYER:
 	SpawnActorOnDeath:
 		Actor: APC.Husk
 
-#[BOAT]
+BOAT:
+	Inherits: ^Ship
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Gunboat
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 700
+	Armor:
+		Type: 3
+	TDGunboat:
+		Speed: 24
+	RevealsShroud:
+		Range: 5c0
+		Type: CenterPosition
+	Turreted:
+		TurnSpeed: 5
+		Offset: 0,896,171
+	Armament:
+		Weapon: BoatMissile
+		LocalOffset: 85,-85,0, 85,85,0
+	AttackTDGunboatTurreted:
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 2
+	WithGunboatBody:
+		Sequence: left # Just a work-around to avoid crash
+	Selectable:
+		Bounds: 42,24
+		DecorationBounds: 42,24
+	AutoTarget:
+		AllowMovement: false
+	RejectsOrders:
+	SelectionDecorations:
+	GrantConditionOnDamageState@HEAVY:
+		Condition: heavy-damage
+		ValidDamageStates: Heavy
+	GrantConditionOnDamageState@CRITICAL:
+		Condition: critical-damage
+		ValidDamageStates: Critical
+	SpeedMultiplier@HEAVYDAMAGE:
+		RequiresCondition: heavy-damage
+		Modifier: 75
+	SpeedMultiplier@CRITICALDAMAGE:
+		RequiresCondition: critical-damage
+		Modifier: 50
 
 STEG:
 	Inherits: ^DINO
@@ -991,3 +1074,597 @@ TRUCK:
 		OwnerType: InternalName
 		EffectiveOwnerFromOwner: true
 		RequiresCondition: HusksEnabled
+
+TRAN:
+	Inherits: ^Helicopter
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Chinook Transport
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~hpad, ~tl6
+		Description: Fast Infantry Transport Helicopter.\n  Unarmed
+	Aircraft:
+		TurnToLand: true
+		InitialFacing: 1
+		TurnSpeed: 5
+		Speed: 90
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
+		AltitudeVelocity: 0c100
+		Repulsable: true
+		IdleBehavior: Land
+	Health:
+		HP: 90
+	Armor:
+		Type: 2
+	RevealsShroud:
+		Range: 0c0
+		Type: GroundPosition
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 597,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR1GROUND:
+		Offset: 597,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -597,0,171
+		Sequence: rotor2
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTOR2GROUND:
+		Offset: -597,0,171
+		Sequence: slow-rotor2
+		RequiresCondition: !airborne
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+	SpawnActorOnDeath:
+		Actor: TRAN.Husk
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 41,41
+	CaptureManager:
+	Capturable:
+		Types: chinook
+
+HELI:
+	Inherits: ^Helicopter
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Apache Longbow
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad, ~tl6, ~OwnerNod
+		Description: Helicopter Gunship with Chainguns.\n  Strong vs Infantry, Light Vehicles and\n  Aircraft\n  Weak vs Tanks
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 120
+	Rearmable:
+		RearmActors: hpad
+		AmmoPools: primary, secondary
+	Health:
+		HP: 125
+	Armor:
+		Type: 3
+	RevealsShroud:
+		Range: 0c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: Chaingun
+		LocalOffset: 128,-213,-85, 128,213,-85
+		MuzzleSequence: muzzle
+		PauseOnCondition: !ammo
+	AutoTarget:
+		ScanRadius: 4
+	AttackAircraft:
+		FacingTolerance: 20
+	AmmoPool:
+		Ammo: 10
+		PipCount: 5
+		AmmoCondition: ammo
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: HELI.Husk
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 30,24
+
+ORCA:
+	Inherits: ^Helicopter
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Orca
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad, ~tl6, ~OwnerGDI
+		Description: Helicopter Gunship with AG Missiles.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 120
+	Rearmable:
+		RearmActors: hpad
+		AmmoPools: primary, secondary
+	Health:
+		HP: 125
+	Armor:
+		Type: 3
+	RevealsShroud:
+		Range: 0c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: Rocket
+		LocalOffset: 427,-171,-213, 427,171,-213
+		PauseOnCondition: !ammo
+		RequiresCondition: !PUTSUXEnabled
+	Armament@SECONDARY:
+		Weapon: Rocket
+		LocalOffset: 427,-171,-213, 427,171,-213
+		PauseOnCondition: !ammo
+		RequiresCondition: !PUTSUXEnabled
+	Armament@PUTSUX:
+		RequiresCondition: PUTSUXEnabled
+		Weapon: Laser
+	AttackCharges:
+		RequiresCondition: PUTSUXEnabled
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	GrantConditionOnPrerequisite@PUTSUX:
+		Condition: PUTSUXEnabled
+		Prerequisites: PrerequisitePUTSUX
+	AutoTarget:
+		ScanRadius: 5
+	AttackAircraft:
+		FacingTolerance: 20
+	AmmoPool:
+		Ammo: 6
+		PipCount: 6
+		AmmoCondition: ammo
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+	WithMoveAnimation:
+		MoveSequence: move
+	SelectionDecorations:
+	Selectable:
+		DecorationBounds: 30,24
+
+C17:
+	Inherits: ^Plane
+	Interactable:
+	Tooltip:
+		Name: Supply Aircraft
+	Valued:
+		Cost: 800
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 120
+		Repulsable: False
+		MaximumPitch: 36
+	HiddenUnderFog:
+		AlwaysVisibleStances: None
+		Type: CenterPosition
+	Cargo:
+		MaxWeight: 10
+		PipCount: 10
+	DamageMultiplier@INVULNERABLE:
+		Modifier: 0
+	Contrail@1:
+		Offset: -261,-650,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -85,-384,0
+		TrailLength: 16
+	Contrail@3:
+		Offset: -85,384,0
+		TrailLength: 16
+	Contrail@4:
+		Offset: -261,650,0
+		TrailLength: 15
+	-MapEditorData:
+
+A10:
+	Inherits: ^Plane
+	Interactable:
+	Tooltip:
+		Name: A10 Bomber
+	Valued:
+		Cost: 800
+	#Health:
+	#	HP: 60
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 120
+		Repulsable: False
+	AttackBomber:
+		Armaments: gun, bombs
+	Armament@GUNS:
+		Name: gun
+		Weapon: Vulcan
+		LocalOffset: 1024,0,-85
+	WithMuzzleOverlay:
+	Armament@BOMBS:
+		Name: bombs
+		Weapon: Napalm
+		LocalOffset: 0,-256,-43, 0,256,-43
+	Contrail@1:
+		Offset: -640,171,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -640,-171,0
+		TrailLength: 15
+	-MapEditorData:
+
+E1:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Minigunner
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~barracks, ~tl1
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles
+	Mobile:
+		Speed: 24
+		#TD speed is 8
+		#took 0.14.07 seconds to reach 8 cells (starting from cell 0 total 9 cells)
+		#same speed in openra resaults in 0.41.70 seconds.
+		#doing 3*8=24 the speed was 0.13.45 in openra.
+		#tried TerrainSpeeds but the % never came close.
+	Health:
+		HP: 50
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: Rifle
+	AttackFrontal:
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4
+		DefaultAttackSequence: shoot
+
+E2:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+	Valued:
+		Cost: 160
+	Tooltip:
+		Name: Grenadier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 40
+		Prerequisites: ~pyle, ~tl2
+		Description: Fast infantry armed with grenades. \n  Strong vs Buildings, slow-moving targets
+	Mobile:
+		Speed: 30
+	Health:
+		HP: 50
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: Grenade
+		LocalOffset: 0,0,427
+		FireDelay: 15
+	TakeCover:
+		ProneOffset: 300,0,-227
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: GrenadierExplode
+		EmptyWeapon: GrenadierExplode
+		Chance: 50
+
+E3:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Rocket Soldier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~barracks, ~tl2
+		Description: Anti-tank/Anti-aircraft infantry. \n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+	Mobile:
+		Speed: 18
+	Health:
+		HP: 25
+	AutoTarget:
+		ScanRadius: 6
+	Armament:
+		Weapon: Rocket
+		LocalOffset: 256,43,341
+		FireDelay: 5
+	TakeCover:
+		ProneOffset: 180,0,-200
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+E4:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Flamethrower
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 40
+		Prerequisites: ~hand,  ~tl1
+		BuildAtProductionType: Soldier
+		Description: Advanced Anti-infantry unit.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks
+	Mobile:
+		Speed: 30
+	Health:
+		HP: 70
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: InfantryFlamer
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	TakeCover:
+		ProneOffset: 190,0,-198
+	AttackFrontal:
+	WithMuzzleOverlay:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+E5:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Chemical Warrior
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~tmpl, ~tl7, ~hand
+		Description: Advanced general-purpose infantry.\n  Strong vs all Ground units
+	Mobile:
+		Speed: 24
+		Locomotor: chem
+	Health:
+		HP: 70
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: ChemSpray
+		LocalOffset: 341,0,256
+		FireDelay: 3
+		MuzzleSequence: muzzle
+	TakeCover:
+		ProneOffset: 190,0,-190
+	AttackFrontal:
+	WithMuzzleOverlay:
+	-DamagedByTerrain:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+E6:
+	Inherits: ^Soldier
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Engineer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: ~barracks, ~EngineerSP, ~tl3
+		Description: Captures enemy structures.\n  Repairs Damaged buildings\n  Unarmed
+	Mobile:
+		Speed: 24
+	Health:
+		HP: 25
+	Passenger:
+		PipType: Yellow
+	EngineerRepair:
+	RepairsBridges:
+	CaptureManager:
+	Captures@SABOTAGE:
+		CaptureTypes: building-sabotage
+		SabotageThreshold: 55
+		PlayerExperience: 50
+	Captures@CAPTURES:
+		CaptureTypes: building
+		PlayerExperience: 50
+	Captures@CHINOOK:
+		CaptureTypes: chinook
+		PlayerExperience: 50
+	Selectable:
+		Priority: 5
+		Class: e6
+E6_MP:
+	Inherits@OriginalActor: E6
+	RenderSprites:
+		Image: e6
+	-EngineerRepair:
+	Buildable:
+		Prerequisites: ~barracks, ~tl3, ~!EngineerSP, ~!SinglePlayer
+		Description: Damages and captures enemy structures.\n  Unarmed
+
+RMBO:
+	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Commando
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~barracks, ~advhq, ~tl7
+		BuildDuration: 2000
+		BuildDurationModifier: 40
+		Description: Elite sniper infantry unit.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles
+	Mobile:
+		Speed: 30
+		Voice: Move
+	Guard:
+		Voice: Move
+	Health:
+		HP: 80
+	Passenger:
+		PipType: Red
+		Voice: Move
+	RevealsShroud:
+		Range: 6c0
+	AutoTarget:
+		ScanRadius: 8
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	Armament:
+		Weapon: Sniper
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2,idle3
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	AnnounceOnKill:
+	Voiced:
+		VoiceSet: CommandoVoice
+	CaptureManager:
+	Captures@CHINOOK:
+		CaptureTypes: chinook
+		PlayerExperience: 50
+		Voice: Move
+
+C1:
+	Inherits: ^CivInfantry
+	Inherits@armed: ^ArmedCivilian
+		HP: 25
+
+C2:
+	Inherits: ^CivInfantry
+		HP: 5
+
+C3:
+	Inherits: ^CivInfantry
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+		HP: 5
+
+C4:
+	Inherits: ^CivInfantry
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+	Health:
+		HP: 5
+
+C5:
+	Inherits: ^CivInfantry
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+	Health:
+		HP: 5
+
+C6:
+	Inherits: ^CivInfantry
+	Health:
+		HP: 5
+
+C7:
+	Inherits: ^CivInfantry
+	Inherits@armed: ^ArmedCivilian
+	Health:
+		HP: 5
+
+C8:
+	Inherits: ^CivInfantry
+	Health:
+		HP: 5
+
+C9:
+	Inherits: ^CivInfantry
+	Health:
+		HP: 5
+
+C10:
+	Inherits: ^CivInfantry
+	Health:
+		HP: 50
+
+MOEBIUS:
+	Inherits: ^CivInfantry
+	-Wanders:
+	Voiced:
+		VoiceSet: MoebiusVoice
+	Tooltip:
+		Name: Dr. Moebius
+	Health:
+		HP: 50
+
+DELPHI:
+	Inherits: ^CivInfantry
+	Inherits@armed: ^ArmedCivilian
+	-Wanders:
+	Tooltip:
+		Name: Agent Delphi
+	Health:
+		HP: 25
+
+CHAN:
+	Inherits: ^CivInfantry
+	Tooltip:
+		Name: Dr. Chan
+	Health:
+		HP: 25
