@@ -47,7 +47,7 @@ World:
 		CheckboxLocked: False
 		CheckboxVisible: True
 	ActorSpawnManager@Vice:
-		Minimum: 1
+		Minimum: 0
 		Maximum: 6
 		SpawnInterval: 3000
 		Actors: vice, vice, vice, vice
