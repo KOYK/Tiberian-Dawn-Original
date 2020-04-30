@@ -465,14 +465,14 @@ observer-scrollitem-hover: dialog.png
 # Used for the main menu frame
 dialog: dialog.png
 	background: 0,0,480,480
-	border-r: 483,0,9,153
-	border-l: 481,0,9,153
-	border-b: 0,483,153,9
-	border-t: 0,481,153,9
-	corner-tl: 393,481,21,21
-	corner-tr: 415,481,21,21
-	corner-bl: 437,481,21,21
-	corner-br: 459,481,21,21
+	border-r: 0,485,3,3
+	border-l: 0,485,3,3
+	border-b: 0,485,3,3
+	border-t: 0,485,3,3
+	corner-tl: 0,493,65,29
+	corner-tr: 66,493,65,29
+	corner-bl: 0,763,16,16
+	corner-br: 115,763,16,16
 
 # Used for Music and Map selection (normal button)
 dialog2: dialog.png

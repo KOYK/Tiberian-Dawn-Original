@@ -1,7 +1,7 @@
 Metrics:
 	ButtonDepth: 1
 	ButtonFont: Regular
-	ButtonTextColor: FFFFFF
+	ButtonTextColor: 3C9A38
 	ButtonTextColorDisabled: 808080
 	ButtonTextContrast: false
 	ButtonTextContrastColorDark: 000000
@@ -33,10 +33,10 @@ Metrics:
 	TextContrastColorLight: 7F7F7F
 	TextFont: Regular
 	TextShadow: false
-	TextfieldColor: FFFFFF
+	TextfieldColor: 3C9A38
 	TextfieldColorDisabled: 808080
 	TextfieldColorInvalid: FFC0C0
-	TextfieldColorHighlight: 195BC4
+	TextfieldColorHighlight: FF0000
 	TextfieldFont: Regular
 	WaitingGameColor: 00FF00
 	UPnPDisabledColor: FFFFFF

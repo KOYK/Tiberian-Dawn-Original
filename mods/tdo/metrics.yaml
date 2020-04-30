@@ -13,9 +13,6 @@ Metrics:
 	FactionSuffix-russia: nod
 	FactionSuffix-soviet: soviet
 	FactionSuffix-ukraine: soviet
-	IncompatibleProtectedGameColor: B22222
-	IncompatibleVersionColor: D3D3D3
-	TextfieldColorHighlight: 562020
 	ChatLineSound: ChatLine
 	ClickDisabledSound: ClickDisabledSound
 	ClickSound: ClickSound
