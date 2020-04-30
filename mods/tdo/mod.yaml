@@ -148,7 +148,7 @@ Hotkeys:
 
 LoadScreen: LogoStripeLoadScreen
 	Image: tdo|uibits/loadscreen.png
-	Text: Filling Crates..., Charging Capacitors..., Reticulating Splines..., Planting Trees..., Building Bridges..., Aging Empires..., Compiling EVA..., Constructing Pylons..., Activating Skynet..., Splitting Atoms...
+	Text: Security Code Accepted..., Establishing Virtual Interface..., Rerouting Connection..., Accesses Granted..., Security Breach Patched..., Error On Command Module Zeta..., Remote Control Enabled..., 245 Log Entries Downloaded..., Voice recognition Failed To Detect Input..., No Fingerprint Input Detected..., Connection With Rio Failed..., Connection With Athens Failed..., Connection With China Enabled..., Connection With South Africa Enabled..., Connection With Germany Interrupted..., Connection With Washington DC Interrupted..., Connection With Russia Blocked..., Connection With France Blocked..., Connection With Europe Reversed... Enabling Firewall Tier 6...
 
 ServerTraits:
 	LobbyCommands
@@ -270,10 +270,10 @@ ModContent:
 			TestFiles: ^Content/cnc/scores-covertops.mix
 			Sources: covertops, covertops-linux, tfd, origin
 	Downloads:
-		cnc|installer/downloads.yaml
+		tdo|installer/downloads.yaml
 	Sources:
-		cnc|installer/covertops.yaml
-		cnc|installer/firstdecade.yaml
-		cnc|installer/gdi95.yaml
-		cnc|installer/nod95.yaml
-		cnc|installer/origin.yaml
+		tdo|installer/covertops.yaml
+		tdo|installer/firstdecade.yaml
+		tdo|installer/gdi95.yaml
+		tdo|installer/nod95.yaml
+		tdo|installer/origin.yaml
