@@ -476,27 +476,27 @@ dialog: dialog.png
 
 # Used for Music and Map selection (normal button)
 dialog2: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # It's a Container, used in various places, like Hotkeys, ColorPicker, Asset Browser frames (looks like a pressed button)
 dialog3: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # Used for tooltips and the video player
 dialog4: dialog.png
@@ -597,63 +597,63 @@ scrollbar: buttons.png
 
 # A copy of dialog3 (pressed button)
 progressbar-bg: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of dialog2 (normal button)
 progressbar-thumb: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # A copy of dialog2 (normal button)
 button: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # 5% lighter than a normal button (mouseover)
 button-hover: dialog.png
-	background: 513,129,126,126
-	border-r: 639,129,1,126
-	border-l: 512,129,1,126
-	border-b: 513,255,126,1
-	border-t: 513,128,126,1
-	corner-tl: 512,128,1,1
-	corner-tr: 639,128,1,1
-	corner-bl: 512,255,1,1
-	corner-br: 639,255,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 	
 # A copy of dialog3 (pressed button)
 button-pressed: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # 50% grey (disabled button)
 button-disabled: dialog.png
@@ -669,74 +669,74 @@ button-disabled: dialog.png
     
 # 10% darker than a normal button - Used in Settings when you select Display Audio Input or Advanced
 button-highlighted: dialog.png
-	background: 769,129,126,126
-	border-r: 895,129,1,126
-	border-l: 768,129,1,126
-	border-b: 769,255,126,1
-	border-t: 769,128,126,1
-	corner-tl: 768,128,1,1
-	corner-tr: 895,128,1,1
-	corner-bl: 768,255,1,1
-	corner-br: 895,255,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of button-highlighted - Used in Settings when you select Display Audio Input or Advanced
 button-highlighted-hover: dialog.png
-	background: 769,129,126,126
-	border-r: 895,129,1,126
-	border-l: 768,129,1,126
-	border-b: 769,255,126,1
-	border-t: 769,128,126,1
-	corner-tl: 768,128,1,1
-	corner-tr: 895,128,1,1
-	corner-bl: 768,255,1,1
-	corner-br: 895,255,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 #  Used in Settings when you select Display Audio Input or Advanced
 button-highlighted-pressed: dialog.png
-	background: 897,129,126,126
-	border-r: 1023,129,1,126
-	border-l: 896,129,1,126
-	border-b: 897,255,126,1
-	border-t: 897,128,126,1
-	corner-tl: 896,128,1,1
-	corner-tr: 1023,128,1,1
-	corner-bl: 896,255,1,1
-	corner-br: 1023,255,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of button-highlighted - Used in Settings when you select Display Audio Input or Advanced
 button-highlighted-disabled: dialog.png
-	background: 769,129,126,126
-	border-r: 895,129,1,126
-	border-l: 768,129,1,126
-	border-b: 769,255,126,1
-	border-t: 769,128,126,1
-	corner-tl: 768,128,1,1
-	corner-tr: 895,128,1,1
-	corner-bl: 768,255,1,1
-	corner-br: 895,255,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 	
 # vivid red - Used for the Battlefields News button
 newsbutton: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 newsbutton-hover: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 	
 newsbutton-highlighted: dialog.png
 	background: 769,1,126,126
@@ -761,50 +761,50 @@ newsbutton-highlighted-hover: dialog.png
 	corner-br: 895,127,1,1
 	
 newsbutton-highlighted-pressed: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 newsbutton-pressed: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of dialog3 (pressed button)
 textfield: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of checkbox-hover
 textfield-hover: dialog.png
-	background: 641,129,126,126
-	border-r: 767,129,1,126
-	border-l: 640,129,1,126
-	border-b: 641,255,126,1
-	border-t: 641,128,126,1
-	corner-tl: 640,128,1,1
-	corner-tr: 767,128,1,1
-	corner-bl: 640,255,1,1
-	corner-br: 767,255,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # Same as button-disabled-pressed
 textfield-disabled: dialog.png
@@ -820,150 +820,151 @@ textfield-disabled: dialog.png
 
 # A copy of dialog3 (pressed button)
 textfield-focused: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of dialog3 (pressed button)
 scrollpanel-bg: dialog.png
-	border-r: 728,427,40,40
-	border-l: 648,427,40,40
-	border-b: 688,467,40,40
-	border-t: 688,387,40,40
-	corner-tl: 648,387,40,40
-	corner-tr: 728,387,40,40
-	corner-bl: 648,467,40,40
-	corner-br: 728,467,40,40
+	background: 1,1,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 
 # A copy of dialog2 (normal button)
 scrollpanel-button: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # A copy of button-hover
 scrollpanel-button-hover: dialog.png
-	background: 513,129,126,126
-	border-r: 639,129,1,126
-	border-l: 512,129,1,126
-	border-b: 513,255,126,1
-	border-t: 513,128,126,1
-	corner-tl: 512,128,1,1
-	corner-tr: 639,128,1,1
-	corner-bl: 512,255,1,1
-	corner-br: 639,255,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # A copy of dialog3 (pressed button)
 scrollpanel-button-pressed: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of dialog2 (normal button)
 scrollpanel-button-disabled: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 slider: dialog.png
 	tick: 512,1,2,4
 
 # A copy of dialog3 (pressed button)
 slider-track: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 	
 # A copy of dialog2 (normal button)
 slider-thumb: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # A copy of button-hover
 slider-thumb-hover: dialog.png
-	background: 513,129,126,126
-	border-r: 639,129,1,126
-	border-l: 512,129,1,126
-	border-b: 513,255,126,1
-	border-t: 513,128,126,1
-	corner-tl: 512,128,1,1
-	corner-tr: 639,128,1,1
-	corner-bl: 512,255,1,1
-	corner-br: 639,255,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # A copy of dialog3 (pressed button)
 slider-thumb-pressed: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of dialog2 (normal button)
 slider-thumb-disabled: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # A copy of dialog3 (pressed button)
 checkbox: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 checkbox-bits: buttons.png
 	checked: 100,157,16,16
@@ -972,15 +973,15 @@ checkbox-bits: buttons.png
 	crossed-disabled: 116,173,16,16
 
 checkbox-hover: dialog.png
-	background: 641,129,126,126
-	border-r: 767,129,1,126
-	border-l: 640,129,1,126
-	border-b: 641,255,126,1
-	border-t: 641,128,126,1
-	corner-tl: 640,128,1,1
-	corner-tr: 767,128,1,1
-	corner-bl: 640,255,1,1
-	corner-br: 767,255,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # Same as button-disabled-pressed
 checkbox-disabled: dialog.png
@@ -1008,39 +1009,39 @@ checkbox-highlighted: dialog.png
 
 # A copy of dialog3 (pressed button)
 scrollitem-selected: dialog.png
-	background: 641,1,126,126
-	border-r: 767,1,1,126
-	border-l: 640,1,1,126
-	border-b: 641,127,126,1
-	border-t: 641,0,126,1
-	corner-tl: 640,0,1,1
-	corner-tr: 767,0,1,1
-	corner-bl: 640,127,1,1
-	corner-br: 767,127,1,1
+	background: 155,495,14,14
+	border-r: 169,495,2,2
+	border-l: 153,495,2,2
+	border-b: 155,509,2,2
+	border-t: 155,493,2,2
+	corner-tl: 153,493,2,2
+	corner-tr: 169,493,2,2
+	corner-bl: 153,509,2,2
+	corner-br: 169,509,2,2
 
 # A copy of dialog2 (normal button)
 scrollitem-hover: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 # A copy of dialog2 (normal button)
 scrollheader-selected: dialog.png
-	background: 513,1,126,126
-	border-r: 639,1,1,126
-	border-l: 512,1,1,126
-	border-b: 513,127,126,1
-	border-t: 513,0,126,1
-	corner-tl: 512,0,1,1
-	corner-tr: 639,0,1,1
-	corner-bl: 512,127,1,1
-	corner-br: 639,127,1,1
+	background: 135,495,14,14
+	border-r: 149,495,2,2
+	border-l: 133,495,2,2
+	border-b: 135,509,2,2
+	border-t: 135,493,2,2
+	corner-tl: 133,493,2,2
+	corner-tr: 149,493,2,2
+	corner-bl: 133,509,2,2
+	corner-br: 149,509,2,2
 
 logos: loadscreen.png
 	logo: 0,0,256,256

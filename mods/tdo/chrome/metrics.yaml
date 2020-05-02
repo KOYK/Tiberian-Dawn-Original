@@ -1,5 +1,5 @@
 Metrics:
-	ButtonDepth: 1
+	ButtonDepth: 0
 	ButtonFont: Regular
 	ButtonTextColor: 3C9A38
 	ButtonTextColorDisabled: 808080
@@ -27,7 +27,7 @@ Metrics:
 	SpawnContrastColor: 000000
 	SpawnFont: TinyBold
 	SpawnLabelOffset: 0,1
-	TextColor: FFFFFF
+	TextColor: 3C9A38
 	TextContrast: false
 	TextContrastColorDark: 000000
 	TextContrastColorLight: 7F7F7F
