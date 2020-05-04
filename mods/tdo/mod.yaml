@@ -162,31 +162,31 @@ ChromeMetrics:
 
 Fonts:
 	Tiny:
-		Font: common|retro_computer_personal_use.ttf
+		Font: tdo|retro_computer_personal_use.ttf
 		Size: 10
 		Ascender: 8
 	TinyBold:
-		Font: common|retro_computer_personal_use.ttf
+		Font: tdo|retro_computer_personal_use.ttf
 		Size: 10
 		Ascender: 8
 	Small:
-		Font: common|retro_computer_personal_use.ttf
+		Font: tdo|retro_computer_personal_use.ttf
 		Size: 12
 		Ascender: 9
 	Regular:
-		Font: common|retro_computer_personal_use.ttf
+		Font: tdo|retro_computer_personal_use.ttf
 		Size: 14
 		Ascender: 11
 	Bold:
-		Font: common|retro_computer_personal_use.ttf
+		Font: tdo|retro_computer_personal_use.ttf
 		Size: 14
 		Ascender: 11
 	MediumBold:
-		Font: common|retro_computer_personal_use.ttf
+		Font: tdo|retro_computer_personal_use.ttf
 		Size: 18
 		Ascender: 14
 	BigBold:
-		Font: common|retro_computer_personal_use.ttf
+		Font: tdo|retro_computer_personal_use.ttf
 		Size: 24
 		Ascender: 18
 	Title:

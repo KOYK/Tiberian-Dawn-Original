@@ -356,7 +356,7 @@ pips:
 		Offset: 9, 5
 	pip-hazmat: pip-hazmat
 		Offset: -3, 0
-	tag-primary:
+	tag-primary: hpips
 		Start: 2
 		Offset: 0, 2
 
