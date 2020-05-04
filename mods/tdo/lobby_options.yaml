@@ -50,7 +50,7 @@ World:
 		Minimum: 0
 		Maximum: 6
 		SpawnInterval: 3000
-		Actors: vice, vice, vice, vice
+		Actors: vice
 		Owner: Creeps
 		Types: vice
 	SpawnMPUnits:
@@ -338,3 +338,21 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: global-lpdamage
+	LobbyPrerequisiteCheckbox@LOWCOSTMCV:
+		ID: lowcostmcv
+		Label: Low Cost MCV
+		Description: MCV cost less to build
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: LowCostMCV
+	LobbyPrerequisiteCheckbox@REGROWTH:
+		ID: Regrowth
+		Label: Tiberium Regrowth
+		Description: Tiberium will regenerate
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: RegrowthOn

@@ -418,17 +418,19 @@ BoatMissile:
 TowerMissile:
 	Inherits: Rocket
 	ReloadDelay: 40
+	Burst: 2
+	BurstDelays: 12
 	Range: 6c50
 	Report: rocket2.aud
 	ValidTargets: Ground
 	Projectile: Missile
 		HorizontalRateOfTurn: 20
-		Speed: 298
+		Speed: 200
 		RangeLimit: 8c409
 	Warhead@1Dam: SpreadDamage
 		Damage: 60
 		Spread: 6
-		ValidTargets: Ground
+		ValidTargets: Ground, Air
 		Versus:
 			0: 87
 			1: 75
@@ -437,30 +439,6 @@ TowerMissile:
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: med_frag
-TowerAAMissile:
-	Inherits: Rocket
-	ReloadDelay: 40
-	Range: 6c50
-	Report: rocket2.aud
-	ValidTargets: Air
-	Projectile: Missile
-		Image: MISSILE
-		HorizontalRateOfTurn: 20
-		Speed: 426
-		RangeLimit: 9c614
-		Inaccuracy: 0
-	Warhead@1Dam: SpreadDamage
-		Damage: 60
-		Spread: 6
-		ValidTargets: Air
-		Versus:
-			0: 87
-			1: 75
-			2: 56
-			3: 25
-	-Warhead@2Smu: LeaveSmudge
-	Warhead@4EffAir: CreateEffect
-		Explosions: small_building
 
 # A-10's Napalm drop
 Napalm:

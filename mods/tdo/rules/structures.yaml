@@ -292,7 +292,6 @@ SILO:
 
 PYLE:
 	Inherits: ^BaseBuilding
-	Inherits@Production: ^ProductionBuilding
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
@@ -301,6 +300,18 @@ PYLE:
 			BottomRight: 1024, 640
 	Valued:
 		Cost: 300
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: -512
+		RequiresCondition: primary
+	Production:
+		Produces: Infantry, Soldier
 	Tooltip:
 		Name: Barracks
 	Buildable:
@@ -309,7 +320,7 @@ PYLE:
 		Queue: Building
 		Description: Trains infantry
 	ProductionBar:
-		ProductionType: Vehicle
+		ProductionType: Infantry
 		Color: 3AA730
 		RequiresCondition: ProductionBarEnabled
 	Building:
@@ -345,12 +356,23 @@ PYLE:
 HAND:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
-	Inherits@Production: ^ProductionBuilding
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Valued:
 		Cost: 300
+	Production:
+		Produces: Infantry, Soldier
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
 	Tooltip:
 		Name: Hand of Nod
 	Buildable:
@@ -359,7 +381,7 @@ HAND:
 		Queue: Building
 		Description: Trains infantry
 	ProductionBar:
-		ProductionType: Vehicle
+		ProductionType: Infantry
 		Color: 3AA730
 		RequiresCondition: ProductionBarEnabled
 	Building:
@@ -392,7 +414,6 @@ HAND:
 WEAP:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
-	Inherits@Production: ^ProductionBuilding
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
 		Type: Rectangle
@@ -400,6 +421,18 @@ WEAP:
 			BottomRight: 1536, 512
 	Valued:
 		Cost: 2000
+	Production:
+		Produces: Vehicle
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
 	Tooltip:
 		Name: Weapons Factory
 	ProvidesPrerequisite@vehicleproduction:
@@ -453,6 +486,16 @@ AFLD:
 			BottomRight: 2048, 1024
 	Valued:
 		Cost: 2000
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
 	Tooltip:
 		Name: Airstrip
 	ProvidesPrerequisite@vehicleproduction:
@@ -491,16 +534,6 @@ AFLD:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
 
 HPAD:
 	Inherits: ^BaseBuilding
@@ -512,6 +545,16 @@ HPAD:
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Valued:
 		Cost: 1500
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
 	#Valued:
 	#	Cost: 300
 	Tooltip:
@@ -565,25 +608,12 @@ HPAD:
 		ProductionTypes: Aircraft
 	ProductionFromMapEdge:
 		Produces: Aircraft
-	Production:
-		Produces: Vehicle
 	Reservable:
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
-	PrimaryBuilding:
-		PrimaryCondition: primarya
-		SelectionNotification: PrimaryBuildingSelected
-		ProductionQueues: Aircrafts
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primarya
 
 HQ:
 	Inherits: ^BaseBuilding
@@ -1048,10 +1078,6 @@ ATWR:
 		Offset: 128,128,384
 	Armament@PRIMARY:
 		Weapon: TowerMissile
-		LocalOffset: 256,128,0, 256,-128,0
-		LocalYaw: -100,100
-	Armament@SECONDARY:
-		Weapon: TowerAAMissile
 		LocalOffset: 256,128,0, 256,-128,0
 		LocalYaw: -100,100
 	AttackTurreted:
