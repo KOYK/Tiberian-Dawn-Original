@@ -1,6 +1,6 @@
 Metadata:
 	Title: Tiberian Dawn Original
-	Version: Release-20200202-1
+	Version: Release-20200503
 	Website: https://www.openra.net
 	WebIcon32: https://www.openra.net/images/icons/cnc_32x32.png
 
@@ -38,7 +38,7 @@ Packages:
 MapFolders:
 	tdo|maps: System
 	tdo|maps/singleplayer: System
-	~^maps/tdo/release-20200202: User
+	~^maps/tdo/release-20200503: User
 
 Rules:
 	tdo|rules/system.yaml
@@ -99,6 +99,7 @@ ChromeLayout:
 	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-infochat.yaml
 	tdo|chrome/mainmenu.yaml
+	common|chrome/mainmenu-prompts.yaml
 	common|chrome/settings.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml
@@ -149,6 +150,8 @@ Hotkeys:
 
 LoadScreen: LogoStripeLoadScreen
 	Image: tdo|uibits/loadscreen.png
+	Image2x: tdo|uibits/loadscreen-2x.png
+	Image3x: tdo|uibits/loadscreen-3x.png
 	Text: Security Code Accepted..., Establishing Virtual Interface..., Rerouting Connection..., Accesses Granted..., Security Breach Patched..., Error On Command Module Zeta..., Remote Control Enabled..., 245 Log Entries Downloaded..., Voice recognition Failed To Detect Input..., No Fingerprint Input Detected..., Connection With Rio Failed..., Connection With Athens Failed..., Connection With China Enabled..., Connection With South Africa Enabled..., Connection With Germany Interrupted..., Connection With Washington DC Interrupted..., Connection With Russia Blocked..., Connection With France Blocked..., Connection With Europe Reversed... Enabling Firewall Tier 6...
 
 ServerTraits:
@@ -158,7 +161,7 @@ ServerTraits:
 	LobbySettingsNotification
 
 ChromeMetrics:
-	tdo|chrome/metrics.yaml
+	common|metrics.yaml
 	tdo|metrics.yaml
 
 Fonts:
