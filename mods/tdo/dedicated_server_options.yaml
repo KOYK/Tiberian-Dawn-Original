@@ -1,0 +1,105 @@
+#This file is meant to be used by server owners, all the lobby options are here with minimum information for easy access by the server owners, in case you want to find the entire code, go to Tiberian-Dawn-Original\mods\tdo\rules\lobby_options.yaml
+#Be aware all the options are set by default on how the original TD game was by westwood.
+
+World:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxEnabled: False
+			#Build on allied base
+	MapOptions:
+		ShortGameCheckboxEnabled: False
+			#die if you lose all buildings
+		TechLevel: tl7
+			#Tech Levels are: tl1, tl2, tl3, tl4, tl5, tl6, tl7
+		TechLevelDropdownLocked: False
+			#True means players wont be able to change Tech Level
+		GameSpeed: default
+			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
+		GameSpeedDropdownLocked: False
+			#Lock the speed?
+	MPStartLocations:
+		SeparateTeamSpawnsCheckboxEnabled: False
+			#players without spawn set, will spawn near allies?
+	MapCreeps:
+		CheckboxEnabled: True
+			#Spawn Visceroids on map?
+	SpawnMPUnits:
+		StartingUnitsClass: light
+			#starting units Classes are: MHQR, none(mcv only), light, heavy, 5(with MHQ), 10(with MHQ), 20(with MHQ), 30(with MHQ), 40(with MHQ), 50(with MHQ), Dino(MHQ With Dinosaurs). 
+		DropdownLocked: False
+			#lock starting units?
+Player:
+	DeveloperMode:
+		CheckboxEnabled: false
+			#enable cheats?
+		CheckboxLocked: false
+			#force cheats checkbox status?
+	PlayerResources:
+		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000
+		DefaultCashDropdownVisible: True
+		DefaultCash: 5000
+		DefaultCashDropdownLocked: False
+	Shroud:
+		FogCheckboxEnabled: False
+			#fog of war? meh dont do it, let it be off
+		ExploredMapCheckboxEnabled: False
+			#the dakness
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		Enabled: True
+			#Allow undeploying Construction Yard?
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@HUSKS:
+		Enabled: False
+			#enable husks that can be captured and repaired?
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@LINEWALLS:
+		Enabled: False
+			#Allows more walls to be build in a line
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
+		Description: Allows the use of Nuclear Missile and Ion Cannon
+		Enabled: True
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
+		Description: Allows the use of Supply Trucks that can aid allies with money
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@PRODUCTIONBAR:
+		Description: Shows loading bars over producing buildings
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
+		Description: Campaign Color theme, Tech level, AI Boost, GDI Airstrike, Capturable Chinook
+		Enabled: False
+		Locked: True
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@PUTSUX:
+		Description: Gives orcas obelisk's laser weapon, not recomended
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
+		Description: Enables ability to capture tech buildings
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@ENGINEERSP:
+		Description: Enables snigleplayer ability of engineers to repair buildings
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@GLOBALLPDAMAGE:
+		Description: Buildings get damaged while low on power
+		Enabled: True
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@REGROWTH:
+		Description: Tiberium will regenerate
+		Enabled: True
+		Locked: False
+			#can the admin player change this?

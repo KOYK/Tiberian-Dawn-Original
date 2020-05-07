@@ -47,7 +47,8 @@ Rules:
 	tdo|rules/units.yaml
 	tdo|rules/trees.yaml
 	tdo|rules/husks.yaml
-	tdo|lobby_options.yaml
+	tdo|rules/lobby_options.yaml
+	tdo|dedicated_server_options.yaml
 
 Sequences:
 	tdo|sequences/structures.yaml

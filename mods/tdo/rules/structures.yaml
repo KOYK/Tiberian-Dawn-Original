@@ -90,6 +90,20 @@ FACT:
 		ProductionType: Building
 		Color: FFFFFF
 		RequiresCondition: ProductionBarEnabled
+#waiting for this https://github.com/OpenRA/OpenRA/issues/18040
+#	# GrantConditionOnPrerequisite:
+#		# Prerequisites: LowCostMCV
+#		# Condition: LowCostMCVcon
+#	# ProductionCostMultiplier:
+#		# Prerequisites: LowCostMCV
+#		# Multiplier: 50
+#		# Queue: Building
+#	# Sellable@LOWCOSTMCV:
+#		# RefundPercent: 25
+#		# RequiresCondition: !build-incomplete && !being-demolished && LowCostMCVcon
+#	# Sellable@COSTMCV:
+#		# RequiresCondition: !build-incomplete && !being-demolished && !LowCostMCVcon
+#		# RefundPercent: 50
 
 FACT.GDI:
 	Inherits: FACT

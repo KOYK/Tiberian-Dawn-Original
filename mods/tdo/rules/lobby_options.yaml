@@ -338,15 +338,6 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: global-lpdamage
-	LobbyPrerequisiteCheckbox@LOWCOSTMCV:
-		ID: lowcostmcv
-		Label: Low Cost MCV
-		Description: MCV cost less to build
-		Enabled: False
-		Locked: False
-		Visible: True
-		DisplayOrder: 10
-		Prerequisites: LowCostMCV
 	LobbyPrerequisiteCheckbox@REGROWTH:
 		ID: Regrowth
 		Label: Tiberium Regrowth
@@ -356,3 +347,13 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: RegrowthOn
+#	#waiting for this https://github.com/OpenRA/OpenRA/issues/18040
+#	# LobbyPrerequisiteCheckbox@LOWCOSTMCV:
+#		# ID: lowcostmcv
+#		# Label: Low Cost MCV
+#		# Description: MCV cost less to build
+#		# Enabled: False
+#		# Locked: False
+#		# Visible: True
+#		# DisplayOrder: 10
+#		# Prerequisites: LowCostMCV
