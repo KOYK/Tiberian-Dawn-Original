@@ -212,6 +212,8 @@ EditorWorld:
 	EditorResourceLayer:
 	EditorSelectionLayer:
 	LoadWidgetAtGameStart:
+	EditorCursorLayer:
+	EditorActionManager:
 
 ^BasePlayer:
 	AlwaysVisible:
@@ -222,6 +224,7 @@ EditorPlayer:
 
 Player:
 	Inherits: ^BasePlayer
+	PlayerRadarTerrain:
 	PlaceBuilding:
 		NewOptionsNotification: NewOptions
 		CannotPlaceNotification: BuildingCannotPlaceAudio
