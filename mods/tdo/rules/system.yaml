@@ -204,7 +204,7 @@ World:
 	RadarPings:
 	LoadWidgetAtGameStart:
 	ResourceRenderer:
-		RenderTypes:
+		RenderTypes: Tiberium, BlueTiberium
 
 EditorWorld:
 	Inherits: ^BaseWorld

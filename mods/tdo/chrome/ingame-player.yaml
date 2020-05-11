@@ -597,6 +597,7 @@ Container@PLAYER_WIDGETS:
 							Background: sidebar-button
 							TooltipText: Scroll up
 							TooltipContainer: TOOLTIP_CONTAINER
+							Key: ScrollUp
 							Children:
 								Image@ICON:
 									X: 6
@@ -612,6 +613,7 @@ Container@PLAYER_WIDGETS:
 							Background: sidebar-button
 							TooltipText: Scroll down
 							TooltipContainer: TOOLTIP_CONTAINER
+							Key: ScrollDown 
 							Children:
 								Image@ICON:
 									X: 6
