@@ -246,7 +246,7 @@ HOSP.Husk:
 		Name: Hospital
 		AllyPrefix: Hospital
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 
 BIO.Husk:
 	Inherits: ^CivBuildingHusk

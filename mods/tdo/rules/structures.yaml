@@ -410,7 +410,7 @@ HAND:
 		Range: 3c0
 	WithBuildingBib:
 	RallyPoint:
-		Offset: 1,2
+		Path: 1,2
 	Exit@1:
 		SpawnOffset: 512,1024,0
 		ExitCell: 1,2
@@ -479,7 +479,7 @@ WEAP:
 		RequiresCondition: !build-incomplete
 		Sequence: build-top
 	RallyPoint:
-		Offset: 0,2
+		Path: 0,2
 	Exit@1:
 		SpawnOffset: -512,-512,0
 		ExitCell: 0,1
@@ -532,12 +532,13 @@ AFLD:
 	RevealsShroud:
 		Range: 5c0
 	RallyPoint:
-		Offset: 4,2
+		Path: 4,2
 	Exit@1:
 		SpawnOffset: -1024,0,0
 		ExitCell: 3,1
 		ProductionTypes: Vehicle
 	ProductionAirdrop:
+		ActorType: c17
 		Produces: Vehicle
 	WithBuildingBib:
 	WithIdleOverlay@DISH:
@@ -897,7 +898,7 @@ GUN:
 	RevealsShroud:
 		Range: 5c0
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Turreted:
 		TurnSpeed: 12
 		InitialFacing: 56
@@ -995,7 +996,7 @@ OBLI:
 	RevealsShroud:
 		Range: 5c0
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	-WithSpriteBody:
 	WithChargeSpriteBody:
 		Sequence: active
@@ -1043,7 +1044,7 @@ GTWR:
 	RevealsShroud:
 		Range: 3c0
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Armament:
 		Weapon: Chaingun
 		LocalOffset: 256,0,256
@@ -1086,7 +1087,7 @@ ATWR:
 	RevealsShroud:
 		Range: 4c0
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Turreted:
 		TurnSpeed: 255
 		Offset: 128,128,384
@@ -1304,7 +1305,7 @@ HOSP:
 	SpawnActorOnDeath:
 		Actor: HOSP.Husk
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	ProvidesPrerequisite@buildingname:
 
 BIO:
@@ -1338,7 +1339,7 @@ BIO:
 	ProductionBar:
 		ProductionType: Biolab
 	RallyPoint:
-		Offset: -1,-1
+		Path: -1,-1
 	SpawnActorOnDeath:
 		Actor: BIO.Husk
 	ProvidesPrerequisite@buildingname:
@@ -1363,7 +1364,7 @@ MISS:
 	Valued:
 		Cost: 2000
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	WithMakeAnimation:
 	SpawnActorOnDeath:
 		Actor: MISS.Husk

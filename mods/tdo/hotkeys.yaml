@@ -13,3 +13,11 @@ ProductionTypeInfantry: N
 #PowerDown: X
 #	Description: Power-down mode
 #	Types: OrderGenerator
+
+ScrollDown: O
+	Description: Scroll Item Up
+	Types: Production
+
+ScrollUp: L
+	Description: Scroll Item Down
+	Types: Production

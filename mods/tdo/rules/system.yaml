@@ -203,6 +203,8 @@ World:
 		PanelName: SKIRMISH_STATS
 	RadarPings:
 	LoadWidgetAtGameStart:
+	ResourceRenderer:
+		RenderTypes: Tiberium, BlueTiberium
 
 EditorWorld:
 	Inherits: ^BaseWorld
@@ -210,6 +212,8 @@ EditorWorld:
 	EditorResourceLayer:
 	EditorSelectionLayer:
 	LoadWidgetAtGameStart:
+	EditorCursorLayer:
+	EditorActionManager:
 
 ^BasePlayer:
 	AlwaysVisible:
@@ -220,6 +224,7 @@ EditorPlayer:
 
 Player:
 	Inherits: ^BasePlayer
+	PlayerRadarTerrain:
 	PlaceBuilding:
 		NewOptionsNotification: NewOptions
 		CannotPlaceNotification: BuildingCannotPlaceAudio
@@ -632,7 +637,7 @@ Player:
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
-		UseLocation: yes
+		UseLocation: true
 	Targetable@GROUND:
 		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne
@@ -929,7 +934,7 @@ Player:
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
-		UseLocation: yes
+		UseLocation: true
 	HiddenUnderFog:
 		Type: GroundPosition
 		AlwaysVisibleStances: None
@@ -1006,7 +1011,7 @@ Player:
 		EmptyWeapon: BuildingExplode
 	CaptureNotification:
 		Notification: BuildingCaptured
-		NewOwnerVoice: no
+		NewOwnerVoice: false
 	ActorLostNotification:
 		Notification: BuildingLost
 	ShakeOnDeath:
@@ -1385,7 +1390,7 @@ Player:
 		Damage: 1
 		Interval: 8
 	Targetable:
-		RequiresForceFire: yes
+		RequiresForceFire: true
 		TargetTypes: Ground, Husk
 	CaptureManager:
 	Capturable:
@@ -1419,7 +1424,6 @@ Player:
 		VTOL: true
 		CanSlide: True
 	FallsToEarth:
-		Spins: True
 		Moves: False
 		Explosion: HeliCrash
 	Tooltip:
@@ -1435,7 +1439,7 @@ Player:
 		Name: Bridge
 		ShowOwnerRow: false
 	Targetable:
-		RequiresForceFire: yes
+		RequiresForceFire: true
 		TargetTypes: Ground, Water
 	Health:
 		HP: 600
@@ -1503,7 +1507,7 @@ CRATE:
 	GiveCashCrateAction:
 		Amount: 1000
 		SelectionShares: 20
-		UseCashTick: yes
+		UseCashTick: true
 	RevealMapCrateAction:
 		SelectionShares: 1
 		Sequence: reveal-map
