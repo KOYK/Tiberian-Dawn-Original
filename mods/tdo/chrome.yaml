@@ -303,7 +303,7 @@ observer-scrollitem-hover:
 dialog:
 	Image: dialog.png
 	Regions:
-		background: 0, 0, 480, 480
+		background: 0, 0, 479, 479
 		border-r: 0, 485, 3, 3
 		border-l: 0, 485, 3, 3
 		border-b: 0, 485, 3, 3
@@ -317,7 +317,7 @@ dialog:
 dialog2:
 	Image: dialog.png
 	Regions:
-		background: 136, 496, 14, 14
+		background: 135, 495, 14, 14
 		border-r: 149, 495, 2, 2
 		border-l: 133, 495, 2, 2
 		border-b: 135, 509, 2, 2

@@ -3,16 +3,8 @@
 Metrics:
 	ColorPickerActorType: fact.colorpicker
 	ColorPickerRemapIndices: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
-	FactionSuffix-allies: allies
 	FactionSuffix-england: gdi
-	FactionSuffix-france: allies
-	FactionSuffix-germany: allies
-	FactionSuffix-spain: allies
-	FactionSuffix-greece: allies
-	FactionSuffix-turkey: allies
 	FactionSuffix-russia: nod
-	FactionSuffix-soviet: soviet
-	FactionSuffix-ukraine: soviet
 	ChatLineSound: ChatLine
 	ClickDisabledSound: ClickDisabledSound
 	ClickSound: ClickSound
