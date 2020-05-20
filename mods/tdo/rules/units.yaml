@@ -92,8 +92,6 @@ FTNK:
 		Speed: 54
 	Health:
 		HP: 300
-	Repairable:
-		HpPerStep: 2046
 	Armor:
 		Type: 3
 	RevealsShroud:
@@ -133,8 +131,6 @@ STNK:
 		Speed: 90
 	Health:
 		HP: 110
-	Repairable:
-		HpPerStep: 758
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -184,8 +180,6 @@ LTNK:
 		Speed: 54
 	Health:
 		HP: 300
-	Repairable:
-		HpPerStep: 2273
 	Armor:
 		Type: 3
 	RevealsShroud:
@@ -227,8 +221,6 @@ MTNK:
 		Speed: 54
 	Health:
 		HP: 400
-	Repairable:
-		HpPerStep: 2557
 	Armor:
 		Type: 3
 	RevealsShroud:
@@ -274,8 +266,6 @@ HTNK:
 		TurnSpeed: 5
 	Health:
 		HP: 600
-	Repairable:
-		HpPerStep: 2637
 	Armor:
 		Type: 3
 	RevealsShroud:
@@ -299,7 +289,7 @@ HTNK:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	SelfHealing:
-		Step: 500
+		Step: 1
 		Delay: 10
 		HealIfBelow: 50
 		DamageCooldown: 200
@@ -314,6 +304,7 @@ HTNK:
 
 MHQ:
 	Inherits: ^Vehicle
+	-GrantConditionOnPrerequisite@HUSKS:
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -393,8 +384,6 @@ MLRS:
 		TurnSpeed: 5
 	Health:
 		HP: 120
-	Repairable:
-		HpPerStep: 1364
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -451,8 +440,6 @@ ARTY:
 		Speed: 36
 	Health:
 		HP: 75
-	Repairable:
-		HpPerStep: 569
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -509,8 +496,6 @@ HARV:
 		Speed: 36
 	Health:
 		HP: 600
-	Repairable:
-		HpPerStep: 2537
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -526,6 +511,11 @@ HARV:
 		RequiresCondition: !no-tiberium
 		Weapon: TiberiumExplosion
 	SelectionDecorations:
+	SelfHealing:
+		Step: 1
+		Delay: 10
+		HealIfBelow: 50
+		DamageCooldown: 200
 
 MCV:
 	Inherits: ^Vehicle
@@ -539,7 +529,7 @@ MCV:
 		Name: Mobile Construction Vehicle
 	Buildable:
 		BuildPaletteOrder: 100
-		Prerequisites: ~tl7, ~Disabled, ~!mhqr
+		Prerequisites: ~tl7, ~disabled, ~!mhqr
 		Queue: Vehicle
 		BuildDuration: 3750
 		BuildDurationModifier: 40
@@ -553,8 +543,6 @@ MCV:
 		Locomotor: heavywheeled
 	Health:
 		HP: 600
-	Repairable:
-		HpPerStep: 2182
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -622,8 +610,6 @@ JEEP:
 		Speed: 90
 	Health:
 		HP: 150
-	Repairable:
-		HpPerStep: 1819
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -664,8 +650,6 @@ BGGY:
 		Speed: 90
 	Health:
 		HP: 140
-	Repairable:
-		HpPerStep: 1819
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -707,8 +691,6 @@ BIKE:
 		Locomotor: bike
 	Health:
 		HP: 160
-	Repairable:
-		HpPerStep: 1000
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -736,7 +718,7 @@ MSAM:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~advhq, ~vehicleproduction, ~!SinglePlayer
+		Prerequisites: ~advhq, ~vehicleproduction, ~!singleplayer
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
 	Mobile:
@@ -744,8 +726,6 @@ MSAM:
 		Speed: 54
 	Health:
 		HP: 100
-	Repairable:
-		HpPerStep: 546
 	Armor:
 		Type: 2
 	RevealsShroud:
@@ -776,7 +756,7 @@ MSAM_SINGLEPLAYER:
 		Class: msam
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: ~eye, ~tl7, ~weap, ~SinglePlayer
+		Prerequisites: ~eye, ~tl7, ~weap, ~singleplayer
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
 
@@ -792,7 +772,7 @@ APC:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: ~barracks, ~vehicleproduction, ~tl4, ~!SinglePlayer
+		Prerequisites: ~barracks, ~vehicleproduction, ~tl4, ~!singleplayer
 		Queue: Vehicle
 		BuildDuration: 938
 		BuildDurationModifier: 40
@@ -803,8 +783,6 @@ APC:
 		PauseOnCondition: !(!notmobile)
 	Health:
 		HP: 200
-	Repairable:
-		HpPerStep: 1440
 	Armor:
 		Type: 3
 	RevealsShroud:
@@ -833,7 +811,7 @@ APC_SINGLEPLAYER:
 		Class: apc
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: ~pyle, ~weap, ~tl4, ~SinglePlayer
+		Prerequisites: ~pyle, ~weap, ~tl4, ~singleplayer
 	SpawnActorOnDeath:
 		Actor: APC.Husk
 
@@ -951,6 +929,7 @@ RAPT:
 
 MHQR:
 	Inherits: ^Vehicle
+	-GrantConditionOnPrerequisite@HUSKS:
 	RenderSprites:
 		Image: mhq
 	Valued:
@@ -1012,11 +991,12 @@ MHQR:
 
 MHQ_CASHREMOVER:
 	Inherits: ^Vehicle
+	-GrantConditionOnPrerequisite@HUSKS:
 	-Buildable:
+	-Selectable:
 	Interactable:
 	EditorOnlyTooltip:
 		Name: (Removes money then dies)
-	WithSpriteBody:
 	-RenderSprites:
 	RenderSpritesEditorOnly:
 		Image: camera
@@ -1460,7 +1440,6 @@ E5:
 		ProneOffset: 190,0,-190
 	AttackFrontal:
 	WithMuzzleOverlay:
-	-DamagedByTerrain:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
@@ -1504,7 +1483,7 @@ E6_MP:
 		Image: e6
 	-EngineerRepair:
 	Buildable:
-		Prerequisites: ~barracks, ~tl3, ~!EngineerSP, ~!SinglePlayer
+		Prerequisites: ~barracks, ~tl3, ~!EngineerSP, ~!singleplayer
 		Description: Damages and captures enemy structures.\n  Unarmed
 
 RMBO:
@@ -1565,16 +1544,19 @@ RMBO:
 C1:
 	Inherits: ^CivInfantry
 	Inherits@armed: ^ArmedCivilian
+	Health:
 		HP: 25
 
 C2:
 	Inherits: ^CivInfantry
+	Health:
 		HP: 5
 
 C3:
 	Inherits: ^CivInfantry
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
+	Health:
 		HP: 5
 
 C4:

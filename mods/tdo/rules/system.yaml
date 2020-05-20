@@ -583,6 +583,7 @@ Player:
 		TargetTypes: Ground, Vehicle
 	Repairable:
 		RepairActors: fix
+		HpPerStep: -1
 	Passenger:
 		CargoType: Vehicle
 	ActorLostNotification:
@@ -1069,17 +1070,11 @@ Player:
 		ReferencePoint: Center
 		Palette: player
 		IsPlayerPalette: True
-	GrantConditionOnPrerequisite:
-		Condition: ProductionBarEnabled
-		Prerequisites: PrerequisiteProductionBar
 
 ^ProductionBuilding:
-	Production:
-		Produces: Vehicle, Infantry, Soldier
 	PrimaryBuilding:
 		PrimaryCondition: primary
 		SelectionNotification: PrimaryBuildingSelected
-		ProductionQueues: Vehicle, Infantry, Soldier
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
@@ -1087,10 +1082,13 @@ Player:
 		ReferencePoint: Top
 		ZOffset: 256
 		RequiresCondition: primary
+	GrantConditionOnPrerequisite@ProductionBar:
+		Condition: ProductionBarEnabled
+		Prerequisites: PrerequisiteProductionBar
 
 ^CivBuilding:
 	Inherits: ^Building
-	-ConditionManager:
+	ConditionManager:
 	Tooltip:
 		ShowOwnerRow: false
 		GenericStancePrefix: True
@@ -1574,11 +1572,15 @@ waypoint:
 		Categories: System
 
 fact.colorpicker:
-	Inherits: FACT
+	Inherits: FIX
 	-Buildable:
 	-MapEditorData:
+	-Demolishable:
+	-Sellable:
+	-RepairsUnits:
+	-ExternalCondition@REPAIRING:
 	RenderSprites:
-		Image: fact
+		Image: fix
 		Palette: colorpicker
 
 CAMERA:
@@ -1640,3 +1642,17 @@ FLARE:
 	MapEditorData:
 		Categories: System
 	Interactable:
+
+SINGLEPLAYER:
+	ProvidesPrerequisite:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Single Player Rules
+
+DISABLED:
+	ProvidesPrerequisite:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Disabled

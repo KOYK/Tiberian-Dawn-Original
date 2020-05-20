@@ -86,6 +86,9 @@ FACT:
 	ProvidesPrerequisite@buildingname:
 	Buildable:
 		Description: Builds structures
+	GrantConditionOnPrerequisite@ProductionBar:
+		Condition: ProductionBarEnabled
+		Prerequisites: PrerequisiteProductionBar
 	ProductionBar:
 		ProductionType: Building
 		Color: FFFFFF
@@ -306,6 +309,7 @@ SILO:
 
 PYLE:
 	Inherits: ^BaseBuilding
+	Inherits@BuildingType: ^ProductionBuilding
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
@@ -315,15 +319,7 @@ PYLE:
 	Valued:
 		Cost: 300
 	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: -512
-		RequiresCondition: primary
+		ProductionQueues: Infantry, Soldier
 	Production:
 		Produces: Infantry, Soldier
 	Tooltip:
@@ -370,6 +366,7 @@ PYLE:
 HAND:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
+	Inherits@BuildingType: ^ProductionBuilding
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
@@ -378,15 +375,7 @@ HAND:
 	Production:
 		Produces: Infantry, Soldier
 	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		ProductionQueues: Infantry, Soldier
 	Tooltip:
 		Name: Hand of Nod
 	Buildable:
@@ -428,6 +417,7 @@ HAND:
 WEAP:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
+	Inherits@BuildingType: ^ProductionBuilding
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
 		Type: Rectangle
@@ -438,15 +428,7 @@ WEAP:
 	Production:
 		Produces: Vehicle
 	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		ProductionQueues: Vehicle
 	Tooltip:
 		Name: Weapons Factory
 	ProvidesPrerequisite@vehicleproduction:
@@ -491,6 +473,7 @@ WEAP:
 
 AFLD:
 	Inherits: ^BaseBuilding
+	Inherits@BuildingType: ^ProductionBuilding
 	Selectable:
 		Bounds: 96,48
 	HitShape:
@@ -501,15 +484,7 @@ AFLD:
 	Valued:
 		Cost: 2000
 	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		ProductionQueues: Vehicle
 	Tooltip:
 		Name: Airstrip
 	ProvidesPrerequisite@vehicleproduction:
@@ -553,6 +528,7 @@ AFLD:
 HPAD:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
+	Inherits@BuildingType: ^ProductionBuilding
 	Selectable:
 		Bounds: 48,48
 	HitShape:
@@ -561,15 +537,7 @@ HPAD:
 	Valued:
 		Cost: 1500
 	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		ProductionQueues: Aircraft
 	#Valued:
 	#	Cost: 300
 	Tooltip:
@@ -701,7 +669,7 @@ FIX:
 		AffectsParent: False
 	Sellable:
 		RefundPercent: 30
-		RequiresCondition: !Repairing
+		RequiresCondition: !Repairing && !build-incomplete && !being-demolished
 	ExternalCondition@REPAIRING:
 		Condition: Repairing
 	Buildable:
@@ -710,7 +678,7 @@ FIX:
 		Queue: Building
 		Description: Repairs vehicles
 	Building:
-		Footprint: _x_ xxx =x= ===
+		Footprint: _+_ +++ =+= ===
 		Dimensions: 3,4
 		LocalCenterOffset: 0,-512,0
 	Selectable:
@@ -728,9 +696,10 @@ FIX:
 		RequiresCondition: !build-incomplete
 	Reservable:
 	RepairsUnits:
-		HpPerStep: 1000
-		Interval: 15
-		PlayerExperience: 25
+		ValuePercentage: 40
+		HpPerStep: 4
+		Interval: 30
+		PlayerExperience: 1
 		StartRepairingNotification: Repairing
 	RallyPoint:
 	Power:
