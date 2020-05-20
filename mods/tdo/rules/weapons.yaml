@@ -327,7 +327,6 @@ MLRSMissile:
 		Shadow: true
 		TrailImage: smokey
 		Inaccuracy: 800
-		LaunchAngle: 62
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Damage: 75
@@ -550,7 +549,8 @@ HonestJohn:
 			1: 100
 			2: 69
 			3: 25
-	-Warhead@2Smu: LeaveSmudge
+	Warhead@2Smu: LeaveSmudge
+		Chance: 0
 	Warhead@4EffAir: CreateEffect
 		Explosions: poof
 
@@ -807,7 +807,8 @@ TiberiumExplosion:
 	Warhead@2Eff: CreateEffect
 		Explosions: chemball
 		ImpactSounds: xplosml2.aud
-	-Warhead@3Smu: LeaveSmudge
+	Warhead@3Smu: LeaveSmudge
+		Chance: 0
 	Warhead@4Res: CreateResource
 		AddsResourceType: Tiberium
 		Size: 1,1
@@ -856,7 +857,8 @@ OrcaAAMissiles:
 		Versus:
 			2: 84
 			3: 56
-	-Warhead@2Smu: LeaveSmudge
+	Warhead@2Smu: LeaveSmudge
+		Chance: 0
 
 227mm.stnk:
 	Inherits: Rocket

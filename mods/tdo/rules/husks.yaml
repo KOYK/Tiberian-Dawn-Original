@@ -14,12 +14,12 @@ MCV.Husk:
 	RenderSprites:
 		Image: mcv.destroyed
 
-NODGDI.Husk:
+MCVNOD.Husk:
 	Inherits: ^Husk
 	Tooltip:
 		Name: Nod Mobile Construction Vehicle (Destroyed)
 	TransformOnCapture:
-		IntoActor: mcvnod
+		IntoActor: mcv.nod
 	RenderSprites:
 		Image: mcv.destroyed
 
@@ -28,7 +28,7 @@ MCVGDI.Husk:
 	Tooltip:
 		Name: GDI Mobile Construction Vehicle (Destroyed)
 	TransformOnCapture:
-		IntoActor: mcvgdi
+		IntoActor: mcv.gdi
 	RenderSprites:
 		Image: mcv.destroyed
 
