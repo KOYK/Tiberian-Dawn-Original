@@ -1,6 +1,6 @@
 Player:
 	ModularBot@1:
-		Name: Very Easy
+		Name: Tutor
 		Type: 1
 	ModularBot@2:
 		Name: Easy
@@ -15,11 +15,8 @@ Player:
 		Name: Very Hard
 		Type: 5
 	ModularBot@6:
-		Name: Impossible
-		Type: 6
-	ModularBot@7:
 		Name: Nightmare
-		Type: 7
+		Type: 6
 	GrantConditionOnBotOwner@1:
 		Condition: enable-1-bot
 		Bots: 1
@@ -38,9 +35,6 @@ Player:
 	GrantConditionOnBotOwner@6:
 		Condition: enable-6-bot
 		Bots: 6
-	GrantConditionOnBotOwner@7:
-		Condition: enable-7-bot
-		Bots: 7
 	GrantConditionOnBotOwner@All:
 		Condition: enable-all-bot
-		Bots: 1,2,3,4,5,6,7
+		Bots: 1,2,3,4,5,6

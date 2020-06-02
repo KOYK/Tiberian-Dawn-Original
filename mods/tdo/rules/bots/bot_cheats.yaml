@@ -1,7 +1,4 @@
 ^Tank:
-	GrantConditionOnBotOwner@7:
-		Condition: rank-elite
-		Bots: 7
 	GrantConditionOnBotOwner@6:
 		Condition: rank-veteran-3
 		Bots: 6
@@ -13,9 +10,6 @@
 		Bots: 4
 
 ^Plane:
-	GrantConditionOnBotOwner@7:
-		Condition: rank-elite
-		Bots: 7
 	GrantConditionOnBotOwner@6:
 		Condition: rank-veteran-3
 		Bots: 6
@@ -27,9 +21,6 @@
 		Bots: 4
 
 ^Helicopter:
-	GrantConditionOnBotOwner@7:
-		Condition: rank-elite
-		Bots: 7
 	GrantConditionOnBotOwner@6:
 		Condition: rank-veteran-3
 		Bots: 6
@@ -42,8 +33,6 @@
 
 ^Soldier:
 	GrantConditionOnBotOwner@7:
-		Condition: rank-elite
-		Bots: 7
 	GrantConditionOnBotOwner@6:
 		Condition: rank-veteran-3
 		Bots: 6
@@ -55,9 +44,6 @@
 		Bots: 4
 
 HARV:
-	HarvesterResourceMultiplier@FreeCreditsBot_7:
-		RequiresCondition: enable-7-bot
-		Modifier: 200
 	HarvesterResourceMultiplier@FreeCreditsBot_6:
 		RequiresCondition: enable-6-bot
 		Modifier: 160
@@ -76,9 +62,6 @@ HARV:
 	HarvesterResourceMultiplier@FreeCreditsBot_1:
 		RequiresCondition: enable-1-bot
 		Modifier: 60
-	GrantConditionOnBotOwner@7:
-		Condition: enable-7-bot
-		Bots: 7
 	GrantConditionOnBotOwner@6:
 		Condition: enable-6-bot
 		Bots: 6
@@ -99,7 +82,7 @@ HARV:
 		Bots: 1
 	GrantConditionOnBotOwner@All:
 		Condition: enable-all-bot
-		Bots: 1,2,3,4,5,6,7
+		Bots: 1,2,3,4,5,6
 	ProvidesPrerequisite@BotOwner:
 		RequiresCondition: enable-all-bot
 		Prerequisite: BotOwner

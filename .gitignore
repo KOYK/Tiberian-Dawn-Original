@@ -17,3 +17,5 @@ Lua-API.md
 StyleCopViolations.xml
 .DS_Store
 Source TDO.lnk
+desktop.ini
+mods/tdo/rules/diplomacy.txt

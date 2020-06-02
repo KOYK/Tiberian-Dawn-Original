@@ -1,0 +1,16 @@
+Player:
+	BaseBuilderBotModule@Power:
+		RequiresCondition: enable-all-bot
+		MinimumExcessPower: 30
+		MaximumExcessPower: 150
+		ExcessPowerIncrement: 30
+		ExcessPowerIncreaseThreshold: 5
+		ConstructionYardTypes: fact
+		NewProductionCashThreshold: 10000
+		RefineryTypes: proc
+		PowerTypes: nuke,nuk2
+		BarracksTypes: pyle,hand
+		VehiclesFactoryTypes: weap,afld
+		ProductionTypes: pyle,hand,weap,afld,hpad
+		SiloTypes: silo
+		
