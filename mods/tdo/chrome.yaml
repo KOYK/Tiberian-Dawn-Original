@@ -236,6 +236,7 @@ sidebar-observer:
 	PanelRegion: 512, 167, 0, 0, 238, 287, 0, 0
 	PanelSides: Center
 	Regions:
+		background: 1, 1, 1, 1
 		replay-bottom: 512, 454, 238, 40
 		observer-bottom: 512, 495, 238, 8
 
