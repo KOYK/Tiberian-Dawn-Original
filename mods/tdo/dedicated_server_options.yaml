@@ -103,3 +103,7 @@ Player:
 		Enabled: True
 		Locked: False
 			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
+		Description: Build empty helipads that cost $300 
+		Enabled: False
+		Locked: False

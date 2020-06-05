@@ -347,6 +347,15 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: RegrowthOn
+	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
+		ID: emptypads
+		Label: Empty Helipads
+		Description: Build empty helipads that cost $300 
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: emptyhelipads
 #	#waiting for this https://github.com/OpenRA/OpenRA/issues/18040
 #	# LobbyPrerequisiteCheckbox@LOWCOSTMCV:
 #		# ID: lowcostmcv
