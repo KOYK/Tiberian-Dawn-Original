@@ -349,9 +349,9 @@ Player:
 		Prerequisites: RegrowthOn
 	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
 		ID: emptypads
-		Label: Empty Helipads
-		Description: Build empty helipads that cost $300 
-		Enabled: False
+		Label: Helipad With Aircraft
+		Description: Placed helipads spawn aircraft but they cost $1500
+		Enabled: True
 		Locked: False
 		Visible: True
 		DisplayOrder: 10

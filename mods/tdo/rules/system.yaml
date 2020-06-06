@@ -626,6 +626,12 @@ Player:
 	Sellable:
 		RefundPercent: 30
 		RequiresCondition: OnPad && !airborne || NearWall && !airborne
+	ProximityExternalCondition@ONHELIPAD:
+		Condition: occupied
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+		RequiresCondition: !airborne
 	ProximityExternalCondition@REPAIRING:
 		Condition: Repairing
 		Range: 1c0
@@ -665,6 +671,8 @@ Player:
 		IdleBehavior: Land
 		Crushes: crate
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
+		TurnToDock: True
+		TurnToLand: True
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:

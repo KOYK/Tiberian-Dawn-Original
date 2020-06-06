@@ -157,6 +157,16 @@ Rocket:
 		ImpactSounds: xplos.aud
 		ImpactActors: false
 		ValidTargets: Air
+RocketBurstGround:
+	Inherits: Rocket
+	Burst: 2
+	BurstDelays: 10
+	ValidTargets: Ground
+RocketBurstAir:
+	Inherits: Rocket
+	Burst: 2
+	BurstDelays: 10
+	ValidTargets: Air
 
 # Infantry flamethrower
 InfantryFlamer:

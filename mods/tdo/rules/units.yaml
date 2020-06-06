@@ -1059,7 +1059,6 @@ TRAN:
 		Prerequisites: ~hpad, ~tl6
 		Description: Fast Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
-		TurnToLand: True
 		InitialFacing: 1
 		TurnSpeed: 5
 		Speed: 90
@@ -1116,6 +1115,7 @@ HELI:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 120
+		InitialFacing: 224
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1170,6 +1170,7 @@ ORCA:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 120
+		InitialFacing: 224
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1181,22 +1182,26 @@ ORCA:
 		Range: 0c0
 		Type: GroundPosition
 	Armament@PRIMARY:
-		Weapon: Rocket
+		Name: primary
+		Weapon: RocketBurstGround
 		LocalOffset: 427,-171,-213, 427,171,-213
 		PauseOnCondition: !ammo
 		RequiresCondition: !PUTSUXEnabled
 	Armament@SECONDARY:
-		Weapon: Rocket
+		Name: secondary
+		Weapon: RocketBurstAir
 		LocalOffset: 427,-171,-213, 427,171,-213
 		PauseOnCondition: !ammo
 		RequiresCondition: !PUTSUXEnabled
 	Armament@PUTSUX:
 		RequiresCondition: PUTSUXEnabled
 		Weapon: Laser
+		Name: tertiary
 	AttackCharges:
 		RequiresCondition: PUTSUXEnabled
 		ChargeLevel: 50
 		ChargingCondition: charging
+		Armaments: tertiary 
 	AmbientSound:
 		RequiresCondition: charging
 		SoundFiles: obelpowr.aud

@@ -104,6 +104,6 @@ Player:
 		Locked: False
 			#can the admin player change this?
 	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
-		Description: Build empty helipads that cost $300 
-		Enabled: False
+		Description: Placed helipads spawn aircraft but they cost $1500
+		Enabled: True
 		Locked: False
