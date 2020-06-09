@@ -472,6 +472,10 @@ HARV:
 	Tooltip:
 		Name: Harvester
 		GenericName: Harvester
+	ProximityExternalCondition@DOCKINPROCESS:
+		Condition: dockinprocess
+		Range: 1c0
+		ValidStances: Ally
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~vehicleproduction, ~proc, ~tl2, ~!mhqr
@@ -494,6 +498,10 @@ HARV:
 	Mobile:
 		TurnSpeed: 5
 		Speed: 36
+	ExternalCondition@docked:
+		Condition: docked
+	RejectsOrders:
+		RequiresCondition: docked
 	Health:
 		HP: 600
 	Armor:
@@ -516,6 +524,8 @@ HARV:
 		Delay: 10
 		HealIfBelow: 50
 		DamageCooldown: 200
+	Targetable:
+		TargetTypes: Ground, Vehicle, harv
 
 MCV:
 	Inherits: ^Vehicle
