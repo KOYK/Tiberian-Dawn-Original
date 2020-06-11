@@ -253,6 +253,7 @@ PROC:
 		DragOffset: -554,512,0
 		DragLength: 12
 		TickRate: 15
+		DiscardExcessResources: True
 	StoresResources:
 		PipColor: Green
 		PipCount: 10
