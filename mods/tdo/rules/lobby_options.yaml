@@ -347,6 +347,15 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: RegrowthOn
+	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
+		ID: emptypads
+		Label: Helipad With Aircraft
+		Description: Placed helipads spawn aircraft but they cost $1500
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: emptyhelipads
 #	#waiting for this https://github.com/OpenRA/OpenRA/issues/18040
 #	# LobbyPrerequisiteCheckbox@LOWCOSTMCV:
 #		# ID: lowcostmcv
