@@ -16,6 +16,104 @@
 			Nod: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
 			Neutral: 192, 164, 132, 155, 133, 197, 112, 12, 163, 132, 155, 133, 134, 197, 154, 198
 
+World:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxEnabled: False
+			#Build on allied base
+		AllyBuildRadiusCheckboxLocked: True
+	MapOptions:
+		ShortGameCheckboxEnabled: False
+			#die if you lose all buildings
+		TechLevel: tl6
+			#Tech Levels are: tl1, tl2, tl3, tl4, tl5, tl6, tl7
+		TechLevelDropdownLocked: True
+			#True means players wont be able to change Tech Level
+		GameSpeed: default
+			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
+		GameSpeedDropdownLocked: False
+			#Lock the speed?
+	-MPStartLocations:
+	MapCreeps:
+		CheckboxEnabled: False
+			#Spawn Visceroids on map?
+		CheckboxLocked: True
+	-SpawnMPUnits:
+
+Player:
+	DeveloperMode:
+		CheckboxEnabled: false
+			#enable cheats?
+		CheckboxLocked: false
+			#force cheats checkbox status?
+	PlayerResources:
+		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000
+		DefaultCashDropdownVisible: True
+		DefaultCash: 5000
+		DefaultCashDropdownLocked: True
+	Shroud:
+		FogCheckboxEnabled: False
+			#fog of war? meh dont do it, let it be off
+		FogCheckboxLocked: True
+		ExploredMapCheckboxEnabled: False
+			#the dakness
+		ExploredMapCheckboxLocked: True
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		Enabled: False
+			#Allow undeploying Construction Yard?
+		Locked: True
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@HUSKS:
+		Enabled: False
+			#enable husks that can be captured and repaired?
+		Locked: True
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@LINEWALLS:
+		Enabled: False
+			#Allows more walls to be build in a line
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
+		Description: Allows the use of Nuclear Missile and Ion Cannon
+		Enabled: True
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
+		Description: Allows the use of Supply Trucks that can aid allies with money
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@PRODUCTIONBAR:
+		Description: Shows loading bars over producing buildings
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
+		Description: Campaign Color theme, Tech level, AI Boost, GDI Airstrike, Capturable Chinook
+		Enabled: True
+		Locked: True
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@PUTSUX:
+		Description: Gives orcas obelisk's laser weapon, not recomended
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
+		Description: Enables ability to capture tech buildings
+		Enabled: False
+		Locked: True
+	LobbyPrerequisiteCheckbox@ENGINEERSP:
+		Description: Enables snigleplayer ability of engineers to repair buildings
+		Enabled: True
+		Locked: True
+	LobbyPrerequisiteCheckbox@GLOBALLPDAMAGE:
+		Description: Buildings get damaged while low on power
+		Enabled: True
+		Locked: True
+	LobbyPrerequisiteCheckbox@REGROWTH:
+		Description: Tiberium will regenerate
+		Enabled: True
+		Locked: True
+
 ^GenericTooltipNames:
 	Tooltip:
 		GenericStancePrefix: True
@@ -50,14 +148,6 @@
 C17:
 	RenderSprites:
 		PlayerPalette: player-units
-	Contrail@1:
-		UsePlayerColor: False
-	Contrail@2:
-		UsePlayerColor: False
-	Contrail@3:
-		UsePlayerColor: False
-	Contrail@4:
-		UsePlayerColor: False
 
 HARV:
 	RenderSprites:
@@ -74,3 +164,68 @@ HARV.Husk:
 MCV.Husk:
 	RenderSprites:
 		PlayerPalette: player
+
+
+^Plane:
+
+^Ship:
+
+^Building:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Wall:
+	Tooltip:
+		ShowOwnerRow: false
+
+^CivBuilding:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^CivBuildingHusk:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^TechBuilding:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: false
+
+^CommonHuskDefaults:
+	Tooltip:
+		GenericVisibility: Enemy, Ally, Neutral
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+
+^DINO:
+	Tooltip:
+		ShowOwnerRow: false
+
+MISS:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+V19.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+HOSP.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+BIO.Husk:
+	Tooltip:
+		GenericVisibility: None

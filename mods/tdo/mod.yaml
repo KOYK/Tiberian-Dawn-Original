@@ -167,35 +167,35 @@ ChromeMetrics:
 Fonts:
 	Tiny:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 10
+		Size: 8
 		Ascender: 8
 	TinyBold:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 10
+		Size: 8
 		Ascender: 8
 	Small:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 12
+		Size: 10
 		Ascender: 9
 	Regular:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 14
+		Size: 12
 		Ascender: 11
 	Bold:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 14
+		Size: 12
 		Ascender: 11
 	MediumBold:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 18
+		Size: 16
 		Ascender: 14
 	BigBold:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 24
+		Size: 22
 		Ascender: 18
 	Title:
 		Font: tdo|retro_computer_personal_use.ttf
-		Size: 48
+		Size: 46
 		Ascender: 26
 
 Missions:

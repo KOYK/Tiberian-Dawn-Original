@@ -399,7 +399,9 @@ MLRS:
 		Ammo: 2
 		PipCount: 0
 		AmmoCondition: ammo
-	AttackTurreted:
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: False
 	WithSpriteTurret:
 		RequiresCondition: ammo > 1
 	WithSpriteTurret@OneMissile:
@@ -410,7 +412,6 @@ MLRS:
 		Sequence: turret0
 	AutoTarget:
 		InitialStanceAI: Defend
-	RenderRangeCircle:
 	SpawnActorOnDeath:
 		Actor: MLRS.Husk
 		OwnerType: InternalName
@@ -419,6 +420,60 @@ MLRS:
 	ReloadAmmoPool:
 		Delay: 300
 		Count: 1
+
+MSAM:
+	Inherits: ^Tank
+	Inherits@CLOAK: ^AcceptsCloakCrate
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Rocket Launcher
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~advhq, ~vehicleproduction, ~!singleplayer
+		Queue: Vehicle
+		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
+	Mobile:
+		TurnSpeed: 5
+		Speed: 54
+	Health:
+		HP: 100
+	Armor:
+		Type: 2
+	RevealsShroud:
+		Range: 4c0
+	Turreted:
+		TurnSpeed: 255
+		Offset: -256,0,128
+	Armament@PRIMARY:
+		Name: primary
+		Weapon: MLRSMissile
+		LocalOffset: 213,128,0, 213,-128,0
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: False
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: MSAM.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
+		RequiresCondition: HusksEnabled
+	WithTurretAimAnimation:
+		Sequence: aim
+MSAM_SINGLEPLAYER:
+	Inherits@OriginalActor: MSAM
+	RenderSprites:
+		Image: msam
+	Selectable:
+		Class: msam
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: ~eye, ~tl7, ~weap, ~singleplayer
+	SpawnActorOnDeath:
+		Actor: MSAM.Husk
 
 ARTY:
 	Inherits: ^Tank
@@ -472,6 +527,10 @@ HARV:
 	Tooltip:
 		Name: Harvester
 		GenericName: Harvester
+	ProximityExternalCondition@DOCKINPROCESS:
+		Condition: dockinprocess
+		Range: 1c0
+		ValidStances: Ally
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~vehicleproduction, ~proc, ~tl2, ~!mhqr
@@ -494,6 +553,10 @@ HARV:
 	Mobile:
 		TurnSpeed: 5
 		Speed: 36
+	ExternalCondition@docked:
+		Condition: docked
+	RejectsOrders:
+		RequiresCondition: docked
 	Health:
 		HP: 600
 	Armor:
@@ -516,6 +579,8 @@ HARV:
 		Delay: 10
 		HealIfBelow: 50
 		DamageCooldown: 200
+	Targetable:
+		TargetTypes: Ground, Vehicle, harv
 
 MCV:
 	Inherits: ^Vehicle
@@ -705,60 +770,6 @@ BIKE:
 		OwnerType: InternalName
 		EffectiveOwnerFromOwner: true
 		RequiresCondition: HusksEnabled
-
-MSAM:
-	Inherits: ^Tank
-	Inherits@CLOAK: ^AcceptsCloakCrate
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Valued:
-		Cost: 800
-	Tooltip:
-		Name: Rocket Launcher
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Buildable:
-		BuildPaletteOrder: 50
-		Prerequisites: ~advhq, ~vehicleproduction, ~!singleplayer
-		Queue: Vehicle
-		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
-	Mobile:
-		TurnSpeed: 5
-		Speed: 54
-	Health:
-		HP: 100
-	Armor:
-		Type: 2
-	RevealsShroud:
-		Range: 4c0
-	Turreted:
-		TurnSpeed: 255
-		Offset: -256,0,128
-	Armament@PRIMARY:
-		Name: primary
-		Weapon: MLRSMissile
-		LocalOffset: 213,128,0, 213,-128,0
-	AttackFrontal:
-		TargetFrozenActors: True
-		ForceFireIgnoresActors: False
-	WithSpriteTurret:
-	SpawnActorOnDeath:
-		Actor: MSAM.Husk
-		OwnerType: InternalName
-		EffectiveOwnerFromOwner: true
-		RequiresCondition: HusksEnabled
-	WithTurretAimAnimation:
-		Sequence: aim
-MSAM_SINGLEPLAYER:
-	Inherits@OriginalActor: MSAM
-	RenderSprites:
-		Image: msam
-	Selectable:
-		Class: msam
-	Buildable:
-		BuildPaletteOrder: 30
-		Prerequisites: ~eye, ~tl7, ~weap, ~singleplayer
-	SpawnActorOnDeath:
-		Actor: MSAM.Husk
 
 APC:
 	Inherits: ^Tank
@@ -1059,7 +1070,6 @@ TRAN:
 		Prerequisites: ~hpad, ~tl6
 		Description: Fast Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
-		TurnToLand: True
 		InitialFacing: 1
 		TurnSpeed: 5
 		Speed: 90
@@ -1116,6 +1126,7 @@ HELI:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 120
+		InitialFacing: 224
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1170,6 +1181,7 @@ ORCA:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 120
+		InitialFacing: 224
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1181,22 +1193,26 @@ ORCA:
 		Range: 0c0
 		Type: GroundPosition
 	Armament@PRIMARY:
-		Weapon: Rocket
+		Name: primary
+		Weapon: RocketBurstGround
 		LocalOffset: 427,-171,-213, 427,171,-213
 		PauseOnCondition: !ammo
 		RequiresCondition: !PUTSUXEnabled
 	Armament@SECONDARY:
-		Weapon: Rocket
+		Name: secondary
+		Weapon: RocketBurstAir
 		LocalOffset: 427,-171,-213, 427,171,-213
 		PauseOnCondition: !ammo
 		RequiresCondition: !PUTSUXEnabled
 	Armament@PUTSUX:
 		RequiresCondition: PUTSUXEnabled
 		Weapon: Laser
+		Name: tertiary
 	AttackCharges:
 		RequiresCondition: PUTSUXEnabled
 		ChargeLevel: 50
 		ChargingCondition: charging
+		Armaments: tertiary 
 	AmbientSound:
 		RequiresCondition: charging
 		SoundFiles: obelpowr.aud
@@ -1240,18 +1256,6 @@ C17:
 		PipCount: 10
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
-	Contrail@1:
-		Offset: -261,-650,0
-		TrailLength: 15
-	Contrail@2:
-		Offset: -85,-384,0
-		TrailLength: 16
-	Contrail@3:
-		Offset: -85,384,0
-		TrailLength: 16
-	Contrail@4:
-		Offset: -261,650,0
-		TrailLength: 15
 	-MapEditorData:
 
 A10:
@@ -1278,12 +1282,6 @@ A10:
 		Name: bombs
 		Weapon: Napalm
 		LocalOffset: 0,-256,-43, 0,256,-43
-	Contrail@1:
-		Offset: -640,171,0
-		TrailLength: 15
-	Contrail@2:
-		Offset: -640,-171,0
-		TrailLength: 15
 	-MapEditorData:
 
 E1:
