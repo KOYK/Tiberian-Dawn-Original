@@ -1,0 +1,29 @@
+Done some UI edits.
+Temporary fix for fonts.
+Added game mode Nod Vs GDI using anthrax map by norman.
+Set default starting units to mcv only.
+Removed SSM launcher RenderRangeCircle trait.
+Removed all smoke trails from weapons and aircrafts.
+Removed Allied repair.
+Removed power down button from the UI.
+Fixed SSM launcher not to fire while moving.
+Added sound chat icon to production bar, not working yet.
+Harvesters will now die along with the refinery if docked.
+Harvesters wont recive commands from the player while they are docked to refinery.
+Removed ability to sell the refinery if harvester is docked.
+Refinery now discard resources once silo capacity has been reached, like the original.
+Added active sequence animation of refinery, for later use when it will be possible to solve issue #97.
+Aircrafts wont hover above cliffs (fixed by the new engine update).
+Apache and Orca now turn to land.
+FreeActor trait now waits for helipad to finish its build animation before it spawns an aircraft.
+FreeActor Trait can be turned off or on for helipads in the lobby.
+Build Duration for helipad is now faster.
+Orca now gets back to helipad to reload.
+Orca weapons now fire in correct burst.
+Newly trained aircraft units will arrive from map edge if all helipads are occupied.
+Added speed penalty on damaged vehicles
+Fixed grenadier not doing expected damage, changed spalsh damage from 6 into 128, NOTE: 6 is the value taken as it is from the original game, Changed inaccuracy from 813 into 600 as it was too inaccurate vs the original game, also changed LaunchAngle into 92 from 62 as a visual change, NOTE: This is not fully tested with the original game, further tests are adviced.
+Fixed observer CTD.
+Contribution By sayedmamdouh!!
+sayedmamdouh Has fixed the missplaced actors on all maps, by converting the maps from the original game.
+He also added a missing map "lakefront clash".

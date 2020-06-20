@@ -1,13 +1,13 @@
 Player:
+	ModularBot@3:
+		Name: Normal
+		Type: 3
 	ModularBot@1:
 		Name: Tutor
 		Type: 1
 	ModularBot@2:
 		Name: Easy
 		Type: 2
-	ModularBot@3:
-		Name: Normal
-		Type: 3
 	ModularBot@4:
 		Name: Hard
 		Type: 4
