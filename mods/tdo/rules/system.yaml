@@ -574,6 +574,13 @@ Player:
 	Mobile:
 		Locomotor: wheeled
 		TurnSpeed: 5
+	GrantConditionOnDamageState@Heavy-Critical:
+		ValidDamageStates: Heavy, Critical
+		Condition: lowhealth
+		GrantPermanently: False
+	SpeedMultiplier:
+		Modifier: 90
+		RequiresCondition: lowhealth
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
