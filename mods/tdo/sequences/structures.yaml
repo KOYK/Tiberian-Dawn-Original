@@ -55,6 +55,16 @@ proc:
 		Length: 6
 		Tick: 120
 		Offset: 2,4
+	active:
+		Start: 7
+		Length: 3
+		Tick: 120
+		Offset: 2,4
+	damaged-active:
+		Start: 37
+		Length: 3
+		Tick: 120
+		Offset: 2,4
 	dead:
 		Start: 60
 		Tick: 800

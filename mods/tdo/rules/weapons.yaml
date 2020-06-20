@@ -129,9 +129,9 @@ Rocket:
 		Shadow: true
 		HorizontalRateOfTurn: 15
 		TrailImage: smokey
-		ContrailColor: 666F7B
-		ContrailLength: 10
-		ContrailWidth: 10
+		# ContrailColor: 666F7B
+		# ContrailLength: 10
+		# ContrailWidth: 10
 		Speed: 298
 		RangeLimit: 7c204
 	Warhead@1Dam: SpreadDamage
@@ -157,6 +157,16 @@ Rocket:
 		ImpactSounds: xplos.aud
 		ImpactActors: false
 		ValidTargets: Air
+RocketBurstGround:
+	Inherits: Rocket
+	Burst: 2
+	BurstDelays: 10
+	ValidTargets: Ground
+RocketBurstAir:
+	Inherits: Rocket
+	Burst: 2
+	BurstDelays: 10
+	ValidTargets: Air
 
 # Infantry flamethrower
 InfantryFlamer:
@@ -211,11 +221,11 @@ Grenade:
 	Projectile: Bullet
 		Speed: 140
 		Blockable: false
-		LaunchAngle: 62
-		Inaccuracy: 813
+		LaunchAngle: 92
+		Inaccuracy: 600
 		Image: BOMB
 	Warhead@1Dam: SpreadDamage
-		Spread: 6
+		Spread: 128
 		Damage: 50
 		Versus:
 			0: 87
@@ -355,7 +365,9 @@ ArtilleryShell:
 		Blockable: false
 		LaunchAngle: 56
 		Inaccuracy: 1c256
-		ContrailLength: 30
+		# ContrailColor: 666F7B
+		# ContrailLength: 10
+		# ContrailWidth: 10
 	Warhead@1Dam: SpreadDamage
 		Spread: 6
 		Damage: 150
@@ -540,6 +552,7 @@ HonestJohn:
 		Speed: 300
 		RangeLimit: 10c819
 		Inaccuracy: 0
+		LockOnProbability: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 682
 		Damage: 100
@@ -778,6 +791,19 @@ BuildingExplode:
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		Delay: 1
+
+BuildingExplodeRef:
+	Warhead@1Eff: CreateEffect
+		Explosions: building, building_napalm, med_frag, poof, small_building
+		Delay: 1
+		ImpactActors: false
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		Delay: 1
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 2000
+		ValidTargets: harv
 
 Napalm.Crate:
 	Inherits: ^DamagingExplosionHE

@@ -221,6 +221,10 @@ PROC:
 			BottomRight: 896, -512
 	Valued:
 		Cost: 2000
+	ExternalCondition:
+		Condition: dockinprocess
+	Sellable:
+		RequiresCondition: !dockinprocess
 	Tooltip:
 		Name: Tiberium Refinery
 	Buildable:
@@ -238,6 +242,10 @@ PROC:
 		Type: 1
 	RevealsShroud:
 		Range: 4c0
+	ProximityExternalCondition@DOCKED:
+		Condition: docked
+		Range: 1c0
+		ValidStances: Ally
 	Refinery:
 		DockAngle: 112
 		DockOffset: 0,2
@@ -245,6 +253,7 @@ PROC:
 		DragOffset: -554,512,0
 		DragLength: 12
 		TickRate: 15
+		DiscardExcessResources: True
 	StoresResources:
 		PipColor: Green
 		PipCount: 10
@@ -265,6 +274,10 @@ PROC:
 		Amount: -40
 	ProvidesPrerequisite@buildingname:
 	SelectionDecorations:
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplodeRef
+		EmptyWeapon: BuildingExplodeRef
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -536,10 +549,14 @@ HPAD:
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Valued:
 		Cost: 1500
+	ProductionCostMultiplier:
+		Multiplier: 20
+		Prerequisites: !emptyhelipads
+	GrantConditionOnPrerequisite@EMPTYHELIPADS:
+		Prerequisites: emptyhelipads
+		Condition: ConEmptyHelipads
 	PrimaryBuilding:
 		ProductionQueues: Aircraft
-	#Valued:
-	#	Cost: 300
 	Tooltip:
 		Name: Helipad
 	Buildable:
@@ -547,6 +564,7 @@ HPAD:
 		Prerequisites: ~barracks, ~tl6
 		Queue: Building
 		Description: Produces and rearms helicopters
+		BuildDuration: 300
 	ProductionBar:
 		ProductionType: Aircraft
 		Color: 00FFDF
@@ -569,12 +587,12 @@ HPAD:
 		Actor: heli
 		Facing: 224
 		SpawnOffset: 0,0
-		RequiresCondition: NodHelipad
+		RequiresCondition: NodHelipad && ConEmptyHelipads && !build-incomplete
 	FreeActor@Orca:
 		Actor: orca
 		Facing: 224
 		SpawnOffset: 0,0
-		RequiresCondition: GDIHelipad
+		RequiresCondition: GDIHelipad && ConEmptyHelipads && !build-incomplete
 	Building:
 		Footprint: xx xx ==
 		Dimensions: 2,3
@@ -589,8 +607,14 @@ HPAD:
 	Exit@1:
 		SpawnOffset: 0,-256,0
 		ProductionTypes: Aircraft
-	ProductionFromMapEdge:
+	ExternalCondition@OCCUPIEDSTATUS:
+		Condition: occupied
+	ProductionFromMapEdge@UNOCCUPIED:
 		Produces: Aircraft
+		PauseOnCondition: !occupied 
+	Production@OCCUPIED:
+		Produces: Aircraft
+		PauseOnCondition: occupied
 	Reservable:
 	WithResupplyAnimation:
 		RequiresCondition: !build-incomplete

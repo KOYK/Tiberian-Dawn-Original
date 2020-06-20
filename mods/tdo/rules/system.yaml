@@ -297,7 +297,6 @@ Player:
 		LeaveNotification: Leave
 	PowerManager:
 		SpeechNotification: LowPower
-	AllyRepair:
 	BaseAttackNotifier:
 	PlayerStatistics:
 	FrozenActorLayer:
@@ -575,6 +574,13 @@ Player:
 	Mobile:
 		Locomotor: wheeled
 		TurnSpeed: 5
+	GrantConditionOnDamageState@Heavy-Critical:
+		ValidDamageStates: Heavy, Critical
+		Condition: lowhealth
+		GrantPermanently: False
+	SpeedMultiplier:
+		Modifier: 90
+		RequiresCondition: lowhealth
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -626,6 +632,12 @@ Player:
 	Sellable:
 		RefundPercent: 30
 		RequiresCondition: OnPad && !airborne || NearWall && !airborne
+	ProximityExternalCondition@ONHELIPAD:
+		Condition: occupied
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+		RequiresCondition: !airborne
 	ProximityExternalCondition@REPAIRING:
 		Condition: Repairing
 		Range: 1c0
@@ -665,6 +677,8 @@ Player:
 		IdleBehavior: Land
 		Crushes: crate
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
+		TurnToDock: True
+		TurnToLand: True
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:
@@ -1071,6 +1085,19 @@ Player:
 		Palette: player
 		IsPlayerPalette: True
 
+^Defense:
+	Inherits: ^BaseBuilding
+	RenderRangeCircle:
+	RenderDetectionCircle:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Targetable:
+		TargetTypes: Ground, C4, Structure, Defense
+	MapEditorData:
+		Categories: Defense
+	-CommandBarBlacklist:
+	-AcceptsDeliveredCash:
+
 ^ProductionBuilding:
 	PrimaryBuilding:
 		PrimaryCondition: primary
@@ -1472,19 +1499,6 @@ Player:
 		XmasImages: xcratea, xcrateb, xcratec, xcrated
 	MapEditorData:
 		Categories: System
-
-^Defense:
-	Inherits: ^BaseBuilding
-	RenderRangeCircle:
-	RenderDetectionCircle:
-	MustBeDestroyed:
-		RequiredForShortGame: false
-	Targetable:
-		TargetTypes: Ground, C4, Structure, Defense
-	MapEditorData:
-		Categories: Defense
-	-CommandBarBlacklist:
-	-AcceptsDeliveredCash:
 
 ^DisabledOverlay:
 	GrantConditionOnPowerState@LOWPOWER:
