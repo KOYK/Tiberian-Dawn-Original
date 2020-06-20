@@ -129,9 +129,9 @@ Rocket:
 		Shadow: true
 		HorizontalRateOfTurn: 15
 		TrailImage: smokey
-		ContrailColor: 666F7B
-		ContrailLength: 10
-		ContrailWidth: 10
+		# ContrailColor: 666F7B
+		# ContrailLength: 10
+		# ContrailWidth: 10
 		Speed: 298
 		RangeLimit: 7c204
 	Warhead@1Dam: SpreadDamage
@@ -355,7 +355,9 @@ ArtilleryShell:
 		Blockable: false
 		LaunchAngle: 56
 		Inaccuracy: 1c256
-		ContrailLength: 30
+		# ContrailColor: 666F7B
+		# ContrailLength: 10
+		# ContrailWidth: 10
 	Warhead@1Dam: SpreadDamage
 		Spread: 6
 		Damage: 150
@@ -540,6 +542,7 @@ HonestJohn:
 		Speed: 300
 		RangeLimit: 10c819
 		Inaccuracy: 0
+		LockOnProbability: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 682
 		Damage: 100
