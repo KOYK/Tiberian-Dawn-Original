@@ -221,6 +221,10 @@ PROC:
 			BottomRight: 896, -512
 	Valued:
 		Cost: 2000
+	ExternalCondition:
+		Condition: dockinprocess
+	Sellable:
+		RequiresCondition: !dockinprocess
 	Tooltip:
 		Name: Tiberium Refinery
 	Buildable:
@@ -238,6 +242,10 @@ PROC:
 		Type: 1
 	RevealsShroud:
 		Range: 4c0
+	ProximityExternalCondition@DOCKED:
+		Condition: docked
+		Range: 1c0
+		ValidStances: Ally
 	Refinery:
 		DockAngle: 112
 		DockOffset: 0,2
@@ -245,6 +253,7 @@ PROC:
 		DragOffset: -554,512,0
 		DragLength: 12
 		TickRate: 15
+		DiscardExcessResources: True
 	StoresResources:
 		PipColor: Green
 		PipCount: 10
@@ -265,6 +274,10 @@ PROC:
 		Amount: -40
 	ProvidesPrerequisite@buildingname:
 	SelectionDecorations:
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplodeRef
+		EmptyWeapon: BuildingExplodeRef
 
 SILO:
 	Inherits: ^BaseBuilding
