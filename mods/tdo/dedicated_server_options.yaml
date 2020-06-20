@@ -23,7 +23,7 @@ World:
 		CheckboxEnabled: True
 			#Spawn Visceroids on map?
 	SpawnMPUnits:
-		StartingUnitsClass: light
+		StartingUnitsClass: none
 			#starting units Classes are: MHQR, none(mcv only), light, heavy, 5(with MHQ), 10(with MHQ), 20(with MHQ), 30(with MHQ), 40(with MHQ), 50(with MHQ), Dino(MHQ With Dinosaurs). 
 		DropdownLocked: False
 			#lock starting units?

@@ -58,7 +58,7 @@ World:
 		DropdownDescription: Set the starting units
 		DropdownVisible: True
 		DropdownDisplayOrder: 0
-		StartingUnitsClass: light
+		StartingUnitsClass: none
 		DropdownLocked: False
 	MPStartUnits@mhqR:
 		Class: MHQR
@@ -147,7 +147,7 @@ World:
 		ClassName: MHQ With 50 Units
 		Factions: nod
 		BaseActor: mhq
-		SupportActors: ltnk,bggy,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,bike,rmbo,arty,msam,msam,bike,e5,e5,e5,e5,e5,rmbo,rmbo,rmbo,		apc,apc,apc,mlrs,mlrs,mlrs,stnk,stnk,stnk,stnk
+		SupportActors: ltnk,bggy,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,bike,rmbo,arty,msam,msam,bike,e5,e5,e5,e5,e5,rmbo,rmbo,rmbo,apc,apc,apc,mlrs,mlrs,mlrs,stnk,stnk,stnk,stnk
 	MPStartUnits@mhq_Dino:
 		Class: Dino
 		ClassName: MHQ With Dinosaurs
@@ -189,7 +189,7 @@ World:
 		ClassName: MHQ With 50 Units
 		Factions: gdi
 		BaseActor: mhq
-		SupportActors: mtnk,jeep,e1,e3,e3,e3,mtnk,jeep,e1,mlrs,mlrs,apc,mtnk,mtnk,e1,e1,e1,e1,e1,htnk,htnk,htnk,e1,e1,jeep,apc,apc,rmbo,mlrs,msam,msam,apc,e2,e2,e2,e2,e2,rmbo,rmbo,rmbo,		apc,apc,apc,mlrs,mlrs,mlrs,jeep,jeep,mtnk,mtnk
+		SupportActors: mtnk,jeep,e1,e3,e3,e3,mtnk,jeep,e1,mlrs,mlrs,apc,mtnk,mtnk,e1,e1,e1,e1,e1,htnk,htnk,htnk,e1,e1,jeep,apc,apc,rmbo,mlrs,msam,msam,apc,e2,e2,e2,e2,e2,rmbo,rmbo,rmbo,apc,apc,apc,mlrs,mlrs,mlrs,jeep,jeep,mtnk,mtnk
 
 Player:
 	ProvidesTechPrerequisite@TL1:
