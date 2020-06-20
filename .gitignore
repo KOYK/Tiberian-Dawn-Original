@@ -19,6 +19,7 @@ StyleCopViolations.xml
 Source TDO.lnk
 desktop.ini
 mods/tdo/rules/diplomacy.txt
+mods/tdo/maps/warteams.oramap
 mods/tdo/maps/devtest/scripts.lua
 mods/tdo/maps/devtest/rules.yaml
 mods/tdo/maps/devtest/map.yaml
