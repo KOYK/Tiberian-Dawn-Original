@@ -4,7 +4,7 @@ Player:
 		MinimumExcessPower: 30
 		MaximumExcessPower: 150
 		ExcessPowerIncrement: 30
-		ExcessPowerIncreaseThreshold: 5
+		ExcessPowerIncreaseThreshold: 1
 		ConstructionYardTypes: fact
 		NewProductionCashThreshold: 10000
 		RefineryTypes: proc

@@ -305,6 +305,7 @@ Player:
 	ResourceStorageWarning:
 	PlayerExperience:
 	ConditionManager:
+	AllyRepair:
 
 ^Palettes:
 	PaletteFromFile@terrain-desert:
@@ -1061,7 +1062,7 @@ Player:
 		RepairStep: 7
 		PlayerExperience: 1
 		RepairingNotification: Repairing
-		RepairBonuses: 100, 100, 100, 100, 100, 100, 100, 100, 100
+		RepairBonuses: 100, 0
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
