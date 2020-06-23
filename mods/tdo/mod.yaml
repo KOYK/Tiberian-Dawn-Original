@@ -42,13 +42,17 @@ MapFolders:
 
 Rules:
 	tdo|rules/system.yaml
-	tdo|rules/ai.yaml
 	tdo|rules/structures.yaml
 	tdo|rules/units.yaml
 	tdo|rules/trees.yaml
 	tdo|rules/husks.yaml
 	tdo|rules/lobby_options.yaml
 	tdo|dedicated_server_options.yaml
+	tdo|rules/bots/ModularBot.yaml
+	tdo|rules/bots/BaseBuilderBotModule.yaml
+	tdo|rules/bots/UnitBuilderBotModule.yaml
+	tdo|rules/bots/SupportPowerBotModule.yaml
+	tdo|rules/bots/SquadManagerBotModule.yaml
 
 Sequences:
 	tdo|sequences/structures.yaml

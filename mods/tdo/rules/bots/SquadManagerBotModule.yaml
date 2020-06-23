@@ -1,0 +1,35 @@
+Player:
+	SquadManagerBotModule:
+		RequiresCondition: enable-all-bot
+		SquadSize: 10
+		ExcludeFromSquadsTypes: harv, mcv, mcv.nod, mcv.gdi, mhqr, e6_mp, e6, e1.scout, e2.scout
+		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		NavalUnitsTypes:
+		SquadSizeRandomBonus: 5
+		AssignRolesInterval: 50
+		RushInterval: 600
+		AttackForceInterval: 75
+		MinimumAttackForceDelay: 25
+		RushAttackScanRadius: 40
+		ProtectUnitScanRadius: 40
+		MaxBaseRadius: 40
+		IdleScanRadius: 15
+		DangerScanRadius: 30
+		AttackScanRadius: 15
+		ProtectionScanRadius: 40
+	SquadManagerBotModule@NodAndGDI:
+		RequiresCondition: enable-all-bot && factn && factg
+		SquadSize: 5
+		ExcludeFromSquadsTypes: harv, mcv, mcv.nod, mcv.gdi, mhqr, e6_mp, e6, e1.scout, e2.scout
+		ConstructionYardTypes: fact,fact.nod,fact.gdi 
+	SquadManagerBotModule@Nod:
+		RequiresCondition: enable-all-bot && factn
+		SquadSize: 15
+		ExcludeFromSquadsTypes: harv,mcv.nod, mhqr, e6_mp, e6
+		ConstructionYardTypes: fact.nod
+	SquadManagerBotModule@GDI:
+		RequiresCondition: enable-all-bot && factg
+		SquadSize: 10
+		ExcludeFromSquadsTypes: harv,mcv.gdi,mhqr, e6_mp, e6
+		ConstructionYardTypes: fact.gdi
+		

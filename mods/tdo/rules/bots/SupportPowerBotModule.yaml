@@ -7,13 +7,13 @@ Player:
 				MinimumAttractiveness: 2000
 				Consideration@1:
 					Against: Enemy
-					Types: Vehicle, Infantry
+					Types: Structure, Vehicle, Infantry
 					Attractiveness: 3
 					TargetMetric: Value
 					CheckRadius: 2c0
 				Consideration@2:
 					Against: Ally
-					Types: Ground, Water
+					Types: Ground, Water, Ship
 					Attractiveness: -20
 					TargetMetric: Value
 					CheckRadius: 2c0
@@ -25,21 +25,27 @@ Player:
 					CheckRadius: 2c0
 			IonCannonPower:
 				OrderName: IonCannonPowerInfoOrder
-				MinimumAttractiveness: 1000
+				MinimumAttractiveness: 2000
 				FineScanRadius: 2
 				Consideration@1:
 					Against: Enemy
-					Types: Air, Tank, Vehicle, Infantry, Water
-					Attractiveness: 2
+					Types: Tank, Vehicle, Infantry
+					Attractiveness: 3
 					TargetMetric: Value
 					CheckRadius: 2c0
 				Consideration@2:
 					Against: Enemy
 					Types: Structure
-					Attractiveness: 1
+					Attractiveness: 2
 					TargetMetric: Value
 					CheckRadius: 2c0
 				Consideration@3:
+					Against: Enemy
+					Types: Ship
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@4:
 					Against: Ally
 					Types: Ground, Water
 					Attractiveness: -10
@@ -50,13 +56,25 @@ Player:
 				MinimumAttractiveness: 3000
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
-					Attractiveness: 1
+					Types: Tank, Vehicle, Infantry
+					Attractiveness: 3
 					TargetMetric: Value
 					CheckRadius: 5c0
 				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@3:
+					Against: Enemy
+					Types: Ship
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@4:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: Ground, Water
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0

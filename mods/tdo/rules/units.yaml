@@ -581,6 +581,8 @@ HARV:
 		DamageCooldown: 200
 	Targetable:
 		TargetTypes: Ground, Vehicle, harv
+	ProvidesPrerequisite@unitname:
+		Prerequisite: harv
 
 MCV:
 	Inherits: ^Vehicle

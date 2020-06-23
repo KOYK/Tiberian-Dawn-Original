@@ -1,0 +1,374 @@
+^Vehicle:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^Plane:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^Helicopter:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^Infantry:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^BaseBuilding:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^Defense:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^TechBuilding:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^Ship:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+^DINO:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	Inherits@Cheats: ^BotSkillLevel
+
+^BotSkillLevel:
+	DamageMultiplier@Bot1:
+		Modifier: 150
+		RequiresCondition: enable-1-bot
+	DamageMultiplier@Bot2:
+		Modifier: 125
+		RequiresCondition: enable-2-bot
+	DamageMultiplier@Bot3:
+		Modifier: 100
+		RequiresCondition: enable-3-bot
+	DamageMultiplier@Bot4:
+		Modifier: 88
+		RequiresCondition: enable-4-bot
+	DamageMultiplier@Bot5:
+		Modifier: 75
+		RequiresCondition: enable-5-bot
+	DamageMultiplier@Bot6:
+		Modifier: 50
+		RequiresCondition: enable-6-bot
+	ProductionTimeMultiplier@Bot1:
+		Queue: Building, Vehicle, Infantry, Aircraft
+		Multiplier: 50
+		Prerequisites: BotOwner
+	ProductionTimeMultiplier@Bot2:
+		Queue: Building, Vehicle, Infantry, Aircraft
+		Multiplier: 75
+		Prerequisites: BotOwner
+	ProductionTimeMultiplier@Bot3:
+		Queue: Building, Vehicle, Infantry, Aircraft
+		Multiplier: 100
+		Prerequisites: BotOwner
+	ProductionTimeMultiplier@Bot4:
+		Queue: Building, Vehicle, Infantry, Aircraft
+		Multiplier: 112
+		Prerequisites: BotOwner
+	ProductionTimeMultiplier@Bot5:
+		Queue: Building, Vehicle, Infantry, Aircraft
+		Multiplier: 125
+		Prerequisites: BotOwner
+	ProductionTimeMultiplier@Bot6:
+		Queue: Building, Vehicle, Infantry, Aircraft
+		Multiplier: 150
+		Prerequisites: BotOwner
+	FirepowerMultiplier@Bot1:
+		Modifier: 50
+		RequiresCondition: enable-1-bot
+	FirepowerMultiplier@Bot2:
+		Modifier: 75
+		RequiresCondition: enable-2-bot
+	FirepowerMultiplier@Bot3:
+		Modifier: 100
+		RequiresCondition: enable-3-bot
+	FirepowerMultiplier@Bot4:
+		Modifier: 112
+		RequiresCondition: enable-4-bot
+	FirepowerMultiplier@Bot5:
+		Modifier: 125
+		RequiresCondition: enable-5-bot
+	FirepowerMultiplier@Bot6:
+		Modifier: 150
+		RequiresCondition: enable-6-bot
+	SpeedMultiplier@Bot1:
+		Modifier: 80
+		RequiresCondition: enable-1-bot
+	SpeedMultiplier@Bot2:
+		Modifier: 90
+		RequiresCondition: enable-2-bot
+	SpeedMultiplier@Bot3:
+		Modifier: 100
+		RequiresCondition: enable-3-bot
+	SpeedMultiplier@Bot4:
+		Modifier: 110
+		RequiresCondition: enable-4-bot
+	SpeedMultiplier@Bot5:
+		Modifier: 120
+		RequiresCondition: enable-5-bot
+	SpeedMultiplier@Bot6:
+		Modifier: 130
+		RequiresCondition: enable-6-bot
+
+HARV:
+	HarvesterResourceMultiplier@FreeCreditsBot_1:
+		RequiresCondition: enable-1-bot
+		Modifier: 50
+	HarvesterResourceMultiplier@FreeCreditsBot_2:
+		RequiresCondition: enable-2-bot
+		Modifier: 75
+	HarvesterResourceMultiplier@FreeCreditsBot_3:
+		RequiresCondition: enable-3-bot
+		Modifier: 100
+	HarvesterResourceMultiplier@FreeCreditsBot_4:
+		RequiresCondition: enable-4-bot
+		Modifier: 100
+	HarvesterResourceMultiplier@FreeCreditsBot_5:
+		RequiresCondition: enable-5-bot
+		Modifier: 125
+	HarvesterResourceMultiplier@FreeCreditsBot_6:
+		RequiresCondition: enable-6-bot
+		Modifier: 150
+
+E1.scout:
+	Inherits: E1
+	RenderSprites:
+		Image: e1
+	Buildable:
+		Prerequisites: ~barracks, ~tl1, ~!e2.scout, ~BotOwner
+		BuildLimit: 1
+	AttackWander:
+		WanderMoveRadius: 40
+	ProvidesPrerequisite@unitname:
+		Prerequisite: e1.scout
+	RejectsOrders:
+
+E2.scout:
+	Inherits: E2
+	RenderSprites:
+		Image: e2
+	Buildable:
+		Prerequisites: ~pyle, ~tl2, ~!e1.scout, ~BotOwner
+		BuildLimit: 1
+	AttackWander:
+		WanderMoveRadius: 40
+	ProvidesPrerequisite@unitname:
+		Prerequisite: e2.scout
+	RejectsOrders:
+
+^GrantConditionOnBotOwner:
+	GrantConditionOnBotOwner@6:
+		Condition: enable-6-bot
+		Bots: 6
+	GrantConditionOnBotOwner@5:
+		Condition: enable-5-bot
+		Bots: 5
+	GrantConditionOnBotOwner@4:
+		Condition: enable-4-bot
+		Bots: 4
+	GrantConditionOnBotOwner@3:
+		Condition: enable-3-bot
+		Bots: 3
+	GrantConditionOnBotOwner@2:
+		Condition: enable-2-bot
+		Bots: 2
+	GrantConditionOnBotOwner@1:
+		Condition: enable-1-bot
+		Bots: 1
+
+Player:
+	Inherits@GrantConditionOnBotOwner: ^GrantConditionOnBotOwner
+	ProvidesPrerequisite@BotOwner:
+		RequiresCondition: enable-all-bot
+		Prerequisite: BotOwner
+		ResetOnOwnerChange: True
+	ModularBot@1:
+		Name: Tutor
+		Type: 1
+	ModularBot@2:
+		Name: Easy
+		Type: 2
+	ModularBot@3:
+		Name: Normal
+		Type: 3
+	ModularBot@4:
+		Name: Hard
+		Type: 4
+	ModularBot@5:
+		Name: Very Hard
+		Type: 5
+	ModularBot@6:
+		Name: Impossible
+		Type: 6
+	GrantConditionOnBotOwner@All:
+		Condition: enable-all-bot
+		Bots: 1,2,3,4,5,6
+	GrantConditionOnPrerequisite@proc:
+		Condition: proc
+		Prerequisites: proc
+	GrantConditionOnPrerequisite@harv:
+		Condition: harv
+		Prerequisites: harv
+	GrantConditionOnPrerequisite@FACTNOD:
+		Condition: factn
+		Prerequisites: fact.nod
+	GrantConditionOnPrerequisite@FACTGDI:
+		Condition: factg
+		Prerequisites: fact.gdi
+	GrantConditionOnFaction@Nod:
+		Condition: nod
+		Factions: nod
+		ResetOnOwnerChange:	False
+		RequiresCondition: enable-all-bot
+	GrantConditionOnFaction@GDI:
+		Condition: gdi
+		Factions: gdi
+		ResetOnOwnerChange:	False
+		RequiresCondition: enable-all-bot
+	GrantConditionOnPrerequisite@TechB:
+		Condition: CapturableCon
+		Prerequisites: TechBuildingsEnabled
+	HarvesterBotModule:
+		RequiresCondition: enable-all-bot
+		HarvesterTypes: harv
+		RefineryTypes: proc
+		HarvesterEnemyAvoidanceRadius: 16c0
+	BuildingRepairBotModule:
+		RequiresCondition: enable-all-bot
+	CaptureManagerBotModule:
+        CapturingActorTypes: e6_mp, e6
+        CapturableStances: Enemy,Neutral
+        RequiresCondition: enable-all-bot && CapturableCon
+		CheckCaptureTargetsForVisibility: True
+	CaptureManagerBotModule@NoTech:
+        CapturingActorTypes: e6_mp, e6
+        CapturableStances: Enemy
+        RequiresCondition: enable-all-bot
+		CheckCaptureTargetsForVisibility: True
+    McvManagerBotModule:
+		RequiresCondition: enable-all-bot
+		McvTypes: mcv, mcv.nod, mcv.gdi
+		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		McvFactoryTypes: weap,afld
+		RestrictMCVDeploymentFallbackToBase: True
+		MinimumConstructionYardCount: 2
+		ScanForNewMcvInterval: 50
+		MaxBaseRadius: 40
+	BaseBuilderBotModule@NoProcNod:
+		RequiresCondition: enable-all-bot && nod
+		MinimumExcessPower: 10
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 1
+		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		NewProductionCashThreshold: 100000000
+		RefineryTypes: proc
+		PowerTypes: nuke,nuk2
+		BarracksTypes:
+		VehiclesFactoryTypes:
+		ProductionTypes:
+		SiloTypes:
+		BuildingFractions:
+			proc: 100
+		BuildingLimits:
+			proc: 1
+	BaseBuilderBotModule@NoHarvNod:
+		RequiresCondition: enable-all-bot && nod && proc
+		MinimumExcessPower: 10
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 1
+		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		NewProductionCashThreshold: 100000000
+		RefineryTypes: proc
+		PowerTypes: nuke,nuk2
+		BarracksTypes:
+		VehiclesFactoryTypes: weap,afld
+		ProductionTypes:
+		SiloTypes:
+		BuildingFractions:
+			weap: 100
+			afld: 100
+		BuildingLimits:
+			weap: 1
+			afld: 1
+	BaseBuilderBotModule@NoProcGDI:
+		RequiresCondition: enable-all-bot && gdi
+		MinimumExcessPower: 10
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 1
+		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		NewProductionCashThreshold: 100000000
+		RefineryTypes: proc
+		PowerTypes: nuke,nuk2
+		BarracksTypes:
+		VehiclesFactoryTypes:
+		ProductionTypes:
+		SiloTypes:
+		BuildingFractions:
+			proc: 100
+		BuildingLimits:
+			proc: 1
+	BaseBuilderBotModule@NoHarvGDI:
+		RequiresCondition: enable-all-bot && gdi && proc
+		MinimumExcessPower: 10
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 1
+		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		NewProductionCashThreshold: 100000000
+		RefineryTypes: proc
+		PowerTypes: nuke,nuk2
+		BarracksTypes:
+		VehiclesFactoryTypes: weap,afld
+		ProductionTypes:
+		SiloTypes:
+		BuildingFractions:
+			weap: 100
+			afld: 100
+		BuildingLimits:
+			weap: 1
+			afld: 1
+	UnitBuilderBotModule@NoProcNod:
+		RequiresCondition: enable-all-bot && nod
+		UnitQueues:
+		IdleBaseUnitsMaximum: 20
+		UnitsToBuild:
+		UnitLimits:
+	UnitBuilderBotModule@NoHarvNod:
+		RequiresCondition: enable-all-bot && proc && nod
+		UnitQueues: Vehicle
+		IdleBaseUnitsMaximum: 20
+		UnitsToBuild:
+			harv: 100
+		UnitLimits:
+			harv: 8
+	UnitBuilderBotModule@NoProcGDI:
+		RequiresCondition: enable-all-bot && gdi
+		UnitQueues:
+		IdleBaseUnitsMaximum: 20
+		UnitsToBuild:
+		UnitLimits:
+	UnitBuilderBotModule@NoHarvGDI:
+		RequiresCondition: enable-all-bot && proc && gdi
+		UnitQueues: Vehicle
+		IdleBaseUnitsMaximum: 20
+		UnitsToBuild:
+			harv: 100
+		UnitLimits:
+			harv: 8
+	#ModularBot@1:
+	#	Name: I am a wimp
+	#	Type: 1
+	#ModularBot@2:
+	#	Name: Piece of Cake
+	#	Type: 2
+	#ModularBot@3:
+	#	Name: Come Get Some
+	#	Type: 3
+	#ModularBot@4:
+	#	Name: Let's Rock
+	#	Type: 4
+	#ModularBot@5:
+	#	Name: Hurt me plenty
+	#	Type: 5
+	#ModularBot@6:
+	#	Name: Nightmare
+	#	Type: 6

@@ -27,3 +27,6 @@ Fixed observer CTD.
 Contribution By sayedmamdouh!!
 sayedmamdouh Has fixed the missplaced actors on all maps, by converting the maps from the original game.
 He also added a missing map "lakefront clash".
+Added new bots, all bots after normal cheat, all bots before normal are handicapped, only normal bot dont use any cheats or is it handicapped in any way, though still it can kick ass.
+Fixed some engine errors.
+Fixed repair rate of tech buildings.
