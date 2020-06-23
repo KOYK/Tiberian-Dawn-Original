@@ -1165,10 +1165,12 @@ Player:
 	CaptureNotification:
 		Notification: CivilianBuildingCaptured
 	RepairableBuilding:
-		RepairPercent: 40
-		RepairStep: 1400
-		PlayerExperience: 15
+		RepairPercent: 20
+		RepairInterval: 24
+		RepairStep: 7
+		PlayerExperience: 1
 		RepairingNotification: Repairing
+		RepairBonuses: 100, 0
 	EngineerRepairable:
 	RevealsShroud:
 		Range: 3c0

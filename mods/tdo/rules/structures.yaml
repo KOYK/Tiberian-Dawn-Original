@@ -221,10 +221,10 @@ PROC:
 			BottomRight: 896, -512
 	Valued:
 		Cost: 2000
-	ExternalCondition:
+	ExternalCondition@DockInProcess:
 		Condition: dockinprocess
 	Sellable:
-		RequiresCondition: !dockinprocess
+		RequiresCondition: !dockinprocess && !build-incomplete && !being-demolished
 	Tooltip:
 		Name: Tiberium Refinery
 	Buildable:
@@ -273,6 +273,7 @@ PROC:
 	Power:
 		Amount: -40
 	ProvidesPrerequisite@buildingname:
+		Prerequisite: proc
 	SelectionDecorations:
 	Explodes:
 		Type: Footprint

@@ -1,4 +1,0 @@
-PROC:
-	GrantConditionOnBotOwner@PROC:
-		Condition: proc
-		Bots: enable-all-bot

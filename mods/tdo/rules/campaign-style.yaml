@@ -24,7 +24,7 @@ World:
 	MapOptions:
 		ShortGameCheckboxEnabled: False
 			#die if you lose all buildings
-		TechLevel: tl6
+		TechLevel: tl7
 			#Tech Levels are: tl1, tl2, tl3, tl4, tl5, tl6, tl7
 		TechLevelDropdownLocked: True
 			#True means players wont be able to change Tech Level
@@ -120,40 +120,48 @@ Player:
 		NeutralPrefix: Civilian
 		AllyPrefix: Friendly
 		EnemyPrefix: Enemy
-		GenericVisibility: Ally, Neutral, Enemy
+		GenericVisibility: Neutral, Enemy
 		ShowOwnerRow: false
 
 ^Vehicle:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player-units
 
 ^Tank:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player-units
 
 ^Helicopter:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player-units
 
 ^Infantry:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player-units
 	WithDeathAnimation:
 		DeathSequencePalette: player-units
 
 ^CommonHuskDefaults:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player-units
 
 C17:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player-units
 
 HARV:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player
 
 MCV:
+	Inherits@ToolTip: ^GenericTooltipNames
 	RenderSprites:
 		PlayerPalette: player
 
@@ -167,8 +175,10 @@ MCV.Husk:
 
 
 ^Plane:
+	Inherits@ToolTip: ^GenericTooltipNames
 
 ^Ship:
+	Inherits@ToolTip: ^GenericTooltipNames
 
 ^Building:
 	Tooltip:

@@ -1,0 +1,107 @@
+Player:
+	UnitBuilderBotModule@Nod:
+		RequiresCondition: enable-all-bot && proc && harv && nod
+		UnitQueues: Vehicle, Infantry, Aircraft
+		IdleBaseUnitsMaximum: 10
+		UnitDelays:
+			e1: 1500
+			e2: 1500
+			e3: 1500
+			e4: 1500
+			heli: 1500
+			orca: 1500
+			bggy: 4500
+			bike: 4500
+			ltnk: 4500
+			ftnk: 4500
+			arty: 4500
+			stnk: 4500
+			jeep: 4500
+			mtnk: 4500
+			msam: 4500
+			htnk: 4500
+		UnitsToBuild:
+			e1: 65
+			e2: 25
+			e3: 40
+			e4: 15
+			e5: 15
+			e6_mp: 1
+			e6: 1
+			e2.scout: 65
+			e1.scout: 65
+			rmbo: 1
+			harv: 10
+			bggy: 5
+			apc_singleplayer: 1
+			apc: 1
+			jeep: 5
+			bike: 40
+			ltnk: 25
+			mtnk: 20
+			htnk: 50
+			ftnk: 10
+			stnk: 40
+			msam: 60
+			msam_singleplayer: 60
+			mlrs: 60
+			arty: 60
+			heli: 5
+			orca: 5
+		UnitLimits:
+			harv: 8
+			e6_mp: 1
+			e6: 1
+	UnitBuilderBotModule@GDI:
+		RequiresCondition: enable-all-bot && proc && harv && gdi
+		UnitQueues: Vehicle, Infantry, Aircraft
+		IdleBaseUnitsMaximum: 10
+		UnitDelays:
+			e1: 1500
+			e2: 1500
+			e3: 1500
+			e4: 1500
+			heli: 1500
+			orca: 1500
+			bggy: 4500
+			bike: 4500
+			ltnk: 4500
+			ftnk: 4500
+			arty: 4500
+			stnk: 4500
+			jeep: 4500
+			mtnk: 4500
+			msam: 4500
+			htnk: 4500
+		UnitsToBuild:
+			e1: 65
+			e2: 25
+			e3: 40
+			e4: 15
+			e5: 15
+			e6_mp: 1
+			e6: 1
+			e2.scout: 65
+			e1.scout: 65
+			rmbo: 1
+			harv: 10
+			bggy: 5
+			apc_singleplayer: 1
+			apc: 1
+			jeep: 5
+			bike: 40
+			ltnk: 25
+			mtnk: 20
+			htnk: 50
+			ftnk: 10
+			stnk: 40
+			msam: 60
+			msam_singleplayer: 60
+			mlrs: 60
+			arty: 60
+			heli: 5
+			orca: 5
+		UnitLimits:
+			harv: 8
+			e6_mp: 1
+			e6: 1
