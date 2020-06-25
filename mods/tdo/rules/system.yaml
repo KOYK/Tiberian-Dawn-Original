@@ -428,6 +428,8 @@ Player:
 	RotationPaletteEffect@water:
 		ExcludePalettes: effect, chrome
 		RotationBase: 32
+		RotationRange: 7
+		RotationStep: 0.2
 
 ^ExistsInWorld:
 	AppearsOnRadar:
@@ -1188,6 +1190,8 @@ Player:
 		ReferencePoint: Center
 		Palette: player
 		IsPlayerPalette: True
+	GivesBuildableArea:
+		AreaTypes: building
 
 ^CivField:
 	Inherits: ^CivBuilding

@@ -1289,8 +1289,9 @@ HOSP:
 		Bounds: 48,48
 		Priority: 0
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 400
 	Tooltip:
@@ -1299,7 +1300,7 @@ HOSP:
 	SpawnActorOnDeath:
 		Actor: HOSP.Husk
 	WithBuildingBib:
-		HasMinibib: true
+		HasMinibib: False
 	ProvidesPrerequisite@buildingname:
 
 BIO:
@@ -1308,8 +1309,9 @@ BIO:
 	Selectable:
 		Bounds: 48,48
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 600
 	Tooltip:
@@ -1336,6 +1338,8 @@ BIO:
 		Path: -1,-1
 	SpawnActorOnDeath:
 		Actor: BIO.Husk
+	WithBuildingBib:
+		HasMinibib: False
 	ProvidesPrerequisite@buildingname:
 
 MISS:
@@ -1344,8 +1348,9 @@ MISS:
 	Selectable:
 		Bounds: 72,48
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Technology Center
 		AllyPrefix: Technology Center
@@ -1358,7 +1363,7 @@ MISS:
 	Valued:
 		Cost: 2000
 	WithBuildingBib:
-		HasMinibib: true
+		HasMinibib: False
 	WithMakeAnimation:
 	SpawnActorOnDeath:
 		Actor: MISS.Husk

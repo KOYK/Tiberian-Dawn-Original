@@ -581,26 +581,18 @@ hosp:
 		Length: *
 		Tick: 80
 		Offset: 0,-2
-	bib: mbHOSP
+	bib: bib3
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
-		Offset: 0,1
+		Offset: 0,0
 
 hosp.husk:
 	idle: hosp
 		Start: 8
-	bib: mbHOSP
+	bib: bib3
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
-		Offset: 0,1
+		Offset: 0,0
 
 bio:
 	idle:
@@ -609,10 +601,18 @@ bio:
 	make: biomake
 		Length: *
 		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
 
 bio.husk:
 	idle: bio
 		Start: 2
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
 
 miss:
 	idle:
@@ -624,25 +624,15 @@ miss:
 		Length: *
 		Tick: 80
 		Offset: 0,-1
-	bib: mbMISS
+	bib: bib2
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
-		Offset: 0,1
 	icon: missicnh
 		Length: *
 
 miss.husk:
 	idle: miss
 		Start: 2
-	bib: mbMISS
+	bib: bib2
 		UseTilesetExtension: true
-		TilesetOverrides:
-			WINTER: TEMPERAT
-			JUNGLE: TEMPERAT
-			SNOW: TEMPERAT
 		Length: *
-		Offset: 0,1
