@@ -74,7 +74,7 @@ Player:
 		Locked: False
 			#can the admin player change this?
 	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
-		Description: Campaign Color theme, Tech level, AI Boost, GDI Airstrike, Capturable Chinook
+		Description: Use Singleplayer rules
 		Enabled: False
 		Locked: False
 			#can the admin player change this?
