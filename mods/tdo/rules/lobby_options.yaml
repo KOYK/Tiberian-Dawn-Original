@@ -298,7 +298,7 @@ Player:
 		Label: Campaign Rules
 		Description: Use Singleplayer rules
 		Enabled: False
-		Locked: True
+		Locked: False
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: PrerequisiteSinglePlayer

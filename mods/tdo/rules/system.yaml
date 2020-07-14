@@ -1688,13 +1688,6 @@ FLARE:
 		Categories: System
 	Interactable:
 
-SINGLEPLAYER:
-	ProvidesPrerequisite:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Single Player Rules
-
 DISABLED:
 	ProvidesPrerequisite:
 	AlwaysVisible:
