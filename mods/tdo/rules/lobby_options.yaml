@@ -258,7 +258,7 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: PrerequisiteHusksEnabled
 	LobbyPrerequisiteCheckbox@LINEWALLS:
-		ID: linewalls
+		ID: linewallsmre
 		Label: Wall Line Build
 		Description: Allows more walls to be build in a line
 		Enabled: False
@@ -267,7 +267,7 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: PrerequisiteLineWalls
 	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
-		ID: superweapons
+		ID: superweaponsni
 		Label: Super Weapons
 		Description: Allows the use of Nuclear Missile and Ion Cannon
 		Enabled: True
@@ -276,7 +276,7 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: PrerequisiteSuperWeapons
 	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
-		ID: supplytruck
+		ID: supplytruckmny
 		Label: Supply Truck
 		Description: Allows the use of Supply Trucks that can aid allies with money
 		Enabled: False
@@ -285,7 +285,7 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: PrerequisiteSupplyTruck
 	LobbyPrerequisiteCheckbox@PRODUCTIONBAR:
-		ID: productionbar
+		ID: productionbarprgs
 		Label: Production Bars
 		Description: Shows loading bars over producing buildings
 		Enabled: False
@@ -294,16 +294,16 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: PrerequisiteProductionBar
 	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
-		ID: singleplayer
+		ID: singleplayermode
 		Label: Campaign Rules
-		Description: Campaign Color theme, Tech level, AI Boost, GDI Airstrike, Capturable Chinook
+		Description: Use Singleplayer rules
 		Enabled: False
 		Locked: True
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: PrerequisiteSinglePlayer
 	LobbyPrerequisiteCheckbox@PUTSUX:
-		ID: putsux
+		ID: putsuxl
 		Label: PATSUX
 		Description: Gives orcas obelisk's laser weapon, not recomended
 		Enabled: False
@@ -321,7 +321,7 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: TechBuildingsEnabled
 	LobbyPrerequisiteCheckbox@ENGINEERSP:
-		ID: engineersp
+		ID: engineersprep
 		Label: Engineer Repair
 		Description: Enables snigleplayer ability of engineers to repair buildings
 		Enabled: False
@@ -339,7 +339,7 @@ Player:
 		DisplayOrder: 10
 		Prerequisites: global-lpdamage
 	LobbyPrerequisiteCheckbox@REGROWTH:
-		ID: Regrowth
+		ID: tregrowth
 		Label: Tiberium Regrowth
 		Description: Tiberium will regenerate
 		Enabled: True
@@ -356,6 +356,15 @@ Player:
 		Visible: True
 		DisplayOrder: 10
 		Prerequisites: emptyhelipads
+	LobbyPrerequisiteCheckbox@MULTIENGINEER:
+		ID: multiengineerdm
+		Label: Multi Engineer
+		Description: Engineers damage enemy buildings before they can capture them
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteMultiEngineer
 #	#waiting for this https://github.com/OpenRA/OpenRA/issues/18040
 #	# LobbyPrerequisiteCheckbox@LOWCOSTMCV:
 #		# ID: lowcostmcv

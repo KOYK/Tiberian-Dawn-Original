@@ -8,61 +8,92 @@ Terrain:
 	TerrainType@Beach:
 		Type: Beach
 		TargetTypes: Ground
-		Color: B09C78
+		Color: 004800
 	TerrainType@BlueTiberium:
 		Type: BlueTiberium
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: 54FCFC
+		Color: 5498FC
 		RestrictPlayerColor: true
 	TerrainType@Bridge:
 		Type: Bridge
 		TargetTypes: Ground, Bridge
 		AcceptsSmudgeType: Crater, Scorch
-		Color: 606060
+		Color: 004800
 	TerrainType@Clear:
 		Type: Clear
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: 285C30
+		Color: 004800
 		RestrictPlayerColor: true
 	TerrainType@River:
 		Type: River
 		TargetTypes: Ground
-		Color: 5C8CB4
+		Color: 0000AA
 	TerrainType@Road:
 		Type: Road
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: 544031
+		Color: 004800
 	TerrainType@Rock:
 		Type: Rock
 		TargetTypes: Ground
-		Color: BFC7C4
+		Color: 555555
 	TerrainType@Rough:
 		Type: Rough
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: 44443C
+		Color: 004800
 	TerrainType@Tiberium:
 		Type: Tiberium
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: A1E21C
+		Color: A6E31C
 		RestrictPlayerColor: true
 	TerrainType@Tree:
 		Type: Tree
 		TargetTypes: Ground
-		Color: 1C2024
+		Color: 28302C
 	TerrainType@Wall:
 		Type: Wall
 		TargetTypes: Ground
 		AcceptsSmudgeType: Crater, Scorch
-		Color: D0C0A0
+		Color: 797575
+		#For minimap color only
+	TerrainType@WALLSAND:
+		Type: WallSand
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 928A4D
+		#For minimap color only
+	TerrainType@WALLFENCE:
+		Type: WallFence
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 65828A
+		#For minimap color only
+	TerrainType@WALLCHAIN:
+		Type: WallChain
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 8A7971
+		#For minimap color only
+	TerrainType@CIVBUILD:
+		Type: CivBuild
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 49495D
+		#For minimap color only
+	TerrainType@CIVUNIT:
+		Type: CivUnit
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: A6A6BE
+		#For minimap color only
 	TerrainType@Water:
 		Type: Water
 		TargetTypes: Water
-		Color: 5C74A4
+		Color: 0000AA
 		RestrictPlayerColor: true
 
 Templates:
