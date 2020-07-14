@@ -376,7 +376,7 @@ MLRS:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 70
-		Prerequisites: ~obli, ~tl7, ~afld
+		Prerequisites: ~obli, ~tl7, ~afld, ~!PrerequisiteSinglePlayer
 		Queue: Vehicle
 		Description: Powerful Long range unit.\nCannot attack Air units.
 	Mobile:
@@ -420,6 +420,18 @@ MLRS:
 	ReloadAmmoPool:
 		Delay: 300
 		Count: 1
+MLRS_SINGLEPLAYER:
+	Inherits@OriginalActor: MLRS
+	RenderSprites:
+		Image: mlrs
+	Selectable:
+		Class: mlrs
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: ~obli, ~tl7, ~afld, ~miss, ~PrerequisiteSinglePlayer
+	SpawnActorOnDeath:
+		Actor: MLRS.Husk
+	-MapEditorData:
 
 MSAM:
 	Inherits: ^Tank
@@ -433,7 +445,7 @@ MSAM:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~advhq, ~vehicleproduction, ~!singleplayer
+		Prerequisites: ~advhq, ~tl7, ~vehicleproduction, ~!PrerequisiteSinglePlayer
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
 	Mobile:
@@ -471,9 +483,10 @@ MSAM_SINGLEPLAYER:
 		Class: msam
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: ~eye, ~tl7, ~weap, ~singleplayer
+		Prerequisites: ~eye, ~tl7, ~weap, ~PrerequisiteSinglePlayer
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
+	-MapEditorData:
 
 ARTY:
 	Inherits: ^Tank
@@ -785,7 +798,7 @@ APC:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: ~barracks, ~vehicleproduction, ~tl4, ~!singleplayer
+		Prerequisites: ~barracks, ~vehicleproduction, ~tl4, ~!PrerequisiteSinglePlayer
 		Queue: Vehicle
 		BuildDuration: 938
 		BuildDurationModifier: 40
@@ -824,9 +837,10 @@ APC_SINGLEPLAYER:
 		Class: apc
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: ~pyle, ~weap, ~tl4, ~singleplayer
+		Prerequisites: ~pyle, ~weap, ~tl4, ~PrerequisiteSinglePlayer
 	SpawnActorOnDeath:
 		Actor: APC.Husk
+	-MapEditorData:
 
 BOAT:
 	Inherits: ^Ship
@@ -1018,8 +1032,6 @@ MHQ_CASHREMOVER:
 	Health:
 		HP: 1
 	HitShape:
-	MapEditorData:
-		Categories: System
 	CashTrickler:
 		Amount: -100000
 		InitialDelay: 1
@@ -1028,6 +1040,7 @@ MHQ_CASHREMOVER:
 	KillsSelf:
 		RemoveInstead: True
 		Delay: 2
+	-MapEditorData:
 
 TRUCK:
 	Inherits: ^Vehicle
@@ -1069,7 +1082,7 @@ TRAN:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 10
-		Prerequisites: ~hpad, ~tl6
+		Prerequisites: ~hpad, ~tl6, ~!PrerequisiteSinglePlayer
 		Description: Fast Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
 		InitialFacing: 1
@@ -1274,7 +1287,7 @@ A10:
 		Speed: 120
 		Repulsable: False
 	AttackBomber:
-		Armaments: gun, bombs
+		Armaments: bombs
 	Armament@GUNS:
 		Name: gun
 		Weapon: Vulcan
@@ -1422,7 +1435,7 @@ E5:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~tmpl, ~tl7, ~hand
+		Prerequisites: ~tmpl, ~tl7, ~hand, ~!PrerequisiteSinglePlayer
 		Description: Advanced general-purpose infantry.\n  Strong vs all Ground units
 	Mobile:
 		Speed: 24
@@ -1442,6 +1455,16 @@ E5:
 	WithMuzzleOverlay:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+E5_SINGLEPLAYER:
+	Inherits@OriginalActor: E5
+	RenderSprites:
+		Image: e5
+	Selectable:
+		Class: e5
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~tmpl, ~tl7, ~hand, ~bio, ~PrerequisiteSinglePlayer
+	-MapEditorData:
 
 E6:
 	Inherits: ^Soldier
@@ -1464,10 +1487,14 @@ E6:
 	EngineerRepair:
 	RepairsBridges:
 	CaptureManager:
+	GrantConditionOnPrerequisite@MULTIENGINEER:
+		Prerequisites: PrerequisiteMultiEngineer
+		Condition: MultiEngineer
 	Captures@SABOTAGE:
 		CaptureTypes: building-sabotage
 		SabotageThreshold: 55
 		PlayerExperience: 50
+		RequiresCondition: MultiEngineer
 	Captures@CAPTURES:
 		CaptureTypes: building, husk
 		PlayerExperience: 50
@@ -1483,7 +1510,7 @@ E6_MP:
 		Image: e6
 	-EngineerRepair:
 	Buildable:
-		Prerequisites: ~barracks, ~tl3, ~!EngineerSP, ~!singleplayer
+		Prerequisites: ~barracks, ~tl3, ~!EngineerSP
 		Description: Damages and captures enemy structures.\n  Unarmed
 
 RMBO:
@@ -1497,7 +1524,7 @@ RMBO:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~barracks, ~advhq, ~tl7
+		Prerequisites: ~barracks, ~advhq, ~tl7, ~!PrerequisiteSinglePlayer
 		BuildDuration: 2000
 		BuildDurationModifier: 40
 		Description: Elite sniper infantry unit.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles

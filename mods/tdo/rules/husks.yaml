@@ -240,35 +240,42 @@ HOSP.Husk:
 	Interactable:
 		Bounds: 48,48
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Hospital
 		AllyPrefix: Hospital
 	WithBuildingBib:
-		HasMinibib: true
+		HasMinibib: False
 
 BIO.Husk:
 	Inherits: ^CivBuildingHusk
 	Interactable:
 		Bounds: 48,48
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Biolab
 		AllyPrefix: Biolab
+	WithBuildingBib:
+		HasMinibib: False
 
 MISS.Husk:
 	Inherits: ^CivBuildingHusk
 	Interactable:
 		Bounds: 72,48
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Technology Center
 		AllyPrefix: Technology Center
+	WithBuildingBib:
+		HasMinibib: False
 
 #===========================================================
 #							BUILDING CIVILIAN
