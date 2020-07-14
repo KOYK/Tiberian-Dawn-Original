@@ -665,6 +665,36 @@ HQ:
 	DetectCloaked:
 		Range: 1c0
 		RequiresCondition: !lowpower
+	GrantConditionOnFaction@GDI:
+		Condition: ConGDI
+		Factions: gdi
+		ResetOnOwnerChange: False
+	AirstrikePower:
+		PauseOnCondition: lowpower
+		Prerequisites: ~PrerequisiteSuperWeapons, ~PrerequisiteSinglePlayer
+		Icon: airstrike
+		ChargeInterval: 6000
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: Air Strike
+		LongDesc: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		EndChargeSpeechNotification: AirstrikeReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: EnemyPlanesApproaching
+		UnitType: a10
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		BeaconPosterPalette: beaconposter
+		DisplayRadarPing: True
+		CameraActor: camera
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: False
+		SupportPowerPaletteOrder: 10
+		RequiresCondition: ConGDI
+	SupportPowerChargeBar:
 	Power:
 		Amount: -40
 
@@ -1127,6 +1157,10 @@ SBAG:
 		Condition: NearWall
 		Range: 1c255
 	ConditionManager:
+	AppearsOnMapPreview:
+		Terrain: WallSand
+	RadarColorFromTerrain:
+		Terrain: WallSand
 SBAG_LINE:
 	Inherits@OriginalActor: SBAG
 	Inherits@LineBuild: ^LineBuild
@@ -1134,6 +1168,10 @@ SBAG_LINE:
 		Image: sbag
 	Buildable:
 		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl2
+	AppearsOnMapPreview:
+		Terrain: WallSand
+	RadarColorFromTerrain:
+		Terrain: WallSand
 
 CYCL:
 	Inherits: ^Wall
@@ -1158,6 +1196,10 @@ CYCL:
 		Condition: NearWall
 		Range: 1c255
 	ConditionManager:
+	AppearsOnMapPreview:
+		Terrain: WallFence
+	RadarColorFromTerrain:
+		Terrain: WallFence
 CYCL_LINE:
 	Inherits@OriginalActor: CYCL
 	Inherits@LineBuild: ^LineBuild
@@ -1165,6 +1207,10 @@ CYCL_LINE:
 		Image: cycl
 	Buildable:
 		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl5
+	AppearsOnMapPreview:
+		Terrain: WallFence
+	RadarColorFromTerrain:
+		Terrain: WallFence
 
 BRIK:
 	Inherits: ^Wall
@@ -1222,6 +1268,10 @@ BARB:
 		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
 		Queue: Building
 		Description: Stops infantry.\nCan be crushed by tanks.
+	AppearsOnMapPreview:
+		Terrain: WallChain
+	RadarColorFromTerrain:
+		Terrain: WallChain
 BARB_LINE:
 	Inherits@OriginalActor: BARB
 	Inherits@LineBuild: ^LineBuild
@@ -1229,6 +1279,10 @@ BARB_LINE:
 		Image: barb
 	Buildable:
 		Prerequisites: ~disabled, ~PrerequisiteLineWalls, ~tl3
+	AppearsOnMapPreview:
+		Terrain: WallChain
+	RadarColorFromTerrain:
+		Terrain: WallChain
 
 WOOD:
 	Inherits: ^Wall
@@ -1249,6 +1303,10 @@ WOOD:
 		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
 		Queue: Building
 		Description: Stops infantry.\nCan be crushed by tanks.
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 WOOD_LINE:
 	Inherits@OriginalActor: WOOD
 	Inherits@LineBuild: ^LineBuild
@@ -1256,6 +1314,10 @@ WOOD_LINE:
 		Image: wood
 	Buildable:
 		Prerequisites: ~disabled, ~PrerequisiteLineWalls, ~tl1
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 #Added walls for map authors
 
 #===========================================================
@@ -1289,8 +1351,9 @@ HOSP:
 		Bounds: 48,48
 		Priority: 0
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 400
 	Tooltip:
@@ -1299,7 +1362,7 @@ HOSP:
 	SpawnActorOnDeath:
 		Actor: HOSP.Husk
 	WithBuildingBib:
-		HasMinibib: true
+		HasMinibib: False
 	ProvidesPrerequisite@buildingname:
 
 BIO:
@@ -1308,8 +1371,9 @@ BIO:
 	Selectable:
 		Bounds: 48,48
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 600
 	Tooltip:
@@ -1336,16 +1400,19 @@ BIO:
 		Path: -1,-1
 	SpawnActorOnDeath:
 		Actor: BIO.Husk
+	WithBuildingBib:
+		HasMinibib: False
 	ProvidesPrerequisite@buildingname:
 
 MISS:
-	Inherits: ^CivBuilding
+	Inherits: ^TechBuilding
 	Inherits@shape: ^3x2Shape
 	Selectable:
 		Bounds: 72,48
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: Technology Center
 		AllyPrefix: Technology Center
@@ -1358,11 +1425,25 @@ MISS:
 	Valued:
 		Cost: 2000
 	WithBuildingBib:
-		HasMinibib: true
+		HasMinibib: False
 	WithMakeAnimation:
 	SpawnActorOnDeath:
 		Actor: MISS.Husk
 	ProvidesPrerequisite@buildingname:
+	GrantRandomCondition:
+		Conditions: SecretTechA, SecretTechB
+	ProvidesPrerequisite@SecretTechA:
+		RequiresPrerequisites: TechBuildingsEnabled
+		Prerequisite: !PrerequisiteSinglePlayer
+		ResetOnOwnerChange: False
+		RequiresCondition: SecretTechA
+		#Factions: 
+	ProvidesPrerequisite@SecretTechB:
+		RequiresPrerequisites: TechBuildingsEnabled
+		Prerequisite: !PrerequisiteSinglePlayer
+		ResetOnOwnerChange: False
+		RequiresCondition: SecretTechB
+		#Factions: 
 
 #===========================================================
 #							CIVILIAN-BUILDINGS

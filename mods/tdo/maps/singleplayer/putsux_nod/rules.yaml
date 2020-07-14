@@ -144,16 +144,6 @@ World:
 		Actors: vice, vice, vice, vice
 		Owner: Creeps
 		Types: vice
-	-MPStartUnits@mhq:
-	-MPStartUnits@mhqR:
-	-MPStartUnits@mcv_only_gdi:
-	-MPStartUnits@mcv_only_nod:
-	-MPStartUnits@default_gdi_a:
-	-MPStartUnits@default_nod_a:
-	-MPStartUnits@heavy_nod_a:
-	-MPStartUnits@heavy_nod_b:
-	-MPStartUnits@heavy_gdi_a:
-	-MPStartUnits@heavy_gdi_b:
 
 Player:
 	Shroud:

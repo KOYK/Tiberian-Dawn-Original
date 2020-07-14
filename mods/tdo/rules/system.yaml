@@ -428,6 +428,8 @@ Player:
 	RotationPaletteEffect@water:
 		ExcludePalettes: effect, chrome
 		RotationBase: 32
+		RotationRange: 7
+		RotationStep: 0.2
 
 ^ExistsInWorld:
 	AppearsOnRadar:
@@ -877,6 +879,8 @@ Player:
 	Wanders:
 		MinMoveDelay: 150
 		MaxMoveDelay: 750
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 	MapEditorData:
 		Categories: Civilian infantry
 
@@ -940,6 +944,8 @@ Player:
 	HitShape:
 		Type: Circle
 			Radius: 128
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 	MapEditorData:
 		Categories: Critter
 
@@ -1128,6 +1134,10 @@ Player:
 	Health:
 		HP: 400
 	FrozenUnderFog:
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 	MapEditorData:
 		Categories: Civilian building
 
@@ -1147,6 +1157,12 @@ Player:
 		GenericVisibility: Enemy, Neutral
 	FrozenUnderFog:
 	ScriptTriggers:
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 	MapEditorData:
 		Categories: Husk
 
@@ -1188,6 +1204,8 @@ Player:
 		ReferencePoint: Center
 		Palette: player
 		IsPlayerPalette: True
+	GivesBuildableArea:
+		AreaTypes: building
 
 ^CivField:
 	Inherits: ^CivBuilding
@@ -1202,6 +1220,10 @@ Player:
 	-Demolishable:
 	RenderSprites:
 		Palette: terrain
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 
 ^CivFieldHusk:
 	Inherits@1: ^SpriteActor
@@ -1221,6 +1243,10 @@ Player:
 	ScriptTriggers:
 	MapEditorData:
 		Categories: Husk
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
 
 ^Wall:
 	Inherits@1: ^SpriteActor
@@ -1260,6 +1286,10 @@ Player:
 		HP: 200
 	Armor:
 		Type: 2
+	AppearsOnMapPreview:
+		Terrain: Wall
+	RadarColorFromTerrain:
+		Terrain: Wall
 	MapEditorData:
 		Categories: Wall
 	LineBuild:
@@ -1275,6 +1305,7 @@ Player:
 		NodeTypes: wall
 	LineBuildNode:
 		Types: wall
+	-MapEditorData:
 
 ^Tree:
 	Inherits@1: ^SpriteActor
@@ -1407,8 +1438,6 @@ Player:
 		AlwaysVisibleStances: None
 	WithFacingSpriteBody:
 	HitShape:
-	MapEditorData:
-		Categories: Husk
 
 ^Husk:
 	Inherits: ^CommonHuskDefaults
@@ -1458,7 +1487,6 @@ Player:
 		GenericName: Destroyed Helicopter
 	BodyOrientation:
 		UseClassicFacingFudge: True
-	-MapEditorData:
 
 ^Bridge:
 	Inherits@shape: ^1x1Shape
@@ -1659,13 +1687,6 @@ FLARE:
 	MapEditorData:
 		Categories: System
 	Interactable:
-
-SINGLEPLAYER:
-	ProvidesPrerequisite:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Single Player Rules
 
 DISABLED:
 	ProvidesPrerequisite:

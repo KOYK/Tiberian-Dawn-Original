@@ -454,23 +454,21 @@ TowerMissile:
 # A-10's Napalm drop
 Napalm:
 	Inherits: ^FlameWeapon
-	ReloadDelay: 20
-	Range: 4c50
-	Burst: 2
-	BurstDelays: 2
-	-Projectile:
+	ReloadDelay: 5
+	Range: 4c0
 	Projectile: GravityBomb
 		Image: BOMBLET
 		Shadow: true
+		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
-		Damage: 100
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Damage: 50
+		Falloff: 100, 80, 60, 40, 20, 5, 0
 		Versus:
 			0: 87
 			1: 100
-			2: 69
-			3: 25
+			2: 87
+			3: 100
 	Warhead@3Eff: CreateEffect
 		Explosions: med_napalm
 
@@ -810,7 +808,7 @@ Napalm.Crate:
 	Warhead@1Dam: SpreadDamage
 		Spread: 170
 		Damage: 100
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Falloff: 100, 80, 60, 40, 20, 5, 0
 		Versus:
 			1: 100
 		AffectsParent: true
