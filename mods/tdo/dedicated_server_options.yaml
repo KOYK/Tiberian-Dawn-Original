@@ -76,7 +76,7 @@ Player:
 	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
 		Description: Campaign Color theme, Tech level, AI Boost, GDI Airstrike, Capturable Chinook
 		Enabled: False
-		Locked: True
+		Locked: False
 			#can the admin player change this?
 	LobbyPrerequisiteCheckbox@PUTSUX:
 		Description: Gives orcas obelisk's laser weapon, not recomended

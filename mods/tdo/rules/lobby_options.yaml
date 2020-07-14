@@ -307,8 +307,8 @@ Player:
 		Label: PATSUX
 		Description: Gives orcas obelisk's laser weapon, not recomended
 		Enabled: False
-		Locked: False
-		Visible: True
+		Locked: True
+		Visible: False
 		DisplayOrder: 10
 		Prerequisites: PrerequisitePUTSUX
 	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
