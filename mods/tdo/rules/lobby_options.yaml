@@ -48,8 +48,8 @@ World:
 		CheckboxVisible: True
 	ActorSpawnManager@Vice:
 		Minimum: 0
-		Maximum: 6
-		SpawnInterval: 3000
+		Maximum: 1
+		SpawnInterval: 6000
 		Actors: vice
 		Owner: Creeps
 		Types: vice

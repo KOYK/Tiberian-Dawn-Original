@@ -1,0 +1,19 @@
+HARVIDLE:
+	Inherits@ParentActor: HARV
+	EditorOnlyTooltip:
+		Name: Idle Harvester
+	RenderSprites:
+		PlayerPalette: player
+		Image: harv
+	Harvester:
+		SearchOnCreation: False
+	MapEditorData:
+		Categories: Mission Only
+	-Buildable:
+
+EYE:
+	IonCannonPower:
+		ChargeInterval: 15000
+HQ:
+	AirstrikePower:
+		ChargeInterval: 7500

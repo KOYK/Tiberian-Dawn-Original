@@ -823,6 +823,7 @@ EYE:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -200
+	-Capturable:
 	ProvidesPrerequisite@buildingname:
 
 TMPL:
@@ -892,6 +893,7 @@ TMPL:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -150
+	-Capturable:
 	ProvidesPrerequisite@buildingname:
 
 #===========================================================

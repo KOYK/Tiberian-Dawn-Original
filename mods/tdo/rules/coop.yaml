@@ -4,8 +4,9 @@
 
 World:
 	MapBuildRadius:
-		AllyBuildRadiusCheckboxEnabled: False
+		AllyBuildRadiusCheckboxEnabled: True
 		AllyBuildRadiusCheckboxLocked: True
+		AllyBuildRadiusCheckboxVisible: False
 	MapOptions:
 		ShortGameCheckboxEnabled: False
 		ShortGameCheckboxVisible: False
@@ -19,19 +20,19 @@ World:
 	-MPStartLocations:
 	-SpawnMPUnits:
 	MapCreeps:
-		CheckboxEnabled: True
+		CheckboxEnabled: False
+		CheckboxLocked: True
+		CheckboxVisible: False
+	CrateSpawner:
+		CheckboxEnabled: False
 		CheckboxLocked: True
 		CheckboxVisible: False
 
 Player:
-	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
-		Enabled: False
-		Locked: True
-		Visible: False
 	PlayerResources:
 		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000
 		DefaultCashDropdownVisible: False
-		DefaultCash: 2500
+		DefaultCash: 5000
 		DefaultCashDropdownLocked: True
 	DeveloperMode:
 		CheckboxEnabled: false
@@ -49,23 +50,30 @@ Player:
 		Enabled: False
 		Locked: True
 		Visible: False
+	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
+		Enabled: True
+		Locked: True
+		Visible: False
 	LobbyPrerequisiteCheckbox@HUSKS:
 		Enabled: False
 		Locked: True
 		Visible: False
 	LobbyPrerequisiteCheckbox@LINEWALLS:
-		Enabled: False
+		Enabled: True
 		Locked: False
+		Visible: False
 	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
 		Enabled: True
 		Locked: True
 		Visible: False
 	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
-		Enabled: False
+		Enabled: True
 		Locked: False
+		Visible: False
 	LobbyPrerequisiteCheckbox@PRODUCTIONBAR:
 		Enabled: False
 		Locked: False
+		Visible: False
 	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
 		Enabled: True
 		Locked: True
@@ -84,6 +92,14 @@ Player:
 		Visible: False
 	LobbyPrerequisiteCheckbox@REGROWTH:
 		Enabled: True
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
+		Enabled: False
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@MULTIENGINEER:
+		Enabled: False
 		Locked: True
 		Visible: False
 
@@ -159,6 +175,8 @@ Player:
 
 ^Helicopter:
 	Inherits@ToolTip: ^GenericTooltipNames
+	Tooltip:
+		GenericName: Aircraft
 	RenderSprites:
 		PlayerPalette: player-units
 

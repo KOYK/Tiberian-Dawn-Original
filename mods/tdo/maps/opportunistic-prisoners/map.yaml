@@ -1584,6 +1584,6 @@ Actors:
 		Location: 1,46
 		SubCell: 1
 
-Rules: coop.yaml
+Rules: tdo|rules/coop.yaml, rules.yaml
 
 Sequences: sequences.yaml

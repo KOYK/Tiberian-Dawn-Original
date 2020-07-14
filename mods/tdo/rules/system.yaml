@@ -148,7 +148,7 @@
 		MaxDensity: 12
 		ValuePerUnit: 35
 		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: true
+		AllowUnderActors: false
 	ResourceType@blue-tib:
 		Type: BlueTiberium
 		Name: Tiberium
@@ -160,7 +160,7 @@
 		MaxDensity: 12
 		ValuePerUnit: 60
 		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: true
+		AllowUnderActors: false
 
 World:
 	Inherits: ^BaseWorld
@@ -1082,7 +1082,7 @@ Player:
 		SellSounds: cashturn.aud
 	CaptureManager:
 	Capturable:
-		Types: building-sabotage
+		Types: building-sabotage, building
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithBuildingRepairDecoration:
@@ -1172,11 +1172,11 @@ Player:
 	OwnerLostAction:
 		Action: ChangeOwner
 	CaptureManager:
-	GrantConditionOnPrerequisite:
+	GrantConditionOnPrerequisite@CAPTURABLELOBBYTECH:
 		Condition: CapturableCon
 		Prerequisites: TechBuildingsEnabled
 	Capturable:
-		Types: building
+		Types: TechBuilding
 		RequiresCondition: CapturableCon
 	CaptureNotification:
 		Notification: CivilianBuildingCaptured

@@ -1492,11 +1492,19 @@ E6:
 		Condition: MultiEngineer
 	Captures@SABOTAGE:
 		CaptureTypes: building-sabotage
-		SabotageThreshold: 55
-		PlayerExperience: 50
+		SabotageThreshold: 50
+		SabotageHPRemoval: 25
+		PlayerExperience: 5
 		RequiresCondition: MultiEngineer
-	Captures@CAPTURES:
-		CaptureTypes: building, husk
+	Captures@BASE:
+		CaptureTypes: building
+		PlayerExperience: 50
+		RequiresCondition: !MultiEngineer
+	Captures@TECHBUILDING:
+		CaptureTypes: TechBuilding
+		PlayerExperience: 1
+	Captures@CAPTURESHUSK:
+		CaptureTypes: husk
 		PlayerExperience: 50
 	Captures@CHINOOK:
 		CaptureTypes: chinook
@@ -1565,7 +1573,7 @@ RMBO:
 	CaptureManager:
 	Captures@CHINOOK:
 		CaptureTypes: chinook
-		PlayerExperience: 50
+		PlayerExperience: 25
 		Voice: Move
 
 C1:
