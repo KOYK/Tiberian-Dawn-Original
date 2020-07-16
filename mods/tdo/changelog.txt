@@ -8,3 +8,9 @@ Added A10 airstrike for Singleplayer rules.
 Changed mini map colors using the original game colors.
 Changed singleplayer rules, now chem warrior, chinook, commando, apc, Rocket Launcher, SSM units received special requirements in order to get them. In detail: chem warrior needs bio lab(in the original you dont get to train them in singleplayer) and only for nod, chinook is untrainable but I havent test this fully to see if you can train it in one of the singleplayer missions, commando is untrainable, APC and Rocket Launcher is a GDI only unit, SSM launcher needs tech center and only for nod.
 Removed PATSUX from skirmish lobby.
+Infantry or civilians now will come out of destroyed buildings some times.
+Added new coop palettes.
+Fixed a visual bug with con yard.
+Fixed bug with with player color on some civilian buildings.
+Fixed dublicate coms center.
+Removed "destroyed" and "burned" tooltip from civialian buildings and trees.

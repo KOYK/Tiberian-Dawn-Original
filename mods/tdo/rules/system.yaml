@@ -1073,7 +1073,7 @@ Player:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
 	SpawnActorsOnSell:
-		ActorTypes: e6,e1,e1,e1
+		ActorTypes: e6,e1,e1,e1,tc1,tc7
 	EngineerRepairable:
 	Demolishable:
 		Condition: being-demolished
@@ -1091,6 +1091,18 @@ Player:
 		ReferencePoint: Center
 		Palette: player
 		IsPlayerPalette: True
+	SpawnActorOnDeath@SpawnE11:
+		Actor: e1
+		Probability: 40
+		OwnerType: Victim
+		SpawnAfterDefeat: False
+		RequiresCondition: !being-demolished
+	SpawnActorOnDeath@SpawnE12:
+		Actor: e1
+		Probability: 50
+		OwnerType: Victim
+		SpawnAfterDefeat: False
+		RequiresCondition: !being-demolished
 
 ^Defense:
 	Inherits: ^BaseBuilding
@@ -1104,6 +1116,7 @@ Player:
 		Categories: Defense
 	-CommandBarBlacklist:
 	-AcceptsDeliveredCash:
+	-Capturable:
 
 ^ProductionBuilding:
 	PrimaryBuilding:
@@ -1140,6 +1153,8 @@ Player:
 		Terrain: CivBuild
 	MapEditorData:
 		Categories: Civilian building
+	RenderSprites:
+		Palette: terrain
 
 ^CivBuildingHusk:
 	Inherits@1: ^SpriteActor
@@ -1165,6 +1180,8 @@ Player:
 		Terrain: CivBuild
 	MapEditorData:
 		Categories: Husk
+	RenderSprites:
+		Palette: terrain
 
 ^TechBuilding:
 	Inherits: ^CivBuilding
@@ -1206,6 +1223,9 @@ Player:
 		IsPlayerPalette: True
 	GivesBuildableArea:
 		AreaTypes: building
+	RenderSprites:
+		PlayerPalette: player
+		-Palette: terrain
 
 ^CivField:
 	Inherits: ^CivBuilding
@@ -1233,7 +1253,7 @@ Player:
 		Dimensions: 1,1
 		Footprint: =
 	Tooltip:
-		Name: Field (Destroyed)
+		Name: Field
 		GenericVisibility: None
 		ShowOwnerRow: false
 	RenderSprites:
@@ -1362,7 +1382,7 @@ Player:
 		Dimensions: 2,2
 	WithSpriteBody:
 	Tooltip:
-		Name: Tree (Burnt)
+		Name: Tree
 		ShowOwnerRow: false
 	HiddenUnderShroud:
 	ScriptTriggers:

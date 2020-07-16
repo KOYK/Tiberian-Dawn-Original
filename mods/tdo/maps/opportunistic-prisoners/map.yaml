@@ -49,7 +49,7 @@ Players:
 		LockFaction: True
 		Faction: gdi
 		LockColor: True
-		Color: F5D378
+		Color: 7D2DBD
 		LockSpawn: True
 		Spawn: 2
 		LockTeam: True

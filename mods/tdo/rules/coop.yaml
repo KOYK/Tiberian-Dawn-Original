@@ -105,8 +105,16 @@ Player:
 
 ^Palettes:
 	-PlayerColorPalette:
+	PaletteFromFile@coop-player:
+		Name: coop
+		Filename: coop.pal
+		ShadowIndex: 4
+	PaletteFromFile@coop-units:
+		Name: coop_units
+		Filename: coop_units.pal
+		ShadowIndex: 4
 	IndexedPlayerPalette:
-		BasePalette: terrain
+		BasePalette: coop
 		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
 		PlayerIndex:
 			GDI_1: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
@@ -118,7 +126,7 @@ Player:
 			GDI_T: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
 			GDI_N: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
 			Nod_1: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
-			Nod_2: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Nod_2: 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239
 			Nod_3: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
 			Nod_4: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
 			Nod_C: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
@@ -126,13 +134,15 @@ Player:
 			Nod_T: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
 			Nod_N: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
 			Neutral: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
-			#1,2,3,4 are players.
+			#1,2 Human Players.
+			#3,4 Reserved Players.
 			#C is civilians allied to that faction.
 			#H is hostiles to the other faction, with no AI just guards.
 			#T is traitors to the same faction, could use AI.
 			#N is neutral to all, uses same faction, no AI just for capture.
+			#NOTE: None human players should not be allied with each other or with humans, but be neutral, so they wont build on each other bases, ie get a defence near a civ wall or farm.
 	IndexedPlayerPalette@units:
-		BasePalette: terrain
+		BasePalette: coop_units
 		BaseName: player-units
 		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
 		PlayerIndex:
@@ -145,7 +155,7 @@ Player:
 			GDI_T: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
 			GDI_N: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
 			Nod_1: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
-			Nod_2: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Nod_2: 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239
 			Nod_3: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
 			Nod_4: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
 			Nod_C: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114

@@ -1576,6 +1576,19 @@ RMBO:
 		PlayerExperience: 25
 		Voice: Move
 
+TC1:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+TC7:
+	Inherits@OriginalActor: C7
+	RenderSprites:
+		Image: c7
+	Tooltip:
+		Name: Technician
+
 C1:
 	Inherits: ^CivInfantry
 	Inherits@armed: ^ArmedCivilian

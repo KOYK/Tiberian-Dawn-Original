@@ -73,7 +73,7 @@ Players:
 		LockFaction: True
 		Faction: nod
 		LockColor: True
-		Color: BD372D
+		Color: 7D2DBD
 		LockSpawn: True
 		Spawn: 3
 		Team: 1

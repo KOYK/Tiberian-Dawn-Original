@@ -175,6 +175,8 @@ NUKE:
 	Power:
 		Amount: 100
 	ScalePowerWithHealth:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1
 
 NUK2:
 	Inherits: ^BaseBuilding
@@ -208,6 +210,8 @@ NUK2:
 	Power:
 		Amount: 200
 	ScalePowerWithHealth:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,tc1,tc7
 
 PROC:
 	Inherits: ^BaseBuilding
@@ -279,6 +283,8 @@ PROC:
 		Type: Footprint
 		Weapon: BuildingExplodeRef
 		EmptyWeapon: BuildingExplodeRef
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -376,6 +382,8 @@ PYLE:
 	ProvidesPrerequisite@buildingname:
 	Selectable:
 		Bounds: 48,42,0,-5
+	SpawnActorsOnSell:
+		ActorTypes: e1,tc1
 
 HAND:
 	Inherits: ^BaseBuilding
@@ -427,6 +435,8 @@ HAND:
 		Bounds: 48,48
 		DecorationBounds: 48,68,0,-10
 	SelectionDecorations:
+	SpawnActorsOnSell:
+		ActorTypes: e1,tc1
 
 WEAP:
 	Inherits: ^BaseBuilding
@@ -484,6 +494,8 @@ WEAP:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1
 
 AFLD:
 	Inherits: ^BaseBuilding
@@ -538,6 +550,8 @@ AFLD:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,tc1
 
 HPAD:
 	Inherits: ^BaseBuilding
@@ -622,6 +636,8 @@ HPAD:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,tc1,tc7
 
 HQ:
 	Inherits: ^BaseBuilding
@@ -697,13 +713,15 @@ HQ:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -40
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1
 
 HQNod:
 	Inherits@OriginalActor: HQ
 	Tooltip:
 		Name: Communications Center
 	Buildable:
-		Prerequisites: ~proc, ~tl2, ~NodConstructionYard
+		Prerequisites: ~proc, ~tl2, ~NodConstructionYard, ~!GDIConstructionYard
 	RenderSprites:
 		Image: hq
 
@@ -760,6 +778,8 @@ FIX:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,tc1,tc7
 
 EYE:
 	Inherits: ^BaseBuilding
@@ -825,6 +845,8 @@ EYE:
 		Amount: -200
 	-Capturable:
 	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1,tc1,tc7
 
 TMPL:
 	Inherits: ^BaseBuilding
@@ -895,6 +917,8 @@ TMPL:
 		Amount: -150
 	-Capturable:
 	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1,tc1,tc7
 
 #===========================================================
 #							BASE-DEFENSE
@@ -944,6 +968,8 @@ GUN:
 		Amount: -20
 	BodyOrientation:
 		UseClassicFacingFudge: True
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1
 
 SAM:
 	Inherits: ^Defense
@@ -995,6 +1021,8 @@ SAM:
 		Amount: -20
 	BodyOrientation:
 		UseClassicFacingFudge: True
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1
 
 OBLI:
 	Inherits: ^Defense
@@ -1045,6 +1073,8 @@ OBLI:
 	Power:
 		Amount: -150
 	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,tc1
 
 GTWR:
 	Inherits: ^Defense
@@ -1086,6 +1116,8 @@ GTWR:
 		TurnSpeed: 255
 	Power:
 		Amount: -10
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1
 
 ATWR:
 	Inherits: ^Defense
@@ -1131,6 +1163,8 @@ ATWR:
 		RequiresCondition: !lowpower
 	Power:
 		Amount: -20
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1
 
 #===========================================================
 #							WALLS
