@@ -36,17 +36,3 @@ Changed vision of all infantry based on the original.
 Changed vision of dinos based on the original.
 Fixed vision of some buildings based on the original.
 Fixed cloak detect range by 1 on HQ and EYE to cover the entire cell cyrcle around them.
-
-Closes #81
-Closes #120
-Closes #105 Add correct build timers for buildings and units (still needs some fixes for units)
-Closes #122
-Closes #119
-Closes #127
-Closes #108
-Closes #114
-Closes #121
-Closes #117
-Closes #56
-Closes #126
-Closes #116
