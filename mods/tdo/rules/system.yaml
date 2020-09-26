@@ -239,7 +239,8 @@ Player:
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		SpeedUp: True
-		BuildTimeSpeedReduction: 100, 75, 60, 50
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
+		#test shows that reduction can go for ever. coms center with around 14 con yards build time reduced to 3 seconds.
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle
 		DisplayOrder: 3
@@ -251,7 +252,7 @@ Player:
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		SpeedUp: True
-		BuildTimeSpeedReduction: 100, 75, 60, 50
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
 	ClassicProductionQueue@Infantry:
 		Type: Infantry
 		DisplayOrder: 2
@@ -263,7 +264,7 @@ Player:
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		SpeedUp: True
-		BuildTimeSpeedReduction: 100, 75, 60, 50
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
 	ClassicProductionQueue@Ship:
 		Type: Ship
 		DisplayOrder: 5
@@ -275,7 +276,7 @@ Player:
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		SpeedUp: True
-		BuildTimeSpeedReduction: 100, 75, 60, 50
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
 	ClassicProductionQueue@Aircraft:
 		Type: Aircraft
 		DisplayOrder: 4
@@ -287,7 +288,7 @@ Player:
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
 		SpeedUp: True
-		BuildTimeSpeedReduction: 100, 75, 60, 50
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
 	TechTree:
 	SupportPowerManager:
 	ScriptTriggers:
@@ -546,7 +547,7 @@ Player:
 	SelfHealing@LOWPOWER:
 		Step: 0
 		PercentageStep: -1
-		Delay: 1500
+		Delay: 750
 		HealIfBelow: 101
 		DamageCooldown: 0
 		RequiresCondition: lowpower && global-lpdamage
@@ -616,6 +617,16 @@ Player:
 	HitShape:
 	MapEditorData:
 		Categories: Vehicle
+	SpawnActorOnDeath@SpawnE11:
+		Actor: e1
+		Probability: 20
+		OwnerType: Victim
+		SpawnAfterDefeat: False
+	SpawnActorOnDeath@SpawnE12:
+		Actor: e1
+		Probability: 5
+		OwnerType: Victim
+		SpawnAfterDefeat: False
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -653,7 +664,13 @@ Player:
 	OwnerLostAction:
 		Action: Kill
 	AppearsOnRadar:
-		UseLocation: true
+		UseLocation: false
+	RevealsShroud@LANDED:
+		Range: 2c0
+		RequiresCondition: !airborne
+	RevealsShroud@AIR:
+		Range: 0c0
+		RequiresCondition: airborne
 	Targetable@GROUND:
 		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne
@@ -683,7 +700,6 @@ Player:
 		TurnToDock: True
 		TurnToLand: True
 	HiddenUnderFog:
-		Type: GroundPosition
 	ActorLostNotification:
 	Explodes:
 		Weapon: HeliExplode
@@ -731,7 +747,8 @@ Player:
 	Armor:
 		Type: 0
 	RevealsShroud:
-		Range: 5c0
+		Range: 1c512
+		MoveRecalculationThreshold: 0c0
 	Mobile:
 		Locomotor: foot
 	SelectionDecorations:
@@ -903,15 +920,16 @@ Player:
 	Armor:
 		Type: 3
 	Buildable:
-		Queue: Biolab
+		Queue: Infantry
 		BuildPaletteOrder: 50
-		Prerequisites: ~disabled
+		Prerequisites: ~inv_dino
+	MustBeDestroyed:
 	Valued:
 		Cost: 1000
 	Tooltip:
 		Name: Dinosaur
 	RevealsShroud:
-		Range: 6c0
+		Range: 5c0
 	Mobile:
 		Locomotor: critter
 		Speed: 113
@@ -1155,6 +1173,8 @@ Player:
 		Categories: Civilian building
 	RenderSprites:
 		Palette: terrain
+	RevealsShroud:
+		Range: 1c512
 
 ^CivBuildingHusk:
 	Inherits@1: ^SpriteActor
@@ -1206,7 +1226,7 @@ Player:
 		RepairBonuses: 100, 0
 	EngineerRepairable:
 	RevealsShroud:
-		Range: 3c0
+		Range: 2c0
 	Tooltip:
 		ShowOwnerRow: false
 		GenericStancePrefix: True
@@ -1290,9 +1310,6 @@ Player:
 		Adjacent: 1
 	Targetable:
 		TargetTypes: Ground, Wall
-	Crushable:
-		CrushClasses: wall
-		CrushSound: sandbag2.aud
 	RenderSprites:
 		Palette: staticterrain
 	WithWallSpriteBody:
@@ -1317,6 +1334,9 @@ Player:
 		NodeTypes: wall
 	LineBuildNode:
 		Types: wall
+	#Crushable:
+	#	CrushClasses: wall
+	#	CrushSound: sandbag2.aud
 
 ^LineBuild:
 	Inherits@Wall: ^Wall
@@ -1647,6 +1667,23 @@ fact.colorpicker:
 	RenderSprites:
 		Image: fix
 		Palette: colorpicker
+
+^InvisibleFactory:
+	Interactable:
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	MapEditorData:
+		Categories: System
+	ProvidesPrerequisite@buildingname:
+	Production:
+		Produces: Infantry
+	ProductionFromMapEdge:
+		Produces: Infantry
 
 CAMERA:
 	Interactable:

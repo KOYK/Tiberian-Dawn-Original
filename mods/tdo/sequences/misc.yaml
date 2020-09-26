@@ -234,6 +234,34 @@ rallypoint:
 		Length: *
 		ZOffset: 2047
 
+inv_dino:
+	idle: invisible_factory
+		Start: 0
+
+inv_vice:
+	idle: invisible_factory
+		Start: 1
+
+inv_veh:
+	idle: invisible_factory
+		Start: 2
+
+inv_inf:
+	idle: invisible_factory
+		Start: 3
+
+inv_air:
+	idle: invisible_factory
+		Start: 4
+
+inv_sea:
+	idle: invisible_factory
+		Start: 5
+
+inv_str:
+	idle: invisible_factory
+		Start: 6
+
 beacon:
 	Defaults:
 		ZOffset: 2535

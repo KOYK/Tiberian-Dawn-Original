@@ -1,12 +1,14 @@
 Added bib to tech buildings.
 Added ability to build near owned tech buildings.
+
 Changed the RotationStep on water to look like the original game.
 Made 2 new coop maps.
+Made 1 new multiplayer map.
 Added lobby option, Multi Engineers.
-Fixed lobby option, Singleplayer rules.
+Fixed lobby option, Singleplayer mode.
 Added A10 airstrike for Singleplayer rules.
 Changed mini map colors using the original game colors.
-Changed singleplayer rules, now chem warrior, chinook, commando, apc, Rocket Launcher, SSM units received special requirements in order to get them. In detail: chem warrior needs bio lab(in the original you dont get to train them in singleplayer) and only for nod, chinook is untrainable but I havent test this fully to see if you can train it in one of the singleplayer missions, commando is untrainable, APC and Rocket Launcher is a GDI only unit, SSM launcher needs tech center and only for nod.
+Changed singleplayer mode rules, now chem warrior, chinook, commando, apc, Rocket Launcher, SSM units received special requirements in order to get them. In detail: chem warrior needs bio lab(in the original you dont get to train them in singleplayer) and only for nod, chinook is untrainable but I havent test this fully to see if you can train it in one of the singleplayer missions, commando is untrainable, APC and Rocket Launcher is a GDI only unit, SSM launcher needs tech center and only for nod.
 Removed PATSUX from skirmish lobby.
 Infantry or civilians now will come out of destroyed buildings some times.
 Added new coop palettes.
@@ -14,3 +16,37 @@ Fixed a visual bug with con yard.
 Fixed bug with with player color on some civilian buildings.
 Fixed dublicate coms center.
 Removed "destroyed" and "burned" tooltip from civialian buildings and trees.
+Fixed Rocket Launcher to be more inaccurate.
+Added chance for crew escaping from destroyed vehicles.
+Added invisible production actors, that train units outside the map, to make life easy for map authors.
+Added dinos and vice to the AI production list, in order to better work with invisible production actors (it can be used for AI dino\vice based defence maps).
+Changed BuildTimeSpeedReduction to 100, 50, 31, 26, 19, 17 for now(#test shows that reduction can go for ever. coms center with around 14 con yards build time reduced to 3 seconds).
+Changed build speed of buildings to be close to the original as possible.(not fully implemented yet).
+Added 100 tiberium storage to hospital like the original game (no idea).
+Fixed Artillery aoe damage.
+Fixed Artillery to target actors when using force fire.
+Fixed Adv.guard tower to fire at air units.
+Changed Temple of nod and adv.com center are not longer capturable.
+Changed vehicles no longer crush walls (like in the original).
+Fixed* spectator missing textures (radar bar still missing texture).
+Fixed CTD caused by missing mute button.
+Added ION Cannon does more damage to Temple Of Nod if singleplayer rules are enabled.
+Fixed aircraft vision (on air and land) now aircraft can only reveal an area around them only when landed.
+Changed vision of all infantry based on the original.
+Changed vision of dinos based on the original.
+Fixed vision of some buildings based on the original.
+Fixed cloak detect range by 1 on HQ and EYE to cover the entire cell cyrcle around them.
+
+Closes #81
+Closes #120
+Closes #105 Add correct build timers for buildings and units (still needs some fixes for units)
+Closes #122
+Closes #119
+Closes #127
+Closes #108
+Closes #114
+Closes #121
+Closes #117
+Closes #56
+Closes #126
+Closes #116

@@ -161,6 +161,7 @@ NUKE:
 		Queue: Building
 		BuildDuration: 330
 		Description: Generates power
+		BuildDurationModifier: 70
 	Building:
 		Footprint: x_ xx ==
 		Dimensions: 2,3
@@ -196,6 +197,7 @@ NUK2:
 		Prerequisites: ~fact, ~anypower, ~tl5
 		Queue: Building
 		Description: Provides more power, cheaper than the\nstandard Power Plant
+		BuildDurationModifier: 110
 	Building:
 		Footprint: x_ xx ==
 		Dimensions: 2,3
@@ -236,6 +238,7 @@ PROC:
 		Prerequisites: ~anypower, ~tl1
 		Queue: Building
 		Description: Processes raw Tiberium\ninto useable resources
+		BuildDurationModifier: 32
 	Building:
 		Footprint: _x_ xxx === ===
 		Dimensions: 3,4
@@ -298,6 +301,7 @@ SILO:
 		Prerequisites: ~proc, ~tl1
 		Queue: Building
 		Description: Stores processed Tiberium
+		BuildDuration: 200
 	Building:
 		Footprint: xx ==
 		Dimensions: 2,2
@@ -349,6 +353,7 @@ PYLE:
 		Prerequisites: ~anypower, ~GDIConstructionYard, ~tl1
 		Queue: Building
 		Description: Trains infantry
+		BuildDurationModifier: 76
 	ProductionBar:
 		ProductionType: Infantry
 		Color: 3AA730
@@ -405,6 +410,7 @@ HAND:
 		Prerequisites: ~anypower, ~NodConstructionYard, ~tl1
 		Queue: Building
 		Description: Trains infantry
+		BuildDurationModifier: 76
 	ProductionBar:
 		ProductionType: Infantry
 		Color: 3AA730
@@ -462,6 +468,7 @@ WEAP:
 		Prerequisites: ~proc, ~GDIConstructionYard, ~tl2
 		Queue: Building
 		Description: Produces vehicles
+		BuildDurationModifier: 116
 	ProductionBar:
 		ProductionType: Vehicle
 		Color: 3AA730
@@ -520,6 +527,7 @@ AFLD:
 		Prerequisites: ~proc, ~NodConstructionYard, ~tl2
 		Queue: Building
 		Description: Provides a dropzone\nfor vehicle reinforcements
+		BuildDurationModifier: 116
 	ProductionBar:
 		ProductionType: Vehicle
 		Color: 3AA730
@@ -567,6 +575,9 @@ HPAD:
 	ProductionCostMultiplier:
 		Multiplier: 20
 		Prerequisites: !emptyhelipads
+	ProductionTimeMultiplier:
+		Multiplier: 22
+		Prerequisites: emptyhelipads
 	GrantConditionOnPrerequisite@EMPTYHELIPADS:
 		Prerequisites: emptyhelipads
 		Condition: ConEmptyHelipads
@@ -579,7 +590,7 @@ HPAD:
 		Prerequisites: ~barracks, ~tl6
 		Queue: Building
 		Description: Produces and rearms helicopters
-		BuildDuration: 300
+		BuildDurationModifier: 70
 	ProductionBar:
 		ProductionType: Aircraft
 		Color: 00FFDF
@@ -658,6 +669,8 @@ HQ:
 		Prerequisites: ~proc, ~tl2, ~GDIConstructionYard
 		Queue: Building
 		Description: Provides radar and Air Strike support power.\nUnlocks higher-tech units and buildings.\nRequires power to operate.
+		BuildDurationModifier: 115
+		#BuildDuration: 1900
 	Building:
 		Footprint: X_ xx ==
 		Dimensions: 2,3
@@ -679,7 +692,7 @@ HQ:
 		RequiresCondition: !lowpower
 	RenderDetectionCircle:
 	DetectCloaked:
-		Range: 1c0
+		Range: 2c0
 		RequiresCondition: !lowpower
 	GrantConditionOnFaction@GDI:
 		Condition: ConGDI
@@ -750,6 +763,7 @@ FIX:
 		Prerequisites: ~anypower, ~tl5
 		Queue: Building
 		Description: Repairs vehicles
+		BuildDurationModifier: 118
 	Building:
 		Footprint: _+_ +++ =+= ===
 		Dimensions: 3,4
@@ -823,7 +837,7 @@ EYE:
 		RequiresCondition: !lowpower
 	RenderDetectionCircle:
 	DetectCloaked:
-		Range: 1c0
+		Range: 2c0
 		RequiresCondition: !lowpower
 	IonCannonPower:
 		PauseOnCondition: lowpower
@@ -878,8 +892,14 @@ TMPL:
 	SelectionDecorations:
 	Health:
 		HP: 2000
-	Armor:
+	GrantConditionOnPrerequisite@IONCANNONVULNERABLE:
+		Condition: singleplayer
+		Prerequisites: PrerequisiteSinglePlayer
+	Armor@Normal:
 		Type: 2
+	Armor@IonCannonPower:
+		Type: IonCannonVulnerable
+		RequiresCondition: singleplayer
 	RevealsShroud:
 		Range: 4c0
 	NukePower:
@@ -938,7 +958,7 @@ GUN:
 		Prerequisites: ~barracks, ~NodConstructionYard, ~tl2
 		Queue: Building
 		BuildDuration: 1440
-		BuildDurationModifier: 40
+		BuildDurationModifier: 45
 		Description: Basic Anti-Tank base defense.\n  Strong vs Tanks, vehicles\n  Weak vs Infantry
 	Building:
 	Health:
@@ -991,7 +1011,7 @@ SAM:
 		Prerequisites: ~hand, ~NodConstructionYard, ~tl6
 		Queue: Building
 		BuildDuration: 1700
-		BuildDurationModifier: 40
+		BuildDurationModifier: 45
 		Description: Anti-Aircraft base defense.\n  Strong vs Aircraft\n  Cannot target Ground units.
 	Building:
 		Footprint: xx
@@ -1183,6 +1203,7 @@ SBAG:
 		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl2
 		Queue: Building
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+		BuildDuration: 200
 	LineBuild:
 		NodeTypes: sandbag
 	LineBuildNode:
@@ -1222,6 +1243,7 @@ CYCL:
 		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl5
 		Queue: Building
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+		BuildDuration: 200
 	LineBuild:
 		NodeTypes: chain
 	LineBuildNode:
@@ -1260,9 +1282,9 @@ BRIK:
 		BuildPaletteOrder: 30
 		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl7
 		Queue: Building
-		BuildDuration: 500
 		BuildDurationModifier: 40
 		Description: Stops infantry and most tanks.\nBlocks some projectiles.
+		BuildDuration: 300
 	Health:
 		HP: 500
 	BlocksProjectiles:
@@ -1304,6 +1326,7 @@ BARB:
 		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
 		Queue: Building
 		Description: Stops infantry.\nCan be crushed by tanks.
+		BuildDuration: 200
 	AppearsOnMapPreview:
 		Terrain: WallChain
 	RadarColorFromTerrain:
@@ -1339,6 +1362,7 @@ WOOD:
 		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
 		Queue: Building
 		Description: Stops infantry.\nCan be crushed by tanks.
+		BuildDuration: 200
 	AppearsOnMapPreview:
 		Terrain: CivBuild
 	RadarColorFromTerrain:
@@ -1400,7 +1424,10 @@ HOSP:
 	WithBuildingBib:
 		HasMinibib: False
 	ProvidesPrerequisite@buildingname:
-
+	StoresResources:
+		PipCount: 0
+		PipColor: Green
+		Capacity: 100
 BIO:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
@@ -1480,6 +1507,94 @@ MISS:
 		ResetOnOwnerChange: False
 		RequiresCondition: SecretTechB
 		#Factions: 
+
+#===========================================================
+#							INVISIBLE-FACTORIES
+#===========================================================
+
+INV_DINO:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Dino 
+
+INV_VICE:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Viceroid
+
+INV_INF:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Infantry
+
+INV_VEH:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Vehicles
+	Production:
+		Produces: Vehicle
+	ProductionFromMapEdge:
+		Produces: Vehicle
+
+INV_AIR:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Aircraft
+	Production:
+		Produces: Aircraft
+	ProductionFromMapEdge:
+		Produces: Aircraft
+
+INV_SEA:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Naval
+	Production:
+		Produces: Naval
+	ProductionFromMapEdge:
+		Produces: Naval
+
+INV_STR:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Structure
+	Production:
+		Produces: Building, Defense
+	ProvidesPrerequisite@GDI:
+		Prerequisite: GDIConstructionYard
+	ProvidesPrerequisite@Nod:
+		Prerequisite: NodConstructionYard
+	ProvidesPrerequisite@Fact:
+		Prerequisite: fact
+#I Need to seperate this into 2 actors, one for nod one for gdi
+
+# PROVIDE_TECH.INSERTTECHNAMEHERE:
+# ProvidesPrerequisite@1:
+# Prerequisite: hand
+# ProvidesPrerequisite@2:
+# Prerequisite: anypower
+# ProvidesPrerequisite@3:
+# Prerequisite: pyle
+# ProvidesPrerequisite@4:
+# Prerequisite: weap
+# ProvidesPrerequisite@5:
+# Prerequisite: afld
+# ProvidesPrerequisite@6:
+# Prerequisite: hpad
+# ProvidesPrerequisite@7:
+# Prerequisite: anyhq
+# ProvidesPrerequisite@8:
+# Prerequisite: fix
+# ProvidesPrerequisite@9:
+# Prerequisite: advhq
+# ProvidesPrerequisite@10:
+# Prerequisite: vehicleproduction
+# ProvidesPrerequisite@11:
+# Prerequisite: barracks
+# ProvidesPrerequisite@12:
+# Prerequisite: tmpl
+# ProvidesPrerequisite@13:
+# Prerequisite: eye
 
 #===========================================================
 #							CIVILIAN-BUILDINGS
@@ -1803,6 +1918,8 @@ V20:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	RevealsShroud:
+		Range: 2c0
 	SpawnActorOnDeath:
 		Actor: V20.Husk
 	MapEditorData:
@@ -1832,6 +1949,8 @@ V21:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Abdul's House
+	RevealsShroud:
+		Range: 2c0
 
 V22:
 	Inherits: ^CivBuilding
@@ -1845,6 +1964,8 @@ V22:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Pablo's Wicked Pub
+	RevealsShroud:
+		Range: 2c0
 
 V23:
 	Inherits: ^CivBuilding
@@ -1854,6 +1975,8 @@ V23:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Village Well
+	RevealsShroud:
+		Range: 2c0
 
 V24:
 	Inherits: ^CivBuilding
@@ -1872,6 +1995,8 @@ V24:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Camel Trader
+	RevealsShroud:
+		Range: 2c0
 
 V25:
 	Inherits: ^CivBuilding
@@ -1890,6 +2015,8 @@ V25:
 		Actor: V25.Husk
 	MapEditorData:
 		RequireTilesets: DESERT
+	RevealsShroud:
+		Range: 2c0
 
 V26:
 	Inherits: ^CivBuilding
@@ -1903,6 +2030,8 @@ V26:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Ali's House
+	RevealsShroud:
+		Range: 2c0
 
 V27:
 	Inherits: ^CivBuilding
@@ -1912,6 +2041,8 @@ V27:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Trader Ted's
+	RevealsShroud:
+		Range: 2c0
 
 V28:
 	Inherits: ^CivBuilding
@@ -1921,6 +2052,8 @@ V28:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Menelik's House
+	RevealsShroud:
+		Range: 2c0
 
 V29:
 	Inherits: ^CivBuilding
@@ -1930,6 +2063,8 @@ V29:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Prestor John's House
+	RevealsShroud:
+		Range: 2c0
 
 V30:
 	Inherits: ^CivBuilding
@@ -1943,6 +2078,8 @@ V30:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Village Well
+	RevealsShroud:
+		Range: 2c0
 
 V31:
 	Inherits: ^CivBuilding
@@ -1956,6 +2093,8 @@ V31:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Witch Doctor's Hut
+	RevealsShroud:
+		Range: 2c0
 
 V32:
 	Inherits: ^CivBuilding
@@ -1969,6 +2108,8 @@ V32:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Rikitikitembo's Hut
+	RevealsShroud:
+		Range: 2c0
 
 V33:
 	Inherits: ^CivBuilding
@@ -1982,6 +2123,8 @@ V33:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Roarke's Hut
+	RevealsShroud:
+		Range: 2c0
 
 V34:
 	Inherits: ^CivBuilding
@@ -1991,6 +2134,8 @@ V34:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Mubasa's Hut
+	RevealsShroud:
+		Range: 2c0
 
 V35:
 	Inherits: ^CivBuilding
@@ -2000,6 +2145,8 @@ V35:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Aksum's Hut
+	RevealsShroud:
+		Range: 2c0
 
 V36:
 	Inherits: ^CivBuilding
@@ -2009,6 +2156,8 @@ V36:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: Mambo's Hut
+	RevealsShroud:
+		Range: 2c0
 
 V37:
 	Inherits: ^CivBuilding
@@ -2029,3 +2178,5 @@ V37:
 		RequireTilesets: DESERT
 	Tooltip:
 		Name: The Studio
+	RevealsShroud:
+		Range: 2c0

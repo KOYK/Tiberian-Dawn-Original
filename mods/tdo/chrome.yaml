@@ -138,6 +138,7 @@ sidebar-bits:
 		production-tooltip-cost: 448, 80, 16, 16
 		production-iconoverlay: 128, 75, 238, 48
 		commandbar-background: 0, 123, 434, 44
+		indicator-muted: 424, 52, 26, 24
 
 power-icons:
 	Image: chrome.png

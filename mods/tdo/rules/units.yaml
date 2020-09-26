@@ -6,10 +6,12 @@ VICE:
 		MaxMoveDelay: 300
 PVICE:
 	Inherits: ^Viceroid
+	MustBeDestroyed:
 	Buildable:
-		Queue: Biolab
+		Queue: Infantry
 		BuildPaletteOrder: 40
 		Description: Mutated abomination that spits liquid Tiberium.\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft
+		Prerequisites: ~inv_vice
 	Tooltip:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -518,7 +520,7 @@ ARTY:
 		MuzzleSequence: muzzle
 	AttackFrontal:
 		TargetFrozenActors: True
-		ForceFireIgnoresActors: True
+		ForceFireIgnoresActors: False
 	WithMuzzleOverlay:
 	AutoTarget:
 		InitialStanceAI: Defend
@@ -626,7 +628,7 @@ MCV:
 	Armor:
 		Type: 2
 	RevealsShroud:
-		Range: 6c0
+		Range: 2c0
 	Transforms:
 		IntoActor: fact
 		Offset: -1,-1
@@ -1093,9 +1095,6 @@ TRAN:
 		HP: 90
 	Armor:
 		Type: 2
-	RevealsShroud:
-		Range: 0c0
-		Type: GroundPosition
 	WithIdleOverlay@ROTOR1AIR:
 		Offset: 597,0,85
 		Sequence: rotor
@@ -1149,9 +1148,6 @@ HELI:
 		HP: 125
 	Armor:
 		Type: 3
-	RevealsShroud:
-		Range: 0c0
-		Type: GroundPosition
 	Armament@PRIMARY:
 		Weapon: Chaingun
 		LocalOffset: 128,-213,-85, 128,213,-85
@@ -1204,9 +1200,6 @@ ORCA:
 		HP: 125
 	Armor:
 		Type: 3
-	RevealsShroud:
-		Range: 0c0
-		Type: GroundPosition
 	Armament@PRIMARY:
 		Name: primary
 		Weapon: RocketBurstGround
@@ -1260,7 +1253,7 @@ C17:
 		Cost: 800
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 120
+		Speed: 220
 		Repulsable: False
 		MaximumPitch: 36
 	HiddenUnderFog:
@@ -1382,6 +1375,8 @@ E3:
 		HP: 25
 	AutoTarget:
 		ScanRadius: 6
+	RevealsShroud:
+		Range: 2c0
 	Armament:
 		Weapon: Rocket
 		LocalOffset: 256,43,341
@@ -1484,6 +1479,8 @@ E6:
 		HP: 25
 	Passenger:
 		PipType: Yellow
+	RevealsShroud:
+		Range: 2c0
 	EngineerRepair:
 	RepairsBridges:
 	CaptureManager:
@@ -1547,7 +1544,7 @@ RMBO:
 		PipType: Red
 		Voice: Move
 	RevealsShroud:
-		Range: 6c0
+		Range: 5c0
 	AutoTarget:
 		ScanRadius: 8
 	Demolition:

@@ -5,13 +5,13 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 0
 		ExcessPowerIncreaseThreshold: 1
-		ConstructionYardTypes: fact,fact.nod
+		ConstructionYardTypes: fact,fact.nod,inv_str
 		NewProductionCashThreshold: 6000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes: hand
 		VehiclesFactoryTypes: afld
-		ProductionTypes: pyle,hand,weap,afld,hpad
+		ProductionTypes: pyle,hand,weap,afld,hpad,inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea
 		SiloTypes: silo
 		BuildingDelays:
 			fix: 7500
@@ -56,13 +56,13 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 0
 		ExcessPowerIncreaseThreshold: 1
-		ConstructionYardTypes: fact,fact.gdi
+		ConstructionYardTypes: fact,fact.gdi,inv_str
 		NewProductionCashThreshold: 6000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes: hand
 		VehiclesFactoryTypes: afld
-		ProductionTypes: pyle,weap,hpad
+		ProductionTypes: pyle,weap,hpad,inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea
 		SiloTypes: silo
 		BuildingDelays:
 			fix: 7500
@@ -107,13 +107,13 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 0
 		ExcessPowerIncreaseThreshold: 1
-		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		ConstructionYardTypes: fact,fact.nod,fact.gdi,inv_str
 		NewProductionCashThreshold: 3000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes: pyle,hand
 		VehiclesFactoryTypes: weap,afld
-		ProductionTypes: pyle,hand,weap,afld,hpad
+		ProductionTypes: pyle,hand,weap,afld,hpad,inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea
 		SiloTypes: silo
 		BuildingDelays:
 			fix: 7500

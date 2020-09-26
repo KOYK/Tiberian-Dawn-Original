@@ -1,7 +1,7 @@
 Player:
 	UnitBuilderBotModule@Nod:
 		RequiresCondition: enable-all-bot && proc && harv && nod
-		UnitQueues: Vehicle, Infantry, Aircraft
+		UnitQueues: Vehicle, Infantry, Aircraft, Naval
 		IdleBaseUnitsMaximum: 10
 		UnitDelays:
 			e1: 1500
@@ -48,13 +48,18 @@ Player:
 			arty: 60
 			heli: 5
 			orca: 5
+			pvice: 100
+			rapt: 100
+			tric: 40
+			trex: 50
+			steg: 40
 		UnitLimits:
 			harv: 8
 			e6_mp: 1
 			e6: 1
 	UnitBuilderBotModule@GDI:
 		RequiresCondition: enable-all-bot && proc && harv && gdi
-		UnitQueues: Vehicle, Infantry, Aircraft
+		UnitQueues: Vehicle, Infantry, Aircraft, Naval
 		IdleBaseUnitsMaximum: 10
 		UnitDelays:
 			e1: 1500
@@ -101,6 +106,11 @@ Player:
 			arty: 60
 			heli: 5
 			orca: 5
+			pvice: 100
+			rapt: 100
+			tric: 40
+			trex: 50
+			steg: 40
 		UnitLimits:
 			harv: 8
 			e6_mp: 1

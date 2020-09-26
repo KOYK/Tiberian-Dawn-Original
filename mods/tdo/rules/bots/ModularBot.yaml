@@ -244,7 +244,7 @@ Player:
     McvManagerBotModule:
 		RequiresCondition: enable-all-bot
 		McvTypes: mcv, mcv.nod, mcv.gdi
-		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		ConstructionYardTypes: fact,fact.nod,fact.gdi,inv_str
 		McvFactoryTypes: weap,afld
 		RestrictMCVDeploymentFallbackToBase: True
 		MinimumConstructionYardCount: 2
@@ -256,13 +256,13 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 0
 		ExcessPowerIncreaseThreshold: 1
-		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		ConstructionYardTypes: fact,fact.nod,fact.gdi,inv_str
 		NewProductionCashThreshold: 100000000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes:
 		VehiclesFactoryTypes:
-		ProductionTypes:
+		ProductionTypes: inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea,inv_str
 		SiloTypes:
 		BuildingFractions:
 			proc: 100
@@ -274,13 +274,13 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 0
 		ExcessPowerIncreaseThreshold: 1
-		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		ConstructionYardTypes: fact,fact.nod,fact.gdi,inv_str
 		NewProductionCashThreshold: 100000000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes:
 		VehiclesFactoryTypes: weap,afld
-		ProductionTypes:
+		ProductionTypes: inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea,inv_str
 		SiloTypes:
 		BuildingFractions:
 			weap: 100
@@ -294,13 +294,13 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 0
 		ExcessPowerIncreaseThreshold: 1
-		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		ConstructionYardTypes: fact,fact.nod,fact.gdi,inv_str
 		NewProductionCashThreshold: 100000000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes:
 		VehiclesFactoryTypes:
-		ProductionTypes:
+		ProductionTypes: inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea,inv_str
 		SiloTypes:
 		BuildingFractions:
 			proc: 100
@@ -312,13 +312,13 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 0
 		ExcessPowerIncreaseThreshold: 1
-		ConstructionYardTypes: fact,fact.nod,fact.gdi
+		ConstructionYardTypes: fact,fact.nod,fact.gdi,inv_str
 		NewProductionCashThreshold: 100000000
 		RefineryTypes: proc
 		PowerTypes: nuke,nuk2
 		BarracksTypes:
 		VehiclesFactoryTypes: weap,afld
-		ProductionTypes:
+		ProductionTypes: inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea
 		SiloTypes:
 		BuildingFractions:
 			weap: 100
