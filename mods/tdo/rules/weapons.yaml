@@ -336,7 +336,8 @@ MLRSMissile:
 		Image: DRAGON
 		Shadow: true
 		TrailImage: smokey
-		Inaccuracy: 800
+		Inaccuracy: 1000
+		LockOnProbability: 50
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Damage: 75
@@ -357,9 +358,9 @@ ArtilleryShell:
 	ReloadDelay: 65
 	Range: 6c0
 	MinRange: 1c0
-	#^?
 	Report: tnkfire2.aud
 	TargetActorCenter: true
+	ValidTargets: Ground
 	Projectile: Bullet
 		Speed: 204
 		Blockable: false
@@ -369,7 +370,8 @@ ArtilleryShell:
 		# ContrailLength: 10
 		# ContrailWidth: 10
 	Warhead@1Dam: SpreadDamage
-		Spread: 6
+		ValidTargets: Ground
+		Spread: 200
 		Damage: 150
 		Versus:
 			0: 87
@@ -433,7 +435,7 @@ TowerMissile:
 	BurstDelays: 12
 	Range: 6c50
 	Report: rocket2.aud
-	ValidTargets: Ground
+	ValidTargets: Ground, Air
 	Projectile: Missile
 		HorizontalRateOfTurn: 20
 		Speed: 200
@@ -572,8 +574,22 @@ DinoGore:
 # Carnivorous dinosaur weapon
 DinoChew:
 
-
-
+#needs a random reload time for this, and also the correct damage value vs infantry
+#until then, the weapon is unassign
+TibTreeSpore:
+	Inherits: ^DamagingExplosionHE
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 10
+		Versus:
+			1: 100
+			2: 0
+			3: 0
+			4: 0
+		DamageTypes: TiberiumDeath
+	Warhead@4Res: CreateResource
+		AddsResourceType: Tiberium
+		Size: 1,1
 
 ##################################################################################
 HeliAGGun:
@@ -1026,6 +1042,7 @@ IonCannon:
 			2: 75
 			3: 75
 			4: 75
+			IonCannonVulnerable: 200
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@2Smu_impact: LeaveSmudge
 		SmudgeType: Scorch

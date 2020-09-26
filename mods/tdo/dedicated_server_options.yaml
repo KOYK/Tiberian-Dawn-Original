@@ -81,7 +81,8 @@ Player:
 	LobbyPrerequisiteCheckbox@PUTSUX:
 		Description: Gives orcas obelisk's laser weapon, not recomended
 		Enabled: False
-		Locked: False
+		Locked: True
+		Visible: False
 			#can the admin player change this?
 	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
 		Description: Enables ability to capture tech buildings
@@ -105,5 +106,9 @@ Player:
 			#can the admin player change this?
 	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
 		Description: Placed helipads spawn aircraft but they cost $1500
+		Enabled: True
+		Locked: False
+	LobbyPrerequisiteCheckbox@MULTIENGINEER:
+		Description: Engineers damage enemy buildings before they can capture them
 		Enabled: True
 		Locked: False

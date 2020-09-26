@@ -113,6 +113,10 @@ Player:
 		Description: Tiberium will regenerate
 		Enabled: True
 		Locked: True
+	LobbyPrerequisiteCheckbox@MULTIENGINEER:
+		Enabled: False
+		Locked: True
+		Visible: False
 
 ^GenericTooltipNames:
 	Tooltip:

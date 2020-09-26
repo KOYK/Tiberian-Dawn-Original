@@ -34,6 +34,7 @@ Packages:
 	tdo|uibits
 	tdo|conquer
 	tdo|conquer/highres
+	tdo|bits/sounds/chat
 
 MapFolders:
 	tdo|maps: System

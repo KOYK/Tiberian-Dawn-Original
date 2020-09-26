@@ -234,6 +234,9 @@ V19.Husk:
 	Tooltip:
 		Name: Oil Derrick
 		AllyPrefix: Oil Derrick
+	RenderSprites:
+		PlayerPalette: player
+		-Palette: terrain
 
 HOSP.Husk:
 	Inherits: ^CivBuildingHusk
@@ -248,6 +251,9 @@ HOSP.Husk:
 		AllyPrefix: Hospital
 	WithBuildingBib:
 		HasMinibib: False
+	RenderSprites:
+		PlayerPalette: player
+		-Palette: terrain
 
 BIO.Husk:
 	Inherits: ^CivBuildingHusk
@@ -262,6 +268,9 @@ BIO.Husk:
 		AllyPrefix: Biolab
 	WithBuildingBib:
 		HasMinibib: False
+	RenderSprites:
+		PlayerPalette: player
+		-Palette: terrain
 
 MISS.Husk:
 	Inherits: ^CivBuildingHusk
@@ -276,6 +285,9 @@ MISS.Husk:
 		AllyPrefix: Technology Center
 	WithBuildingBib:
 		HasMinibib: False
+	RenderSprites:
+		PlayerPalette: player
+		-Palette: terrain
 
 #===========================================================
 #							BUILDING CIVILIAN
