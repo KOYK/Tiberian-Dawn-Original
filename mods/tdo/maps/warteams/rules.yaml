@@ -1,0 +1,28 @@
+World:
+	WeatherOverlay:
+		ParticleDensityFactor: 1
+		ChangingWindLevel: false
+		InstantWindChanges: false
+		WindTick: 5000, 5000
+		WindLevels: -1, 0, -1
+		UseSquares: true
+		ScatterDirection: 0, 0
+		Gravity: -1, 1
+		SwingOffset: -1,1
+		SwingSpeed: -1, 1
+		SwingAmplitude: 1, 1
+		ParticleColors: 30743F, 73F29B, B1CC4C, 385418
+		ParticleSize: 1, 2
+	MusicPlaylist:
+		BackgroundMusic: desolate
+	GlobalLightingPaletteEffect:
+		Red: 1.00
+		Green: 1.50
+		Blue: 1.15
+		Ambient: 0.90
+	FlashPaletteEffect@LIGHTNINGSTRIKE:
+		Type: LightningStrike
+		Color: BEFF00
+		Length: 30
+	LuaScript:
+		Scripts: map_effects.lua

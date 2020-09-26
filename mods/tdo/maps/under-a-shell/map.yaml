@@ -73,7 +73,7 @@ Players:
 		LockFaction: True
 		Faction: nod
 		LockColor: True
-		Color: BD372D
+		Color: 7D2DBD
 		LockSpawn: True
 		Spawn: 3
 		Team: 1
@@ -1677,6 +1677,6 @@ Actors:
 		Owner: Nod_1
 		Health: 21
 
-Rules: coop.yaml
+Rules: tdo|rules/coop.yaml, rules.yaml
 
 Sequences: sequences.yaml
