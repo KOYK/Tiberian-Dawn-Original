@@ -106,44 +106,50 @@
 		Modifier: 120
 		RequiresCondition: enable-6-bot
 
-HARV:
-	HarvesterResourceMultiplier@FreeCreditsBot_1:
+PROC:
+	ResourceValueMultiplier@FreeCreditsBot_1:
 		RequiresCondition: enable-1-bot
 		Modifier: 50
-	HarvesterResourceMultiplier@FreeCreditsBot_2:
+	ResourceValueMultiplier@FreeCreditsBot_2:
 		RequiresCondition: enable-2-bot
 		Modifier: 75
-	HarvesterResourceMultiplier@FreeCreditsBot_3:
+	ResourceValueMultiplier@FreeCreditsBot_3:
 		RequiresCondition: enable-3-bot
 		Modifier: 100
-	HarvesterResourceMultiplier@FreeCreditsBot_4:
+	ResourceValueMultiplier@FreeCreditsBot_4:
 		RequiresCondition: enable-4-bot
 		Modifier: 125
-	HarvesterResourceMultiplier@FreeCreditsBot_5:
+	ResourceValueMultiplier@FreeCreditsBot_5:
 		RequiresCondition: enable-5-bot
 		Modifier: 150
-	HarvesterResourceMultiplier@FreeCreditsBot_6:
+	ResourceValueMultiplier@FreeCreditsBot_6:
 		RequiresCondition: enable-6-bot
 		Modifier: 175
 
 MCV:
 	ProductionCostMultiplier@CheapMCVbot_1:
-		RequiresCondition: enable-1-bot
+		Prerequisites: botlevel1
+		Queue: Vehicle
 		Multiplier: 150
 	ProductionCostMultiplier@CheapMCVbot_2:
-		RequiresCondition: enable-2-bot
+		Prerequisites: botlevel2
+		Queue: Vehicle
 		Multiplier: 125
 	ProductionCostMultiplier@CheapMCVbot_3:
-		RequiresCondition: enable-3-bot
+		Prerequisites: botlevel3
+		Queue: Vehicle
 		Multiplier: 100
 	ProductionCostMultiplier@CheapMCVbot_4:
-		RequiresCondition: enable-4-bot
+		Prerequisites: botlevel4
+		Queue: Vehicle
 		Multiplier: 85
 	ProductionCostMultiplier@CheapMCVbot_5:
-		RequiresCondition: enable-5-bot
+		Prerequisites: botlevel5
+		Queue: Vehicle
 		Multiplier: 75
 	ProductionCostMultiplier@CheapMCVbot_6:
-		RequiresCondition: enable-6-bot
+		Prerequisites: botlevel6
+		Queue: Vehicle
 		Multiplier: 50
 
 E1.scout:
@@ -200,6 +206,30 @@ Player:
 	ProvidesPrerequisite@BotOwner:
 		RequiresCondition: enable-all-bot
 		Prerequisite: BotOwner
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@BotLevel1:
+		RequiresCondition: enable-1-bot
+		Prerequisite: botlevel1
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@BotLevel2:
+		RequiresCondition: enable-2-bot
+		Prerequisite: botlevel2
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@BotLevel3:
+		RequiresCondition: enable-3-bot
+		Prerequisite: botlevel3
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@BotLevel4:
+		RequiresCondition: enable-4-bot
+		Prerequisite: botlevel4
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@BotLevel5:
+		RequiresCondition: enable-5-bot
+		Prerequisite: botlevel5
+		ResetOnOwnerChange: True
+	ProvidesPrerequisite@BotLevel6:
+		RequiresCondition: enable-6-bot
+		Prerequisite: botlevel6
 		ResetOnOwnerChange: True
 	ModularBot@1:
 		Name: Tutor AI
@@ -259,12 +289,12 @@ Player:
 		RequiresCondition: enable-all-bot
 	CaptureManagerBotModule:
         CapturingActorTypes: e6_mp, e6
-        CapturableStances: Enemy,Neutral
+        CapturableRelationships: Enemy,Neutral
         RequiresCondition: enable-all-bot && CapturableCon
 		CheckCaptureTargetsForVisibility: True
 	CaptureManagerBotModule@NoTech:
         CapturingActorTypes: e6_mp, e6
-        CapturableStances: Enemy
+        CapturableRelationships: Enemy
         RequiresCondition: enable-all-bot
 		CheckCaptureTargetsForVisibility: True
     McvManagerBotModule:
@@ -294,6 +324,7 @@ Player:
 			proc: 100
 		BuildingLimits:
 			proc: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	BaseBuilderBotModule@NoHarvNod:
 		RequiresCondition: enable-all-bot && nod && proc
 		MinimumExcessPower: 10
@@ -314,6 +345,7 @@ Player:
 		BuildingLimits:
 			weap: 1
 			afld: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	BaseBuilderBotModule@NoProcGDI:
 		RequiresCondition: enable-all-bot && gdi
 		MinimumExcessPower: 10
@@ -332,6 +364,7 @@ Player:
 			proc: 100
 		BuildingLimits:
 			proc: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	BaseBuilderBotModule@NoHarvGDI:
 		RequiresCondition: enable-all-bot && gdi && proc
 		MinimumExcessPower: 10
@@ -352,6 +385,7 @@ Player:
 		BuildingLimits:
 			weap: 1
 			afld: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	UnitBuilderBotModule@NoProcNod:
 		RequiresCondition: enable-all-bot && nod
 		UnitQueues:

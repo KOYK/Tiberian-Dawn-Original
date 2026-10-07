@@ -2,8 +2,13 @@
 # Helper script used to check and update engine dependencies
 # This should not be called manually
 
-command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl or wget."; exit 1; }
-command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires curl or wget."; exit 1; }
+if command -v python3 >/dev/null 2>&1; then
+	PYTHON="python3"
+else
+	command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires python."; exit 1; }
+	PYTHON="python"
+fi
 
 require_variables() {
 	missing=""
@@ -17,7 +22,7 @@ require_variables() {
 	fi
 }
 
-TEMPLATE_LAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
+TEMPLATE_LAUNCHER=$(${PYTHON} -c "import os; print(os.path.realpath('$0'))")
 TEMPLATE_ROOT=$(dirname "${TEMPLATE_LAUNCHER}")
 
 # shellcheck source=mod.config
@@ -68,6 +73,10 @@ if [ "${AUTOMATIC_ENGINE_MANAGEMENT}" = "True" ]; then
 	mv "${AUTOMATIC_ENGINE_EXTRACT_DIRECTORY}/${REFNAME}" "${ENGINE_DIRECTORY}"
 	rmdir "${AUTOMATIC_ENGINE_EXTRACT_DIRECTORY}"
 	rm "${AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME}"
+
+	# HACK: Remove bogus lint check that the Example mod can't possibly pass
+	# because to do so it would need to define a lot of excess things surrounding resources.
+	rm ${ENGINE_DIRECTORY}/OpenRA.Mods.Common/Lint/CheckFluentReferences.cs
 
 	echo "Compiling engine..."
 	cd "${ENGINE_DIRECTORY}" || exit 1

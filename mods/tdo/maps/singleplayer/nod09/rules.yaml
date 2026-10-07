@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, nod09.lua, nod09-AI.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, nod09.lua, nod09-AI.lua
 	MusicPlaylist:
 		StartingMusic: march
 		VictoryMusic: nod_win1
@@ -20,6 +20,9 @@ World:
 			8,53: sc4,0
 			8,52: sc3,0
 			12,51: sc2,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			21,55: cr1,0
@@ -27,6 +30,9 @@ World:
 			8,55: cr1,0
 			8,54: cr1,0
 			7,54: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	ScriptLobbyDropdown@difficulty:
 		ID: difficulty
 		Label: Difficulty
@@ -137,7 +143,7 @@ BOAT:
 	RejectsOrders:
 		Except: Attack
 	RevealsShroud:
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		Range: 4c0
 
 TRAN.IN:
@@ -176,10 +182,10 @@ RMBO.easy:
 	Inherits: RMBO
 	Health:
 		HP: 30000
-	SelfHealing:
+	ChangesHealth:
 		Step: 500
 		Delay: 10
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 200
 	RenderSprites:
 		Image: RMBO

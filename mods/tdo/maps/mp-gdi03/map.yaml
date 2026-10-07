@@ -284,7 +284,7 @@ Actors:
 		Owner: Neutral
 		Location: 26,27
 
-Rules: data/mode-NodVsGDI.yaml
+Rules: tdo|data/Mode-NodVsGDI.yaml
 	^TibTree:
 		ProximityExternalCondition@NoBotDeploy:
 			Range: 20c0

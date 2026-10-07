@@ -10,6 +10,8 @@ HARVIDLE:
 	MapEditorData:
 		Categories: Mission Only
 	-Buildable:
+	StoresResources:
+	DockClientManager:
 
 EYE:
 	IonCannonPower:

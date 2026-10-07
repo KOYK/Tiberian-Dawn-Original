@@ -60,13 +60,13 @@ World:
 			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
 		GameSpeedDropdownLocked: False
 			#Lock the speed?
-	MPStartLocations:
+	MapStartingLocations:
 	MapCreeps:
 		CheckboxEnabled: False
 			#Spawn Visceroids on map?
 		CheckboxLocked: True
 		CheckboxVisible: False
-	SpawnMPUnits:
+	SpawnStartingUnits:
 
 Player:
 	DeveloperMode:
@@ -283,13 +283,17 @@ BIO.Husk:
 
 OLDLST:
 	Inherits: LST
-	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Interactable:
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
-		PipCount: 5
 		PassengerFacing: 0
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red

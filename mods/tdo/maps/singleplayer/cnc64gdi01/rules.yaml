@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, cnc64gdi01.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, cnc64gdi01.lua
 	MusicPlaylist:
 		StartingMusic: aoi
 	MissionData:
@@ -27,7 +27,7 @@ FLARE:
 
 STNK:
 	Buildable:
-		Prerequisites: ~techlevel.high
+		Prerequisites: ~disabled
 
 TRAN:
 	Buildable:
@@ -39,10 +39,7 @@ RMBO:
 
 OLDLST:
 	Inherits: LST
-	-WithRoof:
-	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Cargo:
 		Types: disabled

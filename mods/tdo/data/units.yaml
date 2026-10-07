@@ -31,6 +31,7 @@ PVICE:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	Health:
 		HP: 150
@@ -45,7 +46,7 @@ PVICE:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Creep
 	AutoTarget:
@@ -64,6 +65,7 @@ PVICE:
 		MuzzleSequence: muzzle
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	BodyOrientation:
 		QuantizedFacings: 8
 	WithSpriteBody:
@@ -100,7 +102,7 @@ FTNK:
 		Queue: Vehicle
 		Description: Heavily armored flame-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 300
@@ -113,8 +115,9 @@ FTNK:
 		LocalOffset: 512,128,42, 512,-128,42
 		MuzzleSequence: muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: FlametankExplode
 		EmptyWeapon: FlametankExplode
 	SpawnActorOnDeath:
@@ -139,7 +142,7 @@ STNK:
 		Description: Long-range missile tank that can cloak.\nCan attack Aircraft.\nHas weak armor. Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry.
 	Mobile:
 		Locomotor: heavywheeled
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 90
 	Health:
 		HP: 110
@@ -153,6 +156,8 @@ STNK:
 		CloakSound: trans1.aud
 		UncloakSound: trans1.aud
 		PauseOnCondition: cloak-force-disabled
+		CloakedPalette: cloak
+		CloakStyle: Palette
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -160,6 +165,7 @@ STNK:
 		Weapon: Rocket
 		LocalOffset: 213,43,128, 213,-43,128
 	AttackFrontal:
+		FacingTolerance: 0
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
@@ -188,7 +194,7 @@ LTNK:
 		BuildDurationModifier: 40
 		Description: Fast, light tank.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 300
@@ -197,7 +203,7 @@ LTNK:
 	RevealsShroud:
 		Range: 3c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 	Armament:
 		Weapon: LightCannon
 		Recoil: 85
@@ -229,7 +235,7 @@ MTNK:
 		Queue: Vehicle
 		Description: General-Purpose GDI Tank.\n  Strong vs Tanks, Vehicles\n  Weak vs Infantry
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 400
@@ -238,7 +244,7 @@ MTNK:
 	RevealsShroud:
 		Range: 3c0
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Armament:
 		Weapon: MediumCannon
 		Recoil: 128
@@ -255,7 +261,7 @@ MTNK:
 		RequiresCondition: HusksEnabled
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1194, 1194
 
 HTNK:
 	Inherits: ^Tank
@@ -275,7 +281,7 @@ HTNK:
 	Mobile:
 		Locomotor: heavytracked
 		Speed: 36
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Health:
 		HP: 600
 	Armor:
@@ -284,7 +290,7 @@ HTNK:
 		Range: 4c0
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Armament@PRIMARY:
 		Weapon: HeavyCannon
 		LocalOffset: 900,180,340, 900,-180,340
@@ -300,10 +306,10 @@ HTNK:
 		MuzzleSequence: muzzle
 	AttackTurreted:
 	WithMuzzleOverlay:
-	SelfHealing:
+	ChangesHealth:
 		Step: 1
 		Delay: 10
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 200
 	SpawnActorOnDeath:
 		Actor: HTNK.Husk
@@ -312,7 +318,7 @@ HTNK:
 		RequiresCondition: HusksEnabled
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 34,34,0,-3
+		DecorationBounds: 1450, 1450, 0, -128
 
 MHQ:
 	Inherits: ^Vehicle
@@ -326,7 +332,7 @@ MHQ:
 	Armor:
 		Type: 2
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	RevealsShroud:
 		Range: 5c0
@@ -357,7 +363,7 @@ MLRS:
 		Description: Powerful Long range unit.\nCannot attack Air units.
 	Mobile:
 		Speed: 54
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Health:
 		HP: 120
 	Armor:
@@ -365,7 +371,7 @@ MLRS:
 	RevealsShroud:
 		Range: 4c0
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: -128,0,128
 		RealignDelay: 0
 	Armament:
@@ -373,11 +379,11 @@ MLRS:
 		LocalOffset: 0,-171,0, 0,171,0
 	AmmoPool:
 		Ammo: 2
-		PipCount: 0
 		AmmoCondition: ammo
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: False
+		FacingTolerance: 0
 	WithSpriteTurret:
 		RequiresCondition: ammo > 1
 	WithSpriteTurret@OneMissile:
@@ -425,7 +431,7 @@ MSAM:
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 100
@@ -434,7 +440,7 @@ MSAM:
 	RevealsShroud:
 		Range: 4c0
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Offset: -256,0,128
 	Armament@PRIMARY:
 		Name: primary
@@ -443,6 +449,7 @@ MSAM:
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: False
+		FacingTolerance: 0
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
@@ -480,7 +487,7 @@ ARTY:
 		Queue: Vehicle
 		Description: Long-range artillery.\n  Strong vs Infantry, Vehicles and Buildings
 	Mobile:
-		TurnSpeed: 2
+		TurnSpeed: 8
 		Speed: 36
 	Health:
 		HP: 75
@@ -495,6 +502,7 @@ ARTY:
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: False
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	AutoTarget:
 		InitialStanceAI: Defend
@@ -503,7 +511,7 @@ ARTY:
 		OwnerType: InternalName
 		EffectiveOwnerFromOwner: true
 		RequiresCondition: HusksEnabled
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ArtilleryShell
 		EmptyWeapon: UnitExplode
 		LoadedChance: 75
@@ -519,7 +527,7 @@ HARV:
 	ProximityExternalCondition@DOCKINPROCESS:
 		Condition: dockinprocess
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~vehicleproduction, ~proc, ~tl2, ~!mhqr
@@ -529,18 +537,16 @@ HARV:
 		Description: Collects Tiberium for processing.\n  Unarmed
 	Selectable:
 		Priority: 7
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	Harvester:
 		Resources: Tiberium, BlueTiberium
-		PipCount: 7
-		Capacity: 20
 		BaleLoadDelay: 12
 		BaleUnloadDelay: 6
 		SearchFromProcRadius: 25
 		SearchFromHarvesterRadius: 15
 		EmptyCondition: no-tiberium
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 36
 	ExternalCondition@docked:
 		Condition: docked
@@ -559,19 +565,30 @@ HARV:
 		RequiresCondition: HusksEnabled
 	WithHarvestAnimation:
 	WithDockingAnimation:
-	Explodes:
+	FireWarheadsOnDeath:
 		RequiresCondition: !no-tiberium
 		Weapon: TiberiumExplosion
 	SelectionDecorations:
-	SelfHealing:
+	ChangesHealth:
 		Step: 1
 		Delay: 10
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 200
 	Targetable:
 		TargetTypes: Ground, Vehicle, harv
 	ProvidesPrerequisite@unitname:
 		Prerequisite: harv
+	WithStoresResourcesPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Tiberium: pip-green
+			BlueTiberium: pip-blue
+	StoresResources:
+		Capacity: 20
+		Resources: Tiberium, BlueTiberium
+	DockClientManager:
 
 MCV:
 	Inherits: ^Vehicle
@@ -592,9 +609,9 @@ MCV:
 		Description: Deploys into another Construction Yard.\n  Unarmed
 	Selectable:
 		Priority: 4
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 36
 		Locomotor: heavywheeled
 	Health:
@@ -606,7 +623,7 @@ MCV:
 	Transforms:
 		IntoActor: fact
 		Offset: -1,-1
-		Facing: 108
+		Facing: 432
 		TransformSounds: constru2.aud, hvydoor1.aud
 		NoTransformNotification: BuildingCannotPlaceAudio
 		TransformNotification: NewOptions
@@ -674,7 +691,7 @@ JEEP:
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 90
 	Health:
 		HP: 150
@@ -683,7 +700,7 @@ JEEP:
 	RevealsShroud:
 		Range: 2c0
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Offset: -85,0,128
 	Armament:
 		Weapon: Machinegun
@@ -714,7 +731,7 @@ BGGY:
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 90
 	Health:
 		HP: 140
@@ -723,7 +740,7 @@ BGGY:
 	RevealsShroud:
 		Range: 2c0
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Offset: -43,0,128
 	Armament:
 		Weapon: Machinegun
@@ -754,7 +771,7 @@ BIKE:
 		Queue: Vehicle
 		Description: Fast scout vehicle, armed with\nrockets.\nCan attack Aircraft.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 120
 		Locomotor: bike
 	Health:
@@ -768,6 +785,7 @@ BIKE:
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
 	AttackFrontal:
+		FacingTolerance: 0
 	SpawnActorOnDeath:
 		Actor: BIKE.Husk
 		OwnerType: InternalName
@@ -792,7 +810,7 @@ APC:
 		BuildDurationModifier: 40
 		Description: Armed infantry transport.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 105
 		PauseOnCondition: !(!notmobile)
 	Health:
@@ -806,17 +824,24 @@ APC:
 		LocalOffset: 85,0,171
 		MuzzleSequence: muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
-		PipCount: 5
 		LoadingCondition: notmobile
 	SpawnActorOnDeath:
 		Actor: APC.Husk
 		OwnerType: InternalName
 		EffectiveOwnerFromOwner: true
 		RequiresCondition: HusksEnabled
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 APC_SINGLEPLAYER:
 	Inherits@OriginalActor: APC
 	RenderSprites:
@@ -849,7 +874,7 @@ BOAT:
 		Range: 5c0
 		Type: CenterPosition
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Offset: 0,896,171
 	Armament:
 		Weapon: BoatMissile
@@ -861,8 +886,8 @@ BOAT:
 	WithGunboatBody:
 		Sequence: left # Just a work-around to avoid crash
 	Selectable:
-		Bounds: 42,24
-		DecorationBounds: 42,24
+		Bounds: 1792, 1024
+		DecorationBounds: 1792, 1024
 	AutoTarget:
 		AllowMovement: false
 	RejectsOrders:
@@ -893,7 +918,7 @@ LST:
 	Mobile:
 		Locomotor: lcraft
 		InitialFacing: 0
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Speed: 90
 		PauseOnCondition: !(!notmobile)
 	Health:
@@ -904,27 +929,33 @@ LST:
 		Range: 3c0
 	WithFacingSpriteBody:
 	Selectable:
-		Bounds: 48,48
-	WithRoof:
+		Bounds: 2048, 2048
+	WithIdleOverlay@ROOF:
+		Sequence: roof
 	WithCargo:
 		DisplayTypes: Infantry, Vehicle
 		LocalOffset: 390,-256,0, 390,256,0, 0,0,0, -390,-256,0, -390,256,0
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
-		PipCount: 5
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 	RenderSprites:
 		PlayerPalette: player
 		Palette: player
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 OLDLST:
 	Inherits: LST
-	-WithRoof:
+	-WithIdleOverlay@ROOF:
 	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Cargo:
 		Types: disabled
@@ -950,7 +981,7 @@ RA_SS:
 	Armor:
 		Type: 2
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 60
 	RevealsShroud:
 		Range: 6c0
@@ -961,14 +992,15 @@ RA_SS:
 		TargetTypes: Underwater, Submarine
 		RequiresCondition: underwater
 	Cloak:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		InitialDelay: 0
 		CloakDelay: 50
 		CloakSound: subshow1.aud
 		UncloakSound: subshow1.aud
 		CloakedCondition: underwater
-		Palette: submerged
+		CloakedPalette: submerged
 		PauseOnCondition: cloak-force-disabled
+		CloakStyle: Palette
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -977,6 +1009,7 @@ RA_SS:
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
 	AttackFrontal:
+		FacingTolerance: 0
 	SelectionDecorations:
 	AutoTarget:
 		InitialStance: HoldFire
@@ -986,14 +1019,14 @@ RA_SS:
 	AutoTargetPriority@ATTACKANYTHING:
 		ValidTargets: Water, Underwater
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 
 RA_MSUB:
 	Inherits: ^ShipRA
@@ -1015,7 +1048,7 @@ RA_MSUB:
 	Armor:
 		Type: 2
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 50
 	RevealsShroud:
 		Range: 6c0
@@ -1026,14 +1059,15 @@ RA_MSUB:
 		TargetTypes: Underwater, Submarine
 		RequiresCondition: underwater
 	Cloak:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		InitialDelay: 0
 		CloakDelay: 100
 		CloakSound: subshow1.aud
 		UncloakSound: subshow1.aud
 		CloakedCondition: underwater
-		Palette: submerged
+		CloakedPalette: submerged
 		PauseOnCondition: cloak-force-disabled
+		CloakStyle: Palette
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -1048,19 +1082,20 @@ RA_MSUB:
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
+		FacingTolerance: 0
 	SelectionDecorations:
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 
 RA_DD:
 	Inherits: ^ShipRA
@@ -1082,12 +1117,12 @@ RA_DD:
 	Armor:
 		Type: 3
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 65
 	RevealsShroud:
 		Range: 6c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: 469,0,128
 	Armament@PRIMARY:
 		Weapon: Stinger
@@ -1105,11 +1140,11 @@ RA_DD:
 	SelectionDecorations:
 	WithSpriteTurret:
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 
 RA_CA:
 	Inherits: ^ShipRA
@@ -1131,18 +1166,18 @@ RA_CA:
 	Armor:
 		Type: 3
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 50
 	RevealsShroud:
 		MinRange: 6c0
 	Turreted@PRIMARY:
 		Turret: primary
 		Offset: -896,0,128
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Turreted@SECONDARY:
 		Turret: secondary
 		Offset: 768,0,128
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Armament@PRIMARY:
 		Turret: primary
 		Weapon: 8Inch
@@ -1169,11 +1204,11 @@ RA_CA:
 	WithSpriteTurret@SECONDARY:
 		Turret: secondary
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 
 RA_PT:
 	Inherits: ^ShipRA
@@ -1195,12 +1230,12 @@ RA_PT:
 	Armor:
 		Type: 3
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 70
 	RevealsShroud:
 		MinRange: 6c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: 512,0,0
 	Armament@PRIMARY:
 		Weapon: 2Inch
@@ -1215,11 +1250,11 @@ RA_PT:
 	SelectionDecorations:
 	WithSpriteTurret:
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 7c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 
 RA_LST:
 	Inherits: ^ShipRA
@@ -1250,11 +1285,17 @@ RA_LST:
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
-		PipCount: 5
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 STEG:
 	Inherits: ^DINO
@@ -1283,8 +1324,8 @@ TREX:
 	Mobile:
 		Speed: 54
 	Selectable:
-		Bounds: 48,36,2,1
-		DecorationBounds: 52,38
+		Bounds: 2048, 1536, 85, 42
+		DecorationBounds: 2218, 1621
 	SelectionDecorations:
 	Buildable:
 		Description: Bipedal carnivore with a massive skull
@@ -1303,7 +1344,7 @@ TRIC:
 	Buildable:
 		Description: Quadruped with large bony frill and three horns
 	Selectable:
-		DecorationBounds: 34,24,0,2
+		DecorationBounds: 1450, 1024, 0, 85
 
 RAPT:
 	Inherits: ^DINO
@@ -1384,6 +1425,7 @@ MHQR:
 
 MHQ_CASHREMOVER:
 	Inherits: ^Vehicle
+	-Tooltip:
 	-GrantConditionOnPrerequisite@HUSKS:
 	-Buildable:
 	-Selectable:
@@ -1451,8 +1493,8 @@ TRAN:
 		Prerequisites: ~hpad, ~tl6, ~!PrerequisiteSinglePlayer
 		Description: Fast Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
-		InitialFacing: 1
-		TurnSpeed: 5
+		InitialFacing: 4
+		TurnSpeed: 20
 		Speed: 90
 		AltitudeVelocity: 0c43
 		IdleBehavior: Land
@@ -1479,15 +1521,21 @@ TRAN:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
-		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: TRAN.Husk
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 41,41
+		DecorationBounds: 1749, 1749
 	CaptureManager:
 	Capturable:
 		Types: chinook
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 HELI:
 	Inherits: ^Helicopter
@@ -1503,9 +1551,9 @@ HELI:
 		Prerequisites: ~hpad, ~tl6, ~OwnerNod
 		Description: Helicopter Gunship with Chainguns.\n  Strong vs Infantry, Light Vehicles and\n  Aircraft\n  Weak vs Tanks
 	Aircraft:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Speed: 120
-		InitialFacing: 224
+		InitialFacing: 896
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1521,13 +1569,12 @@ HELI:
 	AutoTarget:
 		ScanRadius: 4
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 		OpportunityFire: false
 		PersistentTargeting: false
 		AttackType: Hover
 	AmmoPool:
 		Ammo: 10
-		PipCount: 5
 		AmmoCondition: ammo
 	WithIdleOverlay@ROTORAIR:
 		Offset: 0,0,85
@@ -1542,7 +1589,11 @@ HELI:
 		Actor: HELI.Husk
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 30,24
+		DecorationBounds: 1280, 1024
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
 
 ORCA:
 	Inherits: ^Helicopter
@@ -1558,9 +1609,9 @@ ORCA:
 		Prerequisites: ~hpad, ~tl6, ~OwnerGDI
 		Description: Helicopter Gunship with AG Missiles.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry
 	Aircraft:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Speed: 120
-		InitialFacing: 224
+		InitialFacing: 896
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1599,13 +1650,12 @@ ORCA:
 	AutoTarget:
 		ScanRadius: 5
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 		OpportunityFire: false
 		PersistentTargeting: false
 		AttackType: Hover
 	AmmoPool:
 		Ammo: 6
-		PipCount: 6
 		AmmoCondition: ammo
 	SpawnActorOnDeath:
 		Actor: ORCA.Husk
@@ -1613,7 +1663,10 @@ ORCA:
 		MoveSequence: move
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 30,24
+		DecorationBounds: 1280, 1024
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
 
 C17:
 	Inherits: ^Plane
@@ -1623,19 +1676,25 @@ C17:
 	Valued:
 		Cost: 800
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 220
 		Repulsable: False
 		MaximumPitch: 36
 	HiddenUnderFog:
-		AlwaysVisibleStances: None
+		AlwaysVisibleRelationships: None
 		Type: CenterPosition
 	Cargo:
 		MaxWeight: 10
-		PipCount: 10
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
 	-MapEditorData:
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 A10:
 	Inherits: ^Plane
@@ -1647,11 +1706,12 @@ A10:
 	#Health:
 	#	HP: 60
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 120
 		Repulsable: False
 	AttackBomber:
 		Armaments: bombs
+		FacingTolerance: 8
 	Armament@GUNS:
 		Name: gun
 		Weapon: Vulcan
@@ -1690,6 +1750,7 @@ E1:
 	Armament:
 		Weapon: Rifle
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		IdleSequences: idle1,idle2,idle3,idle4
 		DefaultAttackSequence: shoot
@@ -1720,9 +1781,10 @@ E2:
 	TakeCover:
 		ProneOffset: 300,0,-227
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: throw
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: GrenadierExplode
 		EmptyWeapon: GrenadierExplode
 		Chance: 50
@@ -1755,6 +1817,7 @@ E3:
 	TakeCover:
 		ProneOffset: 180,0,-200
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
@@ -1786,6 +1849,7 @@ E4:
 	TakeCover:
 		ProneOffset: 190,0,-198
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -1818,6 +1882,7 @@ E5:
 	TakeCover:
 		ProneOffset: 190,0,-190
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -1849,10 +1914,10 @@ E6:
 	Health:
 		HP: 25
 	Passenger:
-		PipType: Yellow
+		CustomPipType: yellow
 	RevealsShroud:
 		Range: 2c0
-	EngineerRepair:
+	InstantlyRepairs:
 	RepairsBridges:
 	CaptureManager:
 	GrantConditionOnPrerequisite@MULTIENGINEER:
@@ -1873,6 +1938,7 @@ E6:
 		PlayerExperience: 1
 	Captures@CAPTURESHUSK:
 		CaptureTypes: husk
+		ValidRelationships: Enemy, Neutral, Ally
 		PlayerExperience: 50
 	Captures@CHINOOK:
 		CaptureTypes: chinook
@@ -1884,7 +1950,7 @@ E6_MP:
 	Inherits@OriginalActor: E6
 	RenderSprites:
 		Image: e6
-	-EngineerRepair:
+	-InstantlyRepairs:
 	Buildable:
 		Prerequisites: ~barracks, ~tl3, ~!EngineerSP
 		Description: Damages and captures enemy structures.\n  Unarmed
@@ -1912,7 +1978,7 @@ RMBO:
 	Health:
 		HP: 80
 	Passenger:
-		PipType: Red
+		CustomPipType: red
 		Voice: Move
 	RevealsShroud:
 		Range: 5c0
@@ -1925,6 +1991,7 @@ RMBO:
 		Weapon: Sniper
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	AttackMove:
 		Voice: Attack
 	WithInfantryBody:

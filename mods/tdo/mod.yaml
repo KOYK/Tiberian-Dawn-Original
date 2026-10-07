@@ -1,64 +1,71 @@
 Metadata:
-	Title: Tiberian Dawn Original
-	Version: noIp
+	Title: mod-title
+	Version: release-20250330
 	Website: https://www.openra.net
 	WebIcon32: https://www.openra.net/images/icons/cnc_32x32.png
+	WindowTitle: mod-windowtitle
 
 PackageFormats: Mix
 
-Packages:
-	~^Content/cnc
-	~^Content/cnc/movies
-	.
-	$tdo: tdo
-	#$example: example
-	./mods/common: common
-	./mods/cnc
-	~speech.mix
-	~conquer.mix
-	~sounds.mix
-	~tempicnh.mix
-	~temperat.mix
-	~winter.mix
-	~desert.mix
-	~movies.mix
-	~scores.mix
-	~scores2.mix
-	~scores-covertops.mix
-	~transit.mix
-	tdo|uibits
-	tdo|assets/palettes
-	tdo|assets/icons/ra/large
-	tdo|assets/icons/ra/small
-	tdo|assets/icons/td/large
-	tdo|assets/icons/td/small
-	tdo|assets/projectiles
-	tdo|assets/actors/ra
-	tdo|assets/actors/td
-	tdo|assets/sounds/ra
-	tdo|assets/sounds/td
-	tdo|assets/sounds/chat
-	tdo|assets/sounds/td/dinos
-	tdo|assets/sounds/td/scounds
-	tdo|assets/sounds/td/sounds
-	tdo|assets/sounds/td/speech
-	tdo|assets/ss
-	tdo|assets/system
-	tdo|assets/terrain/snow/snow.mix
-	tdo|assets/terrain/snow
-	tdo|assets/terrain/jungle
-	tdo|assets/terrain/desert
-	tdo|assets/terrain/temperat
-	tdo|assets/terrain/winter
-	tdo|assets/terrain/tempera
-	tdo|assets/terrain/interior/interior.mix
-	tdo|assets/terrain/interior
-	
+FileSystem: ContentInstallerFileSystem
+	SystemPackages:
+		^EngineDir
+		$tdo: tdo
+		^EngineDir|mods/common: common
+		^EngineDir|mods/cnc
+		~^SupportDir|Content/cnc: content
+		common|scripts
+		tdo|uibits
+	ContentPackages:
+		content|speech.mix
+		content|conquer.mix
+		content|sounds.mix
+		content|tempicnh.mix
+		content|temperat.mix
+		content|winter.mix
+		content|desert.mix
+		~content|movies
+		~content|scores.mix
+		~content|scores2.mix
+		~content|scores-covertops.mix
+		~content|transit.mix
+		~content|general.mix
+		# Mod-provided packages that must be mounted after the content packages so they can override content assets.
+		# NOTE: a ContentPackages entry that fails to mount (and has no '~') triggers the content installer,
+		# so every non-~ path below has to exist on disk (assets/icons/ra/small and assets/projectiles do not
+		# exist in git today -> they are marked optional with ~).
+		tdo|assets/palettes
+		tdo|assets/icons/ra/large
+		~tdo|assets/icons/ra/small
+		tdo|assets/icons/td/large
+		tdo|assets/icons/td/small
+		~tdo|assets/projectiles
+		tdo|assets/actors/ra
+		tdo|assets/actors/td
+		tdo|assets/sounds/ra
+		tdo|assets/sounds/td
+		tdo|assets/sounds/chat
+		tdo|assets/sounds/td/dinos
+		tdo|assets/sounds/td/scounds
+		tdo|assets/sounds/td/sounds
+		tdo|assets/sounds/td/speech
+		tdo|assets/ss
+		tdo|assets/system
+		tdo|assets/terrain/snow/snow.mix
+		tdo|assets/terrain/snow
+		tdo|assets/terrain/jungle
+		tdo|assets/terrain/desert
+		tdo|assets/terrain/temperat
+		tdo|assets/terrain/winter
+		tdo|assets/terrain/tempera
+		tdo|assets/terrain/interior/interior.mix
+		tdo|assets/terrain/interior
+	ContentInstallerMod: tdo-content
 
 MapFolders:
 	tdo|maps: System
 	tdo|maps/singleplayer: System
-	~^maps/tdo/noIp: User
+	~^SupportDir|maps/tdo/noIp: User
 
 Rules:
 	tdo|data/system.yaml
@@ -104,30 +111,35 @@ Cursors:
 Chrome:
 	tdo|chrome.yaml
 
-Assemblies:
-	common|OpenRA.Mods.Common.dll
-	common|OpenRA.Mods.Cnc.dll
-	#example|OpenRA.Mods.Example.dll
+Assemblies: OpenRA.Mods.Common.dll, OpenRA.Mods.Cnc.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml
 	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-transients.yaml
 	common|chrome/ingame-fmvplayer.yaml
 	common|chrome/ingame-info.yaml
 	common|chrome/ingame-infoscripterror.yaml
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-infoobjectives.yaml
 	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-info-lobby-options.yaml
 	tdo|chrome/ingame-menu.yaml
 	tdo|chrome/ingame-observer.yaml
 	tdo|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debug-hpf.yaml
 	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-infochat.yaml
 	tdo|chrome/mainmenu.yaml
 	common|chrome/mainmenu-prompts.yaml
 	common|chrome/settings.yaml
+	common|chrome/settings-display.yaml
+	common|chrome/settings-audio.yaml
+	common|chrome/settings-input.yaml
+	common|chrome/settings-hotkeys.yaml
+	common|chrome/settings-advanced.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml
 	common|chrome/lobby-mappreview.yaml
@@ -154,6 +166,7 @@ ChromeLayout:
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
 	common|chrome/playerprofile.yaml
+	common|chrome/text-notifications.yaml
 	
 Voices:
 	tdo|data/voices.yaml
@@ -164,10 +177,17 @@ Notifications:
 Music:
 	tdo|data/music.yaml
 
-Translations:
-	tdo|data/languages/english.yaml
-	#tdo|data/languages/greek.yaml
-	#ZZZzzzz... ZZZzzzz... μας πηρε ο υπνος
+FluentMessages:
+	common|fluent/common.ftl
+	common|fluent/chrome.ftl
+	common|fluent/hotkeys.ftl
+	common|fluent/rules.ftl
+	tdo|fluent/tdo.ftl
+	tdo|fluent/chrome.ftl
+	tdo|fluent/hotkeys.ftl
+
+# TDO ships/uses the common engine ftl files wholesale, so many engine messages are unused by TDO.
+AllowUnusedFluentMessagesInExternalPackages: true
 
 Hotkeys:
 	common|hotkeys/game.yaml
@@ -175,16 +195,19 @@ Hotkeys:
 	common|hotkeys/production-common.yaml
 	common|hotkeys/supportpowers.yaml
 	common|hotkeys/viewport.yaml
+	common|hotkeys/chat.yaml
+	common|hotkeys/editor.yaml
+	common|hotkeys/control-groups.yaml
 	tdo|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen
 	Image: tdo|uibits/loadscreen.png
 	Image2x: tdo|uibits/loadscreen-2x.png
 	Image3x: tdo|uibits/loadscreen-3x.png
-	Text: Security Code Accepted..., Establishing Virtual Interface..., Rerouting Connection..., Accesses Granted..., Security Breach Patched..., Error On Command Module Zeta..., Remote Control Enabled..., 245 Log Entries Downloaded..., Voice recognition Failed To Detect Input..., No Fingerprint Input Detected..., Connection With Rio Failed..., Connection With Athens Failed..., Connection With China Enabled..., Connection With South Africa Enabled..., Connection With Germany Interrupted..., Connection With Washington DC Interrupted..., Connection With Russia Blocked..., Connection With France Blocked..., Connection With Europe Reversed... Enabling Firewall Tier 6...
 
 ServerTraits:
 	LobbyCommands
+	SkirmishLogic
 	PlayerPinger
 	MasterServerPinger
 	LobbySettingsNotification
@@ -234,82 +257,49 @@ MapGrid:
 	TileSize: 24,24
 	Type: Rectangular
 
+DefaultOrderGenerator: UnitOrderGenerator
+
 SupportsMapsFrom: cnc, tdo, ra
 
 SoundFormats: Aud, Wav
 
 SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS, PngSheet
 
-SpriteSequenceFormat: TilesetSpecificSpriteSequence
-	TilesetExtensions:
-		TEMPERAT: .tem
-		WINTER: .win
-		SNOW: .sno
-		DESERT: .des
-		JUNGLE: .jun
+VideoFormats: Vqa, Wsa
 
-ModelSequenceFormat: PlaceholderModelSequence
+TerrainFormat: DefaultTerrain
+
+SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 
 AssetBrowser:
-	SupportedExtensions: .shp, .tem, .des, .sno, .jun, .vqa
+	SpriteExtensions: .shp, .tem, .win, .sno, .des, .jun
+	AudioExtensions: .aud, .wav, .v00, .v01, .v02, .v03, .var
+	VideoExtensions: .vqa, .wsa
 
 GameSpeeds:
-	slowest:
-		Name: Slowest
-		Timestep: 80
-		OrderLatency: 2
-	slower:
-		Name: Slower
-		Timestep: 50
-		OrderLatency: 3
-	default:
-		Name: Normal
-		Timestep: 40
-		OrderLatency: 3
-	fast:
-		Name: Fast
-		Timestep: 35
-		OrderLatency: 4
-	faster:
-		Name: Faster
-		Timestep: 30
-		OrderLatency: 4
-	fastest:
-		Name: Fastest
-		Timestep: 20
-		OrderLatency: 6
-
-ColorValidator:
-	TeamColorPresets: FCFC54, DF1008, 007070, D47810, 54FC54, A4A4BC, F5D378, 29D0D0, 8126C0, 1D6914, 814A19, 2A4BD7, 9DAFFF, 575757, E2E2E2, 2B2B2B
-
-ModContent:
-	InstallPromptMessage: Tiberian Dawn requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2007 C&C Gold freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
-	QuickDownload: basefiles
-	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2007 freeware release of C&C.
-	Packages:
-		base: Base Game Files
-			TestFiles: ^Content/cnc/conquer.mix, ^Content/cnc/desert.mix, ^Content/cnc/sounds.mix, ^Content/cnc/speech.mix, ^Content/cnc/temperat.mix, ^Content/cnc/tempicnh.mix, ^Content/cnc/winter.mix
-			Sources: gdi95, gdi95-linux, nod95, nod95-linux, tfd, origin
-			Required: true
-			Download: basefiles
-		music: Base Game Music
-			TestFiles: ^Content/cnc/scores.mix
-			Sources: gdi95, gdi95-linux, nod95, nod95-linux, tfd, origin
-			Download: music
-		movies-gdi: GDI Campaign Briefings
-			TestFiles: ^Content/cnc/movies/visor.vqa, ^Content/cnc/movies/turtkill.vqa, ^Content/cnc/movies/trailer.vqa, ^Content/cnc/movies/tbrinfo3.vqa, ^Content/cnc/movies/tbrinfo2.vqa, ^Content/cnc/movies/tbrinfo1.vqa, ^Content/cnc/movies/seige.vqa, ^Content/cnc/movies/samsite.vqa, ^Content/cnc/movies/samdie.vqa, ^Content/cnc/movies/sabotage.vqa, ^Content/cnc/movies/retro.vqa, ^Content/cnc/movies/podium.vqa, ^Content/cnc/movies/planecra.vqa, ^Content/cnc/movies/pintle.vqa, ^Content/cnc/movies/paratrop.vqa, ^Content/cnc/movies/nodsweep.vqa, ^Content/cnc/movies/nodlose.vqa, ^Content/cnc/movies/nodflees.vqa, ^Content/cnc/movies/nod1.vqa, ^Content/cnc/movies/nitejump.vqa, ^Content/cnc/movies/napalm.vqa, ^Content/cnc/movies/logo.vqa, ^Content/cnc/movies/landing.vqa, ^Content/cnc/movies/intro2.vqa, ^Content/cnc/movies/hellvaly.vqa, ^Content/cnc/movies/gunboat.vqa, ^Content/cnc/movies/generic.vqa, ^Content/cnc/movies/gdilose.vqa, ^Content/cnc/movies/gdifinb.vqa, ^Content/cnc/movies/gdifina.vqa, ^Content/cnc/movies/gdiend2.vqa, ^Content/cnc/movies/gdiend1.vqa, ^Content/cnc/movies/gdi9.vqa, ^Content/cnc/movies/gdi8b.vqa, ^Content/cnc/movies/gdi8a.vqa, ^Content/cnc/movies/gdi7.vqa, ^Content/cnc/movies/gdi6.vqa, ^Content/cnc/movies/gdi5.vqa, ^Content/cnc/movies/gdi4b.vqa, ^Content/cnc/movies/gdi4a.vqa, ^Content/cnc/movies/gdi3lose.vqa, ^Content/cnc/movies/gdi3.vqa, ^Content/cnc/movies/gdi2.vqa, ^Content/cnc/movies/gdi15.vqa, ^Content/cnc/movies/gdi14.vqa, ^Content/cnc/movies/gdi13.vqa, ^Content/cnc/movies/gdi12.vqa, ^Content/cnc/movies/gdi11.vqa, ^Content/cnc/movies/gdi10.vqa, ^Content/cnc/movies/gdi1.vqa, ^Content/cnc/movies/gameover.vqa, ^Content/cnc/movies/forestkl.vqa, ^Content/cnc/movies/flyy.vqa, ^Content/cnc/movies/flag.vqa, ^Content/cnc/movies/dino.vqa, ^Content/cnc/movies/desolat.vqa, ^Content/cnc/movies/consyard.vqa, ^Content/cnc/movies/cc2tease.vqa, ^Content/cnc/movies/burdet2.vqa, ^Content/cnc/movies/burdet1.vqa, ^Content/cnc/movies/bombflee.vqa, ^Content/cnc/movies/bombaway.vqa, ^Content/cnc/movies/bkground.vqa, ^Content/cnc/movies/bcanyon.vqa, ^Content/cnc/movies/banner.vqa
-			Sources: gdi95, gdi95-linux, tfd, origin
-		movies-nod: Nod Campaign Briefings
-			TestFiles: ^Content/cnc/movies/visor.vqa, ^Content/cnc/movies/trtkil_d.vqa, ^Content/cnc/movies/trailer.vqa, ^Content/cnc/movies/tiberfx.vqa, ^Content/cnc/movies/tankkill.vqa, ^Content/cnc/movies/tankgo.vqa, ^Content/cnc/movies/sundial.vqa, ^Content/cnc/movies/stealth.vqa, ^Content/cnc/movies/spycrash.vqa, ^Content/cnc/movies/sethpre.vqa, ^Content/cnc/movies/seige.vqa, ^Content/cnc/movies/samsite.vqa, ^Content/cnc/movies/retro.vqa, ^Content/cnc/movies/refint.vqa, ^Content/cnc/movies/obel.vqa, ^Content/cnc/movies/nuke.vqa, ^Content/cnc/movies/nodlose.vqa, ^Content/cnc/movies/nodfinal.vqa, ^Content/cnc/movies/nodend4.vqa, ^Content/cnc/movies/nodend3.vqa, ^Content/cnc/movies/nodend2.vqa, ^Content/cnc/movies/nodend1.vqa, ^Content/cnc/movies/nod9.vqa, ^Content/cnc/movies/nod8.vqa, ^Content/cnc/movies/nod7b.vqa, ^Content/cnc/movies/nod7a.vqa, ^Content/cnc/movies/nod6.vqa, ^Content/cnc/movies/nod5.vqa, ^Content/cnc/movies/nod4b.vqa, ^Content/cnc/movies/nod4a.vqa, ^Content/cnc/movies/nod3.vqa, ^Content/cnc/movies/nod2.vqa, ^Content/cnc/movies/nod1pre.vqa, ^Content/cnc/movies/nod13.vqa, ^Content/cnc/movies/nod12.vqa, ^Content/cnc/movies/nod11.vqa, ^Content/cnc/movies/nod10b.vqa, ^Content/cnc/movies/nod10a.vqa, ^Content/cnc/movies/nod1.vqa, ^Content/cnc/movies/logo.vqa, ^Content/cnc/movies/landing.vqa, ^Content/cnc/movies/kanepre.vqa, ^Content/cnc/movies/intro2.vqa, ^Content/cnc/movies/insites.vqa, ^Content/cnc/movies/generic.vqa, ^Content/cnc/movies/gdi1.vqa, ^Content/cnc/movies/gameover.vqa, ^Content/cnc/movies/forestkl.vqa, ^Content/cnc/movies/flag.vqa, ^Content/cnc/movies/dino.vqa, ^Content/cnc/movies/dessweep.vqa, ^Content/cnc/movies/deskill.vqa, ^Content/cnc/movies/desflees.vqa, ^Content/cnc/movies/consyard.vqa, ^Content/cnc/movies/cc2tease.vqa, ^Content/cnc/movies/bombflee.vqa, ^Content/cnc/movies/bombaway.vqa, ^Content/cnc/movies/bcanyon.vqa, ^Content/cnc/movies/banner.vqa, ^Content/cnc/movies/akira.vqa, ^Content/cnc/movies/airstrk.vqa
-			Sources: nod95, nod95-linux, tfd, origin
-		music-covertops: Covert Operations Music
-			TestFiles: ^Content/cnc/scores-covertops.mix
-			Sources: covertops, covertops-linux, tfd, origin
-	Downloads:
-		tdo|installer/downloads.yaml
-	Sources:
-		tdo|installer/covertops.yaml
-		tdo|installer/firstdecade.yaml
-		tdo|installer/gdi95.yaml
-		tdo|installer/nod95.yaml
-		tdo|installer/origin.yaml
+	DefaultSpeed: default
+	Speeds:
+		slowest:
+			Name: options-game-speed.slowest
+			Timestep: 80
+			OrderLatency: 2
+		slower:
+			Name: options-game-speed.slower
+			Timestep: 50
+			OrderLatency: 3
+		default:
+			Name: options-game-speed.normal
+			Timestep: 40
+			OrderLatency: 3
+		fast:
+			Name: options-game-speed.fast
+			Timestep: 35
+			OrderLatency: 4
+		faster:
+			Name: options-game-speed.faster
+			Timestep: 30
+			OrderLatency: 4
+		fastest:
+			Name: options-game-speed.fastest
+			Timestep: 20
+			OrderLatency: 6

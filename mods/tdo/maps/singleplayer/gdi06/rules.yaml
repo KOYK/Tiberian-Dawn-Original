@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, gdi06.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, gdi06.lua
 	MusicPlaylist:
 		BackgroundMusic: rain-ambient
 		StartingMusic: rain
@@ -18,7 +18,7 @@ World:
 		ParticleColors: 304074, 28386C, 202C60, 182C54
 		LineTailAlphaValue: 150
 		ParticleSize: 1, 1
-	GlobalLightingPaletteEffect:
+	TintPostProcessEffect:
 		Red: 0.75
 		Green: 0.85
 		Blue: 1.5
@@ -59,10 +59,7 @@ FLARE:
 
 OLDLST:
 	Inherits: LST
-	-WithRoof:
-	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Cargo:
 		Types: disabled
@@ -85,10 +82,10 @@ RMBO.easy:
 	Inherits: RMBO
 	Health:
 		HP: 300
-	SelfHealing:
+	ChangesHealth:
 		Step: 5
 		Delay: 10
-		HealIfBelow: 5
+		StartIfBelow: 5
 		DamageCooldown: 2
 	RenderSprites:
 		Image: RMBO

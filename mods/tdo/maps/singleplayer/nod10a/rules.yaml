@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, nod10a.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, nod10a.lua
 	MissionData:
 		Briefing: GDI is developing an orbital weapon. Our spies have told us of a large lake near the location of the R&D center.\n\nFind the base, and use the sniper to eliminate their scientist.
 		BackgroundVideo: kanepre.vqa
@@ -16,12 +16,18 @@ World:
 			7,16: sc1,0
 			3,14: sc5,0
 			30,5: sc1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			7,15: cr1,0
 			35,5: cr1,0
 			51,4: cr1,0
 			41,3: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	ScriptLobbyDropdown@difficulty:
 		ID: difficulty
 		Label: Difficulty
@@ -45,10 +51,10 @@ RMBO.easy:
 	Inherits: RMBO
 	Health:
 		HP: 30000
-	SelfHealing:
+	ChangesHealth:
 		Step: 500
 		Delay: 10
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 200
 	RenderSprites:
 		Image: RMBO

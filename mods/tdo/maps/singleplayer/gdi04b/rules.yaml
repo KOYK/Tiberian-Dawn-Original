@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, gdi04b.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, gdi04b.lua
 	MusicPlaylist:
 		StartingMusic: fist226m
 	MissionData:

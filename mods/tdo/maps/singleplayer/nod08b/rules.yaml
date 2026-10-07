@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, nod08b.lua, nod08b-AI.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, nod08b.lua, nod08b-AI.lua
 	MusicPlaylist:
 		StartingMusic: linefire
 		VictoryMusic: nod_win1
@@ -30,6 +30,9 @@ World:
 			61,4: sc6,0
 			55,4: sc6,0
 			57,3: sc1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			42,56: cr1,0
@@ -43,6 +46,9 @@ World:
 			53,36: cr1,0
 			55,6: cr1,0
 			54,5: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 Player:
 	PlayerResources:
@@ -99,6 +105,8 @@ HARV:
 	Harvester:
 		SearchFromProcRadius: 30
 		SearchFromHarvesterRadius: 30
+	StoresResources:
+	DockClientManager:
 
 MTNK:
 	Buildable:
@@ -169,7 +177,7 @@ BOAT:
 		Except: Attack
 	RevealsShroud:
 		Range: 4c0
-		ValidStances: Enemy, Neutral, Ally
+		ValidRelationships: Enemy, Neutral, Ally
 
 FACT.IN:
 	Inherits: FACT

@@ -1,4 +1,6 @@
 fact:
+	Defaults:
+		Filename: fact.shp
 	build:
 		Start: 4
 		Length: 20
@@ -17,18 +19,24 @@ fact:
 	dead:
 		Start: 48
 		Tick: 800
-	make: factmake
+	make:
+		Filename: factmake.shp
 		Length: *
 		Tick: 80
-	bib: bib2
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			DESERT: bib2.des
+			WINTER: bib2.win
+			SNOW: bib2.sno
+			JUNGLE: bib2.jun
 		Length: *
-	icon: facticnh
+	icon:
+		Filename: facticnh.shp
 
 nuke:
+	Defaults:
+		Filename: nuke.shp
 	idle:
 		Length: 4
 		Tick: 1000
@@ -39,19 +47,24 @@ nuke:
 	dead:
 		Start: 8
 		Tick: 800
-	make: nukemake
+	make:
+		Filename: nukemake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
-	icon: nukeicnh.tem
-		AddExtension: False
+	icon:
+		Filename: nukeicnh.tem
 
 proc:
+	Defaults:
+		Filename: proc.shp
 	idle:
 		Length: 6
 		Tick: 120
@@ -75,27 +88,34 @@ proc:
 		Start: 60
 		Tick: 800
 		Offset: 2,4
-	make: procmake
+	make:
+		Filename: procmake.shp
 		Length: *
 		Tick: 80
 		Offset: 2,4
-	resources: proctwr
+	resources:
+		Filename: proctwr.shp
 		Length: 6
 		Offset: -30,-17
-	damaged-resources: proctwr
+	damaged-resources:
+		Filename: proctwr.shp
 		Start: 6
 		Length: 6
 		Offset: -30,-17
-	bib: bib2
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			DESERT: bib2.des
+			WINTER: bib2.win
+			SNOW: bib2.sno
+			JUNGLE: bib2.jun
 		Length: *
-	icon: procicnh.tem
-		AddExtension: False
+	icon:
+		Filename: procicnh.tem
 
 silo:
+	Defaults:
+		Filename: silo.shp
 	idle:
 		Offset: 0,-1
 	damaged-idle:
@@ -112,22 +132,26 @@ silo:
 		Start: 5
 		Length: 5
 		Offset: 0,-1
-	make: silomake
+	make:
+		Filename: silomake.shp
 		Length: *
 		Tick: 80
 		Offset: 0,-1
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
 		Offset: 0,-1
-	icon: siloicnh.tem
-		AddExtension: False
+	icon:
+		Filename: siloicnh.tem
 
 hand:
 	Defaults:
+		Filename: hand.shp
 		Offset: 0,-8
 	idle:
 	damaged-idle:
@@ -135,21 +159,26 @@ hand:
 	dead:
 		Start: 2
 		Tick: 800
-	make: handmake
+	make:
+		Filename: handmake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
 		Offset: 0,0
-	icon: handicnh.tem
-		AddExtension: False
+	icon:
+		Filename: handicnh.tem
 		Offset: 0,0
 
 pyle:
+	Defaults:
+		Filename: pyle.shp
 	idle:
 		Length: 10
 		Tick: 100
@@ -160,49 +189,63 @@ pyle:
 	dead:
 		Start: 20
 		Tick: 800
-	make: pylemake
+	make:
+		Filename: pylemake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
-	icon: pyleicnh.tem
-		AddExtension: False
+	icon:
+		Filename: pyleicnh.tem
 
 spen:
+	Defaults:
+		Filename: spen.shp
 	idle:
 		Offset: 0,2
 	damaged-idle:
 		Start: 1
 		Offset: 0,2
-	make: spenmake
+	make:
+		Filename: spenmake.shp
 		Length: *
 		Offset: 0,2
 		Tick: 80
-	icon: spenicon
-	fake-icon: speficon
+	icon:
+		Filename: spenicon.shp
+	fake-icon:
+		Filename: speficon.shp
 	dead:
 		Start: 1
 		Tick: 800
 
 syrd:
+	Defaults:
+		Filename: syrd.shp
 	idle:
 	damaged-idle:
 		Start: 1
-	make: syrdmake
+	make:
+		Filename: syrdmake.shp
 		Length: *
 		Tick: 80
-	icon: syrdicon
-	fake-icon: syrficon
+	icon:
+		Filename: syrdicon.shp
+	fake-icon:
+		Filename: syrficon.shp
 	dead:
 		Start: 1
 		Tick: 800
 
 weap:
 	Defaults:
+		Filename: weap.shp
 		Offset: 0,-12
 	idle:
 		ZOffset: -511
@@ -212,28 +255,35 @@ weap:
 	dead:
 		Start: 2
 		Tick: 800
-	build-top: weap2
+	build-top:
+		Filename: weap2.shp
 		Length: 10
 		ZOffset: -1024
-	damaged-build-top: weap2
+	damaged-build-top:
+		Filename: weap2.shp
 		Start: 10
 		Length: 10
 		ZOffset: -1024
-	make: weapmake
+	make:
+		Filename: weapmake.shp
 		Length: *
 		Tick: 80
-	bib: bib2
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			DESERT: bib2.des
+			WINTER: bib2.win
+			SNOW: bib2.sno
+			JUNGLE: bib2.jun
 		Length: *
 		Offset: 0,0
-	icon: weapicnh.tem
-		AddExtension: False
+	icon:
+		Filename: weapicnh.tem
 		Offset: 0,0
 
 afld:
+	Defaults:
+		Filename: afld.shp
 	idle:
 		Tick: 120
 		ZOffset: -1023
@@ -250,10 +300,12 @@ afld:
 		Length: 16
 		Tick: 120
 		ZOffset: -1023
-	idle-dish: afld_d
+	idle-dish:
+		Filename: afld_d.shp
 		Length: 16
 		Tick: 160
-	damaged-idle-dish: afld_d
+	damaged-idle-dish:
+		Filename: afld_d.shp
 		Start: 16
 		Length: 16
 		Tick: 160
@@ -261,19 +313,24 @@ afld:
 		Start: 32
 		ZOffset: -1023
 		Tick: 800
-	make: afldmake
+	make:
+		Filename: afldmake.shp
 		Length: *
 		Tick: 80
-	bib: bib1
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib1.tem
+		TilesetFilenames:
+			DESERT: bib1.des
+			WINTER: bib1.win
+			SNOW: bib1.sno
+			JUNGLE: bib1.jun
 		Length: *
-	icon: afldicnh.tem
-		AddExtension: False
+	icon:
+		Filename: afldicnh.tem
 
 hq:
+	Defaults:
+		Filename: hq.shp
 	idle:
 		Length: 16
 		Tick: 100
@@ -284,19 +341,24 @@ hq:
 	dead:
 		Start: 32
 		Tick: 800
-	make: hqmake
+	make:
+		Filename: hqmake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
-	icon: hqicnh.tem
-		AddExtension: False
+	icon:
+		Filename: hqicnh.tem
 
 nuk2:
+	Defaults:
+		Filename: nuk2.shp
 	idle:
 		Length: 4
 		Tick: 1000
@@ -307,19 +369,24 @@ nuk2:
 	dead:
 		Start: 8
 		Tick: 800
-	make: nuk2make
+	make:
+		Filename: nuk2make.shp
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
-	icon: nuk2icnh.tem
-		AddExtension: False
+	icon:
+		Filename: nuk2icnh.tem
 
 hpad:
+	Defaults:
+		Filename: hpad.shp
 	idle:
 		ZOffset: -1023
 	damaged-idle:
@@ -339,19 +406,24 @@ hpad:
 		Start: 14
 		ZOffset: -1023
 		Tick: 800
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
-	make: hpadmake
+	make:
+		Filename: hpadmake.shp
 		Length: *
 		Tick: 80
-	icon: hpadicnh.tem
-		AddExtension: False
+	icon:
+		Filename: hpadicnh.tem
 
 fix:
+	Defaults:
+		Filename: fix.shp
 	idle:
 		ZOffset: -1c511
 	damaged-idle:
@@ -368,19 +440,24 @@ fix:
 		Start: 14
 		ZOffset: -1c511
 		Tick: 800
-	make: fixmake
+	make:
+		Filename: fixmake.shp
 		Length: 14
 		Tick: 60
-	bib: bib2
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			DESERT: bib2.des
+			WINTER: bib2.win
+			SNOW: bib2.sno
+			JUNGLE: bib2.jun
 		Length: *
-	icon: fixicnh.tem
-		AddExtension: False
+	icon:
+		Filename: fixicnh.tem
 
 eye:
+	Defaults:
+		Filename: eye.shp
 	idle:
 		Length: 16
 		Tick: 100
@@ -391,20 +468,24 @@ eye:
 	dead:
 		Start: 32
 		Tick: 800
-	make: eyemake
+	make:
+		Filename: eyemake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
-	icon: eyeicnh.tem
-		AddExtension: False
+	icon:
+		Filename: eyeicnh.tem
 
 tmpl:
 	Defaults:
+		Filename: tmpl.shp
 		Offset: 0,-12
 	idle:
 	damaged-idle:
@@ -412,7 +493,8 @@ tmpl:
 	active:
 		Length: 5
 		Tick: 200
-	smoke: atomdoor
+	smoke:
+		Filename: atomdoor.shp
 		Length: *
 		Offset: -1,-47
 	damaged-active:
@@ -421,22 +503,26 @@ tmpl:
 	dead:
 		Start: 10
 		Tick: 800
-	make: tmplmake
+	make:
+		Filename: tmplmake.shp
 		Length: *
 		Tick: 60
-	bib: bib2
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			DESERT: bib2.des
+			WINTER: bib2.win
+			SNOW: bib2.sno
+			JUNGLE: bib2.jun
 		Length: *
 		Offset: 0,0
-	icon: tmplicnh.tem
-		AddExtension: False
+	icon:
+		Filename: tmplicnh.tem
 		Offset: 0,0
 
 obli:
 	Defaults:
+		Filename: obli.shp
 		Offset: 0,-12
 	idle:
 	damaged-idle:
@@ -451,11 +537,12 @@ obli:
 	dead:
 		Start: 8
 		Tick: 800
-	make: oblimake
+	make:
+		Filename: oblimake.shp
 		Length: 13
 		Tick: 80
-	icon: obliicnh.tem
-		AddExtension: False
+	icon:
+		Filename: obliicnh.tem
 		Offset: 0,0
 	#bib: mbOBLI
 	#	UseTilesetExtension: true
@@ -469,6 +556,8 @@ obli:
 	#	Offset: -1,-3
 
 brik:
+	Defaults:
+		Filename: brik.shp
 	idle:
 		Length: 16
 	scratched-idle:
@@ -477,65 +566,76 @@ brik:
 	damaged-idle:
 		Start: 32
 		Length: 16
-	icon: brikicnh.tem
-		AddExtension: False
+	icon:
+		Filename: brikicnh.tem
 
 sbag:
 	idle:
+		Filename: sbag.shp
 		Length: 16
-	icon: sbagicnh.tem
-		AddExtension: False
+	icon:
+		Filename: sbagicnh.tem
 
 cycl:
+	Defaults:
+		Filename: cycl.shp
 	idle:
 		Length: 16
 	damaged-idle:
 		Start: 16
 		Length: 16
-	icon: cyclicnh.tem
-		AddExtension: False
+	icon:
+		Filename: cyclicnh.tem
 
 barb:
+	Defaults:
+		Filename: barb.shp
 	idle:
 		Length: 16
 	damaged-idle:
 		Start: 16
 		Length: 16
-	icon: barbicnh.tem
-		AddExtension: False
+	icon:
+		Filename: barbicnh.tem
 
 wood:
+	Defaults:
+		Filename: wood.shp
 	idle:
 		Length: 16
 	damaged-idle:
 		Start: 16
 		Length: 16
-	icon: woodicnh.tem
-		AddExtension: False
+	icon:
+		Filename: woodicnh.tem
 
 gun:
+	Defaults:
+		Filename: gun.shp
 	idle:
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	recoil:
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	damaged-idle:
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	damaged-recoil:
 		Start: 96
 		Facings: 32
-		UseClassicFacingFudge: True
-	make: gunmake
+		UseClassicFacings: True
+	make:
+		Filename: gunmake.shp
 		Length: *
 		Tick: 80
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: *
-	icon: gunicnh.tem
-		AddExtension: False
+	icon:
+		Filename: gunicnh.tem
 	#bib: mbGUN
 	#	UseTilesetExtension: true
 	#	TilesetOverrides:
@@ -548,6 +648,8 @@ gun:
 	#	Offset: -1,-1
 
 sam:
+	Defaults:
+		Filename: sam.shp
 	closed-idle:
 		Start: 0
 	opening:
@@ -557,7 +659,7 @@ sam:
 	idle:
 		Start: 17
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	closing:
 		Start: 50
 		Length: 14
@@ -571,7 +673,7 @@ sam:
 	damaged-idle:
 		Start: 81
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	damaged-closing:
 		Start: 114
 		Length: 14
@@ -579,16 +681,20 @@ sam:
 	dead:
 		Start: 128
 		Tick: 800
-	make: sammake
+	make:
+		Filename: sammake.shp
 		Length: 20
 		Tick: 30
-	muzzle: samfire
+	muzzle:
+		Filename: samfire.shp
 		Length: 18
 		Facings: 8
-	icon: samicnh.tem
-		AddExtension: False
+	icon:
+		Filename: samicnh.tem
 
 gtwr:
+	Defaults:
+		Filename: gtwr.shp
 	idle:
 	damaged-idle:
 		Start: 1
@@ -596,18 +702,22 @@ gtwr:
 		Start: 2
 		Tick: 800
 	make:
+		Filename:
 		Combine:
-			gtwrmake:
+			0:
+				Filename: gtwrmake.shp
 				Length: 17
-			gtwrmake:
+			1:
+				Filename: gtwrmake.shp
 				Start: 19
 		Length: 18
 		Tick: 80
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: gtwricnh.tem
-		AddExtension: False
+	icon:
+		Filename: gtwricnh.tem
 	#bib: mbGTWR
 	#	UseTilesetExtension: true
 	#	TilesetOverrides:
@@ -621,6 +731,7 @@ gtwr:
 
 atwr:
 	Defaults:
+		Filename: atwr.shp
 		Offset: 0,-13
 	idle:
 	damaged-idle:
@@ -628,13 +739,15 @@ atwr:
 	dead:
 		Start: 2
 		Tick: 800
-	make: atwrmake
+	make:
+		Filename: atwrmake.shp
 		Length: *
 		Tick: 80
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: *
-	icon: atwricnh.tem
-		AddExtension: False
+	icon:
+		Filename: atwricnh.tem
 		Offset: 0,0
 	#bib: mbGTWR
 	#	UseTilesetExtension: true
@@ -648,6 +761,8 @@ atwr:
 	#	Offset: -3,0
 
 hosp:
+	Defaults:
+		Filename: hosp.shp
 	idle:
 		Length: 4
 		Tick: 100
@@ -656,80 +771,103 @@ hosp:
 		Start: 4
 		Length: 4
 		Offset: 0,-2
-	make: hospmake
+	make:
+		Filename: hospmake.shp
 		Length: *
 		Tick: 80
 		Offset: 0,-2
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
 		Offset: 0,0
 
 hosp.husk:
-	idle: hosp
+	idle:
+		Filename: hosp.shp
 		Start: 8
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
 		Offset: 0,0
 
 bio:
+	Defaults:
+		Filename: bio.shp
 	idle:
 	damaged-idle:
 		Start: 1
-	make: biomake
+	make:
+		Filename: biomake.shp
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
 		Offset: 0,0
 
 bio.husk:
-	idle: bio
+	idle:
+		Filename: bio.shp
 		Start: 2
-	bib: bib3
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			DESERT: bib3.des
+			WINTER: bib3.win
+			SNOW: bib3.sno
+			JUNGLE: bib3.jun
 		Length: *
 		Offset: 0,0
 
 miss:
+	Defaults:
+		Filename: miss.shp
 	idle:
 		Offset: 0,-1
 	damaged-idle:
 		Start: 1
 		Offset: 0,-1
-	make: missmake
+	make:
+		Filename: missmake.shp
 		Length: *
 		Tick: 80
 		Offset: 0,-1
-	bib: bib2
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			DESERT: bib2.des
+			WINTER: bib2.win
+			SNOW: bib2.sno
+			JUNGLE: bib2.jun
 		Length: *
-	icon: missicnh
+	icon:
+		Filename: missicnh.shp
 		Length: *
 
 miss.husk:
-	idle: miss
+	idle:
+		Filename: miss.shp
 		Start: 2
-	bib: bib2
-		UseTilesetExtension: true
-		TilesetOverrides:
-			TEMPERA: TEMPERAT
-			INTERIOR: TEMPERAT
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			DESERT: bib2.des
+			WINTER: bib2.win
+			SNOW: bib2.sno
+			JUNGLE: bib2.jun
 		Length: *

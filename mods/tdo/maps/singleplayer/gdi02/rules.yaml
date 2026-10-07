@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, gdi02.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, gdi02.lua
 	MusicPlaylist:
 		StartingMusic: befeared
 	MissionData:
@@ -10,12 +10,10 @@ World:
 		LossVideo: gameover.vqa
 
 SBAG:
-	-Crushable:
 	Buildable:
 		Prerequisites: ~disabled
 
 CYCL:
-	-Crushable:
 	Buildable:
 		Prerequisites: ~disabled
 
@@ -23,6 +21,8 @@ HARV:
 	Harvester:
 		SearchFromProcRadius: 32
 		SearchFromHarvesterRadius: 20
+	StoresResources:
+	DockClientManager:
 
 PROC:
 	Buildable:
@@ -114,10 +114,7 @@ SAM:
 
 OLDLST:
 	Inherits: LST
-	-WithRoof:
-	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Cargo:
 		Types: disabled

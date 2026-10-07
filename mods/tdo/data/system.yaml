@@ -137,52 +137,7 @@
 		Name: Nod
 		InternalName: nod
 		Description: THE BROTHERHOOD OF NOD\n\nCommonly, The Brotherhood, The Ways of Nod, ShaÆSeer among the tribes of Godan;\nsee INTERPOL File ARK936, Aliases of the Brotherhood, for more.\n\nFOUNDED: \nDate unknown: exaggerated reports place the Brotherhood’s founding\nbefore 1,800 BC\n\nIDEOLOGY: \nTo unite third-world nations under a pseudo-religious political platform\nwith imperialist tendencies. In actuality it is an aggressive and popular neo-fascist, antiWest\nmovement vying for total domination of the world’s peoples and resources.\nOperates under the popular mantra, “Brotherhood, unity, peace”.\n\nCURRENT HEAD OF STATE: \nKane; also known as Caine, Jacob (INTERPOL, File\nTRX11-12Q); al-Quayym, Amir (MI6 DR-416.52)\n\nBASE OF OPERATIONS: \nGlobal. Command posts previously identified at Kuantan,\nMalaysia; somewhere in Ar-Rub’ al-Khali, Saudi Arabia; Tokyo; Caen, France.\n\nMILITARY STRENGTH: \nPreviously believed only to be a smaller terrorist operations,\na recent scandal involving United States defense contractors confirms that the\nBrotherhood is well-equipped and supports significant land, sea, and air military\noperations.\n\nECONOMIC STRENGTH: \nConsiderable operating assets believed to be in excess of\nUS$255.2 billion, based on audits of seized financial records (see CIA Docket 3231.54-\n776 FIA).\n\nPOLITICAL STRENGTH: \nBelieved to be the sole backers of the Fist of Allah party in\nJordan (52%); United We Stand America party in the United States (12%); Albion First!\nparty in the United Kingdom (25+%), among others. (See Brookings Institution\npublication A42962-94 for full disclosure.)\n\nAFFILIATIONS: \nIrish Republican Party; Islamic Jihad; Khmer Rouge; others. (See\ndocument: Brotherhood of Nod Splinter Groups.)\n\nSEE ALSO: \nMobius, Dr. R.H.; terrorist activities; United States Global Defense Act;\nReport of World Energy Radical Redistribution, US Congressional Report, 1994, File\nXXY22.
-	ResourceType@green-tib:
-		Type: Tiberium
-		Name: Tiberium
-		PipColor: Green
-		ResourceType: 1
-		Palette: staticterrain
-		TerrainType: Tiberium
-		Sequences: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
-		MaxDensity: 12
-		ValuePerUnit: 35
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
-	ResourceType@blue-tib:
-		Type: BlueTiberium
-		Name: Tiberium
-		PipColor: Blue
-		ResourceType: 2
-		Palette: bluetiberium
-		TerrainType: BlueTiberium
-		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
-		MaxDensity: 12
-		ValuePerUnit: 60
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
-	ResourceType@ore:
-		Type: Ore
-		Name: Tiberium
-		ResourceType: 3
-		TerrainType: Ore
-		Palette: staticterrain
-		Sequences: ti1,ti2,ti3,ti4
-		MaxDensity: 12
-		ValuePerUnit: 35
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
-	ResourceType@gem:
-		Type: Gems
-		Name: Tiberium
-		ResourceType: 4
-		TerrainType: Gems
-		Palette: bluetiberium
-		Sequences: bti1,bti2,bti3,bti4
-		MaxDensity: 12
-		ValuePerUnit: 60
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
+	ControlGroups:
 
 World:
 	Inherits: ^BaseWorld
@@ -197,22 +152,48 @@ World:
 		Bridges: bridge1, bridge2, bridge3, bridge4
 	ProductionQueueFromSelection:
 		ProductionPaletteWidget: PRODUCTION_PALETTE
-	DomainIndex:
 	SmudgeLayer@SCORCH:
 		Type: Scorch
 		Sequence: scorches
-		SmokePercentage: 50
+		SmokeChance: 50
 		Palette: staticterrain
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	SmudgeLayer@CRATER:
 		Type: Crater
 		Sequence: craters
 		Palette: staticterrain
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	ResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Tiberium:
+				ResourceIndex: 1
+				TerrainType: Tiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			BlueTiberium:
+				ResourceIndex: 2
+				TerrainType: BlueTiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Ore:
+				ResourceIndex: 3
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 4
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
 	ResourceClaimLayer:
 	WarheadDebugOverlay:
 	CustomTerrainDebugOverlay:
 	SpawnMapActors:
-	CreateMPPlayers:
+	CreateMapPlayers:
 	CrateSpawner:
 		WaterChance: 0
 	PathFinder:
@@ -222,21 +203,72 @@ World:
 		PanelName: SKIRMISH_STATS
 	RadarPings:
 	LoadWidgetAtGameStart:
+	ColorPickerManager:
+		PreviewActor: fact.colorpicker
+		PresetColors: FCFC54, DF1008, 007070, D47810, 54FC54, A4A4BC, F5D378, 29D0D0, 8126C0, 1D6914, 814A19, 2A4BD7, 9DAFFF, 575757, E2E2E2, 2B2B2B
 	ResourceRenderer:
-		RenderTypes: Tiberium, BlueTiberium, Ore, Gems
+		ResourceTypes:
+			Tiberium:
+				Sequences: ti1, ti2, ti3, ti4, ti5, ti6, ti7, ti8, ti9, ti10, ti11, ti12
+				Palette: staticterrain
+				Name: Tiberium
+			BlueTiberium:
+				Sequences: bti1, bti2, bti3, bti4, bti5, bti6, bti7, bti8, bti9, bti10, bti11, bti12
+				Palette: bluetiberium
+				Name: Tiberium
+			Ore:
+				Sequences: ti1, ti2, ti3, ti4
+				Palette: staticterrain
+				Name: Tiberium
+			Gems:
+				Sequences: bti1, bti2, bti3, bti4
+				Palette: bluetiberium
+				Name: Tiberium
+	PathFinderOverlay:
+	HierarchicalPathFinderOverlay:
 
 EditorWorld:
 	Inherits: ^BaseWorld
 	EditorActorLayer:
 	EditorResourceLayer:
-	EditorSelectionLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Tiberium:
+				ResourceIndex: 1
+				TerrainType: Tiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			BlueTiberium:
+				ResourceIndex: 2
+				TerrainType: BlueTiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Ore:
+				ResourceIndex: 3
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 4
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
 	LoadWidgetAtGameStart:
 	EditorCursorLayer:
 	EditorActionManager:
+	MarkerLayerOverlay:
+	BuildableTerrainOverlay:
+		AllowedTerrainTypes: Clear, Road
 
 ^BasePlayer:
 	AlwaysVisible:
 	Shroud:
+	PlayerResources:
+		ResourceValues:
+			Tiberium: 35
+			BlueTiberium: 60
+			Ore: 35
+			Gems: 60
 
 EditorPlayer:
 	Inherits: ^BasePlayer
@@ -324,7 +356,6 @@ Player:
 	GrantConditionOnPrerequisiteManager:
 	ResourceStorageWarning:
 	PlayerExperience:
-	ConditionManager:
 	AllyRepair:
 
 ^Palettes:
@@ -425,10 +456,15 @@ Player:
 		Name: effect
 		Filename: temperat.pal
 		ShadowIndex: 4
-	PaletteFromFile@colorpicker:
-		Name: colorpicker
+	PaletteFromFile@colorpicker-base:
+		Name: colorpicker-base
 		Filename: temperat.pal
 		ShadowIndex: 4
+		AllowModifiers: false
+	ColorPickerPalette@colorpicker:
+		Name: colorpicker
+		BasePalette: colorpicker-base
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
 		AllowModifiers: false
 	PaletteFromFile@player:
 		Name: player
@@ -508,11 +544,10 @@ Player:
 			Multi11: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111
 			Multi12: 240, 241, 242, 243, 244, 245, 246, 183, 248, 249, 250, 251, 253, 254, 255, 1
 			Multi13: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
-	PlayerHighlightPalette:
-	MenuPaletteEffect:
+	MenuPostProcessEffect:
 		MenuEffect: Desaturated
 	CloakPaletteEffect:
-	FlashPaletteEffect:
+	FlashPostProcessEffect:
 	RotationPaletteEffect@water:
 		ExcludePalettes: effect, chrome, ra, snow, staticterrain
 		RotationBase: 32
@@ -537,7 +572,6 @@ Player:
 	GivesExperience:
 		PlayerExperienceModifier: 1
 	ScriptTriggers:
-	ConditionManager:
 	RenderDebugState:
 
 ^SpriteActor:
@@ -621,6 +655,11 @@ Player:
 	AttackMove:
 		AssaultMoveCondition: assault-move
 
+^PlayerHandicaps:
+	HandicapFirepowerMultiplier:
+	HandicapDamageMultiplier:
+	HandicapProductionTimeMultiplier:
+
 ^AcceptsCloakCrate:
 	Cloak:
 		InitialDelay: 15
@@ -629,6 +668,8 @@ Player:
 		UncloakSound: trans1.aud
 		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloak-crate-collected
+		CloakedPalette: cloak
+		CloakStyle: Palette
 	ExternalCondition@CLOAK:
 		Condition: cloak-crate-collected
 	GrantConditionOnDamageState@UNCLOAK:
@@ -642,17 +683,18 @@ Player:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	SelfHealing@LOWPOWER:
+	ChangesHealth@LOWPOWER:
 		Step: 0
 		PercentageStep: -1
 		Delay: 750
-		HealIfBelow: 101
+		StartIfBelow: 101
 		DamageCooldown: 0
 		RequiresCondition: lowpower && global-lpdamage
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	GrantConditionOnPrerequisite@HUSKS:
 		Prerequisites: PrerequisiteHusksEnabled
 		Condition: HusksEnabled
@@ -662,7 +704,7 @@ Player:
 	ProximityExternalCondition@REPAIRING:
 		Condition: Repairing
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 		AffectsParent: False
 	ExternalCondition@ONPAD:
 		Condition: OnPad
@@ -675,7 +717,7 @@ Player:
 		Action: Kill
 	Mobile:
 		Locomotor: wheeled
-		TurnSpeed: 5
+		TurnSpeed: 20
 	GrantConditionOnDamageState@Heavy-Critical:
 		ValidDamageStates: Heavy, Critical
 		Condition: lowhealth
@@ -686,7 +728,7 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Vehicle
 	Repairable:
@@ -701,7 +743,7 @@ Player:
 	DrawLineToTarget:
 	WithDamageOverlay:
 	WithFacingSpriteBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	Guard:
@@ -711,8 +753,8 @@ Player:
 	MustBeDestroyed:
 	Voiced:
 		VoiceSet: VehicleVoice
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 	HitShape:
 	MapEditorData:
 		Categories: Vehicle
@@ -731,13 +773,14 @@ Player:
 	Inherits: ^Vehicle
 	Mobile:
 		Locomotor: tracked
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Tooltip:
 		GenericName: Vehicle
 
 ^Helicopter:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	Buildable:
 		Queue: Aircraft
@@ -748,13 +791,13 @@ Player:
 	ProximityExternalCondition@ONHELIPAD:
 		Condition: occupied
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 		AffectsParent: False
 		RequiresCondition: !airborne
 	ProximityExternalCondition@REPAIRING:
 		Condition: Repairing
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 		AffectsParent: False
 	ExternalCondition@ONPAD:
 		Condition: OnPad
@@ -767,9 +810,11 @@ Player:
 	RevealsShroud@LANDED:
 		Range: 2c0
 		RequiresCondition: !airborne
+		Type: GroundPosition
 	RevealsShroud@AIR:
 		Range: 0c0
 		RequiresCondition: airborne
+		Type: CenterPosition
 	Targetable@GROUND:
 		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne
@@ -779,7 +824,7 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Repairable:
 		RepairActors: fix
 	Aircraft:
@@ -787,7 +832,7 @@ Player:
 		CruisingCondition: cruising
 		CanHover: True
 		VTOL: True
-		InitialFacing: 224
+		InitialFacing: 896
 		MoveIntoShroud: False
 		Repulsable: True
 		TakeOffOnCreation: True
@@ -796,13 +841,12 @@ Player:
 		IdleBehavior: Land
 		Crushes: crate
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
-		TurnToDock: True
 		TurnToLand: True
 		CanForceLand: False
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: HeliExplode
 		EmptyWeapon: HeliExplode
 	AttackMove:
@@ -820,8 +864,8 @@ Player:
 	MustBeDestroyed:
 	Voiced:
 		VoiceSet: VehicleVoice
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 	HitShape:
 	MapEditorData:
 		Categories: Aircraft
@@ -831,6 +875,7 @@ Player:
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	#Note I should look if the sell value changes based on health, also look at vehicles, ELoyros
 	Sellable:
@@ -855,8 +900,8 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 18,18,0,-6
-		DecorationBounds: 12,17,0,-6
+		Bounds: 768, 768, 0, -256
+		DecorationBounds: 512, 725, 0, -256
 	Targetable:
 		TargetTypes: Ground, Infantry
 	QuantizeFacingsFromSequence:
@@ -898,7 +943,7 @@ Player:
 	WithDecoration@HAZMAT:
 		Image: pips
 		Sequence: pip-hazmat
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		RequiresCondition: hazmatsuits
 	ActorLostNotification:
 	SpawnActorOnDeath:
@@ -912,11 +957,11 @@ Player:
 		WarnProbability: 75
 		CrushSound: squish2.aud
 	Guardable:
-	SelfHealing@HOSPITAL:
+	ChangesHealth@HOSPITAL:
 		Step: 0
 		PercentageStep: 10
 		Delay: 250
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 250
 		RequiresCondition: hospitalheal
 	GrantConditionOnPrerequisite@HOSPITAL:
@@ -931,7 +976,7 @@ Player:
 	WithDecoration@REDCROSS:
 		Image: pips
 		Sequence: pip-heal
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		RequiresCondition: hospitalheal
 		BlinkInterval: 32
 		BlinkPattern: On, Off
@@ -985,7 +1030,7 @@ Player:
 	RevealsShroud:
 		Range: 0c0
 	Passenger:
-		PipType: Gray
+		CustomPipType: gray
 	ActorLostNotification:
 		Notification: CivilianKilled
 		NotifyAll: true
@@ -1006,6 +1051,7 @@ Player:
 	Armament:
 		Weapon: Pistol
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
@@ -1013,6 +1059,7 @@ Player:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1038,13 +1085,12 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Creep
 	HiddenUnderFog:
 	RenderSprites:
 		Palette: staticterrain
-		PlayerPalette: staticterrain
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -1059,6 +1105,7 @@ Player:
 		Voice: Attack
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	DrawLineToTarget:
 	DeathSounds:
 	Voiced:
@@ -1074,6 +1121,7 @@ Player:
 ^Plane:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1081,7 +1129,7 @@ Player:
 		UseLocation: true
 	HiddenUnderFog:
 		Type: GroundPosition
-		AlwaysVisibleStances: None
+		AlwaysVisibleRelationships: None
 	ActorLostNotification:
 	AttackMove:
 	WithShadow:
@@ -1097,6 +1145,7 @@ Player:
 ^Ship:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1110,7 +1159,7 @@ Player:
 	AttackMove:
 	DrawLineToTarget:
 	WithDamageOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 	Guard:
@@ -1126,6 +1175,7 @@ Player:
 ^ShipRA:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1137,7 +1187,7 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	Targetable@REPAIR:
@@ -1155,7 +1205,7 @@ Player:
 	RepairableNear:
 		RepairActors: spen, syrd
 	WithDamageOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 	Guard:
@@ -1173,6 +1223,7 @@ Player:
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^DamagedOnLowPower
 	Inherits@shape: ^1x1Shape
+	Inherits@handicaps: ^PlayerHandicaps
 	FootprintPlaceBuildingPreview:
 	Huntable:
 	OwnerLostAction:
@@ -1194,7 +1245,7 @@ Player:
 		DamagedSounds: xplos.aud
 		DestroyedSounds: crumble.aud
 	WithSpriteBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
@@ -1241,7 +1292,7 @@ Player:
 		UseDeathTypeSuffix: false
 	SpawnActorsOnSell:
 		ActorTypes: e6,e1,e1,e1,tc1,tc7
-	EngineerRepairable:
+	InstantlyRepairable:
 	Demolishable:
 		Condition: being-demolished
 	Sellable:
@@ -1255,7 +1306,7 @@ Player:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	SpawnActorOnDeath@SpawnE11:
@@ -1274,12 +1325,14 @@ Player:
 ^NavalBuilding:
 	Inherits: ^BaseBuilding
 	Inherits@BuildingType: ^ProductionBuilding
+	CaptureManager:
+		BeingCapturedCondition: being-captured
 	ProductionBar:
 		ProductionType: naval
 		Color: 3AA730
 		RequiresCondition: ProductionBarEnabled
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
@@ -1304,25 +1357,25 @@ Player:
 	Exit@1:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,-213,0
-		Facing: 96
+		Facing: 384
 		ExitCell: -1,2
 		ProductionTypes: naval
 	Exit@2:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,-213,0
-		Facing: 160
+		Facing: 640
 		ExitCell: 3,2
 		ProductionTypes: naval
 	Exit@3:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,0,0
-		Facing: 32
+		Facing: 128
 		ExitCell: 0,0
 		ProductionTypes: naval
 	Exit@4:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,0,0
-		Facing: 224
+		Facing: 896
 		ExitCell: 2,0
 		ProductionTypes: naval
 	Production:
@@ -1333,7 +1386,6 @@ Player:
 	RepairsUnits:
 		HpPerStep: 1000
 		StartRepairingNotification: Repairing
-		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 	RallyPoint:
 	Power:
@@ -1364,8 +1416,7 @@ Player:
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
+		Position: Top
 		RequiresCondition: primary
 	GrantConditionOnPrerequisite@ProductionBar:
 		Condition: ProductionBarEnabled
@@ -1373,7 +1424,6 @@ Player:
 
 ^CivBuilding:
 	Inherits: ^Building
-	ConditionManager:
 	Tooltip:
 		ShowOwnerRow: false
 		GenericStancePrefix: True
@@ -1425,7 +1475,6 @@ Player:
 
 ^TechBuilding:
 	Inherits: ^CivBuilding
-	ConditionManager:
 	OwnerLostAction:
 		Action: ChangeOwner
 	CaptureManager:
@@ -1444,7 +1493,7 @@ Player:
 		PlayerExperience: 1
 		RepairingNotification: Repairing
 		RepairBonuses: 100, 0
-	EngineerRepairable:
+	InstantlyRepairable:
 	RevealsShroud:
 		Range: 2c0
 	Tooltip:
@@ -1458,7 +1507,7 @@ Player:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	GivesBuildableArea:
@@ -1474,7 +1523,7 @@ Player:
 	Interactable:
 	Tooltip:
 		GenericName: Field
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
@@ -1513,7 +1562,7 @@ Player:
 	Inherits@shape: ^1x1Shape
 	FootprintPlaceBuildingPreview:
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	CombatDebugOverlay:
 	AppearsOnRadar:
 	OwnerLostAction:
@@ -1638,9 +1687,8 @@ Player:
 	ProximityExternalCondition@NoBotDeploy:
 		Condition: NearTibTree
 		Range: 20c0
-		ValidStances: Ally, Enemy, Neutral
+		ValidRelationships: Ally, Enemy, Neutral
 		AffectsParent: False
-	ConditionManager:
 	Interactable:
 	GrantConditionOnPrerequisite@TibRegrowth:
 		Condition: Regrowth
@@ -1702,7 +1750,7 @@ Player:
 		Type: 2
 	HiddenUnderFog:
 		Type: CenterPosition
-		AlwaysVisibleStances: None
+		AlwaysVisibleRelationships: None
 	WithFacingSpriteBody:
 	HitShape:
 
@@ -1710,28 +1758,32 @@ Player:
 	Inherits: ^CommonHuskDefaults
 	Husk:
 		AllowedTerrain: Clear, Rough, Road, Tiberium, BlueTiberium, Beach
-	Burns:
-		Damage: 1
-		Interval: 8
 	Targetable:
 		RequiresForceFire: true
 		TargetTypes: Ground, Husk
 	CaptureManager:
 	Capturable:
 		Types: husk
-		ValidStances: Enemy, Neutral, Ally
 	TransformOnCapture:
 		ForceHealthPercentage: 25
 	Tooltip:
 		GenericName: Destroyed Vehicle
 	WithColoredOverlay@IDISABLE:
-		Palette: disabled
+		Color: 000000B4
 	ScriptTriggers:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+		IsDecoration: true
+	ChangesHealth:
+		Step: -1
+		StartIfBelow: 101
+		Delay: 8
 
 ^LightHusk:
 	Inherits: ^Husk
@@ -1752,8 +1804,8 @@ Player:
 		Explosion: HeliCrash
 	Tooltip:
 		GenericName: Destroyed Helicopter
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 
 ^Crate:
 	Inherits@1: ^SpriteActor
@@ -1779,7 +1831,7 @@ Player:
 		ValidPowerStates: Low, Critical
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: lowpower
-		Palette: disabled
+		Color: 000000B4
 
 CRATE.plain:
 	Inherits: ^Crate
@@ -1788,7 +1840,7 @@ CRATE.plain:
 CRATE:
 	Inherits: ^Crate
 	Crate:
-		Lifetime: 0
+		Duration: 0
 	ExplodeCrateAction@Nuke:
 		Weapon: Atomic
 		SelectionShares: 2
@@ -1829,13 +1881,13 @@ CRATE:
 		Owner: Creeps
 		SelectionShares: 3
 		Prerequisites: PrerequisiteViceEnabled
-	GiveMcvCrateAction@Nod:
+	GiveBaseBuilderCrateAction@Nod:
 		SelectionShares: 0
 		NoBaseSelectionShares: 10
 		Units: mcv.nod
 		ValidFactions: nod
 		ExcludedActorTypes: pvice, vice, rapt, tric, trex, steg
-	GiveMcvCrateAction@GDI:
+	GiveBaseBuilderCrateAction@GDI:
 		SelectionShares: 0
 		NoBaseSelectionShares: 10
 		Units: mcv.gdi
@@ -1961,6 +2013,8 @@ fact.colorpicker:
 	-Sellable:
 	-RepairsUnits:
 	-ExternalCondition@REPAIRING:
+	ExternalCondition@DEMOLISH:
+		Condition: being-demolished
 	RenderSprites:
 		Image: fix
 		Palette: colorpicker
@@ -2048,14 +2102,13 @@ airstrike.proxy:
 		OneShot: True
 		StartFullyCharged: True
 		AllowMultiple: True
-		PauseOnCondition: lowpower
 		Prerequisites: ~PrerequisiteSuperWeapons
 		Icon: airstrike
 		ChargeInterval: 0
 		SquadSize: 1
 		QuantizedFacings: 8
-		Description: Extra Air Strike
-		LongDesc: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		Name: Extra Air Strike
+		Description: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
 		EndChargeSpeechNotification: AirstrikeReady
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
@@ -2078,14 +2131,13 @@ ioncannon.proxy:
 		OneShot: True
 		StartFullyCharged: True
 		AllowMultiple: True
-		PauseOnCondition: lowpower
 		Prerequisites: ~PrerequisiteSuperWeapons
 		Icon: ioncannon
 		Cursor: ioncannon
 		ChargeInterval: 0
 		Weapon: IonCannon
-		Description: Extra Ion Cannon Strike
-		LongDesc: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		Name: Extra Ion Cannon Strike
+		Description: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
 		BeginChargeSpeechNotification: IonCannonCharging
 		EndChargeSpeechNotification: IonCannonReady
 		SelectTargetSpeechNotification: SelectTarget
@@ -2102,13 +2154,12 @@ nuke.proxy:
 		OneShot: True
 		StartFullyCharged: True
 		AllowMultiple: True
-		PauseOnCondition: lowpower
 		Prerequisites: ~PrerequisiteSuperWeapons
 		Icon: abomb
 		Cursor: nuke
 		ChargeInterval: 0
-		Description: Extra Nuclear Strike
-		LongDesc: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
+		Name: Extra Nuclear Strike
+		Description: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
 		EndChargeSpeechNotification: NuclearWeaponAvailable
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
@@ -2125,6 +2176,7 @@ nuke.proxy:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		MissileImage: atomic
 
 DISABLED:
 	ProvidesPrerequisite:
@@ -2173,7 +2225,7 @@ BRIDGE1:
 		Actor: bridgehut
 		SpawnOffset: 0,2
 	Interactable:
-		Bounds: 96,96
+		Bounds: 4096, 4096
 
 BRIDGE2:
 	Inherits: ^Bridge
@@ -2190,7 +2242,7 @@ BRIDGE2:
 		Actor: bridgehut
 		SpawnOffset: 2,2
 	Interactable:
-		Bounds: 120,120
+		Bounds: 5120, 5120
 
 BRIDGE3:
 	Inherits: ^Bridge
@@ -2207,7 +2259,7 @@ BRIDGE3:
 		Actor: bridgehut
 		SpawnOffset: 1,2
 	Interactable:
-		Bounds: 144,120
+		Bounds: 6144, 5120
 
 BRIDGE4:
 	Inherits: ^Bridge
@@ -2224,7 +2276,7 @@ BRIDGE4:
 		Actor: bridgehut
 		SpawnOffset: 3,2
 	Interactable:
-		Bounds: 144,96
+		Bounds: 6144, 4096
 
 BRIDGEHUT:
 	AlwaysVisible:
@@ -2235,7 +2287,18 @@ BRIDGEHUT:
 	Targetable:
 		TargetTypes: BridgeHut, C4
 	Interactable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
+
+BRIDGEHUT.SMALL:
+	AlwaysVisible:
+	Building:
+		Footprint: _
+		Dimensions: 1,1
+	LegacyBridgeHut:
+	Targetable:
+		TargetTypes: BridgeHut, C4
+	Interactable:
+		Bounds: 1024, 1024
 
 #===================================
 #Start of: RA maps compatibility WIP
@@ -2326,6 +2389,11 @@ WINDMILL:
 
 BR1:
 	Inherits: ^Bridge
+	Building:
+		Footprint: ____ ____ ____
+		Dimensions: 4,3
+	Interactable:
+		Bounds: 4096, 3072
 	Bridge:
 		Template: 235
 		DamagedTemplate: 236
@@ -2337,6 +2405,11 @@ BR1:
 
 BR2:
 	Inherits: ^Bridge
+	Building:
+		Footprint: _____ _____ _____
+		Dimensions: 5,3
+	Interactable:
+		Bounds: 5120, 3072
 	Bridge:
 		Template: 238
 		DamagedTemplate: 239
@@ -2348,6 +2421,11 @@ BR2:
 
 BR3:
 	Inherits: ^Bridge
+	Building:
+		Footprint: ____ ____
+		Dimensions: 4,2
+	Interactable:
+		Bounds: 4096, 2048
 	Bridge:
 		Long: true
 		ShorePieces: br1,br2
@@ -2376,7 +2454,7 @@ SBRIDGE1:
 		Actor: bridgehut.small
 		SpawnOffset: 1,1
 	Interactable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 
 SBRIDGE2:
 	Inherits: ^Bridge
@@ -2394,10 +2472,15 @@ SBRIDGE2:
 		Actor: bridgehut.small
 		SpawnOffset: 1,1
 	Interactable:
-		Bounds: 48,72
+		Bounds: 2048, 3072
 
 SBRIDGE3:
 	Inherits: ^Bridge
+	Building:
+		Footprint: ____ ____
+		Dimensions: 4,2
+	Interactable:
+		Bounds: 4096, 2048
 	Bridge:
 		Template: 523
 		DamagedTemplate: 524
@@ -2411,6 +2494,11 @@ SBRIDGE3:
 
 SBRIDGE4:
 	Inherits: ^Bridge
+	Building:
+		Footprint: ____ ____
+		Dimensions: 4,2
+	Interactable:
+		Bounds: 4096, 2048
 	Bridge:
 		Template: 527
 		DamagedTemplate: 528

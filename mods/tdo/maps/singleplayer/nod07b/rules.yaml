@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, nod07b.lua, nod07b-AI.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, nod07b.lua, nod07b-AI.lua
 	MusicPlaylist:
 		StartingMusic: justdoit
 		VictoryMusic: nod_win1
@@ -12,6 +12,9 @@ World:
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			9,12: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 Player:
 	PlayerResources:
@@ -65,6 +68,8 @@ HARV:
 	Harvester:
 		SearchFromProcRadius: 45
 		SearchFromHarvesterRadius: 45
+	StoresResources:
+	DockClientManager:
 
 MTNK:
 	Buildable:

@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, gdi05b.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, gdi05b.lua
 	MusicPlaylist:
 		StartingMusic: rain
 	MissionData:
@@ -18,6 +18,9 @@ World:
 			39,52: sc5,0
 			24,52: sc1,0
 			39,51: sc4,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 Player:
 	EnemyWatcher:

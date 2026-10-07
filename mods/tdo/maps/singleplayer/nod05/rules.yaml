@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, nod05.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, nod05.lua
 	MusicPlaylist:
 		StartingMusic: airstrik
 		VictoryMusic: nod_win1
@@ -14,6 +14,9 @@ World:
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			46,48: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 ^Palettes:
 	IndexedPlayerPalette:
@@ -93,6 +96,8 @@ HARV:
 	Harvester:
 		SearchFromProcRadius: 24
 		SearchFromHarvesterRadius: 24
+	StoresResources:
+	DockClientManager:
 
 FTNK:
 	Buildable:

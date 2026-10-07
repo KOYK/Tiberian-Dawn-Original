@@ -54,6 +54,7 @@ Player:
 			fix: 1
 			hpad: 2
 			spen: 9
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 
 	BaseBuilderBotModule@GDI:
 		RequiresCondition: enable-all-bot && proc && harv && gdi
@@ -110,6 +111,7 @@ Player:
 			fix: 1
 			hpad: 2
 			syrd: 9
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 
 	BaseBuilderBotModule@NodAndGDI:
 		RequiresCondition: enable-all-bot && proc && harv && factn && factg
@@ -163,3 +165,4 @@ Player:
 			hpad: 2
 			spen: 9
 			syrd: 9
+		DefenseTypes: gun, sam, obli, gtwr, atwr

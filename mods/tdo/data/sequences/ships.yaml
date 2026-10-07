@@ -1,22 +1,28 @@
 lst:
-	idle: lstnew
-		UseClassicFacingFudge: True
+	idle:
+		Filename: lstnew.shp
+		UseClassicFacings: True
 		Facings: 32
-	roof: lstnew2
-		UseClassicFacingFudge: True
+	roof:
+		Filename: lstnew2.shp
+		UseClassicFacings: True
 		Facings: 32
-	icon: lsticnh.tem
-		AddExtension: False
+		ZOffset: 1024
+	icon:
+		Filename: lsticnh.tem
 
 oldlst:
-	idle: lst
+	idle:
+		Filename: lst.shp
 		Start: 0
 		Facings: 1
 		ZOffset: -1024
-	icon: lsticnh.tem
-		AddExtension: False
+	icon:
+		Filename: lsticnh.tem
 
 boat:
+	Defaults:
+		Filename: boat.shp
 	left:
 		Facings: 32
 	damaged-left:
@@ -25,7 +31,8 @@ boat:
 	critical-left:
 		Start: 64
 		Facings: 32
-	wake-left: wake
+	wake-left:
+		Filename: wake.shp
 		Start: 6
 		Length: 6
 		Offset: 1,2
@@ -39,52 +46,65 @@ boat:
 	critical-right:
 		Start: 160
 		Facings: 32
-	wake-right: wake
+	wake-right:
+		Filename: wake.shp
 		Length: 6
 		Offset: -1,2
 		Tick: 120
-	icon: boaticnh.tem
-		AddExtension: False
+	icon:
+		Filename: boaticnh.tem
 
 wake:
-	wake: wake
+	wake:
+		Filename: wake.shp
 		Length: 12
 
 ra_ss:
 	idle:
+		Filename: ra_ss.shp
 		Facings: 16
-	icon: ssicon.shp
-		AddExtension: False
+	icon:
+		Filename: ssicon.shp
 
 ra_ca:
 	idle:
+		Filename: ra_ca.shp
 		Facings: 16
-	turret: turr
+	turret:
+		Filename: turr.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: caicon.shp
-		AddExtension: False
+	icon:
+		Filename: caicon.shp
 
 ra_dd:
 	idle:
+		Filename: ra_dd.shp
 		Facings: 16
-	turret: ssam
+	turret:
+		Filename: ssam.shp
 		Facings: 32
-	icon: ddicon.shp
-		AddExtension: False
+	icon:
+		Filename: ddicon.shp
 
 ra_pt:
 	idle:
+		Filename: ra_pt.shp
 		Facings: 16
-	turret: mgun
+	turret:
+		Filename: mgun.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: pticon.shp
-		AddExtension: False
+	icon:
+		Filename: pticon.shp
 
 ra_lst:
+	Defaults:
+		Filename: ra_lst.shp
 	idle:
 	open:
 		Start: 1
@@ -97,11 +117,12 @@ ra_lst:
 	unload:
 		Start: 4
 		ZOffset: -511
-	icon: ra_lsticon.shp
-		AddExtension: False
+	icon:
+		Filename: ra_lsticon.shp
 
 ra_msub:
 	idle:
+		Filename: ra_msub.shp
 		Facings: 16
-	icon: msubicon.shp
-		AddExtension: False
+	icon:
+		Filename: msubicon.shp

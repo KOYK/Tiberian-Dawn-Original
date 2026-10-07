@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, gdi03.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, gdi03.lua
 	MusicPlaylist:
 		StartingMusic: crep226m
 	MissionData:

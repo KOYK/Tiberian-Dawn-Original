@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, nod04a.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, nod04a.lua
 	MusicPlaylist:
 		StartingMusic: valkyrie
 		VictoryMusic: nod_win1
@@ -13,6 +13,9 @@ World:
 		InitialSmudges:
 			37,24: sc6,0
 			36,18: sc6,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 Player:
 	EnemyWatcher:
