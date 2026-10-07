@@ -91,41 +91,35 @@ Actors:
 	Actor1: apc
 		Owner: Nod_1
 		Location: 54,59
-		Facing: 255
+		Facing: 1020
 	Actor2: e6
 		Owner: Nod_1
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 55,59
 	Actor3: e6
 		Owner: Nod_1
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 55,59
 		SubCell: 1
 	Actor4: e6
 		Owner: Nod_1
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 55,59
 		SubCell: 2
 	Actor5: e6
 		Owner: Nod_1
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 55,59
 		SubCell: 4
 	Actor6: e6
 		Owner: Nod_1
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 55,59
 		SubCell: 5
 	Actor8: rmbo
 		Owner: Nod_1
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 53,59
 		SubCell: 1
 	Actor9: tc05
@@ -172,11 +166,11 @@ Actors:
 		Location: 56,49
 	Actor23: atwr
 		Owner: GDI_H
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 47,45
 	Actor24: atwr
 		Owner: GDI_H
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 47,50
 	Actor25: camera.small
 		Owner: Nod_1
@@ -228,52 +222,45 @@ Actors:
 		Location: 60,43
 	Actor43: gtwr
 		Owner: GDI_H
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 58,43
 	Actor44: gtwr
 		Owner: GDI_H
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 51,43
 	Actor45: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 56,49
 	Actor46: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 59,53
 	Actor47: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 57,53
 	Actor48: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 54,52
 		SubCell: 1
 	Actor49: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 54,51
 	Actor50: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 52,51
 		SubCell: 3
 	Actor51: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 53,56
 		SubCell: 3
 	Actor57: brik
@@ -437,26 +424,22 @@ Actors:
 		Location: 54,37
 	Actor110: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 54,39
 	Actor111: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 55,39
 	Actor112: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 55,40
 	Actor113: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 1
 		Location: 55,40
 	Actor114: tc04
@@ -588,7 +571,7 @@ Actors:
 		FreeActor: False
 	Actor154: atwr
 		Owner: GDI_H
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 37,44
 	Actor155: v19
 		Owner: GDI_H
@@ -602,36 +585,30 @@ Actors:
 	Actor158: mtnk
 		Owner: GDI_H
 		Location: 4,42
-		TurretFacing: 218
-		Facing: 218
+		Facing: 872
 	Actor159: e3
 		Owner: GDI_H
 		SubCell: 3
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 1,40
 	Actor160: e3
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 1,39
 	Actor161: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 3,43
 		SubCell: 3
 	Actor162: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 5,42
 	Actor163: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 4,41
 	Actor164: t14
@@ -671,66 +648,57 @@ Actors:
 	Actor175: bggy
 		Owner: Nod_2
 		Location: 31,59
-		TurretFacing: 236
-		Facing: 236
+		Facing: 944
 	Actor176: bggy
 		Owner: Nod_2
 		Location: 31,58
-		TurretFacing: 232
-		Facing: 232
+		Facing: 928
 	Actor177: e3
 		Owner: Nod_2
 		SubCell: 3
 		Location: 28,59
-		TurretFacing: 252
-		Facing: 252
+		Facing: 1008
 	Actor178: e3
 		Owner: Nod_2
 		SubCell: 3
 		Location: 29,58
-		TurretFacing: 179
-		Facing: 179
+		Facing: 716
 	Actor179: e3
 		Owner: Nod_2
 		Location: 29,59
 		SubCell: 3
-		TurretFacing: 0
-		Facing: 255
+		TurretFacing: 4
+		Facing: 1020
 	Actor180: e3
 		Owner: Nod_2
 		SubCell: 3
 		Location: 27,57
-		TurretFacing: 22
-		Facing: 22
+		Facing: 88
 	Actor181: e1
 		Owner: Nod_2
 		SubCell: 3
 		Location: 35,54
-		TurretFacing: 221
-		Facing: 221
+		Facing: 884
 	Actor182: e1
 		Owner: Nod_2
 		SubCell: 3
 		Location: 37,54
-		TurretFacing: 218
-		Facing: 218
+		Facing: 872
 	Actor183: e1
 		Owner: Nod_2
 		Location: 38,55
 		SubCell: 3
-		TurretFacing: 0
-		Facing: 255
+		TurretFacing: 4
+		Facing: 1020
 	Actor184: e1
 		Owner: Nod_2
 		SubCell: 3
 		Location: 32,52
-		TurretFacing: 182
-		Facing: 182
+		Facing: 728
 	Actor185: ltnk
 		Owner: Nod_2
 		Location: 38,47
-		TurretFacing: 21
-		Facing: 21
+		Facing: 84
 	Actor186: cycl
 		Owner: GDI_H
 		Location: 21,33
@@ -787,45 +755,40 @@ Actors:
 		Location: 23,36
 	Actor204: gtwr
 		Owner: GDI_H
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 24,35
 	Actor205: gtwr
 		Owner: GDI_H
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 22,35
 	Actor206: e1
 		Owner: GDI_H
 		SubCell: 3
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 26,34
 	Actor207: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 26,32
 	Actor208: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 20,33
 		SubCell: 3
 	Actor209: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 20,35
 	Actor210: apc
 		Owner: GDI_H
 		Location: 27,32
-		Facing: 189
+		Facing: 756
 	Actor211: htnk
 		Owner: GDI_H
 		Location: 20,32
-		TurretFacing: 67
-		Facing: 67
+		Facing: 268
 	Actor212: brik
 		Owner: GDI_1
 		Location: 56,1
@@ -852,7 +815,7 @@ Actors:
 		Location: 56,3
 	Actor220: mcv.gdi
 		Owner: GDI_1
-		Facing: 96
+		Facing: 384
 		Location: 58,3
 	Actor221: brik
 		Owner: GDI_1
@@ -1075,19 +1038,19 @@ Actors:
 		Location: 40,15
 	Actor296: atwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 59,13
 	Actor297: atwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 49,13
 	Actor298: atwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 39,13
 	Actor299: atwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 39,3
 	Actor301: weap
 		Owner: GDI_1
@@ -1202,39 +1165,39 @@ Actors:
 		Location: 54,11
 	Actor337: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 54,10
 	Actor338: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 43,11
 	Actor341: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 41,6
 	Actor342: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 46,16
 	Actor343: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 52,16
 	Actor344: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 59,16
 	Actor345: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 38,16
 	Actor346: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 36,10
 	Actor347: gtwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 36,3
 	Actor348: cycl
 		Owner: GDI_1
@@ -1259,7 +1222,7 @@ Actors:
 		Location: 51,15
 	Actor355: atwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 49,15
 	Actor356: brik
 		Owner: GDI_1
@@ -1281,7 +1244,7 @@ Actors:
 		Location: 47,13
 	Actor362: atwr
 		Owner: GDI_1
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 15,13
 	Actor363: brik
 		Owner: GDI_1
@@ -1370,296 +1333,251 @@ Actors:
 	Actor391: htnk
 		Owner: GDI_H
 		Location: 56,24
-		TurretFacing: 126
-		Facing: 126
+		Facing: 504
 	Actor392: msam
 		Owner: GDI_H
 		Location: 54,22
-		Facing: 147
-		TurretFacing: 128
+		Facing: 588
+		TurretFacing: 948
 	Actor393: msam
 		Owner: GDI_H
 		Location: 1,5
-		Facing: 186
-		TurretFacing: 158
+		Facing: 744
+		TurretFacing: 912
 	Actor394: msam
 		Owner: GDI_H
-		Facing: 96
+		Facing: 384
 		Location: 21,1
-		TurretFacing: 148
+		TurretFacing: 208
 	Actor395: mtnk
 		Owner: GDI_H
 		Location: 19,20
-		Facing: 91
-		TurretFacing: 138
+		Facing: 364
+		TurretFacing: 188
 	Actor396: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 16,20
 	Actor397: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 18,19
 	Actor398: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 6,34
 	Actor399: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 7,35
 		SubCell: 3
 	Actor400: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 8,34
 		SubCell: 3
 	Actor401: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 3,27
 	Actor402: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 7,29
 	Actor403: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 3,22
 		SubCell: 3
 	Actor404: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 2,24
 		SubCell: 1
 	Actor405: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 27,21
 	Actor406: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 32,16
 	Actor407: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 23,15
 	Actor408: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 31,11
 	Actor409: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 29,12
 	Actor410: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 24,11
 		SubCell: 3
 	Actor411: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 28,12
 		SubCell: 3
 	Actor412: e3
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 31,11
 		SubCell: 1
 	Actor413: e3
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 7,15
 		SubCell: 1
 	Actor414: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 8,15
 		SubCell: 3
 	Actor415: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 32,39
 	Actor416: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 36,36
 		SubCell: 3
 	Actor417: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 36,36
 		SubCell: 1
 	Actor418: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 42,37
 	Actor419: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 48,41
 		SubCell: 3
 	Actor420: e3
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 23,46
 	Actor421: e3
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 20,55
 		SubCell: 3
 	Actor422: e3
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 29,42
 	Actor423: rmbo
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 17,20
 	Actor424: rmbo
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 54,8
 		SubCell: 3
 	Actor425: rmbo
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 23,34
 		SubCell: 3
 	Actor426: e2
 		Owner: GDI_H
 		SubCell: 3
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 42,15
 	Actor427: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 43,17
 	Actor428: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 56,16
 	Actor429: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 56,19
 	Actor430: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 58,21
 	Actor431: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 54,17
 	Actor432: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 34,7
 	Actor433: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 31,8
 	Actor434: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 35,11
 	Actor435: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 33,9
 	Actor436: e2
 		Owner: GDI_H
 		SubCell: 3
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 11,47
 	Actor437: e2
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 13,49
 	Actor438: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 13,49
 		SubCell: 1
 	Actor439: e1
 		Owner: GDI_H
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 13,47
 	Actor440: mcv.nod
 		Owner: Nod_2
 		Location: 33,56
-		Facing: 214
+		Facing: 856
 	Actor293: brik
 		Owner: GDI_1
 		Location: 45,1
@@ -1672,7 +1590,7 @@ Actors:
 		Owner: GDI_1
 		Location: 46,7
 	Actor441: harvidle
-		Facing: 96
+		Facing: 384
 		Location: 2,55
 		Owner: Nod_1
 		Health: 21

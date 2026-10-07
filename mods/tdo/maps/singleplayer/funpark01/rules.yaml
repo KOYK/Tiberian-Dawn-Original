@@ -43,7 +43,6 @@ OLDLST:
 	-WithRoof:
 	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Cargo:
 		Types: disabled

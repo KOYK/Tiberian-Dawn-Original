@@ -91,18 +91,16 @@ Actors:
 		Location: 70,39
 	Actor27: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 75,41
 		SubCell: 3
 	top_rigt_list: oldlst
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		Location: 83,30
 	Actor39: e2
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 71,40
 	Actor32: nuk2
@@ -113,7 +111,7 @@ Actors:
 		Location: 87,55
 	Actor40: atwr
 		Owner: Neutral
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 86,54
 	Actor42: sbag
 		Owner: Neutral
@@ -135,7 +133,7 @@ Actors:
 		Location: 87,58
 	Actor48: gtwr
 		Owner: Neutral
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 89,55
 	Actor34: v19
 		Owner: Neutral
@@ -145,26 +143,24 @@ Actors:
 		Location: 90,60
 	Actor36: gun
 		Owner: Neutral
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 82,36
 	Actor41: rmbo
 		Owner: Neutral
 		SubCell: 3
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 83,36
 		Stance: ReturnFire
 	Actor49: rmbo
 		Owner: Neutral
 		SubCell: 3
 		Location: 77,35
-		TurretFacing: 154
-		Facing: 154
+		Facing: 616
 		Stance: ReturnFire
 	Actor52: mcv.nod
 		Owner: Neutral
 		Location: 89,17
-		Facing: 29
+		Facing: 116
 	wp_botlz: waypoint
 		Owner: Neutral
 		Location: 83,30
@@ -180,13 +176,11 @@ Actors:
 	Actor54: msam
 		Owner: Neutral
 		Location: 63,42
-		TurretFacing: 191
-		Facing: 191
+		Facing: 764
 	Actor56: msam
 		Owner: Neutral
 		Location: 63,31
-		TurretFacing: 171
-		Facing: 171
+		Facing: 684
 	Actor57: t15
 		Owner: Neutral
 		Location: 54,43
@@ -231,7 +225,7 @@ Actors:
 		Location: 79,3
 	Actor71: atwr
 		Owner: Neutral
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 80,17
 	Actor72: tc05
 		Owner: Neutral
@@ -253,7 +247,7 @@ Actors:
 		Location: 78,7
 	Actor78: gtwr
 		Owner: Neutral
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 80,9
 	Actor79: sbag
 		Owner: Neutral
@@ -305,144 +299,124 @@ Actors:
 		Location: 80,13
 	Actor95: ltnk
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		Location: 83,16
-		TurretFacing: 85
+		TurretFacing: 980
 	Actor96: ltnk
 		Owner: Neutral
 		Location: 87,14
-		TurretFacing: 21
-		Facing: 21
+		Facing: 84
 	Actor97: ltnk
 		Owner: Neutral
 		Location: 88,12
-		Facing: 9
-		TurretFacing: 45
+		Facing: 36
+		TurretFacing: 144
 	Actor98: mtnk
 		Owner: Neutral
 		Location: 85,11
-		Facing: 169
-		TurretFacing: 174
+		Facing: 676
+		TurretFacing: 20
 	Actor99: arty
 		Owner: Neutral
 		Location: 87,17
-		Facing: 72
+		Facing: 288
 	Actor100: arty
 		Owner: Neutral
 		Location: 85,18
 		Health: 100
-		Facing: 59
+		Facing: 236
 	Actor101: jeep
 		Owner: Neutral
 		Location: 86,9
-		TurretFacing: 139
-		Facing: 139
+		Facing: 556
 	Actor102: e3
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 83,18
 	Actor103: e3
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 82,19
 	Actor104: e3
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 83,19
 		SubCell: 3
 	Actor105: e3
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 85,14
 	Actor106: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 87,13
 	Actor107: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 86,13
 		SubCell: 3
 	Actor108: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 87,12
 		SubCell: 3
 	Actor109: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 87,11
 	Actor110: e5
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 85,12
 	Actor111: e3
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 84,10
 	Actor112: e3
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 85,9
 	Actor113: e3
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 83,10
 		SubCell: 3
 	Actor114: e2
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 85,10
 	Actor115: e2
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 87,9
 	Actor116: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 84,9
 		SubCell: 3
 	Actor117: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 84,11
 		SubCell: 3
 	Actor118: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 81,9
 		SubCell: 1
 	Actor119: e1
 		Owner: Neutral
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		SubCell: 1
 		Location: 78,9
 	Actor120: tc02

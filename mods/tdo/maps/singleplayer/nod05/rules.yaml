@@ -14,6 +14,9 @@ World:
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			46,48: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 ^Palettes:
 	IndexedPlayerPalette:

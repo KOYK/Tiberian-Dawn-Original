@@ -21,11 +21,17 @@ World:
 			23,51: sc2,0
 			23,50: sc5,0
 			23,49: sc3,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			47,58: cr1,0
 			56,54: cr1,0
 			55,54: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 Player:
 	PlayerResources:

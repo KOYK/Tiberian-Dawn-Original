@@ -259,12 +259,12 @@ Player:
 		RequiresCondition: enable-all-bot
 	CaptureManagerBotModule:
         CapturingActorTypes: e6_mp, e6
-        CapturableStances: Enemy,Neutral
+        CapturableRelationships: Enemy,Neutral
         RequiresCondition: enable-all-bot && CapturableCon
 		CheckCaptureTargetsForVisibility: True
 	CaptureManagerBotModule@NoTech:
         CapturingActorTypes: e6_mp, e6
-        CapturableStances: Enemy
+        CapturableRelationships: Enemy
         RequiresCondition: enable-all-bot
 		CheckCaptureTargetsForVisibility: True
     McvManagerBotModule:

@@ -62,7 +62,6 @@ OLDLST:
 	-WithRoof:
 	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Cargo:
 		Types: disabled
@@ -85,10 +84,10 @@ RMBO.easy:
 	Inherits: RMBO
 	Health:
 		HP: 300
-	SelfHealing:
+	ChangesHealth:
 		Step: 5
 		Delay: 10
-		HealIfBelow: 5
+		StartIfBelow: 5
 		DamageCooldown: 2
 	RenderSprites:
 		Image: RMBO

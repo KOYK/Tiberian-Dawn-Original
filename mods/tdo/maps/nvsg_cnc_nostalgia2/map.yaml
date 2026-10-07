@@ -289,27 +289,27 @@ Actors:
 		Location: 88,23
 	Actor58: c9
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		Location: 94,24
 		SubCell: 3
 	Actor60: c6
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 94,26
 	Actor61: c4
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 90,26
 	Actor62: c7
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 98,27
 	Actor63: c3
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		SubCell: 3
 		Location: 92,24
 	Actor64: hosp
@@ -359,13 +359,11 @@ Actors:
 		Location: 26,7
 	Actor89: boat
 		Owner: GDI
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 3,15
 	Actor90: boat
 		Owner: Nod
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 		Location: 99,14
 	Actor91: t18
 		Owner: Neutral
@@ -378,11 +376,11 @@ Actors:
 		Location: 11,48
 	LST_GDI: oldlst
 		Owner: GDI
-		Facing: 96
+		Facing: 384
 		Location: 16,19
 	LST_NOD: oldlst
 		Owner: Nod
-		Facing: 96
+		Facing: 384
 		Location: 88,17
 	LEFT_TOP: waypoint
 		Owner: Neutral

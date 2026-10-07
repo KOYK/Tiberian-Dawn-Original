@@ -64,67 +64,60 @@ Players:
 Actors:
 	Actor36: jeep
 		Owner: Creeps
-		TurretFacing: 174
-		Facing: 174
+		Facing: 696
 		Location: 45,2
 	Actor38: split2
 		Owner: Neutral
 		Location: 53,3
 	Actor39: jeep
 		Owner: Creeps
-		TurretFacing: 157
-		Facing: 157
+		Facing: 628
 		Location: 56,3
 	Actor40: split2
 		Owner: Neutral
 		Location: 4,5
 	Actor41: jeep
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 38,5
 	Actor42: split2
 		Owner: Neutral
 		Location: 10,7
 	Actor43: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 47,7
 	Actor44: htnk
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 49,7
 	Actor45: htnk
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 50,7
 	Actor46: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 52,7
 	Actor48: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,8
 	Actor49: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 41,8
 	Actor50: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 42,8
 	Actor51: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 43,8
 	Actor52: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 44,8
 	Actor53: brik
 		Owner: GDI_1
@@ -140,25 +133,23 @@ Actors:
 		Location: 54,8
 	Actor57: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 55,8
 	Actor58: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 56,8
 	Actor59: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 57,8
 	Actor60: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 58,8
 	Actor61: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,8
 	Actor62: brik
 		Owner: GDI_1
@@ -216,61 +207,57 @@ Actors:
 		Location: 39,10
 	Actor80: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,10
 	Actor81: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 41,10
 	Actor82: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 42,10
 	Actor83: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 43,10
 	Actor84: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 44,10
 	Actor85: proc
 		Owner: GDI_1
 		Location: 44,10
 	Actor86: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 46,10
 	Actor87: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 53,10
 	Actor88: proc
 		Owner: GDI_1
 		Location: 53,10
 	Actor89: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 55,10
 	Actor90: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 56,10
 	Actor91: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 57,10
 	Actor92: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 0
 		Facing: 0
 		Location: 58,10
 	Actor93: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,10
 	Actor94: brik
 		Owner: GDI_1
@@ -292,7 +279,7 @@ Actors:
 		Location: 39,12
 	Actor100: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,12
 	Actor101: nuk2
 		Owner: GDI_1
@@ -302,7 +289,7 @@ Actors:
 		Location: 50,12
 	Actor103: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,12
 	Actor104: brik
 		Owner: GDI_1
@@ -318,7 +305,7 @@ Actors:
 		Location: 39,14
 	Actor108: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,14
 	Actor109: nuk2
 		Owner: GDI_1
@@ -328,7 +315,7 @@ Actors:
 		Location: 57,14
 	Actor111: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,14
 	Actor112: brik
 		Owner: GDI_1
@@ -350,7 +337,7 @@ Actors:
 		Location: 39,16
 	Actor118: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,16
 	Actor119: weap
 		Owner: GDI_1
@@ -360,7 +347,7 @@ Actors:
 		Location: 54,16
 	Actor121: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,16
 	Actor122: brik
 		Owner: GDI_1
@@ -382,7 +369,7 @@ Actors:
 		Location: 39,18
 	Actor128: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,18
 	Actor129: hpad
 		Owner: GDI_1
@@ -392,7 +379,7 @@ Actors:
 		Location: 52,18
 	Actor131: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,18
 	Actor132: brik
 		Owner: GDI_1
@@ -411,7 +398,7 @@ Actors:
 		Location: 39,20
 	Actor137: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,20
 	Actor138: nuk2
 		Owner: GDI_1
@@ -436,7 +423,7 @@ Actors:
 		Location: 57,20
 	Actor145: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,20
 	Actor146: brik
 		Owner: GDI_1
@@ -467,7 +454,7 @@ Actors:
 		Location: 39,22
 	Actor156: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,22
 	Actor157: cycl
 		Owner: GDI_1
@@ -477,7 +464,7 @@ Actors:
 		Location: 46,22
 	Actor159: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,22
 	Actor160: brik
 		Owner: GDI_1
@@ -494,7 +481,7 @@ Actors:
 	Actor164: moebius
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 45,23
 	Actor165: cycl
 		Owner: GDI_1
@@ -513,7 +500,7 @@ Actors:
 		Location: 39,24
 	Actor170: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,24
 	Actor171: cycl
 		Owner: GDI_1
@@ -535,7 +522,7 @@ Actors:
 		Location: 51,24
 	Actor177: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,24
 	Actor178: brik
 		Owner: GDI_1
@@ -557,65 +544,59 @@ Actors:
 		Location: 39,26
 	Actor184: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,26
 	Actor185: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 127
-		Facing: 127
+		Facing: 508
 		Location: 41,26
 	Actor186: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 42,26
 	Actor187: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 130
-		Facing: 130
+		Facing: 520
 		Location: 43,26
 	Actor188: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 44,26
 	Actor189: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 132
-		Facing: 132
+		Facing: 528
 		Location: 45,26
 	Actor190: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 46,26
 	Actor191: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 53,26
 	Actor192: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 128
-		Facing: 128
+		Facing: 512
 		Location: 54,26
 	Actor193: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 55,26
 	Actor194: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 131
-		Facing: 131
+		Facing: 524
 		Location: 56,26
 	Actor195: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 57,26
 	Actor196: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 131
-		Facing: 131
+		Facing: 524
 		Location: 58,26
 	Actor197: atwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,26
 	Actor198: brik
 		Owner: GDI_1
@@ -670,26 +651,24 @@ Actors:
 		Location: 60,27
 	Actor215: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 40,28
 	Actor216: msam_singleplayer
 		Owner: Creeps
 		Health: 100
-		TurretFacing: 128
-		Facing: 128
+		Facing: 512
 		Location: 41,28
 	Actor217: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 42,28
 	Actor218: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 128
-		Facing: 128
+		Facing: 512
 		Location: 43,28
 	Actor219: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 44,28
 	Actor220: brik
 		Owner: GDI_1
@@ -705,63 +684,55 @@ Actors:
 		Location: 54,28
 	Actor224: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 55,28
 	Actor225: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 132
-		Facing: 132
+		Facing: 528
 		Location: 56,28
 	Actor226: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 57,28
 	Actor227: msam_singleplayer
 		Owner: Creeps
-		TurretFacing: 131
-		Facing: 131
+		Facing: 524
 		Location: 58,28
 	Actor228: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 59,28
 	Actor229: htnk
 		Owner: Creeps
-		TurretFacing: 131
-		Facing: 131
+		Facing: 524
 		Location: 40,29
 	Actor230: htnk
 		Owner: Creeps
-		TurretFacing: 128
-		Facing: 128
+		Facing: 512
 		Location: 42,29
 	Actor231: htnk
 		Owner: Creeps
-		TurretFacing: 132
-		Facing: 132
+		Facing: 528
 		Location: 44,29
 	Actor232: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 47,29
 	Actor233: gtwr
 		Owner: GDI_1
-		TurretFacing: 92
+		TurretFacing: 368
 		Location: 52,29
 	Actor234: htnk
 		Owner: Creeps
-		TurretFacing: 132
-		Facing: 132
+		Facing: 528
 		Location: 55,29
 	Actor235: htnk
 		Owner: Creeps
-		TurretFacing: 127
-		Facing: 127
+		Facing: 508
 		Location: 57,29
 	Actor236: htnk
 		Owner: Creeps
-		TurretFacing: 126
-		Facing: 126
+		Facing: 504
 		Location: 59,29
 	Actor238: rock1
 		Owner: Neutral
@@ -775,8 +746,7 @@ Actors:
 	Actor242: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,37
 	Actor243: hosp
 		Location: 23,38
@@ -785,50 +755,42 @@ Actors:
 	Actor244: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,38
 	Actor245: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,38
 	Actor246: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,38
 	Actor247: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,38
 	Actor248: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 47,39
 	Actor249: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,39
 	Actor250: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,39
 	Actor251: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 58,39
 	Actor252: rock2
 		Owner: Neutral
@@ -836,248 +798,207 @@ Actors:
 	Actor253: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 46,40
 	Actor254: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 46,40
 	Actor255: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,40
 	Actor256: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,40
 	Actor257: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,40
 	Actor259: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,40
 	Actor260: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,40
 	Actor261: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,40
 	Actor262: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 45,41
 	Actor263: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,41
 	Actor267: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 45,42
 	Actor268: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 46,42
 	Actor271: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,42
 	Actor272: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,42
 	Actor275: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 57,42
 	Actor276: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 58,42
 	Actor277: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 59,42
 	Actor278: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 44,43
 	Actor279: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 45,43
 	Actor283: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,43
 	Actor284: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,43
 	Actor285: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,43
 	Actor287: e3
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,43
 	Actor288: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,43
 	Actor290: e1
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,43
 	Actor291: e1
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,43
 	Actor296: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 45,44
 	Actor297: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 46,44
 	Actor298: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,44
 	Actor299: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,44
 	Actor300: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,44
 	Actor308: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,45
 	Actor309: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,45
 	Actor310: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,45
 	Actor311: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,45
 	Actor314: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,45
 	Actor316: e1
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,45
 	Actor317: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 57,45
 	Actor318: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 57,45
 	Actor319: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 57,45
 	Actor321: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 59,45
 	Actor322: rock5
 		Owner: Neutral
@@ -1085,74 +1006,62 @@ Actors:
 	Actor323: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,46
 	Actor324: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 48,46
 	Actor325: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,46
 	Actor326: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,46
 	Actor327: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 52,46
 	Actor328: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,46
 	Actor329: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,46
 	Actor330: e1
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,46
 	Actor331: e1
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,46
 	Actor334: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 58,46
 	Actor335: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 58,46
 	Actor337: e3
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 58,46
 	Actor338: t08
 		Owner: Neutral
@@ -1165,49 +1074,41 @@ Actors:
 		Location: 43,47
 	Actor341: mtnk
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,47
 	Actor342: mtnk
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,47
 	Actor343: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,47
 	Actor344: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,47
 	Actor345: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,47
 	Actor347: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,47
 	Actor348: e3
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,47
 	Actor349: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,47
 	Actor351: t18
 		Owner: Neutral
@@ -1215,118 +1116,98 @@ Actors:
 	Actor352: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,48
 	Actor354: mtnk
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 52,48
 	Actor355: mtnk
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,48
 	Actor357: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,49
 	Actor358: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,49
 	Actor359: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,49
 	Actor360: e3
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,49
 	Actor362: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,49
 	Actor364: e3
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,49
 	Actor367: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,49
 	Actor368: mtnk
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,49
 	Actor369: mtnk
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 56,49
 	Actor370: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,50
 	Actor371: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 49,50
 	Actor372: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,50
 	Actor373: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,50
 	Actor375: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,50
 	Actor377: e3
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,50
 	Actor378: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 52,50
 	Actor379: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,50
 	Actor382: t08
 		Owner: Neutral
@@ -1334,115 +1215,96 @@ Actors:
 	Actor386: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 50,51
 	Actor387: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,51
 	Actor389: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,51
 	Actor391: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,51
 	Actor392: e3
 		Owner: Creeps
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,51
 	Actor393: e3
 		Owner: Creeps
 		SubCell: 5
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,51
 	Actor397: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 52,51
 	Actor398: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 52,51
 	Actor399: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 52,51
 	Actor400: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,51
 	Actor401: e1
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,51
 	Actor403: mtnk
 		Owner: Creeps
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 55,51
 	Actor404: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 51,52
 	Actor405: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 52,52
 	Actor406: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,52
 	Actor407: e3
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,52
 	Actor408: e3
 		Owner: Creeps
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 53,52
 	Actor409: e1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,52
 	Actor410: e3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 54,53
 	Actor429: arco
 		Owner: Creeps
@@ -1491,7 +1353,7 @@ Actors:
 	Actor444: c6
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 53,58
 	Actor445: v28
 		Owner: Creeps
@@ -1508,32 +1370,29 @@ Actors:
 	Actor453: rmbo
 		Owner: Nod_1
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 11,59
 	Actor454: rmbo
 		Owner: Nod_1
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 11,59
 	Actor455: rmbo
 		Owner: Nod_1
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 		Location: 11,59
 	Actor456: rmbo
 		Owner: Nod_1
 		SubCell: 4
-		Facing: 255
-		TurretFacing: 17
+		Facing: 1020
+		TurretFacing: 72
 		Location: 11,59
 	Actor457: rmbo
 		Owner: Nod_1
 		SubCell: 5
-		TurretFacing: 0
-		Facing: 255
+		TurretFacing: 4
+		Facing: 1020
 		Location: 11,59
 	Actor459: wood
 		Owner: Creeps
@@ -1544,7 +1403,7 @@ Actors:
 	Actor461: c3
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 54,59
 	Actor462: v21
 		Owner: Creeps
@@ -1552,7 +1411,7 @@ Actors:
 	Actor463: c7
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 57,59
 	Actor464: wood
 		Owner: Creeps
@@ -1560,12 +1419,12 @@ Actors:
 	Actor465: c5
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 57,60
 	Actor466: c1
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 59,60
 	Actor467: wood
 		Owner: Creeps
@@ -1576,7 +1435,7 @@ Actors:
 	Actor469: c2
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 51,61
 	Actor470: v30
 		Owner: Creeps
@@ -1590,7 +1449,7 @@ Actors:
 	Actor473: c10
 		Owner: Creeps
 		SubCell: 1
-		Facing: 92
+		Facing: 368
 		Location: 58,61
 	Actor474: wood
 		Owner: Creeps
@@ -1607,12 +1466,12 @@ Actors:
 	Actor480: c9
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 53,63
 	Actor481: c4
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 54,63
 	Actor482: wood
 		Owner: Creeps
@@ -1623,7 +1482,7 @@ Actors:
 	Actor484: c8
 		Owner: Creeps
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 		Location: 56,64
 	Actor485: v19
 		Owner: Creeps
@@ -1673,7 +1532,7 @@ Actors:
 	Actor446: mcv.nod
 		Owner: Nod_1
 		Location: 11,61
-		Facing: 255
+		Facing: 1020
 	Actor451: split2
 		Owner: Neutral
 		Location: 11,15
@@ -1701,13 +1560,12 @@ Actors:
 	Actor505: boat
 		Owner: Nod_1
 		Location: 12,68
-		Facing: 92
-		TurretFacing: 38
+		Facing: 368
+		TurretFacing: 808
 	Actor506: boat
 		Owner: GDI_1
 		Location: 35,69
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor441: tran
 		Owner: Nod_1
 		Location: 11,58
@@ -1715,17 +1573,17 @@ Actors:
 	Actor450: ltnk
 		Owner: Nod_1
 		Location: 13,60
-		TurretFacing: 0
-		Facing: 255
+		TurretFacing: 4
+		Facing: 1020
 	Actor452: ltnk
 		Owner: Nod_1
 		Location: 9,60
-		TurretFacing: 0
-		Facing: 255
+		TurretFacing: 4
+		Facing: 1020
 	Actor458: stnk
 		Owner: Nod_1
 		Location: 11,56
-		Facing: 255
+		Facing: 1020
 	Actor508: rock1
 		Owner: Neutral
 		Location: 3,63
@@ -1769,7 +1627,7 @@ Actors:
 		Owner: Neutral
 		Location: 4,59
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor523: miss
 		Location: 5,37
 		Faction: nod
@@ -1860,113 +1718,98 @@ Actors:
 	Actor551: arty
 		Owner: Nod_1
 		Location: 14,60
-		Facing: 255
+		Facing: 1020
 	Actor554: arty
 		Owner: Nod_1
 		Location: 15,60
-		Facing: 255
+		Facing: 1020
 	Actor555: arty
 		Owner: Nod_1
 		Location: 8,60
-		Facing: 255
+		Facing: 1020
 	Actor558: arty
 		Owner: Nod_1
 		Location: 7,60
-		Facing: 255
+		Facing: 1020
 	Actor559: e3
 		Owner: Nod_1
 		Location: 14,59
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor560: e3
 		Owner: Nod_1
 		Location: 14,59
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor561: e3
 		Owner: Nod_1
 		Location: 14,59
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor562: e3
 		Owner: Nod_1
 		Location: 14,59
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor563: e3
 		Owner: Nod_1
 		Location: 14,59
 		SubCell: 5
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor569: e3
 		Owner: Nod_1
 		Location: 8,59
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor571: e3
 		Owner: Nod_1
 		Location: 8,59
 		SubCell: 2
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor573: e3
 		Owner: Nod_1
 		Location: 8,59
 		SubCell: 5
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor580: mhqr
 		Owner: Nod_2
 		Location: 30,57
-		Facing: 92
+		Facing: 368
 	Actor507: rmbo
 		Owner: Creeps
 		Location: 56,29
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor579: rmbo
 		Owner: Creeps
 		Location: 58,29
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor581: rmbo
 		Owner: Creeps
 		Location: 43,29
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor582: rmbo
 		Owner: Creeps
 		Location: 41,29
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor583: rmbo
 		Owner: Creeps
 		Location: 46,29
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor584: rmbo
 		Owner: Creeps
 		Location: 53,29
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor585: rmbo
 		Owner: Creeps
 		Location: 44,23
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor552: inv_inf
 		Owner: Nod_2
 		Location: 30,57
@@ -1974,12 +1817,10 @@ Actors:
 		Owner: Nod_1
 		Location: 8,59
 		SubCell: 1
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor556: e3
 		Owner: Nod_1
 		Location: 8,59
 		SubCell: 4
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 Rules: tdo|data/Mode-Cooperative.yaml

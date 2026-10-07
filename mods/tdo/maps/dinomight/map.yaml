@@ -348,7 +348,7 @@ Actors:
 		Health: 30
 	Actor108: harv
 		Owner: Neutral
-		Facing: 96
+		Facing: 384
 		Location: 41,25
 		Health: 22
 	Actor109: split2
@@ -605,7 +605,7 @@ Actors:
 		Location: 41,30
 	Actor194: atwr
 		Owner: Neutral
-		TurretFacing: 96
+		TurretFacing: 384
 		Location: 39,30
 	Actor195: t02
 		Owner: Neutral

@@ -12,6 +12,9 @@ World:
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			9,12: cr1,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 Player:
 	PlayerResources:

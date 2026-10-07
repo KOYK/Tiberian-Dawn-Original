@@ -391,6 +391,8 @@ lobby-bits:
 	Regions:
 		spawn-unclaimed: 159, 5, 23, 22
 		spawn-claimed: 127, 5, 23, 22
+		# TODO: needs dedicated art; reuses the unclaimed marker for now
+		spawn-disabled: 159, 5, 23, 22
 		admin: 187, 5, 7, 5
 		colorpicker: 127, 5, 23, 22
 		huepicker: 194, 0, 7, 15
@@ -902,6 +904,15 @@ checkbox-highlighted:
 	Image: dialog.png
 	PanelRegion: 896, 0, 1, 1, 126, 126, 1, 1
 
+checkbox-highlighted-hover:
+	Inherits: button-highlighted-hover
+
+checkbox-highlighted-disabled:
+	Inherits: button-highlighted-disabled
+
+checkbox-highlighted-pressed:
+	Inherits: button-highlighted-pressed
+
 # A copy of dialog3 (pressed button)
 scrollitem-selected:
 	Image: dialog.png
@@ -959,8 +970,25 @@ mainmenu-border:
 	PanelRegion: 648, 387, 40, 40, 40, 40, 40, 40
 	PanelSides: Edges
 
-dropdown:
+dropdown-separators:
 	Image: dialog.png
 	Regions:
 		separator: 512, 1, 1, 19
 		observer-separator: 768, 256, 1, 19
+
+dropdown-decorations:
+	Image: buttons.png
+	Regions:
+		marker: 116, 140, 16, 16
+		marker-pressed: 116, 140, 16, 16
+		marker-disabled: 116, 140, 16, 16
+
+scrollpanel-decorations:
+	Image: buttons.png
+	Regions:
+		down: 116, 140, 16, 16
+		down-pressed: 116, 140, 16, 16
+		down-disabled: 116, 140, 16, 16
+		up: 132, 140, 16, 16
+		up-pressed: 132, 140, 16, 16
+		up-disabled: 132, 140, 16, 16

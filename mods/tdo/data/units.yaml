@@ -31,6 +31,7 @@ PVICE:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	Health:
 		HP: 150
@@ -100,7 +101,7 @@ FTNK:
 		Queue: Vehicle
 		Description: Heavily armored flame-throwing vehicle.\n  Strong vs Infantry, Buildings and Vehicles\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 300
@@ -139,7 +140,7 @@ STNK:
 		Description: Long-range missile tank that can cloak.\nCan attack Aircraft.\nHas weak armor. Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry.
 	Mobile:
 		Locomotor: heavywheeled
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 90
 	Health:
 		HP: 110
@@ -188,7 +189,7 @@ LTNK:
 		BuildDurationModifier: 40
 		Description: Fast, light tank.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 300
@@ -197,7 +198,7 @@ LTNK:
 	RevealsShroud:
 		Range: 3c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 	Armament:
 		Weapon: LightCannon
 		Recoil: 85
@@ -229,7 +230,7 @@ MTNK:
 		Queue: Vehicle
 		Description: General-Purpose GDI Tank.\n  Strong vs Tanks, Vehicles\n  Weak vs Infantry
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 400
@@ -238,7 +239,7 @@ MTNK:
 	RevealsShroud:
 		Range: 3c0
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Armament:
 		Weapon: MediumCannon
 		Recoil: 128
@@ -275,7 +276,7 @@ HTNK:
 	Mobile:
 		Locomotor: heavytracked
 		Speed: 36
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Health:
 		HP: 600
 	Armor:
@@ -284,7 +285,7 @@ HTNK:
 		Range: 4c0
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Armament@PRIMARY:
 		Weapon: HeavyCannon
 		LocalOffset: 900,180,340, 900,-180,340
@@ -300,10 +301,10 @@ HTNK:
 		MuzzleSequence: muzzle
 	AttackTurreted:
 	WithMuzzleOverlay:
-	SelfHealing:
+	ChangesHealth:
 		Step: 1
 		Delay: 10
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 200
 	SpawnActorOnDeath:
 		Actor: HTNK.Husk
@@ -326,7 +327,7 @@ MHQ:
 	Armor:
 		Type: 2
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	RevealsShroud:
 		Range: 5c0
@@ -357,7 +358,7 @@ MLRS:
 		Description: Powerful Long range unit.\nCannot attack Air units.
 	Mobile:
 		Speed: 54
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Health:
 		HP: 120
 	Armor:
@@ -365,7 +366,7 @@ MLRS:
 	RevealsShroud:
 		Range: 4c0
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: -128,0,128
 		RealignDelay: 0
 	Armament:
@@ -373,7 +374,6 @@ MLRS:
 		LocalOffset: 0,-171,0, 0,171,0
 	AmmoPool:
 		Ammo: 2
-		PipCount: 0
 		AmmoCondition: ammo
 	AttackFrontal:
 		TargetFrozenActors: True
@@ -425,7 +425,7 @@ MSAM:
 		Queue: Vehicle
 		Description: Long range rocket artillery.\n  Strong vs all Ground and Air units.
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 54
 	Health:
 		HP: 100
@@ -434,7 +434,7 @@ MSAM:
 	RevealsShroud:
 		Range: 4c0
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Offset: -256,0,128
 	Armament@PRIMARY:
 		Name: primary
@@ -480,7 +480,7 @@ ARTY:
 		Queue: Vehicle
 		Description: Long-range artillery.\n  Strong vs Infantry, Vehicles and Buildings
 	Mobile:
-		TurnSpeed: 2
+		TurnSpeed: 8
 		Speed: 36
 	Health:
 		HP: 75
@@ -519,7 +519,7 @@ HARV:
 	ProximityExternalCondition@DOCKINPROCESS:
 		Condition: dockinprocess
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~vehicleproduction, ~proc, ~tl2, ~!mhqr
@@ -532,7 +532,6 @@ HARV:
 		DecorationBounds: 36,36
 	Harvester:
 		Resources: Tiberium, BlueTiberium
-		PipCount: 7
 		Capacity: 20
 		BaleLoadDelay: 12
 		BaleUnloadDelay: 6
@@ -540,7 +539,7 @@ HARV:
 		SearchFromHarvesterRadius: 15
 		EmptyCondition: no-tiberium
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 36
 	ExternalCondition@docked:
 		Condition: docked
@@ -563,15 +562,22 @@ HARV:
 		RequiresCondition: !no-tiberium
 		Weapon: TiberiumExplosion
 	SelectionDecorations:
-	SelfHealing:
+	ChangesHealth:
 		Step: 1
 		Delay: 10
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 200
 	Targetable:
 		TargetTypes: Ground, Vehicle, harv
 	ProvidesPrerequisite@unitname:
 		Prerequisite: harv
+	WithHarvesterPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Tiberium: pip-green
+			BlueTiberium: pip-blue
 
 MCV:
 	Inherits: ^Vehicle
@@ -594,7 +600,7 @@ MCV:
 		Priority: 4
 		DecorationBounds: 36,36
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 36
 		Locomotor: heavywheeled
 	Health:
@@ -606,7 +612,7 @@ MCV:
 	Transforms:
 		IntoActor: fact
 		Offset: -1,-1
-		Facing: 108
+		Facing: 432
 		TransformSounds: constru2.aud, hvydoor1.aud
 		NoTransformNotification: BuildingCannotPlaceAudio
 		TransformNotification: NewOptions
@@ -674,7 +680,7 @@ JEEP:
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 90
 	Health:
 		HP: 150
@@ -683,7 +689,7 @@ JEEP:
 	RevealsShroud:
 		Range: 2c0
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Offset: -85,0,128
 	Armament:
 		Weapon: Machinegun
@@ -714,7 +720,7 @@ BGGY:
 		Queue: Vehicle
 		Description: Fast scout and anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 90
 	Health:
 		HP: 140
@@ -723,7 +729,7 @@ BGGY:
 	RevealsShroud:
 		Range: 2c0
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Offset: -43,0,128
 	Armament:
 		Weapon: Machinegun
@@ -754,7 +760,7 @@ BIKE:
 		Queue: Vehicle
 		Description: Fast scout vehicle, armed with\nrockets.\nCan attack Aircraft.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 120
 		Locomotor: bike
 	Health:
@@ -792,7 +798,7 @@ APC:
 		BuildDurationModifier: 40
 		Description: Armed infantry transport.\n  Strong vs Infantry\n  Weak vs Tanks
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 105
 		PauseOnCondition: !(!notmobile)
 	Health:
@@ -810,13 +816,19 @@ APC:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
-		PipCount: 5
 		LoadingCondition: notmobile
 	SpawnActorOnDeath:
 		Actor: APC.Husk
 		OwnerType: InternalName
 		EffectiveOwnerFromOwner: true
 		RequiresCondition: HusksEnabled
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 APC_SINGLEPLAYER:
 	Inherits@OriginalActor: APC
 	RenderSprites:
@@ -849,7 +861,7 @@ BOAT:
 		Range: 5c0
 		Type: CenterPosition
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Offset: 0,896,171
 	Armament:
 		Weapon: BoatMissile
@@ -893,7 +905,7 @@ LST:
 	Mobile:
 		Locomotor: lcraft
 		InitialFacing: 0
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Speed: 90
 		PauseOnCondition: !(!notmobile)
 	Health:
@@ -912,19 +924,24 @@ LST:
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
-		PipCount: 5
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 	RenderSprites:
 		PlayerPalette: player
 		Palette: player
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 OLDLST:
 	Inherits: LST
 	-WithRoof:
 	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	Cargo:
 		Types: disabled
@@ -950,7 +967,7 @@ RA_SS:
 	Armor:
 		Type: 2
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 60
 	RevealsShroud:
 		Range: 6c0
@@ -1015,7 +1032,7 @@ RA_MSUB:
 	Armor:
 		Type: 2
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 50
 	RevealsShroud:
 		Range: 6c0
@@ -1082,12 +1099,12 @@ RA_DD:
 	Armor:
 		Type: 3
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 65
 	RevealsShroud:
 		Range: 6c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: 469,0,128
 	Armament@PRIMARY:
 		Weapon: Stinger
@@ -1131,18 +1148,18 @@ RA_CA:
 	Armor:
 		Type: 3
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 50
 	RevealsShroud:
 		MinRange: 6c0
 	Turreted@PRIMARY:
 		Turret: primary
 		Offset: -896,0,128
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Turreted@SECONDARY:
 		Turret: secondary
 		Offset: 768,0,128
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Armament@PRIMARY:
 		Turret: primary
 		Weapon: 8Inch
@@ -1195,12 +1212,12 @@ RA_PT:
 	Armor:
 		Type: 3
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 70
 	RevealsShroud:
 		MinRange: 6c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: 512,0,0
 	Armament@PRIMARY:
 		Weapon: 2Inch
@@ -1250,11 +1267,17 @@ RA_LST:
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
-		PipCount: 5
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 	Selectable:
 		DecorationBounds: 36,36
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 STEG:
 	Inherits: ^DINO
@@ -1451,8 +1474,8 @@ TRAN:
 		Prerequisites: ~hpad, ~tl6, ~!PrerequisiteSinglePlayer
 		Description: Fast Infantry Transport Helicopter.\n  Unarmed
 	Aircraft:
-		InitialFacing: 1
-		TurnSpeed: 5
+		InitialFacing: 4
+		TurnSpeed: 20
 		Speed: 90
 		AltitudeVelocity: 0c43
 		IdleBehavior: Land
@@ -1479,7 +1502,6 @@ TRAN:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
-		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: TRAN.Husk
 	SelectionDecorations:
@@ -1488,6 +1510,13 @@ TRAN:
 	CaptureManager:
 	Capturable:
 		Types: chinook
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 HELI:
 	Inherits: ^Helicopter
@@ -1503,9 +1532,9 @@ HELI:
 		Prerequisites: ~hpad, ~tl6, ~OwnerNod
 		Description: Helicopter Gunship with Chainguns.\n  Strong vs Infantry, Light Vehicles and\n  Aircraft\n  Weak vs Tanks
 	Aircraft:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Speed: 120
-		InitialFacing: 224
+		InitialFacing: 896
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1521,13 +1550,12 @@ HELI:
 	AutoTarget:
 		ScanRadius: 4
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 		OpportunityFire: false
 		PersistentTargeting: false
 		AttackType: Hover
 	AmmoPool:
 		Ammo: 10
-		PipCount: 5
 		AmmoCondition: ammo
 	WithIdleOverlay@ROTORAIR:
 		Offset: 0,0,85
@@ -1543,6 +1571,10 @@ HELI:
 	SelectionDecorations:
 	Selectable:
 		DecorationBounds: 30,24
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
 
 ORCA:
 	Inherits: ^Helicopter
@@ -1558,9 +1590,9 @@ ORCA:
 		Prerequisites: ~hpad, ~tl6, ~OwnerGDI
 		Description: Helicopter Gunship with AG Missiles.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry
 	Aircraft:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Speed: 120
-		InitialFacing: 224
+		InitialFacing: 896
 	Rearmable:
 		RearmActors: hpad
 		AmmoPools: primary, secondary
@@ -1599,13 +1631,12 @@ ORCA:
 	AutoTarget:
 		ScanRadius: 5
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 		OpportunityFire: false
 		PersistentTargeting: false
 		AttackType: Hover
 	AmmoPool:
 		Ammo: 6
-		PipCount: 6
 		AmmoCondition: ammo
 	SpawnActorOnDeath:
 		Actor: ORCA.Husk
@@ -1614,6 +1645,9 @@ ORCA:
 	SelectionDecorations:
 	Selectable:
 		DecorationBounds: 30,24
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
 
 C17:
 	Inherits: ^Plane
@@ -1623,19 +1657,25 @@ C17:
 	Valued:
 		Cost: 800
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 220
 		Repulsable: False
 		MaximumPitch: 36
 	HiddenUnderFog:
-		AlwaysVisibleStances: None
+		AlwaysVisibleRelationships: None
 		Type: CenterPosition
 	Cargo:
 		MaxWeight: 10
-		PipCount: 10
 	DamageMultiplier@INVULNERABLE:
 		Modifier: 0
 	-MapEditorData:
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			red: pip-red
 
 A10:
 	Inherits: ^Plane
@@ -1647,7 +1687,7 @@ A10:
 	#Health:
 	#	HP: 60
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 120
 		Repulsable: False
 	AttackBomber:
@@ -1849,7 +1889,7 @@ E6:
 	Health:
 		HP: 25
 	Passenger:
-		PipType: Yellow
+		CustomPipType: yellow
 	RevealsShroud:
 		Range: 2c0
 	EngineerRepair:
@@ -1912,7 +1952,7 @@ RMBO:
 	Health:
 		HP: 80
 	Passenger:
-		PipType: Red
+		CustomPipType: red
 		Voice: Move
 	RevealsShroud:
 		Range: 5c0

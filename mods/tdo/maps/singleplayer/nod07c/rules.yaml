@@ -12,6 +12,9 @@ World:
 	SmudgeLayer@CRATER:
 		InitialSmudges:
 			40,22: cr1,2
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 Player:
 	EnemyWatcher:
@@ -117,7 +120,7 @@ BOAT:
 	Health:
 		HP: 150000
 	RevealsShroud:
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		Range: 4c0
 
 TRAN.IN:

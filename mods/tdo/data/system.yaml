@@ -140,7 +140,6 @@
 	ResourceType@green-tib:
 		Type: Tiberium
 		Name: Tiberium
-		PipColor: Green
 		ResourceType: 1
 		Palette: staticterrain
 		TerrainType: Tiberium
@@ -152,7 +151,6 @@
 	ResourceType@blue-tib:
 		Type: BlueTiberium
 		Name: Tiberium
-		PipColor: Blue
 		ResourceType: 2
 		Palette: bluetiberium
 		TerrainType: BlueTiberium
@@ -201,12 +199,17 @@ World:
 	SmudgeLayer@SCORCH:
 		Type: Scorch
 		Sequence: scorches
-		SmokePercentage: 50
+		SmokeChance: 50
 		Palette: staticterrain
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	SmudgeLayer@CRATER:
 		Type: Crater
 		Sequence: craters
 		Palette: staticterrain
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 	ResourceLayer:
 	ResourceClaimLayer:
 	WarheadDebugOverlay:
@@ -324,7 +327,6 @@ Player:
 	GrantConditionOnPrerequisiteManager:
 	ResourceStorageWarning:
 	PlayerExperience:
-	ConditionManager:
 	AllyRepair:
 
 ^Palettes:
@@ -537,7 +539,6 @@ Player:
 	GivesExperience:
 		PlayerExperienceModifier: 1
 	ScriptTriggers:
-	ConditionManager:
 	RenderDebugState:
 
 ^SpriteActor:
@@ -621,6 +622,11 @@ Player:
 	AttackMove:
 		AssaultMoveCondition: assault-move
 
+^PlayerHandicaps:
+	HandicapFirepowerMultiplier:
+	HandicapDamageMultiplier:
+	HandicapProductionTimeMultiplier:
+
 ^AcceptsCloakCrate:
 	Cloak:
 		InitialDelay: 15
@@ -642,17 +648,18 @@ Player:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	SelfHealing@LOWPOWER:
+	ChangesHealth@LOWPOWER:
 		Step: 0
 		PercentageStep: -1
 		Delay: 750
-		HealIfBelow: 101
+		StartIfBelow: 101
 		DamageCooldown: 0
 		RequiresCondition: lowpower && global-lpdamage
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	GrantConditionOnPrerequisite@HUSKS:
 		Prerequisites: PrerequisiteHusksEnabled
 		Condition: HusksEnabled
@@ -662,7 +669,7 @@ Player:
 	ProximityExternalCondition@REPAIRING:
 		Condition: Repairing
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 		AffectsParent: False
 	ExternalCondition@ONPAD:
 		Condition: OnPad
@@ -675,7 +682,7 @@ Player:
 		Action: Kill
 	Mobile:
 		Locomotor: wheeled
-		TurnSpeed: 5
+		TurnSpeed: 20
 	GrantConditionOnDamageState@Heavy-Critical:
 		ValidDamageStates: Heavy, Critical
 		Condition: lowhealth
@@ -711,8 +718,8 @@ Player:
 	MustBeDestroyed:
 	Voiced:
 		VoiceSet: VehicleVoice
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 	HitShape:
 	MapEditorData:
 		Categories: Vehicle
@@ -731,13 +738,14 @@ Player:
 	Inherits: ^Vehicle
 	Mobile:
 		Locomotor: tracked
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Tooltip:
 		GenericName: Vehicle
 
 ^Helicopter:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	Buildable:
 		Queue: Aircraft
@@ -748,13 +756,13 @@ Player:
 	ProximityExternalCondition@ONHELIPAD:
 		Condition: occupied
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 		AffectsParent: False
 		RequiresCondition: !airborne
 	ProximityExternalCondition@REPAIRING:
 		Condition: Repairing
 		Range: 1c0
-		ValidStances: Ally
+		ValidRelationships: Ally
 		AffectsParent: False
 	ExternalCondition@ONPAD:
 		Condition: OnPad
@@ -787,7 +795,7 @@ Player:
 		CruisingCondition: cruising
 		CanHover: True
 		VTOL: True
-		InitialFacing: 224
+		InitialFacing: 896
 		MoveIntoShroud: False
 		Repulsable: True
 		TakeOffOnCreation: True
@@ -796,7 +804,6 @@ Player:
 		IdleBehavior: Land
 		Crushes: crate
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
-		TurnToDock: True
 		TurnToLand: True
 		CanForceLand: False
 	HiddenUnderFog:
@@ -820,8 +827,8 @@ Player:
 	MustBeDestroyed:
 	Voiced:
 		VoiceSet: VehicleVoice
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 	HitShape:
 	MapEditorData:
 		Categories: Aircraft
@@ -831,6 +838,7 @@ Player:
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	#Note I should look if the sell value changes based on health, also look at vehicles, ELoyros
 	Sellable:
@@ -898,7 +906,7 @@ Player:
 	WithDecoration@HAZMAT:
 		Image: pips
 		Sequence: pip-hazmat
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		RequiresCondition: hazmatsuits
 	ActorLostNotification:
 	SpawnActorOnDeath:
@@ -912,11 +920,11 @@ Player:
 		WarnProbability: 75
 		CrushSound: squish2.aud
 	Guardable:
-	SelfHealing@HOSPITAL:
+	ChangesHealth@HOSPITAL:
 		Step: 0
 		PercentageStep: 10
 		Delay: 250
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 250
 		RequiresCondition: hospitalheal
 	GrantConditionOnPrerequisite@HOSPITAL:
@@ -931,7 +939,7 @@ Player:
 	WithDecoration@REDCROSS:
 		Image: pips
 		Sequence: pip-heal
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		RequiresCondition: hospitalheal
 		BlinkInterval: 32
 		BlinkPattern: On, Off
@@ -985,7 +993,7 @@ Player:
 	RevealsShroud:
 		Range: 0c0
 	Passenger:
-		PipType: Gray
+		CustomPipType: gray
 	ActorLostNotification:
 		Notification: CivilianKilled
 		NotifyAll: true
@@ -1013,6 +1021,7 @@ Player:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1074,6 +1083,7 @@ Player:
 ^Plane:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1081,7 +1091,7 @@ Player:
 		UseLocation: true
 	HiddenUnderFog:
 		Type: GroundPosition
-		AlwaysVisibleStances: None
+		AlwaysVisibleRelationships: None
 	ActorLostNotification:
 	AttackMove:
 	WithShadow:
@@ -1097,6 +1107,7 @@ Player:
 ^Ship:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1126,6 +1137,7 @@ Player:
 ^ShipRA:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
+	Inherits@handicaps: ^PlayerHandicaps
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1173,6 +1185,7 @@ Player:
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^DamagedOnLowPower
 	Inherits@shape: ^1x1Shape
+	Inherits@handicaps: ^PlayerHandicaps
 	FootprintPlaceBuildingPreview:
 	Huntable:
 	OwnerLostAction:
@@ -1255,7 +1268,7 @@ Player:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	SpawnActorOnDeath@SpawnE11:
@@ -1304,25 +1317,25 @@ Player:
 	Exit@1:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,-213,0
-		Facing: 96
+		Facing: 384
 		ExitCell: -1,2
 		ProductionTypes: naval
 	Exit@2:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,-213,0
-		Facing: 160
+		Facing: 640
 		ExitCell: 3,2
 		ProductionTypes: naval
 	Exit@3:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,0,0
-		Facing: 32
+		Facing: 128
 		ExitCell: 0,0
 		ProductionTypes: naval
 	Exit@4:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,0,0
-		Facing: 224
+		Facing: 896
 		ExitCell: 2,0
 		ProductionTypes: naval
 	Production:
@@ -1364,8 +1377,7 @@ Player:
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
+		Position: Top
 		RequiresCondition: primary
 	GrantConditionOnPrerequisite@ProductionBar:
 		Condition: ProductionBarEnabled
@@ -1373,7 +1385,6 @@ Player:
 
 ^CivBuilding:
 	Inherits: ^Building
-	ConditionManager:
 	Tooltip:
 		ShowOwnerRow: false
 		GenericStancePrefix: True
@@ -1425,7 +1436,6 @@ Player:
 
 ^TechBuilding:
 	Inherits: ^CivBuilding
-	ConditionManager:
 	OwnerLostAction:
 		Action: ChangeOwner
 	CaptureManager:
@@ -1458,7 +1468,7 @@ Player:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	GivesBuildableArea:
@@ -1638,9 +1648,8 @@ Player:
 	ProximityExternalCondition@NoBotDeploy:
 		Condition: NearTibTree
 		Range: 20c0
-		ValidStances: Ally, Enemy, Neutral
+		ValidRelationships: Ally, Enemy, Neutral
 		AffectsParent: False
-	ConditionManager:
 	Interactable:
 	GrantConditionOnPrerequisite@TibRegrowth:
 		Condition: Regrowth
@@ -1702,7 +1711,7 @@ Player:
 		Type: 2
 	HiddenUnderFog:
 		Type: CenterPosition
-		AlwaysVisibleStances: None
+		AlwaysVisibleRelationships: None
 	WithFacingSpriteBody:
 	HitShape:
 
@@ -1710,16 +1719,13 @@ Player:
 	Inherits: ^CommonHuskDefaults
 	Husk:
 		AllowedTerrain: Clear, Rough, Road, Tiberium, BlueTiberium, Beach
-	Burns:
-		Damage: 1
-		Interval: 8
 	Targetable:
 		RequiresForceFire: true
 		TargetTypes: Ground, Husk
 	CaptureManager:
 	Capturable:
 		Types: husk
-		ValidStances: Enemy, Neutral, Ally
+		ValidRelationships: Enemy, Neutral, Ally
 	TransformOnCapture:
 		ForceHealthPercentage: 25
 	Tooltip:
@@ -1730,8 +1736,16 @@ Player:
 	Explodes:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
+	WithIdleOverlay@Burns:
+		Image: fire
+		Sequence: 1
+		IsDecoration: true
+	ChangesHealth:
+		Step: -1
+		StartIfBelow: 101
+		Delay: 8
 
 ^LightHusk:
 	Inherits: ^Husk
@@ -1752,8 +1766,8 @@ Player:
 		Explosion: HeliCrash
 	Tooltip:
 		GenericName: Destroyed Helicopter
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 
 ^Crate:
 	Inherits@1: ^SpriteActor

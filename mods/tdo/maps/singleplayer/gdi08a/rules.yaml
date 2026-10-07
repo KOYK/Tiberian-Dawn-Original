@@ -18,6 +18,9 @@ World:
 			43,50: sc3,0
 			40,48: sc4,0
 			47,46: sc5,0
+		SmokeChance: 25
+		SmokeImage: smoke_m
+		SmokeSequences: idle
 
 ATWR:
 	Buildable:
