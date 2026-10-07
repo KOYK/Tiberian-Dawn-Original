@@ -775,9 +775,11 @@ Player:
 	RevealsShroud@LANDED:
 		Range: 2c0
 		RequiresCondition: !airborne
+		Type: GroundPosition
 	RevealsShroud@AIR:
 		Range: 0c0
 		RequiresCondition: airborne
+		Type: CenterPosition
 	Targetable@GROUND:
 		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne

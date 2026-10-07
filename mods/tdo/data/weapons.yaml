@@ -461,7 +461,6 @@ Napalm:
 	Projectile: GravityBomb
 		Image: BOMBLET
 		Shadow: true
-		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
 		Damage: 50

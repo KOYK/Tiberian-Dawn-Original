@@ -73,12 +73,10 @@ ATWR:
 		Prerequisites: ~disabled
 
 SBAG:
-	-Crushable:
 	Buildable:
 		Prerequisites: ~disabled
 
 CYCL:
-	-Crushable:
 	Buildable:
 		Prerequisites: ~disabled
 

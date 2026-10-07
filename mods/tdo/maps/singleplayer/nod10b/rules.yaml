@@ -31,7 +31,8 @@ TRAN.IN:
 	Buildable:
 		Prerequisites: ~disabled
 	Interactable:
-	-RevealsShroud:
+	-RevealsShroud@LANDED:
+	-RevealsShroud@AIR:
 
 RMBO.easy:
 	Inherits: RMBO

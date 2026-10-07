@@ -144,7 +144,7 @@ HPAD.IN:
 	Capturable:
 		Types: building
 	Building:
-		Footprint: x_ xx
+		Footprint: x_ xx ==
 		BuildSounds: placbldg.aud, build5.aud
 		UndeploySounds: cashturn.aud
 	-Sellable:

@@ -1595,6 +1595,6 @@ Actors:
 		Owner: Nod_1
 		Health: 21
 
-Rules: tdo|data/coop.yaml, rules.yaml
+Rules: tdo|data/Mode-Cooperative.yaml, rules.yaml
 
 Sequences: sequences.yaml
