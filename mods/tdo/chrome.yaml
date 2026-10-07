@@ -393,6 +393,7 @@ lobby-bits:
 		spawn-claimed: 127, 5, 23, 22
 		# TODO: needs dedicated art; reuses the unclaimed marker for now
 		spawn-disabled: 159, 5, 23, 22
+		bot: 240, 16, 16, 16
 		admin: 187, 5, 7, 5
 		colorpicker: 127, 5, 23, 22
 		huepicker: 194, 0, 7, 15
@@ -873,14 +874,6 @@ checkbox:
 		corner-bl: 153, 509, 2, 2
 		corner-br: 169, 509, 2, 2
 
-checkbox-bits:
-	Image: buttons.png
-	Regions:
-		checked: 100, 157, 16, 16
-		checked-disabled: 100, 173, 16, 16
-		crossed: 116, 157, 16, 16
-		crossed-disabled: 116, 173, 16, 16
-
 checkbox-hover:
 	Image: dialog.png
 	Regions:
@@ -992,3 +985,149 @@ scrollpanel-decorations:
 		up: 132, 140, 16, 16
 		up-pressed: 132, 140, 16, 16
 		up-disabled: 132, 140, 16, 16
+
+# Collections required by the release-20250330 engine widgets (several use placeholder art)
+# ---------------------------------------------------------------------------------------------
+# Additions / replacements for mods/tdo/chrome.yaml  (engine release-20250330 requirements)
+# Coordinates reuse TDO's existing art (buttons.png / dialog.png / chrome.png).  Entries marked
+# PLACEHOLDER have no matching TDO artwork yet: they only have to EXIST (ChromeProvider.GetImage
+# throws ArgumentException for a missing collection/region), they can be given real art later.
+# Verified against: WidgetUtils.GetCachedStatefulImage / GetCachedStatefulPanelImages and
+# ChromeProvider.GetImage in release-20250330 (OpenRA.Mods.Common/Widgets/WidgetUtils.cs,
+# OpenRA.Game/Graphics/ChromeProvider.cs) and mods/ra/chrome.yaml + mods/cnc/chrome.yaml @ 20250330.
+# ---------------------------------------------------------------------------------------------
+
+# --- [20230225] Checkbox rework: `checkbox-bits` (CheckType/CheckOffset/HasPressedState) is gone.
+#     CheckboxWidget now draws collection "checkmark-<Checkmark>" (default Checkmark: tick) with image
+#     checked/unchecked + state suffix, and "<collection>-highlighted" when highlighted.
+#     DELETE the old `checkbox-bits:` collection.
+checkmark-tick:
+	Image: buttons.png
+	Regions:
+		checked: 100, 157, 16, 16
+		checked-pressed: 100, 173, 16, 16
+		checked-disabled: 100, 173, 16, 16
+		unchecked: 0, 0, 0, 0
+		unchecked-pressed: 100, 173, 16, 16
+
+checkmark-tick-highlighted:
+	Inherits: checkmark-tick
+
+checkmark-cross:
+	Image: buttons.png
+	Regions:
+		checked: 116, 157, 16, 16
+		checked-pressed: 116, 173, 16, 16
+		checked-disabled: 116, 173, 16, 16
+		unchecked: 0, 0, 0, 0
+		unchecked-pressed: 116, 173, 16, 16
+
+checkmark-cross-highlighted:
+	Inherits: checkmark-cross
+
+# PLACEHOLDER (used by common/chrome/ingame-infostats.yaml `Checkmark: mute` + `Background: checkbox-toggle`)
+checkmark-mute:
+	Image: buttons.png
+	Regions:
+		unchecked: 0, 0, 0, 0
+		unchecked-pressed: 116, 157, 16, 16
+		checked: 116, 157, 16, 16
+		checked-pressed: 0, 0, 0, 0
+
+checkmark-mute-highlighted:
+	Inherits: checkmark-mute
+
+checkbox-pressed:
+	Inherits: checkbox-hover
+
+checkbox-toggle:
+
+checkbox-toggle-hover:
+	Inherits: button
+
+checkbox-toggle-pressed:
+	Inherits: checkbox-pressed
+
+checkbox-toggle-highlighted:
+
+checkbox-toggle-highlighted-hover:
+	Inherits: button-highlighted
+
+checkbox-toggle-highlighted-pressed:
+	Inherits: checkbox-highlighted-pressed
+
+# --- [20230225] ScrollItemWidget.BaseName -> Background (default "scrollitem"), selected -> "-highlighted".
+#     RENAME scrollitem-selected -> scrollitem-highlighted, scrollheader-selected -> scrollheader-highlighted,
+#     observer-scrollitem-selected -> observer-scrollitem-highlighted, observer-scrollheader-selected -> observer-scrollheader-highlighted
+#     and add the empty/base collections below.  (`scrollitem-nohover` was referenced by TDO's observer but never defined.)
+scrollitem:
+
+scrollitem-pressed:
+	Inherits: button
+
+scrollitem-highlighted:
+	Inherits: button-pressed
+
+scrollitem-nohover:
+
+scrollitem-nohover-highlighted:
+
+scrollheader:
+	Inherits: button
+
+scrollheader-highlighted:
+	Inherits: button
+
+observer-scrollheader:
+	Inherits: observer-scrollpanel-button-disabled
+
+observer-scrollheader-highlighted:
+	Inherits: observer-scrollpanel-button-disabled
+
+observer-scrollitem:
+
+observer-scrollitem-pressed:
+	Inherits: observer-scrollpanel-button
+
+observer-scrollitem-highlighted:
+	Inherits: observer-scrollpanel-button-pressed
+
+# --- [20230225] new generic separator collection (used by tabs/dropdown separators in common chrome)
+separator:
+	Inherits: button
+
+# --- [20230225] highlighted icon collections: "stance-icons"/"command-icons" `*-active` regions replaced by
+#     <collection>-highlighted.  Without these a highlighted CommandBar/Stance button throws.
+#     In `stance-icons` DELETE the four *-active regions (attack-anything-active, defend-active,
+#     return-fire-active, hold-fire-active) and add:
+stance-icons-highlighted:
+	Inherits: stance-icons
+	Regions:
+		attack-anything: 544, 48, 16, 16
+		defend: 592, 48, 16, 16
+		return-fire: 640, 48, 16, 16
+		hold-fire: 688, 48, 16, 16
+
+command-icons-highlighted:
+	Inherits: command-icons
+
+# --- [20231010/20250330] map editor tab icons (common/chrome/editor.yaml, ImageCollection: editor). PLACEHOLDER art.
+editor:
+	Image: buttons.png
+	Regions:
+		select: 116, 140, 16, 16
+		tiles: 116, 140, 16, 16
+		overlays: 116, 140, 16, 16
+		actors: 116, 140, 16, 16
+		tools: 116, 140, 16, 16
+		history: 116, 140, 16, 16
+		erase: 116, 140, 16, 16
+
+# --- [20250330] lobby bot icon: ADD this region to the existing `lobby-bits` collection (LobbyUtils: c.IsBot ? "bot")
+#		bot: 240, 16, 16, 16
+
+# --- cosmetic upstream changes (optional)
+# scrollpanel-decorations: remove down-pressed/up-pressed/left-pressed/right-pressed; dropdown-decorations: remove marker-pressed
+#   (stateful lookup falls back to the base region anyway).
+# slider-thumb-disabled: upstream changed `Inherits: button` -> `Inherits: button-disabled`.
+# production-icons: engine renamed region `defence*` -> `support*` in cnc (only if a TDO sidebar uses production-icons/support).

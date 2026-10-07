@@ -203,6 +203,9 @@ World:
 		PanelName: SKIRMISH_STATS
 	RadarPings:
 	LoadWidgetAtGameStart:
+	ColorPickerManager:
+		PreviewActor: fact.colorpicker
+		PresetColors: FCFC54, DF1008, 007070, D47810, 54FC54, A4A4BC, F5D378, 29D0D0, 8126C0, 1D6914, 814A19, 2A4BD7, 9DAFFF, 575757, E2E2E2, 2B2B2B
 	ResourceRenderer:
 		ResourceTypes:
 			Tiberium:
@@ -254,6 +257,8 @@ EditorWorld:
 	EditorCursorLayer:
 	EditorActionManager:
 	MarkerLayerOverlay:
+	BuildableTerrainOverlay:
+		AllowedTerrainTypes: Clear, Road
 
 ^BasePlayer:
 	AlwaysVisible:
@@ -451,10 +456,15 @@ Player:
 		Name: effect
 		Filename: temperat.pal
 		ShadowIndex: 4
-	PaletteFromFile@colorpicker:
-		Name: colorpicker
+	PaletteFromFile@colorpicker-base:
+		Name: colorpicker-base
 		Filename: temperat.pal
 		ShadowIndex: 4
+		AllowModifiers: false
+	ColorPickerPalette@colorpicker:
+		Name: colorpicker
+		BasePalette: colorpicker-base
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
 		AllowModifiers: false
 	PaletteFromFile@player:
 		Name: player

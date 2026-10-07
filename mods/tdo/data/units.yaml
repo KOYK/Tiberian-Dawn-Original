@@ -930,7 +930,6 @@ LST:
 	WithFacingSpriteBody:
 	Selectable:
 		Bounds: 2048, 2048
-	WithRoof:
 	WithCargo:
 		DisplayTypes: Infantry, Vehicle
 		LocalOffset: 390,-256,0, 390,256,0, 0,0,0, -390,-256,0, -390,256,0
@@ -952,7 +951,6 @@ LST:
 
 OLDLST:
 	Inherits: LST
-	-WithRoof:
 	-Selectable:
 	SelectionDecorations:
 	RejectsOrders:

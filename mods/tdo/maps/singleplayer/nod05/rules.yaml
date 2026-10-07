@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, nod05.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, nod05.lua
 	MusicPlaylist:
 		StartingMusic: airstrik
 		VictoryMusic: nod_win1

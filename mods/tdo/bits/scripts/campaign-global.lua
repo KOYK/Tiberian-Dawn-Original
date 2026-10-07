@@ -7,7 +7,7 @@
    information, see COPYING.
 ]]
 
-Difficulty = Map.LobbyOption("difficulty")
+Difficulty = Map.LobbyOptionOrDefault("difficulty", "normal")
 
 IdleHunt = function(actor)
 	if actor.HasProperty("Hunt") and not actor.IsDead then

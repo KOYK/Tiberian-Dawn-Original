@@ -23,11 +23,12 @@ Container@MAINMENU:
 			ImageCollection: logos
 			ImageName: logo
 			Children:
-				VqaPlayer@PLAYER:
+				VideoPlayer@PLAYER:
 					Width: 803
 					Height: 595
 					#yeah before you start stealing this idea too, be polite and place my name on your credits list. And what you used.
 		Label@VERSION_LABEL:
+			Logic: VersionLabelLogic
 			X: WINDOW_WIDTH - 296
 			Y: 296 - 20
 			Width: 296 - 20
@@ -58,42 +59,42 @@ Container@MAINMENU:
 							Y: 60
 							Width: 180
 							Height: 30
-							Text: Singleplayer
+							Text: label-singleplayer-title
 							Font: Bold
 						Button@MULTIPLAYER_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 100
 							Width: 180
 							Height: 30
-							Text: Multiplayer
+							Text: label-multiplayer-title
 							Font: Bold
 						Button@SETTINGS_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 140
 							Width: 180
 							Height: 30
-							Text: Settings
+							Text: button-settings-title
 							Font: Bold
 						Button@EXTRAS_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 180
 							Width: 180
 							Height: 30
-							Text: Extras
+							Text: button-extras-title
 							Font: Bold
 						Button@CONTENT_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 220
 							Width: 180
 							Height: 30
-							Text: Manage Content
+							Text: button-main-menu-content
 							Font: Bold
 						Button@QUIT_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 260
 							Width: 180
 							Height: 30
-							Text: Quit
+							Text: button-quit
 							Font: Bold
 				Background@SINGLEPLAYER_MENU:
 					Width: PARENT_WIDTH
@@ -104,7 +105,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: Singleplayer
+							Text: label-singleplayer-title
 							Align: Center
 							Font: Bold
 						Button@SKIRMISH_BUTTON:
@@ -112,21 +113,21 @@ Container@MAINMENU:
 							Y: 60
 							Width: 180
 							Height: 30
-							Text: Skirmish
+							Text: button-singleplayer-menu-skirmish
 							Font: Bold
 						Button@MISSIONS_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 100
 							Width: 180
 							Height: 30
-							Text: Missions
+							Text: label-missions-title
 							Font: Bold
 						Button@LOAD_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 140
 							Width: 180
 							Height: 30
-							Text: Load
+							Text: button-singleplayer-menu-load
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
@@ -134,7 +135,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 180
 							Height: 30
-							Text: Back
+							Text: button-back
 							Font: Bold
 				Background@EXTRAS_MENU:
 					Width: PARENT_WIDTH
@@ -145,7 +146,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: Extras
+							Text: button-extras-title
 							Align: Center
 							Font: Bold
 						Button@REPLAYS_BUTTON:
@@ -153,35 +154,35 @@ Container@MAINMENU:
 							Y: 60
 							Width: 180
 							Height: 30
-							Text: Replays
+							Text: button-extras-menu-replays
 							Font: Bold
 						Button@MUSIC_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 100
 							Width: 180
 							Height: 30
-							Text: Music
+							Text: label-music-title
 							Font: Bold
 						Button@MAP_EDITOR_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 140
 							Width: 180
 							Height: 30
-							Text: Map Editor
+							Text: label-map-editor-title
 							Font: Bold
 						Button@ASSETBROWSER_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 180
 							Width: 180
 							Height: 30
-							Text: Asset Browser
+							Text: button-extras-menu-assetbrowser
 							Font: Bold
 						Button@CREDITS_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 220
 							Width: 180
 							Height: 30
-							Text: Credits
+							Text: label-credits-title
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
@@ -189,7 +190,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 180
 							Height: 30
-							Text: Back
+							Text: button-back
 							Font: Bold
 				Background@MAP_EDITOR_MENU:
 					Width: PARENT_WIDTH
@@ -200,7 +201,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: Map Editor
+							Text: label-map-editor-title
 							Align: Center
 							Font: Bold
 						Button@NEW_MAP_BUTTON:
@@ -208,14 +209,14 @@ Container@MAINMENU:
 							Y: 60
 							Width: 180
 							Height: 30
-							Text: New Map
+							Text: button-map-editor-new-map
 							Font: Bold
 						Button@LOAD_MAP_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
 							Y: 100
 							Width: 180
 							Height: 30
-							Text: Load Map
+							Text: button-map-editor-load-map
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_WIDTH / 2 - WIDTH / 2
@@ -223,7 +224,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 180
 							Height: 30
-							Text: Back
+							Text: button-back
 							Font: Bold
 		Container@PERFORMANCE_INFO:
 			Logic: PerfDebugLogic
@@ -259,7 +260,7 @@ Container@MAINMENU:
 					Y: 15
 					Width: 400
 					Height: 25
-					Text: Battlefield News
+					Text: dropdownbutton-news-bg-button
 					Font: Bold
 		Container@UPDATE_NOTICE:
 			X: (WINDOW_WIDTH - WIDTH) / 2
@@ -271,14 +272,15 @@ Container@MAINMENU:
 					Height: 25
 					Align: Center
 					Shadow: true
-					Text: You are running an outdated version of OpenRA.
+					Text: label-update-notice-a
 				Label@B:
 					Y: 20
 					Width: PARENT_WIDTH
 					Height: 25
 					Align: Center
 					Shadow: true
-					Text: Download the latest version from www.openra.net
+					Text: label-update-notice-b
 		Container@PLAYER_PROFILE_CONTAINER:
+			Logic: LoadLocalPlayerProfileLogic
 			X: 25
 			Y: 25

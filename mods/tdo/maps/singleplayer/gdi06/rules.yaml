@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: tdo|data\scripts\campaign-global.lua, gdi06.lua
+		Scripts: tdo|data/scripts/campaign-global.lua, gdi06.lua
 	MusicPlaylist:
 		BackgroundMusic: rain-ambient
 		StartingMusic: rain
