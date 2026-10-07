@@ -7,6 +7,7 @@ lst:
 		Filename: lstnew2.shp
 		UseClassicFacings: True
 		Facings: 32
+		ZOffset: 1024
 	icon:
 		Filename: lsticnh.tem
 
