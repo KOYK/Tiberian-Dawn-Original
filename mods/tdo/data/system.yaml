@@ -544,10 +544,10 @@ Player:
 			Multi11: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111
 			Multi12: 240, 241, 242, 243, 244, 245, 246, 183, 248, 249, 250, 251, 253, 254, 255, 1
 			Multi13: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
-	MenuPaletteEffect:
+	MenuPostProcessEffect:
 		MenuEffect: Desaturated
 	CloakPaletteEffect:
-	FlashPaletteEffect:
+	FlashPostProcessEffect:
 	RotationPaletteEffect@water:
 		ExcludePalettes: effect, chrome, ra, snow, staticterrain
 		RotationBase: 32

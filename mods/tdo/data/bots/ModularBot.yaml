@@ -106,23 +106,23 @@
 		Modifier: 120
 		RequiresCondition: enable-6-bot
 
-HARV:
-	HarvesterResourceMultiplier@FreeCreditsBot_1:
+PROC:
+	ResourceValueMultiplier@FreeCreditsBot_1:
 		RequiresCondition: enable-1-bot
 		Modifier: 50
-	HarvesterResourceMultiplier@FreeCreditsBot_2:
+	ResourceValueMultiplier@FreeCreditsBot_2:
 		RequiresCondition: enable-2-bot
 		Modifier: 75
-	HarvesterResourceMultiplier@FreeCreditsBot_3:
+	ResourceValueMultiplier@FreeCreditsBot_3:
 		RequiresCondition: enable-3-bot
 		Modifier: 100
-	HarvesterResourceMultiplier@FreeCreditsBot_4:
+	ResourceValueMultiplier@FreeCreditsBot_4:
 		RequiresCondition: enable-4-bot
 		Modifier: 125
-	HarvesterResourceMultiplier@FreeCreditsBot_5:
+	ResourceValueMultiplier@FreeCreditsBot_5:
 		RequiresCondition: enable-5-bot
 		Modifier: 150
-	HarvesterResourceMultiplier@FreeCreditsBot_6:
+	ResourceValueMultiplier@FreeCreditsBot_6:
 		RequiresCondition: enable-6-bot
 		Modifier: 175
 

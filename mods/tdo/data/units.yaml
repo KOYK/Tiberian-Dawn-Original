@@ -1425,6 +1425,7 @@ MHQR:
 
 MHQ_CASHREMOVER:
 	Inherits: ^Vehicle
+	-Tooltip:
 	-GrantConditionOnPrerequisite@HUSKS:
 	-Buildable:
 	-Selectable:
