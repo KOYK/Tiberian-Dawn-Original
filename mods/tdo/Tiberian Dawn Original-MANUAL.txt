@@ -1,0 +1,106 @@
+# GAME MODES
+
+### Cooperative
+Lets you play the single-player campaign with another player.
+
+### Old Multiplayer
+Lets you play multiplayer using the original rules and player colors from Tiberian Dawn Gold.
+
+### Conquest
+Lets you play multiplayer with custom rules and unrestricted player colors.
+
+### Nod vs GDI
+Lets you play as either Nod or GDI in 1v1 or team games, using a mix of color themes per player.
+
+The first Nod player in a slot plays with red-colored base buildings and white/silver units, as they do in the single-player campaign. Other players use different color combinations.
+
+This mode also uses a mix of the single-player rules and custom rules. As the name suggests, the teams are pre-made: Nod vs GDI.
+
+### Nod vs GDI MIX
+Same as Nod vs GDI, but with mixed-faction teams.
+
+
+# BETA
+
+## Things to Know
+
+Some terrain types don't work, such as the snow terrain. This is because I am making changes to those tilesets in order to make them compatible with Red Alert maps, allowing users to put maps from RA into the TDO map directory and play them, and so on.
+
+Most of the single-player maps don't work at the moment. This is due to mod changes I made in order to create the mod.
+
+Cooperative missions from the single-player campaign are not yet implemented. First, I need to fix the single-player missions.
+
+TDO Cooperative maps do work, but due to an engine bug, the AI only works in local LAN multiplayer and not on dedicated servers. Maybe trying a third-party VPN program like Hamachi could help as a temporary solution. Sorry for this, but I can't do anything about it at the moment.
+
+
+## Modes to Be Added
+
+- **King of the Hill:** Capture and hold points on the map.
+- **VIP:** Escort the VIP to a predefined point on the map.
+- **Kill the Commander:** Kill the enemy commander unit.
+- **Capture the Flag:** (Maybe) Capture the flag and carry it to your own flag/base, like in first-person shooter games.
+- **Survival:** Defend against waves of AI units, probably Visceroids and dinosaurs.
+
+
+## New Game Features
+
+**Tech Centers Provide Hidden Units:** Capturing a Tech Center, like in RA2, will unlock additional units for production. The units will mostly be RA1 units.
+
+
+# BUGS
+
+See: https://github.com/KOYK/Tiberian-Dawn-Original/issues
+
+
+# SOME WORDS FROM THE DEVELOPER OF THE MOD
+
+## ELoyros
+
+I started this mod out of nostalgia. I worked on this day and night in order to bring my vision to life.
+
+The main reason why I am doing this is my nephews. When I was their age, I really wanted to play the game with my family. Unfortunately, there was only one PC.
+
+After some years, when I found out that I could play some form of skirmish, I got disappointed because you could only play against AI-controlled units, with no AI bases.
+
+Also, to my surprise, there was no mixed red and white/silver color scheme for Nod in multiplayer. That was another thing that got me down.
+
+After many years, I found OpenRA. I was so excited that there were AI players who could actually build a base, but the game had been changed to the point where it no longer gave me the nostalgia I was looking for.
+
+So I decided to make a mod. That mod was Tiberian Dawn Apolyton. But as I was learning to mod in the OpenRA engine, I got carried away and started adding stuff that made the mod great! However, it did not give me the feeling of nostalgia I was looking for.
+
+So I decided, once again, to make another mod alongside Apolyton. This one is Tiberian Dawn Original!!
+
+The thing is, I can't start adding stuff that deviates from the original game, because that would defeat the purpose (again).
+
+But there are things I wanted when I was a kid! Things like the Nod color theme for multiplayer and AI skirmish base building. There are also some other things, like adding the Red Alert navy into TD (or using just the hovercraft and gunboat from TD). However, the gunboat does not have a fully working animation, and I can't make one.
+
+I am also going to add the RA2 navy, but they will be optional and will not interfere with the main game. The base game should remain the same as the original!
+
+I might even hide them and just use modded maps on my end to enable them for my personal use.
+
+
+The work done here was mine, but there were three other people who gave me **GREAT** help!
+
+
+### abcdefg30
+
+For example, he is always there to help me with questions or even provide Lua code! The help he gave me, not only in this mod but also in Apolyton, was gold!
+
+Whenever I was stuck, he was there to push me forward and give me solutions. He even went the extra mile to help me out with the SDK!
+
+
+### MustaphaTR
+
+Made the low-power damage effect on buildings!
+
+
+### sayedmamdouh
+
+Did all of the bug testing. That person really knows how to find bugs for extermination!!!!
+
+He also exported the multiplayer maps from TD into OpenRA format!!!
+
+He also provided me with practical testing of which units can actually fire over walls.
+
+
+And of course, my mods would be without servers if it weren't for **ABARRAT**!! He provided me with high-end servers!

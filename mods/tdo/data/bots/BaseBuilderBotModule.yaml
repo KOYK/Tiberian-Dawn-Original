@@ -1,0 +1,165 @@
+Player:
+	BaseBuilderBotModule@Nod:
+		RequiresCondition: enable-all-bot && proc && harv && nod
+		MinimumExcessPower: 40
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 1
+		ConstructionYardTypes: fact,fact.nod,inv_str
+		NewProductionCashThreshold: 6000
+		RefineryTypes: proc,mhqr
+		PowerTypes: nuke,nuk2,mhqr
+		BarracksTypes: hand,mhqr
+			#NavalProductionTypes: spen
+		VehiclesFactoryTypes: afld,mhqr
+		ProductionTypes: pyle,hand,weap,afld,hpad,inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea,spen,mhqr
+		SiloTypes: silo
+		BuildingDelays:
+			fix: 7500
+			pyle: 1500
+			hand: 1500
+			hpad: 1500
+			gtwr: 1500
+			gun: 1500
+			sam: 1500
+		BuildingLimits:
+			proc: 4
+			pyle: 3
+			hand: 3
+			hq: 1
+			hqnod: 1
+			weap: 3
+			afld: 3
+			hpad: 7
+			eye: 1
+			tmpl: 1
+			fix: 1
+			silo: 1
+			spen: 1
+		BuildingFractions:
+			proc: 20
+			pyle: 5
+			hand: 5
+			hq: 4
+			hqnod: 4
+			weap: 9
+			afld: 9
+			gtwr: 5
+			gun: 5
+			atwr: 9
+			obli: 7
+			sam: 7
+			eye: 1
+			tmpl: 1
+			fix: 1
+			hpad: 2
+			spen: 9
+
+	BaseBuilderBotModule@GDI:
+		RequiresCondition: enable-all-bot && proc && harv && gdi
+		MinimumExcessPower: 40
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 1
+		ConstructionYardTypes: fact,fact.gdi,inv_str
+		NewProductionCashThreshold: 6000
+		RefineryTypes: proc,mhqr
+		PowerTypes: nuke,nuk2,mhqr
+		BarracksTypes: hand,mhqr
+		VehiclesFactoryTypes: afld,mhqr
+			#NavalProductionTypes: syrd
+		ProductionTypes: pyle,weap,hpad,inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea,syrd,mhqr
+		SiloTypes: silo
+		BuildingDelays:
+			fix: 7500
+			pyle: 1500
+			hand: 1500
+			hpad: 1500
+			gtwr: 1500
+			gun: 1500
+			sam: 1500
+		BuildingLimits:
+			proc: 4
+			pyle: 3
+			hand: 3
+			hq: 1
+			hqnod: 1
+			weap: 3
+			afld: 3
+			hpad: 7
+			eye: 1
+			tmpl: 1
+			fix: 1
+			silo: 1
+			syrd: 1
+		BuildingFractions:
+			proc: 20
+			pyle: 5
+			hand: 5
+			hq: 4
+			hqnod: 4
+			weap: 9
+			afld: 9
+			gtwr: 5
+			gun: 5
+			atwr: 9
+			obli: 7
+			sam: 7
+			eye: 1
+			tmpl: 1
+			fix: 1
+			hpad: 2
+			syrd: 9
+
+	BaseBuilderBotModule@NodAndGDI:
+		RequiresCondition: enable-all-bot && proc && harv && factn && factg
+		MinimumExcessPower: 100
+		MaximumExcessPower: 200
+		ExcessPowerIncrement: 0
+		ExcessPowerIncreaseThreshold: 1
+		ConstructionYardTypes: fact,fact.nod,fact.gdi,inv_str
+		NewProductionCashThreshold: 3000
+		RefineryTypes: proc,mhqr
+		PowerTypes: nuke,nuk2,mhqr
+		BarracksTypes: pyle,hand,mhqr
+		VehiclesFactoryTypes: weap,afld,mhqr
+			#NavalProductionTypes: spen,syrd
+		ProductionTypes: pyle,hand,weap,afld,hpad,inv_dino,inv_vice,inv_veh,inv_inf,inv_air,inv_sea,spen,syrd,mhqr
+		SiloTypes: silo
+		BuildingDelays:
+			fix: 7500
+			pyle: 1500
+			hand: 1500
+			hpad: 1500
+			gtwr: 1500
+		BuildingLimits:
+			proc: 8
+			pyle: 7
+			hand: 7
+			hq: 1
+			hqnod: 1
+			weap: 7
+			afld: 7
+			hpad: 7
+			eye: 1
+			tmpl: 1
+			fix: 1
+			spen: 1
+			syrd: 1
+		BuildingFractions:
+			proc: 20
+			pyle: 5
+			hand: 5
+			hq: 4
+			hqnod: 4
+			weap: 9
+			gtwr: 3
+			atwr: 9
+			obli: 7
+			gun: 2
+			eye: 1
+			tmpl: 1
+			fix: 1
+			hpad: 2
+			spen: 9
+			syrd: 9

@@ -1,0 +1,116 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Emerald Highlands
+
+Author: Westwood Studios
+
+Tileset: TEMPERAT
+
+MapSize: 64,64
+
+Bounds: 12,1,44,58
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: tc04
+		Location: 12,26
+		Owner: Neutral
+	Actor1: t01
+		Location: 40,6
+		Owner: Neutral
+	Actor2: split3
+		Location: 39,36
+		Owner: Neutral
+	Actor3: split2
+		Location: 14,34
+		Owner: Neutral
+	Actor4: split3
+		Location: 53,2
+		Owner: Neutral
+	Actor5: tc05
+		Location: 53,45
+		Owner: Neutral
+	Actor6: split3
+		Location: 52,46
+		Owner: Neutral
+	Actor7: tc05
+		Location: 24,1
+		Owner: Neutral
+	Actor8: tc04
+		Location: 22,2
+		Owner: Neutral
+	Actor9: tc03
+		Location: 24,3
+		Owner: Neutral
+	Actor10: tc02
+		Location: 18,4
+		Owner: Neutral
+	Actor11: tc01
+		Location: 17,5
+		Owner: Neutral
+	Actor12: tc03
+		Location: 12,10
+		Owner: Neutral
+	Actor13: tc03
+		Location: 39,1
+		Owner: Neutral
+	Actor14: tc05
+		Location: 38,4
+		Owner: Neutral
+	Actor15: t15
+		Location: 39,2
+		Owner: Neutral
+	Actor16: t11
+		Location: 30,1
+		Owner: Neutral
+	Actor17: tc05
+		Location: 21,19
+		Owner: Neutral
+	Actor18: tc03
+		Location: 12,25
+		Owner: Neutral
+	Actor19: t08
+		Location: 25,35
+		Owner: Neutral
+	Actor20: t11
+		Location: 23,35
+		Owner: Neutral
+	Actor21: tc03
+		Location: 42,55
+		Owner: Neutral
+	Actor22: tc04
+		Location: 53,39
+		Owner: Neutral
+	Actor28: mpspawn
+		Location: 19,49
+		Owner: Neutral
+	Actor29: mpspawn
+		Location: 40,21
+		Owner: Neutral

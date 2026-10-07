@@ -1545,6 +1545,6 @@ Actors:
 		Owner: Nod_1
 		Location: 58,48
 
-Rules: tdo|rules/coop.yaml, rules.yaml
+Rules: tdo|data/coop.yaml, rules.yaml
 
 Sequences: sequences.yaml

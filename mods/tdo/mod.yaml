@@ -1,6 +1,6 @@
 Metadata:
 	Title: Tiberian Dawn Original
-	Version: release-20200503-11
+	Version: noIp
 	Website: https://www.openra.net
 	WebIcon32: https://www.openra.net/images/icons/cnc_32x32.png
 
@@ -26,55 +26,77 @@ Packages:
 	~scores2.mix
 	~scores-covertops.mix
 	~transit.mix
-	tdo|bits/snow.mix
-	tdo|bits
-	tdo|bits/jungle
-	tdo|bits/desert
-	tdo|bits/ss
 	tdo|uibits
-	tdo|conquer
-	tdo|conquer/highres
-	tdo|bits/sounds/chat
+	tdo|assets/palettes
+	tdo|assets/icons/ra/large
+	tdo|assets/icons/ra/small
+	tdo|assets/icons/td/large
+	tdo|assets/icons/td/small
+	tdo|assets/projectiles
+	tdo|assets/actors/ra
+	tdo|assets/actors/td
+	tdo|assets/sounds/ra
+	tdo|assets/sounds/td
+	tdo|assets/sounds/chat
+	tdo|assets/sounds/td/dinos
+	tdo|assets/sounds/td/scounds
+	tdo|assets/sounds/td/sounds
+	tdo|assets/sounds/td/speech
+	tdo|assets/ss
+	tdo|assets/system
+	tdo|assets/terrain/snow/snow.mix
+	tdo|assets/terrain/snow
+	tdo|assets/terrain/jungle
+	tdo|assets/terrain/desert
+	tdo|assets/terrain/temperat
+	tdo|assets/terrain/winter
+	tdo|assets/terrain/tempera
+	tdo|assets/terrain/interior/interior.mix
+	tdo|assets/terrain/interior
+	
 
 MapFolders:
 	tdo|maps: System
 	tdo|maps/singleplayer: System
-	~^maps/tdo/release-20200503: User
+	~^maps/tdo/noIp: User
 
 Rules:
-	tdo|rules/system.yaml
-	tdo|rules/structures.yaml
-	tdo|rules/units.yaml
-	tdo|rules/trees.yaml
-	tdo|rules/husks.yaml
-	tdo|rules/lobby_options.yaml
+	tdo|data/system.yaml
+	tdo|data/structures.yaml
+	tdo|data/units.yaml
+	tdo|data/trees.yaml
+	tdo|data/husks.yaml
+	tdo|data/lobby_options.yaml
 	tdo|dedicated_server_options.yaml
-	tdo|rules/bots/ModularBot.yaml
-	tdo|rules/bots/BaseBuilderBotModule.yaml
-	tdo|rules/bots/UnitBuilderBotModule.yaml
-	tdo|rules/bots/SupportPowerBotModule.yaml
-	tdo|rules/bots/SquadManagerBotModule.yaml
+	tdo|data/bots/ModularBot.yaml
+	tdo|data/bots/BaseBuilderBotModule.yaml
+	tdo|data/bots/UnitBuilderBotModule.yaml
+	tdo|data/bots/SupportPowerBotModule.yaml
+	tdo|data/bots/SquadManagerBotModule.yaml
 
 Sequences:
-	tdo|sequences/structures.yaml
-	tdo|sequences/vehicles.yaml
-	tdo|sequences/infantry.yaml
-	tdo|sequences/aircraft.yaml
-	tdo|sequences/decorations.yaml
-	tdo|sequences/misc.yaml
-	tdo|sequences/funpark.yaml
-	tdo|sequences/civilian.yaml
-	tdo|sequences/campaign.yaml
+	tdo|data/sequences/structures.yaml
+	tdo|data/sequences/vehicles.yaml
+	tdo|data/sequences/infantry.yaml
+	tdo|data/sequences/aircraft.yaml
+	tdo|data/sequences/ships.yaml
+	tdo|data/sequences/decorations.yaml
+	tdo|data/sequences/misc.yaml
+	tdo|data/sequences/funpark.yaml
+	tdo|data/sequences/civilian.yaml
+
 
 TileSets:
-	tdo|tilesets/desert.yaml
-	tdo|tilesets/winter.yaml
-	tdo|tilesets/snow.yaml
-	tdo|tilesets/temperat.yaml
-	tdo|tilesets/jungle.yaml
+	tdo|data/tilesets/desert.yaml
+	tdo|data/tilesets/winter.yaml
+	tdo|data/tilesets/snow.yaml
+	tdo|data/tilesets/temperat.yaml
+	tdo|data/tilesets/jungle.yaml
+	tdo|data/tilesets/tempera.yaml
+	tdo|data/tilesets/interior.yaml
 
 Weapons:
-	tdo|rules/weapons.yaml
+	tdo|data/weapons.yaml
 
 Cursors:
 	tdo|cursors.yaml
@@ -96,7 +118,7 @@ ChromeLayout:
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-infoobjectives.yaml
 	common|chrome/ingame-infostats.yaml
-	common|chrome/ingame-menu.yaml
+	tdo|chrome/ingame-menu.yaml
 	tdo|chrome/ingame-observer.yaml
 	tdo|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
@@ -134,16 +156,18 @@ ChromeLayout:
 	common|chrome/playerprofile.yaml
 	
 Voices:
-	tdo|audio/voices.yaml
+	tdo|data/voices.yaml
 
 Notifications:
-	tdo|audio/notifications.yaml
+	tdo|data/notifications.yaml
 
 Music:
-	tdo|audio/music.yaml
+	tdo|data/music.yaml
 
 Translations:
-	tdo|languages/english.yaml
+	tdo|data/languages/english.yaml
+	#tdo|data/languages/greek.yaml
+	#ZZZzzzz... ZZZzzzz... μας πηρε ο υπνος
 
 Hotkeys:
 	common|hotkeys/game.yaml
@@ -204,17 +228,17 @@ Fonts:
 		Ascender: 26
 
 Missions:
-	tdo|missions.yaml
+	tdo|data/missions.yaml
 
 MapGrid:
 	TileSize: 24,24
 	Type: Rectangular
 
-SupportsMapsFrom: cnc, tdo
+SupportsMapsFrom: cnc, tdo, ra
 
 SoundFormats: Aud, Wav
 
-SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS
+SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS, PngSheet
 
 SpriteSequenceFormat: TilesetSpecificSpriteSequence
 	TilesetExtensions:
@@ -256,7 +280,7 @@ GameSpeeds:
 		OrderLatency: 6
 
 ColorValidator:
-	TeamColorPresets: F40000, A4A4BC, F5D378, D47810, 007070, FCFC54, 29D0D0, 8126C0, 1D6914, 814A19, 2A4BD7, 9DAFFF, A8FF00, 575757, E2E2E2, 2B2B2B
+	TeamColorPresets: FCFC54, DF1008, 007070, D47810, 54FC54, A4A4BC, F5D378, 29D0D0, 8126C0, 1D6914, 814A19, 2A4BD7, 9DAFFF, 575757, E2E2E2, 2B2B2B
 
 ModContent:
 	InstallPromptMessage: Tiberian Dawn requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2007 C&C Gold freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.

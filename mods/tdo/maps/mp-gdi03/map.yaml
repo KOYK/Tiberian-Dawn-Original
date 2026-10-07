@@ -1,0 +1,290 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Destroy the SAM Sites
+
+Author: Westwood Studios
+
+Tileset: TEMPERAT
+
+MapSize: 64,64
+
+Bounds: 1,25,45,37
+
+Visibility: Lobby
+
+Categories: Nod Vs GDI
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: gdi
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi4
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		LockFaction: True
+		Faction: gdi
+		LockSpawn: True
+		Spawn: 1
+		LockTeam: True
+		Team: 1
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		LockFaction: True
+		Faction: nod
+		LockSpawn: True
+		Spawn: 2
+		LockTeam: True
+		Team: 2
+		Enemies: Creeps
+
+Actors:
+	Actor0: wood
+		Location: 45,59
+		Owner: Neutral
+	Actor1: wood
+		Location: 44,59
+		Owner: Neutral
+	Actor2: wood
+		Location: 43,59
+		Owner: Neutral
+	Actor3: wood
+		Location: 42,59
+		Owner: Neutral
+	Actor4: wood
+		Location: 45,58
+		Owner: Neutral
+	Actor5: v14
+		Location: 44,58
+		Owner: Neutral
+	Actor6: v15
+		Location: 43,58
+		Owner: Neutral
+	Actor7: wood
+		Location: 42,58
+		Owner: Neutral
+	Actor8: wood
+		Location: 45,57
+		Owner: Neutral
+	Actor9: v17
+		Location: 44,57
+		Owner: Neutral
+	Actor10: v17
+		Location: 43,57
+		Owner: Neutral
+	Actor11: wood
+		Location: 42,57
+		Owner: Neutral
+	Actor58: t01
+		Location: 21,51
+		Owner: Neutral
+	Actor59: tc04
+		Location: 11,34
+		Owner: Neutral
+	Actor60: t01
+		Location: 43,59
+		Owner: Neutral
+	Actor61: t01
+		Location: 41,58
+		Owner: Neutral
+	Actor62: t05
+		Location: 12,38
+		Owner: Neutral
+	Actor63: tc01
+		Location: 22,44
+		Owner: Neutral
+	Actor64: t02
+		Location: 3,34
+		Owner: Neutral
+	Actor65: tc02
+		Location: 24,57
+		Owner: Neutral
+	Actor66: tc02
+		Location: 3,35
+		Owner: Neutral
+	Actor67: tc02
+		Location: 2,48
+		Owner: Neutral
+	Actor68: t03
+		Location: 41,57
+		Owner: Neutral
+	Actor69: t03
+		Location: 45,55
+		Owner: Neutral
+	Actor70: t06
+		Location: 45,53
+		Owner: Neutral
+	Actor71: t16
+		Location: 40,60
+		Owner: Neutral
+	Actor72: tc01
+		Location: 44,52
+		Owner: Neutral
+	Actor73: tc04
+		Location: 39,53
+		Owner: Neutral
+	Actor74: t01
+		Location: 36,38
+		Owner: Neutral
+	Actor75: t06
+		Location: 36,43
+		Owner: Neutral
+	Actor76: t06
+		Location: 35,42
+		Owner: Neutral
+	Actor77: t05
+		Location: 24,56
+		Owner: Neutral
+	Actor78: tc02
+		Location: 30,51
+		Owner: Neutral
+	Actor79: t01
+		Location: 30,53
+		Owner: Neutral
+	Actor80: tc05
+		Location: 34,56
+		Owner: Neutral
+	Actor81: tc04
+		Location: 24,49
+		Owner: Neutral
+	Actor82: t07
+		Location: 4,36
+		Owner: Neutral
+	Actor83: t06
+		Location: 2,37
+		Owner: Neutral
+	Actor84: t08
+		Location: 3,38
+		Owner: Neutral
+	Actor85: t11
+		Location: 2,36
+		Owner: Neutral
+	Actor86: tc05
+		Location: 17,31
+		Owner: Neutral
+	Actor87: t12
+		Location: 19,26
+		Owner: Neutral
+	Actor88: t12
+		Location: 33,44
+		Owner: Neutral
+	Actor89: t08
+		Location: 36,42
+		Owner: Neutral
+	Actor90: tc01
+		Location: 39,43
+		Owner: Neutral
+	Actor91: tc02
+		Location: 22,51
+		Owner: Neutral
+	Actor92: tc04
+		Location: 20,50
+		Owner: Neutral
+	Actor93: tc01
+		Location: 43,33
+		Owner: Neutral
+	Actor94: t17
+		Location: 14,33
+		Owner: Neutral
+	Actor95: t12
+		Location: 36,30
+		Owner: Neutral
+	Actor96: tc04
+		Location: 38,25
+		Owner: Neutral
+	Actor97: tc01
+		Location: 36,28
+		Owner: Neutral
+	Actor98: t16
+		Location: 38,28
+		Owner: Neutral
+	Actor99: tc01
+		Location: 34,45
+		Owner: Neutral
+	Actor100: tc04
+		Location: 20,42
+		Owner: Neutral
+	Actor101: t16
+		Location: 19,43
+		Owner: Neutral
+	Actor102: tc04
+		Location: 16,26
+		Owner: Neutral
+	Actor103: tc01
+		Location: 4,31
+		Owner: Neutral
+	Actor104: t17
+		Location: 6,31
+		Owner: Neutral
+	Actor105: t01
+		Location: 20,38
+		Owner: Neutral
+	Actor106: t02
+		Location: 23,40
+		Owner: Neutral
+	Actor107: t02
+		Location: 31,42
+		Owner: Neutral
+	Actor108: t07
+		Location: 32,39
+		Owner: Neutral
+	Actor109: t07
+		Location: 21,33
+		Owner: Neutral
+	Actor118: v07
+		Location: 40,55
+		Owner: Neutral
+	Actor119: v11
+		Location: 44,60
+		Owner: Neutral
+	Actor120: v08
+		Location: 40,56
+		Owner: Neutral
+	Actor121: v01
+		Location: 44,54
+		Owner: Neutral
+	Actor163: c6
+		Location: 42,56
+		Owner: Neutral
+		SubCell: 1
+	Actor164: c3
+		Location: 43,56
+		Owner: Neutral
+		SubCell: 1
+	Actor165: c2
+		Location: 40,58
+		Owner: Neutral
+		SubCell: 1
+	Actor110: split2
+		Owner: Neutral
+		Location: 28,43
+	Actor111: split2
+		Owner: Neutral
+		Location: 42,29
+	Actor112: split2
+		Owner: Neutral
+		Location: 6,43
+	Actor114: split2
+		Owner: Neutral
+		Location: 23,59
+	Actor113: mpspawn
+		Owner: Neutral
+		Location: 7,59
+	Actor115: mpspawn
+		Owner: Neutral
+		Location: 26,27
+
+Rules: data/mode-NodVsGDI.yaml
+	^TibTree:
+		ProximityExternalCondition@NoBotDeploy:
+			Range: 20c0

@@ -1,0 +1,194 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Tiberium Garden
+
+Author: Westwood Studios
+
+Tileset: TEMPERAT
+
+MapSize: 64,64
+
+Bounds: 1,1,62,62
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: split2
+		Location: 6,4
+		Owner: Neutral
+	Actor1: split2
+		Location: 3,7
+		Owner: Neutral
+	Actor2: split2
+		Location: 18,60
+		Owner: Neutral
+	Actor3: split2
+		Location: 3,56
+		Owner: Neutral
+	Actor4: split2
+		Location: 59,55
+		Owner: Neutral
+	Actor5: split2
+		Location: 53,58
+		Owner: Neutral
+	Actor6: split2
+		Location: 51,14
+		Owner: Neutral
+	Actor7: split2
+		Location: 58,19
+		Owner: Neutral
+	Actor8: t11
+		Location: 22,12
+		Owner: Neutral
+	Actor9: t12
+		Location: 31,17
+		Owner: Neutral
+	Actor10: t12
+		Location: 40,8
+		Owner: Neutral
+	Actor11: t08
+		Location: 41,8
+		Owner: Neutral
+	Actor12: t08
+		Location: 41,7
+		Owner: Neutral
+	Actor13: t08
+		Location: 42,3
+		Owner: Neutral
+	Actor14: t08
+		Location: 49,15
+		Owner: Neutral
+	Actor15: t10
+		Location: 59,17
+		Owner: Neutral
+	Actor16: t03
+		Location: 52,34
+		Owner: Neutral
+	Actor17: t03
+		Location: 60,50
+		Owner: Neutral
+	Actor18: t03
+		Location: 49,43
+		Owner: Neutral
+	Actor19: t08
+		Location: 48,58
+		Owner: Neutral
+	Actor20: t14
+		Location: 48,56
+		Owner: Neutral
+	Actor21: t10
+		Location: 34,58
+		Owner: Neutral
+	Actor22: t10
+		Location: 16,53
+		Owner: Neutral
+	Actor23: t12
+		Location: 4,43
+		Owner: Neutral
+	Actor24: t08
+		Location: 14,33
+		Owner: Neutral
+	Actor25: t11
+		Location: 3,34
+		Owner: Neutral
+	Actor26: t12
+		Location: 2,33
+		Owner: Neutral
+	Actor27: t08
+		Location: 18,46
+		Owner: Neutral
+	Actor28: t17
+		Location: 19,44
+		Owner: Neutral
+	Actor29: t15
+		Location: 1,23
+		Owner: Neutral
+	Actor30: t08
+		Location: 5,45
+		Owner: Neutral
+	Actor31: t08
+		Location: 14,27
+		Owner: Neutral
+	Actor32: t08
+		Location: 22,1
+		Owner: Neutral
+	Actor33: split2
+		Location: 30,6
+		Owner: Neutral
+	Actor34: split2
+		Location: 31,4
+		Owner: Neutral
+	Actor35: t14
+		Location: 34,18
+		Owner: Neutral
+	Actor36: t14
+		Location: 58,37
+		Owner: Neutral
+	Actor37: t13
+		Location: 37,47
+		Owner: Neutral
+	Actor38: t13
+		Location: 48,24
+		Owner: Neutral
+	Actor39: t13
+		Location: 60,4
+		Owner: Neutral
+	Actor40: t13
+		Location: 7,17
+		Owner: Neutral
+	Actor41: mpspawn
+		Location: 7,58
+		Owner: Neutral
+	Actor42: mpspawn
+		Location: 27,4
+		Owner: Neutral
+	Actor43: mpspawn
+		Location: 46,57
+		Owner: Neutral
+	Actor44: mpspawn
+		Location: 6,31
+		Owner: Neutral
+	Actor45: mpspawn
+		Location: 56,23
+		Owner: Neutral

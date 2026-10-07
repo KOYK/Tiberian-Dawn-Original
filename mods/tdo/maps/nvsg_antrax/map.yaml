@@ -978,13 +978,12 @@ Actors:
 	Actor392: v15
 		Owner: Neutral
 		Location: 29,52
-	Actor394: mcv.gdi
-		Owner: GDI
-		Facing: 96
+	Actor395: mpspawn
+		Owner: Neutral
+		Faction: Random
 		Location: 20,73
-	Actor393: mcv.nod
-		Owner: Nod
-		Facing: 96
+	Actor396: mpspawn
+		Owner: Neutral
 		Location: 64,10
 
-Rules: rules/campaign-style.yaml
+Rules: data/mode-NodVsGDI.yaml

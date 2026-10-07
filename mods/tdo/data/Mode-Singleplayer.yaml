@@ -1,0 +1,235 @@
+##############################
+# Rules for Singleplayer play#
+##############################
+
+^Palettes:
+	-PlayerColorPalette:
+	IndexedPlayerPalette:
+		BasePalette: player
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Nod: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Neutral: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Creeps: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+	IndexedPlayerPalette@units:
+		BasePalette: player
+		BaseName: player-units
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Nod: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Neutral: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Creeps: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+
+World:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	-CrateSpawner:
+	ObjectivesPanel:
+		PanelName: MISSION_OBJECTIVES
+	MapCreeps:
+		CheckboxLocked: True
+		CheckboxEnabled: False
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxLocked: True
+		AllyBuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxLocked: True
+		BuildRadiusCheckboxEnabled: True
+	MapOptions:
+		ShortGameCheckboxLocked: True
+		ShortGameCheckboxEnabled: False
+	ScriptLobbyDropdown@difficulty:
+		ID: difficulty
+		Label: Difficulty
+		Values:
+			normal: Normal
+		Default: normal
+		Locked: true
+
+Player:
+	-ConquestVictoryConditions:
+	MissionObjectives:
+		EarlyGameOver: true
+	Shroud:
+		FogCheckboxLocked: True
+		FogCheckboxEnabled: False
+		ExploredMapCheckboxLocked: True
+		ExploredMapCheckboxEnabled: False
+	PlayerResources:
+		DefaultCashDropdownLocked: True
+		DefaultCash: 5000
+	ModularBot@CampaignAI:
+		Name: Campaign Player AI
+		Type: campaign
+
+MoneyCrate:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Money Crate
+	GiveCashCrateAction:
+		Amount: 2000
+		Sequence: dollar
+		UseCashTick: true
+	RenderSprites:
+		Image: wcrate
+
+airstrike.proxy:
+	AlwaysVisible:
+	AirstrikePower:
+		Icon: airstrike
+		StartFullyCharged: True
+		ChargeInterval: 3000
+		SquadSize: 3
+		QuantizedFacings: 8
+		Description: Air Strike
+		LongDesc: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		EndChargeSpeechNotification: AirstrikeReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: EnemyPlanesApproaching
+		UnitType: a10
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		DisplayRadarPing: True
+		CameraActor: camera
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+
+TRUCK:
+	Buildable:
+		Prerequisites: ~disabled
+
+^Vehicle:
+	RenderSprites:
+		PlayerPalette: player-units
+
+^Tank:
+	RenderSprites:
+		PlayerPalette: player-units
+
+^Helicopter:
+	RenderSprites:
+		PlayerPalette: player-units
+
+^Infantry:
+	RenderSprites:
+		PlayerPalette: player-units
+	WithDeathAnimation:
+		DeathSequencePalette: player-units
+
+^CommonHuskDefaults:
+	RenderSprites:
+		PlayerPalette: player-units
+
+C17:
+	RenderSprites:
+		PlayerPalette: player-units
+
+HARV:
+	RenderSprites:
+		PlayerPalette: player
+
+MCV:
+	RenderSprites:
+		PlayerPalette: player
+
+HARV.Husk:
+	RenderSprites:
+		PlayerPalette: player
+
+MCV.Husk:
+	RenderSprites:
+		PlayerPalette: player
+
+^Vehicle:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Tank:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Helicopter:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Infantry:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Plane:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Ship:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Building:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Wall:
+	Tooltip:
+		ShowOwnerRow: false
+
+^CivBuilding:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^CivBuildingHusk:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^TechBuilding:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: false
+
+^CommonHuskDefaults:
+	Tooltip:
+		GenericVisibility: Enemy, Ally, Neutral
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+
+^DINO:
+	Tooltip:
+		ShowOwnerRow: false
+
+MISS:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+V19.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+HOSP.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+BIO.Husk:
+	Tooltip:
+		GenericVisibility: None
+

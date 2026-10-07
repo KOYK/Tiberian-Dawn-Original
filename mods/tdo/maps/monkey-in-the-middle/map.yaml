@@ -1,0 +1,87 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Monkey in the Middle
+
+Author: Westwood Studios
+
+Tileset: DESERT
+
+MapSize: 64,64
+
+Bounds: 2,2,60,60
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: split3
+		Location: 25,38
+		Owner: Neutral
+	Actor1: split3
+		Location: 38,25
+		Owner: Neutral
+	Actor2: t18
+		Location: 4,55
+		Owner: Neutral
+	Actor3: rock1
+		Location: 2,53
+		Owner: Neutral
+	Actor4: split3
+		Location: 25,25
+		Owner: Neutral
+	Actor5: split3
+		Location: 38,38
+		Owner: Neutral
+	Actor6: split3
+		Location: 32,31
+		Owner: Neutral
+	Actor7: split3
+		Location: 31,32
+		Owner: Neutral
+	Actor8: mpspawn
+		Location: 10,51
+		Owner: Neutral
+	Actor9: mpspawn
+		Location: 51,54
+		Owner: Neutral
+	Actor10: mpspawn
+		Location: 52,9
+		Owner: Neutral
+	Actor11: mpspawn
+		Location: 10,11
+		Owner: Neutral

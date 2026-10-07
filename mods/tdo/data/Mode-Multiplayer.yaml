@@ -1,0 +1,264 @@
+##############################
+# Rules for Multiplayer play #
+##############################
+
+# The colors are in this order
+# yellow 	0
+# red		1
+# Dcyel		2
+# orange	3
+# green		4
+# gray		5
+# black		6
+# Dgreen	7
+# purple	8
+# blue		9
+# cyel		10
+# Dblue		11
+# GDI		12
+# Nod		13
+
+^Palettes:
+	IndexedPlayerPalette:
+		BasePalette: player
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			Neutral: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Creeps: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Multi0: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi1: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Multi2: 2, 119, 118, 135, 136, 138, 183, 199, 118, 135, 136, 137, 138, 136, 114, 183
+			Multi3: 24, 25, 26, 27, 29, 31, 46, 199, 26, 27, 28, 29, 30, 31, 43, 47
+			Multi4: 5, 165, 166, 167, 159, 142, 140, 199, 166, 167, 157, 3, 159, 143, 142, 141
+			Multi5: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Multi6: 224, 225, 226, 227, 228, 229, 230, 183, 232, 233, 234, 235, 236, 237, 238, 183
+			Multi7: 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79
+			Multi8: 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255
+			Multi9: 80, 81, 82, 83, 84, 85, 86, 183, 88, 89, 90, 91, 92, 93, 94, 95
+			Multi10: 48, 49, 50, 51, 52, 53, 54, 183, 56, 57, 58, 59, 60, 61, 62, 63
+			Multi11: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111
+			Multi12: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi13: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+	IndexedPlayerPalette@units:
+		BasePalette: player
+		BaseName: player-units
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			Neutral: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Creeps: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Multi0: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi1: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Multi2: 2, 119, 118, 135, 136, 138, 183, 199, 118, 135, 136, 137, 138, 136, 114, 183
+			Multi3: 24, 25, 26, 27, 29, 31, 46, 199, 26, 27, 28, 29, 30, 31, 43, 47
+			Multi4: 5, 165, 166, 167, 159, 142, 140, 199, 166, 167, 157, 3, 159, 143, 142, 141
+			Multi5: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Multi6: 224, 225, 226, 227, 228, 229, 230, 183, 232, 233, 234, 235, 236, 237, 238, 183
+			Multi7: 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79
+			Multi8: 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255
+			Multi9: 80, 81, 82, 83, 84, 85, 86, 183, 88, 89, 90, 91, 92, 93, 94, 95
+			Multi10: 48, 49, 50, 51, 52, 53, 54, 183, 56, 57, 58, 59, 60, 61, 62, 63
+			Multi11: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111
+			Multi12: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi13: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+
+^DefaultTooltipColorPrimary:
+	Tooltip:
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		AllyPrefix: Friendly
+		EnemyPrefix: Enemy
+		GenericVisibility: Neutral, Enemy
+		ShowOwnerRow: false
+	RenderSprites:
+		PlayerPalette: player-units
+
+^DefaultTooltipColorSecondary:
+	Tooltip:
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		AllyPrefix: Friendly
+		EnemyPrefix: Enemy
+		GenericVisibility: Neutral, Enemy
+		ShowOwnerRow: false
+	RenderSprites:
+		PlayerPalette: player
+
+^Vehicle:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+^Tank:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+^Helicopter:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+^Infantry:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+	WithDeathAnimation:
+		DeathSequencePalette: player-units
+^CommonHuskDefaults:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+C17:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+^Plane:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+^Ship:
+	Inherits@DPC: ^DefaultTooltipColorPrimary
+
+
+HARV:
+	Inherits@DPC: ^DefaultTooltipColorSecondary
+MCV:
+	Inherits@DPC: ^DefaultTooltipColorSecondary
+HARV.Husk:
+	Inherits@DPC: ^DefaultTooltipColorSecondary
+MCV.Husk:
+	Inherits@DPC: ^DefaultTooltipColorSecondary
+^Building:
+	Inherits@DPC: ^DefaultTooltipColorSecondary
+
+^Wall:
+	Tooltip:
+		ShowOwnerRow: false
+
+^CivBuilding:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^CivBuildingHusk:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^TechBuilding:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: false
+
+^CommonHuskDefaults:
+	Tooltip:
+		GenericVisibility: Enemy, Ally, Neutral
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+
+^DINO:
+	Tooltip:
+		ShowOwnerRow: false
+
+MISS:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+V19.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+HOSP.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+BIO.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+#Players:
+#	PlayerReference@Neutral:
+#		Name: Neutral
+#		OwnsWorld: True
+#		NonCombatant: True
+#	PlayerReference@Multi0:
+#		Name: Multi0
+#		Playable: True
+#		Enemies: Creeps
+#		Color: FCFC54
+#		LockColor: true
+#	PlayerReference@Multi1:
+#		Name: Multi1
+#		Playable: True
+#		Enemies: Creeps
+#		Color: DF1008
+#		LockColor: true
+#	PlayerReference@Multi2:
+#		Name: Multi2
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 007070
+#		LockColor: true
+#	PlayerReference@Multi3:
+#		Name: Multi3
+#		Playable: True
+#		Enemies: Creeps
+#		Color: D47810
+#		LockColor: true
+#	PlayerReference@Multi4:
+#		Name: Multi4
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 54FC54
+#		LockColor: true
+#	PlayerReference@Multi5:
+#		Name: Multi5
+#		Playable: True
+#		Enemies: Creeps
+#		Color: A4A4BC
+#		LockColor: true
+#	PlayerReference@Multi6:
+#		Name: Multi6
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 2B2B2B
+#		LockColor: true
+#	PlayerReference@Multi7:
+#		Name: Multi7
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 1D6914
+#		LockColor: true
+#	PlayerReference@Multi8:
+#		Name: Multi8
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 8126C0
+#		LockColor: true
+#	PlayerReference@Multi9:
+#		Name: Multi9
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 9DAFFF
+#		LockColor: true
+#	PlayerReference@Multi10:
+#		Name: Multi10
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 29D0D0
+#		LockColor: true
+#	PlayerReference@Multi11:
+#		Name: Multi11
+#		Playable: True
+#		Enemies: Creeps
+#		Color: 2A4BD7
+#		LockColor: true
+#	PlayerReference@Multi12:
+#		Name: Multi12
+#		Playable: True
+#		Enemies: Creeps
+#		Color: FCFC54
+#		LockColor: true
+#	PlayerReference@Multi13:
+#		Name: Multi13
+#		Playable: True
+#		Enemies: Creeps
+#		Color: DF1008
+#		LockColor: true
+#	PlayerReference@Creeps:
+#		Name: Creeps
+#		NonCombatant: True
+#		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5, Multi6, Multi7, Multi8, Multi9, Multi10, Multi11, Multi12, Multi13

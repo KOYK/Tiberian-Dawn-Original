@@ -2,6 +2,10 @@
 #Be aware all the options are set by default on how the original TD game was by westwood.
 
 World:
+	CrateSpawner:
+		CheckboxEnabled: True
+		CheckboxLocked: False
+		CheckboxVisible: True
 	MapBuildRadius:
 		AllyBuildRadiusCheckboxEnabled: False
 			#Build on allied base
@@ -12,16 +16,12 @@ World:
 			#Tech Levels are: tl1, tl2, tl3, tl4, tl5, tl6, tl7
 		TechLevelDropdownLocked: False
 			#True means players wont be able to change Tech Level
-		GameSpeed: default
 			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
 		GameSpeedDropdownLocked: False
 			#Lock the speed?
 	MPStartLocations:
 		SeparateTeamSpawnsCheckboxEnabled: False
 			#players without spawn set, will spawn near allies?
-	MapCreeps:
-		CheckboxEnabled: True
-			#Spawn Visceroids on map?
 	SpawnMPUnits:
 		StartingUnitsClass: none
 			#starting units Classes are: MHQR, none(mcv only), light, heavy, 5(with MHQ), 10(with MHQ), 20(with MHQ), 30(with MHQ), 40(with MHQ), 50(with MHQ), Dino(MHQ With Dinosaurs). 
@@ -40,9 +40,9 @@ Player:
 		DefaultCashDropdownLocked: False
 	Shroud:
 		FogCheckboxEnabled: False
-			#fog of war? meh dont do it, let it be off
+			#fog of war? meh dont do it, let it be off like the original
 		ExploredMapCheckboxEnabled: False
-			#the dakness
+			#the darkness
 	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
 		Enabled: True
 			#Allow undeploying Construction Yard?
@@ -82,8 +82,8 @@ Player:
 		Description: Gives orcas obelisk's laser weapon, not recomended
 		Enabled: False
 		Locked: True
-		Visible: False
 			#can the admin player change this?
+		Visible: False
 	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
 		Description: Enables ability to capture tech buildings
 		Enabled: False
@@ -105,7 +105,7 @@ Player:
 		Locked: False
 			#can the admin player change this?
 	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
-		Description: Placed helipads spawn aircraft but they cost $1500
+		Description: Placed helipads spawn 1 aircraft but they cost $1500
 		Enabled: True
 		Locked: False
 	LobbyPrerequisiteCheckbox@MULTIENGINEER:

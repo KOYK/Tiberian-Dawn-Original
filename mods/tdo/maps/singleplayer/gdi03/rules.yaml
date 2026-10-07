@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: campaign-global.lua, gdi03.lua
+		Scripts: tdo|data\scripts\campaign-global.lua, gdi03.lua
 	MusicPlaylist:
 		StartingMusic: crep226m
 	MissionData:
@@ -11,12 +11,10 @@ World:
 		LossVideo: gameover.vqa
 
 SBAG:
-	-Crushable:
 	Buildable:
 		Prerequisites: ~disabled
 
 CYCL:
-	-Crushable:
 	Buildable:
 		Prerequisites: ~disabled
 
@@ -90,7 +88,6 @@ SAM:
 	Building:
 	Power:
 		Amount: -10
-	-Capturable:
 
 HQ:
 	Tooltip:

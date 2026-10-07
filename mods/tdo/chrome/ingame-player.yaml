@@ -565,7 +565,7 @@ Container@PLAYER_WIDGETS:
 							Background: sidebar-button
 							TooltipText: Naval
 							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Ship
+							ProductionGroup: naval
 							Key: ProductionTypeNaval
 							Children:
 								Image@ICON:

@@ -1,0 +1,2427 @@
+^BaseWorld:
+	AlwaysVisible:
+	Inherits: ^Palettes
+	ScreenMap:
+	ActorMap:
+	Selection:
+	MusicPlaylist:
+		VictoryMusic: win1
+		DefeatMusic: nod_map1
+	DebugVisualizations:
+	TerrainRenderer:
+	TerrainGeometryOverlay:
+	ShroudRenderer:
+		ShroudVariants: typea, typeb, typec, typed
+		FogVariants: typea, typeb, typec, typed
+		OverrideFullShroud: full
+		OverrideFullFog: full
+	Locomotor@FOOT:
+		Name: foot
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+				PathingCost: 300
+			BlueTiberium: 100
+				PathingCost: 300
+			Beach: 100
+	Locomotor@CHEM:
+		Name: chem
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@WHEELED:
+		Name: wheeled
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@BIKE:
+		Name: bike
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@HEAVYWHEELED:
+		Name: heavywheeled
+		Crushes: crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@TRACKED:
+		Name: tracked
+		Crushes: wall, crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@HEAVYTRACKED:
+		Name: heavytracked
+		Crushes: wall, heavywall, crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Locomotor@NAVAL:
+		Name: naval
+		Crushes: crate
+		TerrainSpeeds:
+			Water: 100
+	Locomotor@LANDINGCRAFT:
+		Name: lcraft
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Water: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+			River: 100
+	Locomotor@CRITTER:
+		Name: critter
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Tiberium: 100
+			BlueTiberium: 100
+			Beach: 100
+	Faction@Random:
+		Name: Any
+		InternalName: Random
+		RandomFactionMembers: gdi, nod
+		Description: Random Faction\nA random faction will be chosen when the game starts.
+	Faction@gdi:
+		Name: GDI
+		InternalName: gdi
+		Description: GLOBAL DEFENSE INITIATIVE\n\nCommonly, GDI. Before 1990, known as Special Operations Group Echo, Black Ops 9.\n\nFOUNDED: \n12 October 1995, in accordance with the United Nations Global Defense\nAct (UNGDA)\n\nIDEOLOGY: \nTo enforce the United Nations Global Defense Act and uphold the ideals\nas outlined in the United Nations Charter.\n\nCURRENT HEAD OF STATE:\nBrigadier General Mark Jamison Shepherd, Chief of\nStaff, United Nations Military Command.\n\nBASE OF OPERATIONS: \nUnited Nations Military Command Center, location\nCLASSIFIED.\n\nMILITARY STRENGTH: \nWithin parameters of the UNGDA, Article V, Section 3A,\nParagraph 12.\n\nECONOMIC STRENGTH: \nFunded by United Nations and various national\ngovernments, public organizations, and private enterprise.\n\nPOLITICAL STRENGTH: \nNot applicable: operates within parameters of the UNGDA\nand under the orders of the United Nations Security Council.\n\nAFFILIATIONS: \nUnited Nations.\n\nSEE ALSO: \nShepherd, M.J.; United Nations, 1995 to present; United Nations Global\nDefense Act, 1995; Mobius, Dr. R.H.
+	Faction@nod:
+		Name: Nod
+		InternalName: nod
+		Description: THE BROTHERHOOD OF NOD\n\nCommonly, The Brotherhood, The Ways of Nod, ShaÆSeer among the tribes of Godan;\nsee INTERPOL File ARK936, Aliases of the Brotherhood, for more.\n\nFOUNDED: \nDate unknown: exaggerated reports place the Brotherhood’s founding\nbefore 1,800 BC\n\nIDEOLOGY: \nTo unite third-world nations under a pseudo-religious political platform\nwith imperialist tendencies. In actuality it is an aggressive and popular neo-fascist, antiWest\nmovement vying for total domination of the world’s peoples and resources.\nOperates under the popular mantra, “Brotherhood, unity, peace”.\n\nCURRENT HEAD OF STATE: \nKane; also known as Caine, Jacob (INTERPOL, File\nTRX11-12Q); al-Quayym, Amir (MI6 DR-416.52)\n\nBASE OF OPERATIONS: \nGlobal. Command posts previously identified at Kuantan,\nMalaysia; somewhere in Ar-Rub’ al-Khali, Saudi Arabia; Tokyo; Caen, France.\n\nMILITARY STRENGTH: \nPreviously believed only to be a smaller terrorist operations,\na recent scandal involving United States defense contractors confirms that the\nBrotherhood is well-equipped and supports significant land, sea, and air military\noperations.\n\nECONOMIC STRENGTH: \nConsiderable operating assets believed to be in excess of\nUS$255.2 billion, based on audits of seized financial records (see CIA Docket 3231.54-\n776 FIA).\n\nPOLITICAL STRENGTH: \nBelieved to be the sole backers of the Fist of Allah party in\nJordan (52%); United We Stand America party in the United States (12%); Albion First!\nparty in the United Kingdom (25+%), among others. (See Brookings Institution\npublication A42962-94 for full disclosure.)\n\nAFFILIATIONS: \nIrish Republican Party; Islamic Jihad; Khmer Rouge; others. (See\ndocument: Brotherhood of Nod Splinter Groups.)\n\nSEE ALSO: \nMobius, Dr. R.H.; terrorist activities; United States Global Defense Act;\nReport of World Energy Radical Redistribution, US Congressional Report, 1994, File\nXXY22.
+	ResourceType@green-tib:
+		Type: Tiberium
+		Name: Tiberium
+		PipColor: Green
+		ResourceType: 1
+		Palette: staticterrain
+		TerrainType: Tiberium
+		Sequences: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
+		MaxDensity: 12
+		ValuePerUnit: 35
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: false
+	ResourceType@blue-tib:
+		Type: BlueTiberium
+		Name: Tiberium
+		PipColor: Blue
+		ResourceType: 2
+		Palette: bluetiberium
+		TerrainType: BlueTiberium
+		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
+		MaxDensity: 12
+		ValuePerUnit: 60
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: false
+	ResourceType@ore:
+		Type: Ore
+		Name: Tiberium
+		ResourceType: 3
+		TerrainType: Ore
+		Palette: staticterrain
+		Sequences: ti1,ti2,ti3,ti4
+		MaxDensity: 12
+		ValuePerUnit: 35
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: false
+	ResourceType@gem:
+		Type: Gems
+		Name: Tiberium
+		ResourceType: 4
+		TerrainType: Gems
+		Palette: bluetiberium
+		Sequences: bti1,bti2,bti3,bti4
+		MaxDensity: 12
+		ValuePerUnit: 60
+		AllowedTerrainTypes: Clear,Road
+		AllowUnderActors: false
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	DebugVisualizationCommands:
+	PlayerCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	LegacyBridgeLayer:
+		Bridges: bridge1, bridge2, bridge3, bridge4
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	DomainIndex:
+	SmudgeLayer@SCORCH:
+		Type: Scorch
+		Sequence: scorches
+		SmokePercentage: 50
+		Palette: staticterrain
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Sequence: craters
+		Palette: staticterrain
+	ResourceLayer:
+	ResourceClaimLayer:
+	WarheadDebugOverlay:
+	CustomTerrainDebugOverlay:
+	SpawnMapActors:
+	CreateMPPlayers:
+	CrateSpawner:
+		WaterChance: 0
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	RadarPings:
+	LoadWidgetAtGameStart:
+	ResourceRenderer:
+		RenderTypes: Tiberium, BlueTiberium, Ore, Gems
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+	LoadWidgetAtGameStart:
+	EditorCursorLayer:
+	EditorActionManager:
+
+^BasePlayer:
+	AlwaysVisible:
+	Shroud:
+
+EditorPlayer:
+	Inherits: ^BasePlayer
+
+Player:
+	Inherits: ^BasePlayer
+	PlayerRadarTerrain:
+	PlaceBuilding:
+		NewOptionsNotification: NewOptions
+		CannotPlaceNotification: BuildingCannotPlaceAudio
+	ClassicProductionQueue@Building:
+		Type: Building
+		DisplayOrder: 0
+		LowPowerModifier: 300
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
+		#test shows that reduction can go for ever. coms center with around 14 con yards build time reduced to 3 seconds.
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle
+		DisplayOrder: 3
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+		DisplayOrder: 2
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
+	ClassicProductionQueue@Naval:
+		Type: naval
+		DisplayOrder: 5
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft
+		DisplayOrder: 4
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: True
+		BuildTimeSpeedReduction: 100, 50, 31, 26, 19, 17
+	TechTree:
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+		WinNotification: Win
+		LoseNotification: Lose
+		LeaveNotification: Leave
+	PowerManager:
+		SpeechNotification: LowPower
+	BaseAttackNotifier:
+	PlayerStatistics:
+	FrozenActorLayer:
+	PlaceBeacon:
+	GrantConditionOnPrerequisiteManager:
+	ResourceStorageWarning:
+	PlayerExperience:
+	ConditionManager:
+	AllyRepair:
+
+^Palettes:
+	PaletteFromFile@terrain-desert:
+		Name: terrain
+		Tileset: DESERT
+		Filename: desert.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-winter:
+		Name: terrain
+		Tileset: WINTER
+		Filename: winter.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-snow:
+		Name: terrain
+		Tileset: SNOW
+		Filename: snowTD.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-snow-ra:
+		Name: snowRA
+		Tileset: SNOW
+		Filename: snowRA.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-tempera-ra:
+		Name: terrain
+		Tileset: TEMPERA
+		Filename: tempera.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-interior-ra:
+		Name: terrain
+		Tileset: INTERIOR
+		Filename: tempera.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-temperat:
+		Name: terrain
+		Tileset: TEMPERAT
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-jungle:
+		Name: terrain
+		Tileset: JUNGLE
+		Filename: jungle.pal
+		ShadowIndex: 4
+
+	PaletteFromFile@terrain-temperat-ra:
+		Name: ra
+		Tileset: TEMPERAT
+		Filename: tempera.pal
+		ShadowIndex: 4
+
+	PaletteFromFile@staticterrain-interior:
+		Name: staticterrain
+		Tileset: INTERIOR
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-tempera:
+		Name: staticterrain
+		Tileset: TEMPERA
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-desert:
+		Name: staticterrain
+		Tileset: DESERT
+		Filename: desert.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-winter:
+		Name: staticterrain
+		Tileset: WINTER
+		Filename: winter.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-snow:
+		Name: staticterrain
+		Tileset: SNOW
+		Filename: snowTD.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-temperat:
+		Name: staticterrain
+		Tileset: TEMPERAT
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-jungle:
+		Name: staticterrain
+		Tileset: JUNGLE
+		Filename: jungle.pal
+		ShadowIndex: 4
+
+	PaletteFromFile@chrome:
+		Name: chrome
+		Filename: temperat.pal
+		ShadowIndex: 3
+		AllowModifiers: false
+		CursorPalette: true
+	PaletteFromFile@beaconposter:
+		Name: beaconposter
+		Filename: temperat.pal
+		ShadowIndex: 3
+	PaletteFromFile@effect:
+		Name: effect
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@colorpicker:
+		Name: colorpicker
+		Filename: temperat.pal
+		ShadowIndex: 4
+		AllowModifiers: false
+	PaletteFromFile@player:
+		Name: player
+		Filename: player.pal
+		ShadowIndex: 4
+	PaletteFromFile@NULL:
+		Name: null
+		Filename: player.pal
+		ShadowIndex: 4
+	PaletteFromRGBA@shadow:
+		Name: shadow
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromRGBA@cloak:
+		Name: cloak
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromRGBA@submerged:
+		Name: submerged
+		R: 0
+		G: 0
+		B: 0
+		A: 140
+	PaletteFromRGBA@highlight:
+		Name: highlight
+		R: 255
+		G: 255
+		B: 255
+		A: 128
+	PaletteFromRGBA@moveflash:
+		Name: moveflash
+		R: 255
+		G: 255
+		B: 255
+		A: 64
+	PaletteFromRGBA@disabled:
+		Name: disabled
+		R: 0
+		G: 0
+		B: 0
+		A: 180
+	ShroudPalette@shroud:
+		Name: shroud
+	ShroudPalette@fog:
+		Name: fog
+		Fog: true
+	FixedColorPalette@BlueTiberium:
+		Base: staticterrain
+		Name: bluetiberium
+		Color: 89BAFF
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+	PlayerColorPalette:
+		BasePalette: null
+		BaseName: null
+		RemapIndex: 176, 178, 180, 182, 184, 186, 189, 191, 177, 179, 181, 183, 185, 187, 188, 190
+	IndexedPlayerPalette:
+		BasePalette: player
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			Neutral: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Creeps: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Multi0: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi1: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Multi2: 2, 119, 118, 135, 136, 138, 183, 199, 118, 135, 136, 137, 138, 136, 114, 183
+			Multi3: 24, 25, 26, 27, 29, 31, 46, 199, 26, 27, 28, 29, 30, 31, 43, 47
+			Multi4: 5, 165, 166, 167, 159, 142, 140, 199, 166, 167, 157, 3, 159, 143, 142, 141
+			Multi5: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Multi6: 224, 225, 226, 227, 228, 229, 230, 183, 232, 233, 234, 235, 236, 237, 238, 183
+			Multi7: 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79
+			Multi8: 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255
+			Multi9: 80, 81, 82, 83, 84, 85, 86, 183, 88, 89, 90, 91, 92, 93, 94, 95
+			Multi10: 48, 49, 50, 51, 52, 53, 54, 183, 56, 57, 58, 59, 60, 61, 62, 63
+			Multi11: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111
+			Multi12: 240, 241, 242, 243, 244, 245, 246, 183, 248, 249, 250, 251, 253, 254, 255, 1
+			Multi13: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+	PlayerHighlightPalette:
+	MenuPaletteEffect:
+		MenuEffect: Desaturated
+	CloakPaletteEffect:
+	FlashPaletteEffect:
+	RotationPaletteEffect@water:
+		ExcludePalettes: effect, chrome, ra, snow, staticterrain
+		RotationBase: 32
+		RotationRange: 7
+		RotationStep: 0.2
+		Tilesets: JUNGLE, WINTER, TEMPERAT, DESERT
+	RotationPaletteEffect@water-ra:
+		ExcludePalettes: effect, chrome, staticterrain
+		RotationBase: 96
+		RotationRange: 7
+		RotationStep: 0.25
+		Tilesets: SNOW, TEMPERA, INTERIOR
+	PaletteFromPng@wake:
+		Name: wake
+		Filename: wake.png
+		#NOTE: png depth must be 8, use irfan-view software to decrese color depth
+
+^ExistsInWorld:
+	AppearsOnRadar:
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	GivesExperience:
+		PlayerExperienceModifier: 1
+	ScriptTriggers:
+	ConditionManager:
+	RenderDebugState:
+
+^SpriteActor:
+	BodyOrientation:
+	QuantizeFacingsFromSequence:
+	RenderSprites:
+
+^1x1Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+
+^2x1Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 512
+
+^2x2Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+
+^3x2Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 1024
+
+^AutoTargetGround:
+	AutoTarget:
+		AttackAnythingCondition: stance-attackanything
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything
+		ValidTargets: Infantry, Vehicle, Creep, Water, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything
+		ValidTargets: Infantry, Vehicle, Creep, Water, Structure, Defense
+		InvalidTargets: NoAutoTarget
+
+^AutoTargetGroundAssaultMove:
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+
+^AutoTargetAir:
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Air
+		InvalidTargets: NoAutoTarget
+
+^AutoTargetAll:
+	AutoTarget:
+		AttackAnythingCondition: stance-attackanything
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything
+		ValidTargets: Infantry, Vehicle, Creep, Water, Air, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything
+		ValidTargets: Infantry, Vehicle, Creep, Water, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
+
+^AutoTargetAllAssaultMove:
+	Inherits: ^AutoTargetAll
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+
+^AcceptsCloakCrate:
+	Cloak:
+		InitialDelay: 15
+		CloakDelay: 90
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+		PauseOnCondition: cloak-force-disabled
+		RequiresCondition: cloak-crate-collected
+	ExternalCondition@CLOAK:
+		Condition: cloak-crate-collected
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+
+^DamagedOnLowPower:
+	GrantConditionOnPrerequisite@GLOBALLPDAMAGE:
+		Condition: global-lpdamage
+		Prerequisites: global-lpdamage
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	SelfHealing@LOWPOWER:
+		Step: 0
+		PercentageStep: -1
+		Delay: 750
+		HealIfBelow: 101
+		DamageCooldown: 0
+		RequiresCondition: lowpower && global-lpdamage
+
+^Vehicle:
+	Inherits@1: ^ExistsInWorld
+	Inherits@3: ^SpriteActor
+	GrantConditionOnPrerequisite@HUSKS:
+		Prerequisites: PrerequisiteHusksEnabled
+		Condition: HusksEnabled
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: OnPad || NearWall
+	ProximityExternalCondition@REPAIRING:
+		Condition: Repairing
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	ExternalCondition@ONPAD:
+		Condition: OnPad
+	ExternalCondition@NearWall:
+		Condition: NearWall
+	Huntable:
+	Buildable:
+		Queue: Vehicle
+	OwnerLostAction:
+		Action: Kill
+	Mobile:
+		Locomotor: wheeled
+		TurnSpeed: 5
+	GrantConditionOnDamageState@Heavy-Critical:
+		ValidDamageStates: Heavy, Critical
+		Condition: lowhealth
+		GrantPermanently: False
+	SpeedMultiplier:
+		Modifier: 90
+		RequiresCondition: lowhealth
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 24,24
+	Targetable:
+		TargetTypes: Ground, Vehicle
+	Repairable:
+		RepairActors: fix
+		HpPerStep: -1
+	Passenger:
+		CargoType: Vehicle
+		Weight: 5
+	ActorLostNotification:
+	HiddenUnderFog:
+	AttackMove:
+	DrawLineToTarget:
+	WithDamageOverlay:
+	WithFacingSpriteBody:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	Guard:
+	Guardable:
+	Tooltip:
+		GenericName: Vehicle
+	MustBeDestroyed:
+	Voiced:
+		VoiceSet: VehicleVoice
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	HitShape:
+	MapEditorData:
+		Categories: Vehicle
+	SpawnActorOnDeath@SpawnE11:
+		Actor: e1
+		Probability: 20
+		OwnerType: Victim
+		SpawnAfterDefeat: False
+	SpawnActorOnDeath@SpawnE12:
+		Actor: e1
+		Probability: 5
+		OwnerType: Victim
+		SpawnAfterDefeat: False
+
+^Tank:
+	Inherits: ^Vehicle
+	Mobile:
+		Locomotor: tracked
+		TurnSpeed: 5
+	Tooltip:
+		GenericName: Vehicle
+
+^Helicopter:
+	Inherits@1: ^ExistsInWorld
+	Inherits@3: ^SpriteActor
+	Huntable:
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Aircraft
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: OnPad && !airborne || NearWall && !airborne
+	ProximityExternalCondition@ONHELIPAD:
+		Condition: occupied
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+		RequiresCondition: !airborne
+	ProximityExternalCondition@REPAIRING:
+		Condition: Repairing
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	ExternalCondition@ONPAD:
+		Condition: OnPad
+	ExternalCondition@NearWall:
+		Condition: NearWall
+	OwnerLostAction:
+		Action: Kill
+	AppearsOnRadar:
+		UseLocation: false
+	RevealsShroud@LANDED:
+		Range: 2c0
+		RequiresCondition: !airborne
+	RevealsShroud@AIR:
+		Range: 0c0
+		RequiresCondition: airborne
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle
+		RequiresCondition: !airborne
+	Targetable@AIRBORNE:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 24,24
+	Repairable:
+		RepairActors: fix
+	Aircraft:
+		AirborneCondition: airborne
+		CruisingCondition: cruising
+		CanHover: True
+		VTOL: True
+		InitialFacing: 224
+		MoveIntoShroud: False
+		Repulsable: True
+		TakeOffOnCreation: True
+		TakeOffOnResupply: False
+		CanSlide: True
+		IdleBehavior: Land
+		Crushes: crate
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Tiberium,BlueTiberium
+		TurnToDock: True
+		TurnToLand: True
+		CanForceLand: False
+	HiddenUnderFog:
+		Type: GroundPosition
+	ActorLostNotification:
+	Explodes:
+		Weapon: HeliExplode
+		EmptyWeapon: HeliExplode
+	AttackMove:
+	DrawLineToTarget:
+	Guard:
+	Guardable:
+	Tooltip:
+		GenericName: Helicopter
+	WithFacingSpriteBody:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	MustBeDestroyed:
+	Voiced:
+		VoiceSet: VehicleVoice
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	HitShape:
+	MapEditorData:
+		Categories: Aircraft
+	SpawnActorOnDeath:
+		RequiresCondition: airborne
+
+^Infantry:
+	Inherits@1: ^ExistsInWorld
+	Inherits@3: ^SpriteActor
+	Huntable:
+	#Note I should look if the sell value changes based on health, also look at vehicles, ELoyros
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: NearWall
+	ExternalCondition@NearWall:
+		Condition: NearWall
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: DefaultDeath
+	Health:
+	Armor:
+		Type: 0
+	RevealsShroud:
+		Range: 1c512
+		MoveRecalculationThreshold: 0c0
+	Mobile:
+		Locomotor: foot
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 18,18,0,-6
+		DecorationBounds: 12,17,0,-6
+	Targetable:
+		TargetTypes: Ground, Infantry
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+	WithDeathAnimation:
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 1
+			RippedApartDeath: 2
+			SmallExplosionDeath: 3
+			ExplosionDeath: 4
+			FireDeath: 5
+			TiberiumDeath: 6
+		CrushedSequence: die-crushed
+	AttackMove:
+	DrawLineToTarget:
+	Passenger:
+		CargoType: Infantry
+	HiddenUnderFog:
+	GrantConditionOnMovement@GREENLEGS:
+		Condition: moveintib
+		ValidMovementTypes: Horizontal
+	DamagedByTerrain:
+		Terrain: Tiberium, BlueTiberium
+		Damage: 2
+		DamageInterval: 25
+		DamageTypes: TiberiumDeath
+		RequiresCondition: !hazmatsuits && moveintib
+	GrantConditionOnTerrain@HAZMAT:
+		Condition: ontiberium
+		TerrainTypes: Tiberium, BlueTiberium
+	GrantConditionOnPrerequisite@HAZMAT:
+		Condition: biolab
+		Prerequisites: bio
+	GrantCondition@HAZMAT:
+		RequiresCondition: biolab && ontiberium
+		Condition: hazmatsuits
+	WithDecoration@HAZMAT:
+		Image: pips
+		Sequence: pip-hazmat
+		ReferencePoint: Bottom, Right
+		RequiresCondition: hazmatsuits
+	ActorLostNotification:
+	SpawnActorOnDeath:
+		Probability: 5
+		Actor: vice
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		DeathType: TiberiumDeath
+		RequiresLobbyCreeps: true
+	Crushable:
+		WarnProbability: 75
+		CrushSound: squish2.aud
+	Guardable:
+	SelfHealing@HOSPITAL:
+		Step: 0
+		PercentageStep: 10
+		Delay: 250
+		HealIfBelow: 100
+		DamageCooldown: 250
+		RequiresCondition: hospitalheal
+	GrantConditionOnPrerequisite@HOSPITAL:
+		Condition: hospital
+		Prerequisites: hosp
+	GrantConditionOnDamageState@HOSPITAL:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	GrantCondition@HOSPITAL:
+		RequiresCondition: hospital && damaged
+		Condition: hospitalheal
+	WithDecoration@REDCROSS:
+		Image: pips
+		Sequence: pip-heal
+		ReferencePoint: Bottom, Right
+		RequiresCondition: hospitalheal
+		BlinkInterval: 32
+		BlinkPattern: On, Off
+	DetectCloaked:
+		Range: 2c0
+	DeathSounds@NORMAL:
+		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath, RippedApartDeath
+	DeathSounds@BURNED:
+		Voice: Burned
+		DeathTypes: FireDeath
+	DeathSounds@POISONED:
+		Voice: Poisoned
+		DeathTypes: TiberiumDeath
+	Voiced:
+		VoiceSet: GenericVoice
+	HitShape:
+		Type: Circle
+			Radius: 128
+	MapEditorData:
+		Categories: Infantry
+
+^Soldier:
+	Inherits: ^Infantry
+	MustBeDestroyed:
+	Tooltip:
+		GenericName: Soldier
+	Guard:
+	TakeCover:
+		SpeedModifier: 60
+		DamageModifiers:
+			Prone50Percent: 50
+			Prone80Percent: 80
+		DamageTriggers: TriggerProne
+		ProneOffset: 400,0,0
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+		StandSequences: stand, stand2
+
+^CivInfantry:
+	Inherits: ^Infantry
+	Valued:
+		Cost: 10
+	-Buildable:
+	Tooltip:
+		Name: Civilian
+		GenericVisibility: None
+	Mobile:
+		Speed: 30
+	Health:
+		HP: 50
+	RevealsShroud:
+		Range: 0c0
+	Passenger:
+		PipType: Gray
+	ActorLostNotification:
+		Notification: CivilianKilled
+		NotifyAll: true
+	ScaredyCat:
+	Crushable:
+		CrushSound: squish2.aud
+	Voiced:
+		VoiceSet: CivilianMaleVoice
+	Wanders:
+		MinMoveDelay: 150
+		MaxMoveDelay: 750
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+	MapEditorData:
+		Categories: Civilian infantry
+
+^ArmedCivilian:
+	Armament:
+		Weapon: Pistol
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+^DINO:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	Health:
+		HP: 400
+	Armor:
+		Type: 3
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 50
+		Prerequisites: ~inv_dino
+	MustBeDestroyed:
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Dinosaur
+	RevealsShroud:
+		Range: 5c0
+	Mobile:
+		Locomotor: critter
+		Speed: 113
+		Voice: Move
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 24,24
+	Targetable:
+		TargetTypes: Ground, Creep
+	HiddenUnderFog:
+	RenderSprites:
+		Palette: staticterrain
+		PlayerPalette: staticterrain
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: attack
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: staticterrain
+		DeathPaletteIsPlayerPalette: false
+	AutoTarget:
+		ScanRadius: 4
+	AttackMove:
+		Voice: Attack
+	AttackFrontal:
+		Voice: Attack
+	DrawLineToTarget:
+	DeathSounds:
+	Voiced:
+		VoiceSet: DinoVoice
+	HitShape:
+		Type: Circle
+			Radius: 128
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+	MapEditorData:
+		Categories: Critter
+
+^Plane:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	AppearsOnRadar:
+		UseLocation: true
+	HiddenUnderFog:
+		Type: GroundPosition
+		AlwaysVisibleStances: None
+	ActorLostNotification:
+	AttackMove:
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	RejectsOrders:
+	Aircraft:
+		CruiseAltitude: 2560
+	MapEditorData:
+		Categories: Aircraft
+
+^Ship:
+	Inherits@1: ^ExistsInWorld
+	Inherits@3: ^SpriteActor
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+	Targetable:
+		TargetTypes: Ground, Water
+	HiddenUnderFog:
+	ActorLostNotification:
+	AttackMove:
+	DrawLineToTarget:
+	WithDamageOverlay:
+	Explodes:
+		Weapon: UnitExplodeShip
+		EmptyWeapon: UnitExplodeShip
+	Guard:
+	Guardable:
+	Tooltip:
+		GenericName: Ship
+	Voiced:
+		VoiceSet: VehicleVoice
+	HitShape:
+	MapEditorData:
+		Categories: Naval
+
+^ShipRA:
+	Inherits@1: ^ExistsInWorld
+	Inherits@4: ^SpriteActor
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	Selectable:
+	DrawLineToTarget:
+	UpdatesPlayerStatistics:
+	Mobile:
+		Locomotor: naval
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 24,24
+	Targetable:
+		TargetTypes: Ground, Water, Ship
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	HiddenUnderFog:
+	AttackMove:
+	ActorLostNotification:
+	ProximityCaptor:
+		Types: Ship
+	Chronoshiftable:
+	RepairableNear:
+		RepairActors: spen, syrd
+	WithDamageOverlay:
+	Explodes:
+		Weapon: UnitExplodeShip
+		EmptyWeapon: UnitExplodeShip
+	Guard:
+	Guardable:
+	Tooltip:
+		GenericName: Ship
+	MustBeDestroyed:
+	Voiced:
+		VoiceSet: VehicleVoice
+	WithFacingSpriteBody:
+	HitShape:
+
+^Building:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^DamagedOnLowPower
+	Inherits@shape: ^1x1Shape
+	FootprintPlaceBuildingPreview:
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Priority: 3
+	Targetable:
+		TargetTypes: Ground, C4, Structure
+	Armor:
+		Type: 1
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	SoundOnDamageTransition:
+		DamagedSounds: xplos.aud
+		DestroyedSounds: crumble.aud
+	WithSpriteBody:
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
+	CaptureNotification:
+		Notification: BuildingCaptured
+		NewOwnerVoice: false
+	ActorLostNotification:
+		Notification: BuildingLost
+	ShakeOnDeath:
+	Guardable:
+		Range: 3c0
+	Tooltip:
+		GenericName: Structure
+	FrozenUnderFog:
+	Demolishable:
+	MapEditorData:
+		Categories: Building
+	CommandBarBlacklist:
+	AcceptsDeliveredCash:
+
+^BaseBuilding:
+	Inherits: ^Building
+	Building:
+		RequiresBaseProvider: true
+		BuildSounds: constru2.aud, hvydoor1.aud
+		UndeploySounds: cashturn.aud
+		TerrainTypes: Clear,Road
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 1
+	GivesBuildableArea:
+		AreaTypes: building
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	RepairableBuilding:
+		RepairPercent: 20
+		RepairInterval: 24
+		RepairStep: 7
+		PlayerExperience: 1
+		RepairingNotification: Repairing
+		RepairBonuses: 100, 0
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	SpawnActorsOnSell:
+		ActorTypes: e6,e1,e1,e1,tc1,tc7
+	EngineerRepairable:
+	Demolishable:
+		Condition: being-demolished
+	Sellable:
+		RequiresCondition: !build-incomplete && !being-demolished
+		SellSounds: cashturn.aud
+	CaptureManager:
+	Capturable:
+		Types: building-sabotage, building
+	WithMakeAnimation:
+		Condition: build-incomplete
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
+	SpawnActorOnDeath@SpawnE11:
+		Actor: e1
+		Probability: 40
+		OwnerType: Victim
+		SpawnAfterDefeat: False
+		RequiresCondition: !being-demolished
+	SpawnActorOnDeath@SpawnE12:
+		Actor: e1
+		Probability: 50
+		OwnerType: Victim
+		SpawnAfterDefeat: False
+		RequiresCondition: !being-demolished
+
+^NavalBuilding:
+	Inherits: ^BaseBuilding
+	Inherits@BuildingType: ^ProductionBuilding
+	ProductionBar:
+		ProductionType: naval
+		Color: 3AA730
+		RequiresCondition: ProductionBarEnabled
+	Selectable:
+		Bounds: 72,48
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		Prerequisites: anypower
+		Description: Produces and repairs\nships submarines and transports.
+	Targetable:
+		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack
+	Building:
+		Footprint: XXX xxx XXX
+		Dimensions: 3,3
+		TerrainTypes: Water
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 8
+	-GivesBuildableArea:
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	Exit@1:
+		RequiresCondition: !being-captured
+		SpawnOffset: 0,-213,0
+		Facing: 96
+		ExitCell: -1,2
+		ProductionTypes: naval
+	Exit@2:
+		RequiresCondition: !being-captured
+		SpawnOffset: 0,-213,0
+		Facing: 160
+		ExitCell: 3,2
+		ProductionTypes: naval
+	Exit@3:
+		RequiresCondition: !being-captured
+		SpawnOffset: 0,0,0
+		Facing: 32
+		ExitCell: 0,0
+		ProductionTypes: naval
+	Exit@4:
+		RequiresCondition: !being-captured
+		SpawnOffset: 0,0,0
+		Facing: 224
+		ExitCell: 2,0
+		ProductionTypes: naval
+	Production:
+		Produces: naval
+	-SpawnActorsOnSell:
+	-SpawnActorOnDeath@SpawnE11:
+	-SpawnActorOnDeath@SpawnE12:
+	RepairsUnits:
+		HpPerStep: 1000
+		StartRepairingNotification: Repairing
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 15
+	RallyPoint:
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	MapEditorData:
+		ExcludeTilesets: INTERIOR,TEMPERAT,SNOW,WINTER,DESERT,JUNGLE
+
+^Defense:
+	Inherits: ^BaseBuilding
+	RenderRangeCircle:
+	RenderDetectionCircle:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Targetable:
+		TargetTypes: Ground, C4, Structure, Defense
+	MapEditorData:
+		Categories: Defense
+	-CommandBarBlacklist:
+	-AcceptsDeliveredCash:
+	-Capturable:
+
+^ProductionBuilding:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	GrantConditionOnPrerequisite@ProductionBar:
+		Condition: ProductionBarEnabled
+		Prerequisites: PrerequisiteProductionBar
+
+^CivBuilding:
+	Inherits: ^Building
+	ConditionManager:
+	Tooltip:
+		ShowOwnerRow: false
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		EnemyPrefix: Enemy
+		GenericVisibility: Enemy, Neutral
+	Armor:
+		Type: 1
+	Health:
+		HP: 400
+	FrozenUnderFog:
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+	MapEditorData:
+		Categories: Civilian building
+	RenderSprites:
+		Palette: staticterrain
+	RevealsShroud:
+		Range: 1c512
+
+^CivBuildingHusk:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	AppearsOnRadar:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithSpriteBody:
+	Tooltip:
+		ShowOwnerRow: false
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		EnemyPrefix: Enemy
+		GenericVisibility: Enemy, Neutral
+	FrozenUnderFog:
+	ScriptTriggers:
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+	MapEditorData:
+		Categories: Husk
+	RenderSprites:
+		Palette: staticterrain
+
+^TechBuilding:
+	Inherits: ^CivBuilding
+	ConditionManager:
+	OwnerLostAction:
+		Action: ChangeOwner
+	CaptureManager:
+	GrantConditionOnPrerequisite@CAPTURABLELOBBYTECH:
+		Condition: CapturableCon
+		Prerequisites: TechBuildingsEnabled
+	Capturable:
+		Types: TechBuilding
+		RequiresCondition: CapturableCon
+	CaptureNotification:
+		Notification: CivilianBuildingCaptured
+	RepairableBuilding:
+		RepairPercent: 20
+		RepairInterval: 24
+		RepairStep: 7
+		PlayerExperience: 1
+		RepairingNotification: Repairing
+		RepairBonuses: 100, 0
+	EngineerRepairable:
+	RevealsShroud:
+		Range: 2c0
+	Tooltip:
+		ShowOwnerRow: false
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		EnemyPrefix: Enemy
+		GenericVisibility: Enemy, Neutral
+	MapEditorData:
+		Categories: Tech building
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
+	GivesBuildableArea:
+		AreaTypes: building
+	RenderSprites:
+		PlayerPalette: player
+		-Palette: terrain
+
+^CivField:
+	Inherits: ^CivBuilding
+	-Selectable:
+	-SelectionDecorations:
+	Interactable:
+	Tooltip:
+		GenericName: Field
+	-Explodes:
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	-Demolishable:
+	RenderSprites:
+		Palette: staticterrain
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+
+^CivFieldHusk:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	AppearsOnRadar:
+	Building:
+		Dimensions: 1,1
+		Footprint: =
+	Tooltip:
+		Name: Field
+		GenericVisibility: None
+		ShowOwnerRow: false
+	RenderSprites:
+		Palette: staticterrain
+	WithSpriteBody:
+	FrozenUnderFog:
+	ScriptTriggers:
+	MapEditorData:
+		Categories: Husk
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+
+^Wall:
+	Inherits@1: ^SpriteActor
+	Inherits@shape: ^1x1Shape
+	FootprintPlaceBuildingPreview:
+	Interactable:
+		Bounds: 24,24
+	CombatDebugOverlay:
+	AppearsOnRadar:
+	OwnerLostAction:
+		Action: ChangeOwner
+	GivesBuildableArea:
+		AreaTypes: building
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+		BuildSounds: hvydoor1.aud
+		TerrainTypes: Clear,Road
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 1
+	Targetable:
+		TargetTypes: Ground, Wall
+	RenderSprites:
+		Palette: staticterrain
+	WithWallSpriteBody:
+	GivesExperience:
+	Sellable:
+		SellSounds: cashturn.aud
+	Guardable:
+	FrozenUnderFog:
+	ScriptTriggers:
+	Health:
+		HP: 200
+	Armor:
+		Type: 2
+	AppearsOnMapPreview:
+		Terrain: Wall
+	RadarColorFromTerrain:
+		Terrain: Wall
+	MapEditorData:
+		Categories: Wall
+	LineBuild:
+		Range: 1
+		NodeTypes: wall
+	LineBuildNode:
+		Types: wall
+	#Crushable:
+	#	CrushClasses: wall
+	#	CrushSound: sandbag2.aud
+
+^LineBuild:
+	Inherits@Wall: ^Wall
+	LineBuild:
+		Range: 8
+		NodeTypes: wall
+	LineBuildNode:
+		Types: wall
+	-MapEditorData:
+
+^Tree:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	Tooltip:
+		Name: Tree
+		ShowOwnerRow: false
+	RenderSprites:
+		Palette: staticterrain
+	WithSpriteBody:
+	Building:
+		Footprint: __ x_
+		Dimensions: 2,2
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	Health:
+		HP: 500
+	Armor:
+		Type: 1
+	Targetable:
+		TargetTypes: Trees
+	WithDamageOverlay@SmallBurn:
+		DamageTypes: Incendiary
+		Image: burn-s
+		MinimumDamageState: Light
+		MaximumDamageState: Medium
+	WithDamageOverlay@MediumBurn:
+		DamageTypes: Incendiary
+		Image: burn-m
+		MinimumDamageState: Medium
+		MaximumDamageState: Heavy
+	WithDamageOverlay@LargeBurn:
+		DamageTypes: Incendiary
+		Image: burn-l
+		MinimumDamageState: Heavy
+		MaximumDamageState: Dead
+	HiddenUnderShroud:
+	ScriptTriggers:
+	HitShape:
+	MapEditorData:
+		Categories: Tree
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
+^TreeHusk:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	Building:
+		Footprint: __ x_
+		Dimensions: 2,2
+	WithSpriteBody:
+	Tooltip:
+		Name: Tree
+		ShowOwnerRow: false
+	HiddenUnderShroud:
+	ScriptTriggers:
+	MapEditorData:
+		Categories: Tree
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	RenderSprites:
+		Palette: staticterrain
+
+^TibTree:
+	Inherits@1: ^SpriteActor
+	ProximityExternalCondition@NoBotDeploy:
+		Condition: NearTibTree
+		Range: 20c0
+		ValidStances: Ally, Enemy, Neutral
+		AffectsParent: False
+	ConditionManager:
+	Interactable:
+	GrantConditionOnPrerequisite@TibRegrowth:
+		Condition: Regrowth
+		Prerequisites: RegrowthOn
+	SeedsResource:
+		ResourceType: Tiberium
+		Interval: 55
+		RequiresCondition: Regrowth
+	Tooltip:
+		Name: Blossom Tree
+		ShowOwnerRow: false
+	RenderSprites:
+		Palette: staticterrain
+	WithSpriteBody:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tiberium
+	HiddenUnderShroud:
+	WithMakeAnimation:
+	MapEditorData:
+		Categories: Resource spawn
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+	ActorSpawner:
+		Types: vice
+
+^Rock:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	Tooltip:
+		Name: Rock
+		ShowOwnerRow: false
+	RenderSprites:
+		Palette: staticterrain
+	WithSpriteBody:
+	Building:
+		Footprint: __ x_
+		Dimensions: 2,2
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	HiddenUnderShroud:
+	ScriptTriggers:
+	MapEditorData:
+		RequireTilesets: DESERT
+		Categories: Decoration
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
+^CommonHuskDefaults:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	Health:
+		HP: 140
+	Armor:
+		Type: 2
+	HiddenUnderFog:
+		Type: CenterPosition
+		AlwaysVisibleStances: None
+	WithFacingSpriteBody:
+	HitShape:
+
+^Husk:
+	Inherits: ^CommonHuskDefaults
+	Husk:
+		AllowedTerrain: Clear, Rough, Road, Tiberium, BlueTiberium, Beach
+	Burns:
+		Damage: 1
+		Interval: 8
+	Targetable:
+		RequiresForceFire: true
+		TargetTypes: Ground, Husk
+	CaptureManager:
+	Capturable:
+		Types: husk
+		ValidStances: Enemy, Neutral, Ally
+	TransformOnCapture:
+		ForceHealthPercentage: 25
+	Tooltip:
+		GenericName: Destroyed Vehicle
+	WithColoredOverlay@IDISABLE:
+		Palette: disabled
+	ScriptTriggers:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	BodyOrientation:
+		UseClassicFacingFudge: True
+
+^LightHusk:
+	Inherits: ^Husk
+	Health:
+		HP: 100
+
+^HelicopterHusk:
+	Inherits: ^CommonHuskDefaults
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	Aircraft:
+		CanHover: True
+		VTOL: true
+		CanSlide: True
+	FallsToEarth:
+		Moves: False
+		Explosion: HeliCrash
+	Tooltip:
+		GenericName: Destroyed Helicopter
+	BodyOrientation:
+		UseClassicFacingFudge: True
+
+^Crate:
+	Inherits@1: ^SpriteActor
+	Interactable:
+	HiddenUnderFog:
+	Tooltip:
+		Name: Crate
+		GenericName: Crate
+		ShowOwnerRow: false
+	Crate:
+		TerrainTypes: Clear, Rough, Road, Tiberium, BlueTiberium, Beach
+	RenderSprites:
+		Palette: effect
+		Image: wcrate
+	WithCrateBody:
+		XmasImages: xcratea, xcrateb, xcratec, xcrated
+	MapEditorData:
+		Categories: System
+
+^DisabledOverlay:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: lowpower
+		Palette: disabled
+
+CRATE.plain:
+	Inherits: ^Crate
+	ScriptTriggers:
+
+CRATE:
+	Inherits: ^Crate
+	Crate:
+		Lifetime: 0
+	ExplodeCrateAction@Nuke:
+		Weapon: Atomic
+		SelectionShares: 2
+		Sequence: explnuke
+	ExplodeCrateAction@Ion:
+		Weapon: IonCannon
+		SelectionShares: 2
+		Sequence: explion
+	ExplodeCrateAction@fire:
+		Weapon: Napalm.Crate
+		SelectionShares: 3
+	SupportPowerCrateAction@NukeS:
+		Proxy: nuke.proxy
+		SelectionShares: 1
+		Sequence: nuke
+	#SupportPowerCrateAction@IonC:
+	#	Proxy: ioncannon.proxy
+	#	SelectionShares: 1
+	SupportPowerCrateAction@AirS:
+		Proxy: airstrike.proxy
+		SelectionShares: 2
+		Sequence: airstrike
+	HideMapCrateAction:
+		SelectionShares: 1
+		Sequence: hide-map
+	RevealMapCrateAction:
+		SelectionShares: 3
+		Sequence: reveal-map
+	#HealActorsCrateAction:
+	#	SelectionShares: 2 #waiting for engine update
+	#	Sequence: heal
+	GrantExternalConditionCrateAction@cloak:
+		SelectionShares: 3
+		Sequence: cloak
+		Condition: cloak-crate-collected
+	GiveUnitCrateAction:
+		Units: vice
+		Owner: Creeps
+		SelectionShares: 3
+		Prerequisites: PrerequisiteViceEnabled
+	GiveMcvCrateAction@Nod:
+		SelectionShares: 0
+		NoBaseSelectionShares: 10
+		Units: mcv.nod
+		ValidFactions: nod
+		ExcludedActorTypes: pvice, vice, rapt, tric, trex, steg
+	GiveMcvCrateAction@GDI:
+		SelectionShares: 0
+		NoBaseSelectionShares: 10
+		Units: mcv.gdi
+		ValidFactions: gdi
+		ExcludedActorTypes: pvice, vice, rapt, tric, trex, steg
+
+	GiveCashCrateAction@1:
+		Amount: 100
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@2:
+		Amount: 200
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@3:
+		Amount: 300
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@4:
+		Amount: 400
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@5:
+		Amount: 500
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@6:
+		Amount: 600
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@7:
+		Amount: 700
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@8:
+		Amount: 800
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@9:
+		Amount: 900
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@10:
+		Amount: 1000
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@11:
+		Amount: 1100
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@12:
+		Amount: 1200
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@13:
+		Amount: 1300
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+	GiveCashCrateAction@14:
+		Amount: 1400
+		SelectionShares: 5
+		UseCashTick: false
+		Sequence: dollar
+
+WCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Wooden Crate
+
+SCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: Steel Crate
+
+mpspawn:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (multiplayer player starting point)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
+waypoint:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (waypoint for scripted behavior)
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+
+fact.colorpicker:
+	Inherits: FIX
+	-Buildable:
+	-MapEditorData:
+	-Demolishable:
+	-Sellable:
+	-RepairsUnits:
+	-ExternalCondition@REPAIRING:
+	RenderSprites:
+		Image: fix
+		Palette: colorpicker
+
+^InvisibleFactory:
+	Interactable:
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	MapEditorData:
+		Categories: System
+	ProvidesPrerequisite@buildingname:
+	Production:
+		Produces: Infantry
+	ProductionFromMapEdge:
+		Produces: Infantry
+
+CAMERA:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+CAMERA.small:
+	Interactable:
+	EditorOnlyTooltip:
+		Name: (reveals small area to owner)
+	AlwaysVisible:
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	BodyOrientation:
+		QuantizedFacings: 1
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 100000
+	HitShape:
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	MapEditorData:
+		Categories: System
+
+FLARE:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: smokland
+		Palette: staticterrain
+	WithSpriteBody:
+		StartSequence: open
+	HiddenUnderFog:
+		Type: CenterPosition
+	Tooltip:
+		Name: Flare
+		ShowOwnerRow: false
+	BodyOrientation:
+		QuantizedFacings: 1
+	MapEditorData:
+		Categories: System
+	Interactable:
+
+airstrike.proxy:
+	AlwaysVisible:
+	AirstrikePower:
+		OneShot: True
+		StartFullyCharged: True
+		AllowMultiple: True
+		PauseOnCondition: lowpower
+		Prerequisites: ~PrerequisiteSuperWeapons
+		Icon: airstrike
+		ChargeInterval: 0
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: Extra Air Strike
+		LongDesc: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		EndChargeSpeechNotification: AirstrikeReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: EnemyPlanesApproaching
+		UnitType: a10
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		BeaconPosterPalette: beaconposter
+		DisplayRadarPing: True
+		CameraActor: camera
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: False
+		SupportPowerPaletteOrder: 10
+
+ioncannon.proxy:
+	AlwaysVisible:
+	IonCannonPower:
+		OneShot: True
+		StartFullyCharged: True
+		AllowMultiple: True
+		PauseOnCondition: lowpower
+		Prerequisites: ~PrerequisiteSuperWeapons
+		Icon: ioncannon
+		Cursor: ioncannon
+		ChargeInterval: 0
+		Weapon: IonCannon
+		Description: Extra Ion Cannon Strike
+		LongDesc: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		BeginChargeSpeechNotification: IonCannonCharging
+		EndChargeSpeechNotification: IonCannonReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OnFireSound: ion1.aud
+		DisplayRadarPing: True
+		CameraActor: camera.small
+		OrderName: IonCannonPowerInfoOrder
+		DisplayBeacon: False
+
+nuke.proxy:
+	AlwaysVisible:
+	NukePower:
+		OneShot: True
+		StartFullyCharged: True
+		AllowMultiple: True
+		PauseOnCondition: lowpower
+		Prerequisites: ~PrerequisiteSuperWeapons
+		Icon: abomb
+		Cursor: nuke
+		ChargeInterval: 0
+		Description: Extra Nuclear Strike
+		LongDesc: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
+		EndChargeSpeechNotification: NuclearWeaponAvailable
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		LaunchSpeechNotification: NuclearWeaponLaunched
+		IncomingSpeechNotification: NuclearWarheadApproaching
+		MissileWeapon: atomic
+		MissileDelay: 11
+		SpawnOffset: 3c0,0,-1c512
+		DisplayBeacon: True
+		BeaconPoster: atomic
+		BeaconPosterPalette: beaconposter
+		DisplayRadarPing: True
+		CameraRange: 10c0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+
+DISABLED:
+	ProvidesPrerequisite:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Disabled
+
+^Bridge:
+	Inherits@shape: ^1x1Shape
+	AlwaysVisible:
+	Tooltip:
+		Name: Bridge
+		ShowOwnerRow: false
+	Targetable:
+		RequiresForceFire: true
+		TargetTypes: Ground, Water
+	Health:
+		HP: 600
+	Armor:
+		Type: 3
+	SoundOnDamageTransition:
+		DamagedSounds: xplos.aud
+		DestroyedSounds: xplobig4.aud
+	ScriptTriggers:
+	BodyOrientation:
+		QuantizedFacings: 1
+	ShakeOnDeath:
+		Duration: 15
+		Intensity: 6
+	RequiresSpecificOwners:
+		ValidOwnerNames: Neutral
+
+BRIDGE1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 165
+		DestroyedTemplate: 166
+	Building:
+		Footprint: ____ ____ ____ ____
+		Dimensions: 4,4
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 2,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 0,2
+	Interactable:
+		Bounds: 96,96
+
+BRIDGE2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 167
+		DestroyedTemplate: 168
+	Building:
+		Footprint: _____ _____ _____ _____ _____
+		Dimensions: 5,5
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 0,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 2,2
+	Interactable:
+		Bounds: 120,120
+
+BRIDGE3:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 169
+		DestroyedTemplate: 170
+	Building:
+		Footprint: ______ ______ ______ ______ ______
+		Dimensions: 6,5
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 3,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 1,2
+	Interactable:
+		Bounds: 144,120
+
+BRIDGE4:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 171
+		DestroyedTemplate: 172
+	Building:
+		Footprint: ______ ______ ______ ______
+		Dimensions: 6,4
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 1,0
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 3,2
+	Interactable:
+		Bounds: 144,96
+
+BRIDGEHUT:
+	AlwaysVisible:
+	Building:
+		Footprint: __ __
+		Dimensions: 2,2
+	LegacyBridgeHut:
+	Targetable:
+		TargetTypes: BridgeHut, C4
+	Interactable:
+		Bounds: 48,48
+
+#===================================
+#Start of: RA maps compatibility WIP
+#===================================
+MINE:
+	Inherits: ^TibTree
+	RenderSprites:
+		Image: split2
+	SeedsResource:
+		ResourceType: Tiberium
+		Interval: 55
+		MaxRange: 900
+
+GMINE:
+	Inherits: ^TibTree
+	RenderSprites:
+		Image: split3
+	SeedsResource:
+		ResourceType: BlueTiberium
+		Interval: 110
+		MaxRange: 10
+	Tooltip:
+		Name: Blossom Tree (blue)
+	RadarColorFromTerrain:
+		Terrain: BlueTiberium
+
+OILB:
+	Inherits@ParentActor: V19
+	RenderSprites:
+		Image: v19
+	-SpawnActorOnDeath:
+
+BRL3:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+BARL:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+RICE:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+RUSHOUSE:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+ASIANHUT:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+SNOWHUT:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+LHUS:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+WINDMILL:
+	Inherits@OriginalActor: C1
+	RenderSprites:
+		Image: c1
+	Tooltip:
+		Name: Technician
+
+BR1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 235
+		DamagedTemplate: 236
+		DestroyedTemplate: 237
+		SouthOffset: 0,2
+	FreeActor:
+		Actor: bridgehut
+		SpawnOffset: 2,0
+
+BR2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 238
+		DamagedTemplate: 239
+		DestroyedTemplate: 240
+		NorthOffset: 3,0
+	FreeActor:
+		Actor: bridgehut
+		SpawnOffset: 1,1
+
+BR3:
+	Inherits: ^Bridge
+	Bridge:
+		Long: true
+		ShorePieces: br1,br2
+		Template: 241
+		DamagedTemplate: 242
+		DestroyedTemplate: 243
+		DestroyedPlusNorthTemplate: 245
+		DestroyedPlusSouthTemplate: 244
+		DestroyedPlusBothTemplate: 246
+		NorthOffset: 2,0
+		SouthOffset: 0,1
+
+SBRIDGE1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 520
+		DamagedTemplate: 521
+		DestroyedTemplate: 522
+	Building:
+		Footprint: ___ ___
+		Dimensions: 3,2
+	FreeActor@north:
+		Actor: bridgehut.small
+		SpawnOffset: 1,0
+	FreeActor@south:
+		Actor: bridgehut.small
+		SpawnOffset: 1,1
+	Interactable:
+		Bounds: 72,48
+
+SBRIDGE2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 531
+		DamagedTemplate: 532
+		DestroyedTemplate: 533
+	Building:
+		Footprint: __ __ __
+		Dimensions: 2,3
+	FreeActor@west:
+		Actor: bridgehut.small
+		SpawnOffset: 0,1
+	FreeActor@east:
+		Actor: bridgehut.small
+		SpawnOffset: 1,1
+	Interactable:
+		Bounds: 48,72
+
+SBRIDGE3:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 523
+		DamagedTemplate: 524
+		DestroyedTemplate: 525
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 2,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 0,1
+
+SBRIDGE4:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 527
+		DamagedTemplate: 528
+		DestroyedTemplate: 529
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 0,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 2,1
+
+#-----------------------------------
+#End of: RA maps compatibility
+#-----------------------------------

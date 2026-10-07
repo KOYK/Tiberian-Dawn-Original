@@ -1,0 +1,3 @@
+RA Map compatibility:
+	In order to make RA maps compatibitable with TDO you need to open the map file, and edit this line
+	Tileset: TEMPERAT to this line Tileset: TEMPERA. ie just remove the letter T.

@@ -1,0 +1,216 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Pitfall
+
+Author: Westwood Studios
+
+Tileset: TEMPERAT
+
+MapSize: 64,64
+
+Bounds: 1,1,62,62
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: split2
+		Location: 27,50
+		Owner: Neutral
+	Actor1: split2
+		Location: 20,33
+		Owner: Neutral
+	Actor2: split2
+		Location: 39,46
+		Owner: Neutral
+	Actor3: split2
+		Location: 4,32
+		Owner: Neutral
+	Actor4: split2
+		Location: 9,56
+		Owner: Neutral
+	Actor5: split2
+		Location: 34,58
+		Owner: Neutral
+	Actor6: split2
+		Location: 56,51
+		Owner: Neutral
+	Actor7: split2
+		Location: 49,44
+		Owner: Neutral
+	Actor8: split2
+		Location: 60,24
+		Owner: Neutral
+	Actor9: split2
+		Location: 54,3
+		Owner: Neutral
+	Actor10: split2
+		Location: 24,5
+		Owner: Neutral
+	Actor11: split2
+		Location: 21,17
+		Owner: Neutral
+	Actor12: split2
+		Location: 3,20
+		Owner: Neutral
+	Actor13: t01
+		Location: 37,11
+		Owner: Neutral
+	Actor14: t01
+		Location: 37,10
+		Owner: Neutral
+	Actor15: t01
+		Location: 6,57
+		Owner: Neutral
+	Actor16: t03
+		Location: 15,56
+		Owner: Neutral
+	Actor17: t01
+		Location: 14,56
+		Owner: Neutral
+	Actor18: t01
+		Location: 15,57
+		Owner: Neutral
+	Actor19: t16
+		Location: 62,24
+		Owner: Neutral
+	Actor20: tc03
+		Location: 61,27
+		Owner: Neutral
+	Actor21: t08
+		Location: 27,37
+		Owner: Neutral
+	Actor22: tc01
+		Location: 25,38
+		Owner: Neutral
+	Actor23: tc03
+		Location: 15,33
+		Owner: Neutral
+	Actor24: tc04
+		Location: 14,31
+		Owner: Neutral
+	Actor25: tc03
+		Location: 27,38
+		Owner: Neutral
+	Actor26: tc05
+		Location: 34,38
+		Owner: Neutral
+	Actor27: tc03
+		Location: 41,39
+		Owner: Neutral
+	Actor28: tc04
+		Location: 40,37
+		Owner: Neutral
+	Actor29: tc02
+		Location: 43,33
+		Owner: Neutral
+	Actor30: tc01
+		Location: 55,32
+		Owner: Neutral
+	Actor31: tc03
+		Location: 2,48
+		Owner: Neutral
+	Actor32: tc04
+		Location: 1,46
+		Owner: Neutral
+	Actor33: tc05
+		Location: 9,32
+		Owner: Neutral
+	Actor34: tc05
+		Location: 11,18
+		Owner: Neutral
+	Actor35: tc03
+		Location: 1,21
+		Owner: Neutral
+	Actor36: tc04
+		Location: 1,1
+		Owner: Neutral
+	Actor37: t08
+		Location: 23,10
+		Owner: Neutral
+	Actor38: t01
+		Location: 28,9
+		Owner: Neutral
+	Actor39: t02
+		Location: 23,4
+		Owner: Neutral
+	Actor40: t02
+		Location: 28,6
+		Owner: Neutral
+	Actor41: t05
+		Location: 28,8
+		Owner: Neutral
+	Actor42: tc04
+		Location: 20,9
+		Owner: Neutral
+	Actor43: tc03
+		Location: 21,11
+		Owner: Neutral
+	Actor44: tc02
+		Location: 22,8
+		Owner: Neutral
+	Actor45: tc01
+		Location: 41,10
+		Owner: Neutral
+	Actor46: tc03
+		Location: 38,10
+		Owner: Neutral
+	Actor47: tc02
+		Location: 41,13
+		Owner: Neutral
+	Actor48: tc04
+		Location: 40,9
+		Owner: Neutral
+	Actor49: tc05
+		Location: 44,10
+		Owner: Neutral
+	Actor50: split2
+		Location: 44,8
+		Owner: Neutral
+	Actor54: mpspawn
+		Location: 51,27
+		Owner: Neutral
+	Actor55: mpspawn
+		Location: 46,59
+		Owner: Neutral
+	Actor56: mpspawn
+		Location: 6,50
+		Owner: Neutral
+	Actor57: mpspawn
+		Location: 6,14
+		Owner: Neutral

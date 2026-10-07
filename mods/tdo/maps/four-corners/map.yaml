@@ -1,0 +1,159 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Four Corners
+
+Author: Westwood Studios
+
+Tileset: DESERT
+
+MapSize: 64,64
+
+Bounds: 5,4,53,55
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: rock2
+		Location: 7,15
+		Owner: Neutral
+	Actor1: t18
+		Location: 5,14
+		Owner: Neutral
+	Actor2: t08
+		Location: 7,16
+		Owner: Neutral
+	Actor3: rock2
+		Location: 37,8
+		Owner: Neutral
+	Actor4: rock3
+		Location: 52,20
+		Owner: Neutral
+	Actor5: rock4
+		Location: 34,42
+		Owner: Neutral
+	Actor6: rock7
+		Location: 16,21
+		Owner: Neutral
+	Actor7: rock6
+		Location: 23,54
+		Owner: Neutral
+	Actor8: t09
+		Location: 45,25
+		Owner: Neutral
+	Actor9: t09
+		Location: 42,15
+		Owner: Neutral
+	Actor10: t09
+		Location: 42,14
+		Owner: Neutral
+	Actor11: t09
+		Location: 25,15
+		Owner: Neutral
+	Actor12: t04
+		Location: 31,16
+		Owner: Neutral
+	Actor13: t08
+		Location: 27,11
+		Owner: Neutral
+	Actor14: t08
+		Location: 10,13
+		Owner: Neutral
+	Actor15: t04
+		Location: 14,58
+		Owner: Neutral
+	Actor16: t08
+		Location: 12,48
+		Owner: Neutral
+	Actor17: t08
+		Location: 45,57
+		Owner: Neutral
+	Actor18: t18
+		Location: 56,57
+		Owner: Neutral
+	Actor19: t09
+		Location: 29,34
+		Owner: Neutral
+	Actor20: t18
+		Location: 33,28
+		Owner: Neutral
+	Actor21: split3
+		Location: 31,35
+		Owner: Neutral
+	Actor22: split3
+		Location: 48,54
+		Owner: Neutral
+	Actor23: split3
+		Location: 54,51
+		Owner: Neutral
+	Actor24: split3
+		Location: 7,57
+		Owner: Neutral
+	Actor25: split3
+		Location: 7,51
+		Owner: Neutral
+	Actor26: split3
+		Location: 13,9
+		Owner: Neutral
+	Actor27: split3
+		Location: 7,7
+		Owner: Neutral
+	Actor28: split3
+		Location: 50,11
+		Owner: Neutral
+	Actor29: split3
+		Location: 55,6
+		Owner: Neutral
+	Actor30: split3
+		Location: 35,34
+		Owner: Neutral
+	Actor31: split3
+		Location: 31,31
+		Owner: Neutral
+	Actor32: mpspawn
+		Location: 53,38
+		Owner: Neutral
+	Actor36: mpspawn
+		Location: 19,50
+		Owner: Neutral
+	Actor34: mpspawn
+		Owner: Neutral
+		Location: 20,16
+	Actor35: mpspawn
+		Owner: Neutral
+		Location: 41,19

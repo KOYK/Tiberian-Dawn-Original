@@ -4,7 +4,7 @@ Player:
 
 World:
 	LuaScript:
-		Scripts: campaign-global.lua, nod02a.lua
+		Scripts: tdo|data\scripts\campaign-global.lua, nod02a.lua
 	MusicPlaylist:
 		StartingMusic: ind2
 		VictoryMusic: nod_win1

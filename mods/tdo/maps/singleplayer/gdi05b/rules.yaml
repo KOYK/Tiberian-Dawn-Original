@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: campaign-global.lua, gdi05b.lua
+		Scripts: tdo|data\scripts\campaign-global.lua, gdi05b.lua
 	MusicPlaylist:
 		StartingMusic: rain
 	MissionData:
