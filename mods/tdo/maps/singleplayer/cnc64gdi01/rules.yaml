@@ -27,7 +27,7 @@ FLARE:
 
 STNK:
 	Buildable:
-		Prerequisites: ~techlevel.high
+		Prerequisites: ~disabled
 
 TRAN:
 	Buildable:
