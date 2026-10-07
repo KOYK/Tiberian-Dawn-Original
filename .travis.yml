@@ -1,5 +1,17 @@
 # Travis-CI Build for OpenRAModSDK
 # see travis-ci.org for details
+#
+# CHANGED for SDK 20230225+ / engine release-20250330:
+#  * SDK Makefile defaults to RUNTIME=net6 (needs the dotnet 6 SDK).  Travis' `language: csharp` + `mono: 6.4.0`
+#    image has no dotnet, so every `make` call is switched to the supported mono path (`make RUNTIME=mono`,
+#    Makefile header at 20230225: "to compile using Mono (version 6.4 or greater) instead of .NET 6").
+#    The upstream CI (SDK 20250330 .github/workflows/ci.yml, job `linux-mono`) runs `make RUNTIME=mono check`
+#    / `make RUNTIME=mono ... test`, so this configuration is exercised upstream.
+#  * packaging needs extra tools: appimagetool needs libfuse2; the windows package needs wine64 (rcedit)
+#    (SDK 20230225 packaging.yml: `sudo apt install libfuse2`, `sudo apt-get install nsis wine64`;
+#     SDK 20250330 linux job also installs desktop-file-utils).
+#  * UNVERIFIED: whether Travis' xenial image can run these (wine64/libfuse2 on xenial); if it cannot, move to
+#    GitHub Actions (SDK 20250330 .github/workflows/{ci,packaging}.yml) -- the repo chose not to adopt those earlier.
 
 language: csharp
 mono: 6.4.0
@@ -18,14 +30,17 @@ addons:
     - dpkg
     - liblua5.1-0
     - imagemagick
+    - libfuse2
+    - wine64
+    - desktop-file-utils
 
 script:
- - make
+ - make RUNTIME=mono
  - |
    . mod.config;
    awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format. File must be saved using unix-style (LF, not CRLF or CR) line endings.\n"; travis_terminate 1);
    if [ "${TRAVIS_TEST_MOD}" == "True" ]; then
-     make test || travis_terminate 1;
+     make RUNTIME=mono test || travis_terminate 1;
    fi;
    if [ "$TRAVIS_OS_NAME" == "linux" ] && ( [ "${TRAVIS_TEST_PACKAGING}" == "True" ] || [ -n "${TRAVIS_TAG}" ] ); then
      wget https://mirrors.edge.kernel.org/ubuntu/pool/universe/n/nsis/nsis-common_3.04-1_all.deb || travis_terminate 1;
