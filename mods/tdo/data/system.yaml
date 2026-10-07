@@ -1055,7 +1055,6 @@ Player:
 	HiddenUnderFog:
 	RenderSprites:
 		Palette: staticterrain
-		PlayerPalette: staticterrain
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -1263,6 +1262,7 @@ Player:
 		RequiresCondition: !build-incomplete && !being-demolished
 		SellSounds: cashturn.aud
 	CaptureManager:
+		BeingCapturedCondition: being-captured
 	Capturable:
 		Types: building-sabotage, building
 	WithMakeAnimation:
@@ -1348,7 +1348,6 @@ Player:
 	RepairsUnits:
 		HpPerStep: 1000
 		StartRepairingNotification: Repairing
-		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 	RallyPoint:
 	Power:
