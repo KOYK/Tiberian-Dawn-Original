@@ -137,50 +137,7 @@
 		Name: Nod
 		InternalName: nod
 		Description: THE BROTHERHOOD OF NOD\n\nCommonly, The Brotherhood, The Ways of Nod, ShaÆSeer among the tribes of Godan;\nsee INTERPOL File ARK936, Aliases of the Brotherhood, for more.\n\nFOUNDED: \nDate unknown: exaggerated reports place the Brotherhood’s founding\nbefore 1,800 BC\n\nIDEOLOGY: \nTo unite third-world nations under a pseudo-religious political platform\nwith imperialist tendencies. In actuality it is an aggressive and popular neo-fascist, antiWest\nmovement vying for total domination of the world’s peoples and resources.\nOperates under the popular mantra, “Brotherhood, unity, peace”.\n\nCURRENT HEAD OF STATE: \nKane; also known as Caine, Jacob (INTERPOL, File\nTRX11-12Q); al-Quayym, Amir (MI6 DR-416.52)\n\nBASE OF OPERATIONS: \nGlobal. Command posts previously identified at Kuantan,\nMalaysia; somewhere in Ar-Rub’ al-Khali, Saudi Arabia; Tokyo; Caen, France.\n\nMILITARY STRENGTH: \nPreviously believed only to be a smaller terrorist operations,\na recent scandal involving United States defense contractors confirms that the\nBrotherhood is well-equipped and supports significant land, sea, and air military\noperations.\n\nECONOMIC STRENGTH: \nConsiderable operating assets believed to be in excess of\nUS$255.2 billion, based on audits of seized financial records (see CIA Docket 3231.54-\n776 FIA).\n\nPOLITICAL STRENGTH: \nBelieved to be the sole backers of the Fist of Allah party in\nJordan (52%); United We Stand America party in the United States (12%); Albion First!\nparty in the United Kingdom (25+%), among others. (See Brookings Institution\npublication A42962-94 for full disclosure.)\n\nAFFILIATIONS: \nIrish Republican Party; Islamic Jihad; Khmer Rouge; others. (See\ndocument: Brotherhood of Nod Splinter Groups.)\n\nSEE ALSO: \nMobius, Dr. R.H.; terrorist activities; United States Global Defense Act;\nReport of World Energy Radical Redistribution, US Congressional Report, 1994, File\nXXY22.
-	ResourceType@green-tib:
-		Type: Tiberium
-		Name: Tiberium
-		ResourceType: 1
-		Palette: staticterrain
-		TerrainType: Tiberium
-		Sequences: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
-		MaxDensity: 12
-		ValuePerUnit: 35
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
-	ResourceType@blue-tib:
-		Type: BlueTiberium
-		Name: Tiberium
-		ResourceType: 2
-		Palette: bluetiberium
-		TerrainType: BlueTiberium
-		Sequences: bti1,bti2,bti3,bti4,bti5,bti6,bti7,bti8,bti9,bti10,bti11,bti12
-		MaxDensity: 12
-		ValuePerUnit: 60
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
-	ResourceType@ore:
-		Type: Ore
-		Name: Tiberium
-		ResourceType: 3
-		TerrainType: Ore
-		Palette: staticterrain
-		Sequences: ti1,ti2,ti3,ti4
-		MaxDensity: 12
-		ValuePerUnit: 35
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
-	ResourceType@gem:
-		Type: Gems
-		Name: Tiberium
-		ResourceType: 4
-		TerrainType: Gems
-		Palette: bluetiberium
-		Sequences: bti1,bti2,bti3,bti4
-		MaxDensity: 12
-		ValuePerUnit: 60
-		AllowedTerrainTypes: Clear,Road
-		AllowUnderActors: false
+	ControlGroups:
 
 World:
 	Inherits: ^BaseWorld
@@ -195,7 +152,6 @@ World:
 		Bridges: bridge1, bridge2, bridge3, bridge4
 	ProductionQueueFromSelection:
 		ProductionPaletteWidget: PRODUCTION_PALETTE
-	DomainIndex:
 	SmudgeLayer@SCORCH:
 		Type: Scorch
 		Sequence: scorches
@@ -211,11 +167,33 @@ World:
 		SmokeImage: smoke_m
 		SmokeSequences: idle
 	ResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Tiberium:
+				ResourceIndex: 1
+				TerrainType: Tiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			BlueTiberium:
+				ResourceIndex: 2
+				TerrainType: BlueTiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Ore:
+				ResourceIndex: 3
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 4
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
 	ResourceClaimLayer:
 	WarheadDebugOverlay:
 	CustomTerrainDebugOverlay:
 	SpawnMapActors:
-	CreateMPPlayers:
+	CreateMapPlayers:
 	CrateSpawner:
 		WaterChance: 0
 	PathFinder:
@@ -226,12 +204,52 @@ World:
 	RadarPings:
 	LoadWidgetAtGameStart:
 	ResourceRenderer:
-		RenderTypes: Tiberium, BlueTiberium, Ore, Gems
+		ResourceTypes:
+			Tiberium:
+				Sequences: ti1, ti2, ti3, ti4, ti5, ti6, ti7, ti8, ti9, ti10, ti11, ti12
+				Palette: staticterrain
+				Name: Tiberium
+			BlueTiberium:
+				Sequences: bti1, bti2, bti3, bti4, bti5, bti6, bti7, bti8, bti9, bti10, bti11, bti12
+				Palette: bluetiberium
+				Name: Tiberium
+			Ore:
+				Sequences: ti1, ti2, ti3, ti4
+				Palette: staticterrain
+				Name: Tiberium
+			Gems:
+				Sequences: bti1, bti2, bti3, bti4
+				Palette: bluetiberium
+				Name: Tiberium
+	PathFinderOverlay:
+	HierarchicalPathFinderOverlay:
 
 EditorWorld:
 	Inherits: ^BaseWorld
 	EditorActorLayer:
 	EditorResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Tiberium:
+				ResourceIndex: 1
+				TerrainType: Tiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			BlueTiberium:
+				ResourceIndex: 2
+				TerrainType: BlueTiberium
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Ore:
+				ResourceIndex: 3
+				TerrainType: Ore
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 4
+				TerrainType: Gems
+				AllowedTerrainTypes: Clear, Road
+				MaxDensity: 12
 	EditorSelectionLayer:
 	LoadWidgetAtGameStart:
 	EditorCursorLayer:
@@ -240,6 +258,12 @@ EditorWorld:
 ^BasePlayer:
 	AlwaysVisible:
 	Shroud:
+	PlayerResources:
+		ResourceValues:
+			Tiberium: 35
+			BlueTiberium: 60
+			Ore: 35
+			Gems: 60
 
 EditorPlayer:
 	Inherits: ^BasePlayer
@@ -510,7 +534,6 @@ Player:
 			Multi11: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111
 			Multi12: 240, 241, 242, 243, 244, 245, 246, 183, 248, 249, 250, 251, 253, 254, 255, 1
 			Multi13: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
-	PlayerHighlightPalette:
 	MenuPaletteEffect:
 		MenuEffect: Desaturated
 	CloakPaletteEffect:
@@ -693,7 +716,7 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Vehicle
 	Repairable:
@@ -789,7 +812,7 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Repairable:
 		RepairActors: fix
 	Aircraft:
@@ -865,8 +888,8 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 18,18,0,-6
-		DecorationBounds: 12,17,0,-6
+		Bounds: 768, 768, 0, -256
+		DecorationBounds: 512, 725, 0, -256
 	Targetable:
 		TargetTypes: Ground, Infantry
 	QuantizeFacingsFromSequence:
@@ -1016,6 +1039,7 @@ Player:
 	Armament:
 		Weapon: Pistol
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
@@ -1049,7 +1073,7 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Creep
 	HiddenUnderFog:
@@ -1069,6 +1093,7 @@ Player:
 		Voice: Attack
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	DrawLineToTarget:
 	DeathSounds:
 	Voiced:
@@ -1150,7 +1175,7 @@ Player:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	Targetable@REPAIR:
@@ -1295,7 +1320,7 @@ Player:
 		Color: 3AA730
 		RequiresCondition: ProductionBarEnabled
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
@@ -1525,7 +1550,7 @@ Player:
 	Inherits@shape: ^1x1Shape
 	FootprintPlaceBuildingPreview:
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	CombatDebugOverlay:
 	AppearsOnRadar:
 	OwnerLostAction:
@@ -1733,7 +1758,7 @@ Player:
 	Tooltip:
 		GenericName: Destroyed Vehicle
 	WithColoredOverlay@IDISABLE:
-		Palette: disabled
+		Color: 000000B4
 	ScriptTriggers:
 	Explodes:
 		Weapon: UnitExplodeSmall
@@ -1795,7 +1820,7 @@ Player:
 		ValidPowerStates: Low, Critical
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: lowpower
-		Palette: disabled
+		Color: 000000B4
 
 CRATE.plain:
 	Inherits: ^Crate
@@ -1804,7 +1829,7 @@ CRATE.plain:
 CRATE:
 	Inherits: ^Crate
 	Crate:
-		Lifetime: 0
+		Duration: 0
 	ExplodeCrateAction@Nuke:
 		Weapon: Atomic
 		SelectionShares: 2
@@ -2071,8 +2096,8 @@ airstrike.proxy:
 		ChargeInterval: 0
 		SquadSize: 1
 		QuantizedFacings: 8
-		Description: Extra Air Strike
-		LongDesc: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		Name: Extra Air Strike
+		Description: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
 		EndChargeSpeechNotification: AirstrikeReady
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
@@ -2100,8 +2125,8 @@ ioncannon.proxy:
 		Cursor: ioncannon
 		ChargeInterval: 0
 		Weapon: IonCannon
-		Description: Extra Ion Cannon Strike
-		LongDesc: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		Name: Extra Ion Cannon Strike
+		Description: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
 		BeginChargeSpeechNotification: IonCannonCharging
 		EndChargeSpeechNotification: IonCannonReady
 		SelectTargetSpeechNotification: SelectTarget
@@ -2122,8 +2147,8 @@ nuke.proxy:
 		Icon: abomb
 		Cursor: nuke
 		ChargeInterval: 0
-		Description: Extra Nuclear Strike
-		LongDesc: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
+		Name: Extra Nuclear Strike
+		Description: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
 		EndChargeSpeechNotification: NuclearWeaponAvailable
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
@@ -2140,6 +2165,7 @@ nuke.proxy:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		MissileImage: atomic
 
 DISABLED:
 	ProvidesPrerequisite:
@@ -2188,7 +2214,7 @@ BRIDGE1:
 		Actor: bridgehut
 		SpawnOffset: 0,2
 	Interactable:
-		Bounds: 96,96
+		Bounds: 4096, 4096
 
 BRIDGE2:
 	Inherits: ^Bridge
@@ -2205,7 +2231,7 @@ BRIDGE2:
 		Actor: bridgehut
 		SpawnOffset: 2,2
 	Interactable:
-		Bounds: 120,120
+		Bounds: 5120, 5120
 
 BRIDGE3:
 	Inherits: ^Bridge
@@ -2222,7 +2248,7 @@ BRIDGE3:
 		Actor: bridgehut
 		SpawnOffset: 1,2
 	Interactable:
-		Bounds: 144,120
+		Bounds: 6144, 5120
 
 BRIDGE4:
 	Inherits: ^Bridge
@@ -2239,7 +2265,7 @@ BRIDGE4:
 		Actor: bridgehut
 		SpawnOffset: 3,2
 	Interactable:
-		Bounds: 144,96
+		Bounds: 6144, 4096
 
 BRIDGEHUT:
 	AlwaysVisible:
@@ -2250,7 +2276,7 @@ BRIDGEHUT:
 	Targetable:
 		TargetTypes: BridgeHut, C4
 	Interactable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 
 BRIDGEHUT.SMALL:
 	AlwaysVisible:
@@ -2261,7 +2287,7 @@ BRIDGEHUT.SMALL:
 	Targetable:
 		TargetTypes: BridgeHut, C4
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 
 #===================================
 #Start of: RA maps compatibility WIP
@@ -2356,7 +2382,7 @@ BR1:
 		Footprint: ____ ____ ____
 		Dimensions: 4,3
 	Interactable:
-		Bounds: 96,72
+		Bounds: 4096, 3072
 	Bridge:
 		Template: 235
 		DamagedTemplate: 236
@@ -2372,7 +2398,7 @@ BR2:
 		Footprint: _____ _____ _____
 		Dimensions: 5,3
 	Interactable:
-		Bounds: 120,72
+		Bounds: 5120, 3072
 	Bridge:
 		Template: 238
 		DamagedTemplate: 239
@@ -2388,7 +2414,7 @@ BR3:
 		Footprint: ____ ____
 		Dimensions: 4,2
 	Interactable:
-		Bounds: 96,48
+		Bounds: 4096, 2048
 	Bridge:
 		Long: true
 		ShorePieces: br1,br2
@@ -2417,7 +2443,7 @@ SBRIDGE1:
 		Actor: bridgehut.small
 		SpawnOffset: 1,1
 	Interactable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 
 SBRIDGE2:
 	Inherits: ^Bridge
@@ -2435,7 +2461,7 @@ SBRIDGE2:
 		Actor: bridgehut.small
 		SpawnOffset: 1,1
 	Interactable:
-		Bounds: 48,72
+		Bounds: 2048, 3072
 
 SBRIDGE3:
 	Inherits: ^Bridge
@@ -2443,7 +2469,7 @@ SBRIDGE3:
 		Footprint: ____ ____
 		Dimensions: 4,2
 	Interactable:
-		Bounds: 96,48
+		Bounds: 4096, 2048
 	Bridge:
 		Template: 523
 		DamagedTemplate: 524
@@ -2461,7 +2487,7 @@ SBRIDGE4:
 		Footprint: ____ ____
 		Dimensions: 4,2
 	Interactable:
-		Bounds: 96,48
+		Bounds: 4096, 2048
 	Bridge:
 		Template: 527
 		DamagedTemplate: 528

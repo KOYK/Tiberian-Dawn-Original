@@ -60,13 +60,13 @@ World:
 			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
 		GameSpeedDropdownLocked: False
 			#Lock the speed?
-	MPStartLocations:
+	MapStartingLocations:
 	MapCreeps:
 		CheckboxEnabled: False
 			#Spawn Visceroids on map?
 		CheckboxLocked: True
 		CheckboxVisible: False
-	SpawnMPUnits:
+	SpawnStartingUnits:
 
 Player:
 	DeveloperMode:

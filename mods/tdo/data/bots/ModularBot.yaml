@@ -324,6 +324,7 @@ Player:
 			proc: 100
 		BuildingLimits:
 			proc: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	BaseBuilderBotModule@NoHarvNod:
 		RequiresCondition: enable-all-bot && nod && proc
 		MinimumExcessPower: 10
@@ -344,6 +345,7 @@ Player:
 		BuildingLimits:
 			weap: 1
 			afld: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	BaseBuilderBotModule@NoProcGDI:
 		RequiresCondition: enable-all-bot && gdi
 		MinimumExcessPower: 10
@@ -362,6 +364,7 @@ Player:
 			proc: 100
 		BuildingLimits:
 			proc: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	BaseBuilderBotModule@NoHarvGDI:
 		RequiresCondition: enable-all-bot && gdi && proc
 		MinimumExcessPower: 10
@@ -382,6 +385,7 @@ Player:
 		BuildingLimits:
 			weap: 1
 			afld: 1
+		DefenseTypes: gun, sam, obli, gtwr, atwr
 	UnitBuilderBotModule@NoProcNod:
 		RequiresCondition: enable-all-bot && nod
 		UnitQueues:

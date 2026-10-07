@@ -46,7 +46,7 @@ PVICE:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Targetable:
 		TargetTypes: Ground, Creep
 	AutoTarget:
@@ -65,6 +65,7 @@ PVICE:
 		MuzzleSequence: muzzle
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	BodyOrientation:
 		QuantizedFacings: 8
 	WithSpriteBody:
@@ -114,6 +115,7 @@ FTNK:
 		LocalOffset: 512,128,42, 512,-128,42
 		MuzzleSequence: muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	Explodes:
 		Weapon: FlametankExplode
@@ -161,6 +163,7 @@ STNK:
 		Weapon: Rocket
 		LocalOffset: 213,43,128, 213,-43,128
 	AttackFrontal:
+		FacingTolerance: 0
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
@@ -256,7 +259,7 @@ MTNK:
 		RequiresCondition: HusksEnabled
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1194, 1194
 
 HTNK:
 	Inherits: ^Tank
@@ -313,7 +316,7 @@ HTNK:
 		RequiresCondition: HusksEnabled
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 34,34,0,-3
+		DecorationBounds: 1450, 1450, 0, -128
 
 MHQ:
 	Inherits: ^Vehicle
@@ -378,6 +381,7 @@ MLRS:
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: False
+		FacingTolerance: 0
 	WithSpriteTurret:
 		RequiresCondition: ammo > 1
 	WithSpriteTurret@OneMissile:
@@ -443,6 +447,7 @@ MSAM:
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: False
+		FacingTolerance: 0
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
@@ -495,6 +500,7 @@ ARTY:
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: False
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	AutoTarget:
 		InitialStanceAI: Defend
@@ -529,7 +535,7 @@ HARV:
 		Description: Collects Tiberium for processing.\n  Unarmed
 	Selectable:
 		Priority: 7
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	Harvester:
 		Resources: Tiberium, BlueTiberium
 		Capacity: 20
@@ -598,7 +604,7 @@ MCV:
 		Description: Deploys into another Construction Yard.\n  Unarmed
 	Selectable:
 		Priority: 4
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	Mobile:
 		TurnSpeed: 20
 		Speed: 36
@@ -774,6 +780,7 @@ BIKE:
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
 	AttackFrontal:
+		FacingTolerance: 0
 	SpawnActorOnDeath:
 		Actor: BIKE.Husk
 		OwnerType: InternalName
@@ -812,6 +819,7 @@ APC:
 		LocalOffset: 85,0,171
 		MuzzleSequence: muzzle
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	Cargo:
 		Types: Infantry
@@ -873,8 +881,8 @@ BOAT:
 	WithGunboatBody:
 		Sequence: left # Just a work-around to avoid crash
 	Selectable:
-		Bounds: 42,24
-		DecorationBounds: 42,24
+		Bounds: 1792, 1024
+		DecorationBounds: 1792, 1024
 	AutoTarget:
 		AllowMovement: false
 	RejectsOrders:
@@ -916,7 +924,7 @@ LST:
 		Range: 3c0
 	WithFacingSpriteBody:
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	WithRoof:
 	WithCargo:
 		DisplayTypes: Infantry, Vehicle
@@ -978,7 +986,7 @@ RA_SS:
 		TargetTypes: Underwater, Submarine
 		RequiresCondition: underwater
 	Cloak:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		InitialDelay: 0
 		CloakDelay: 50
 		CloakSound: subshow1.aud
@@ -994,6 +1002,7 @@ RA_SS:
 		LocalOffset: 0,-171,0, 0,171,0
 		FireDelay: 2
 	AttackFrontal:
+		FacingTolerance: 0
 	SelectionDecorations:
 	AutoTarget:
 		InitialStance: HoldFire
@@ -1003,14 +1012,14 @@ RA_SS:
 	AutoTargetPriority@ATTACKANYTHING:
 		ValidTargets: Water, Underwater
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	Explodes:
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 
 RA_MSUB:
 	Inherits: ^ShipRA
@@ -1043,7 +1052,7 @@ RA_MSUB:
 		TargetTypes: Underwater, Submarine
 		RequiresCondition: underwater
 	Cloak:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		InitialDelay: 0
 		CloakDelay: 100
 		CloakSound: subshow1.aud
@@ -1065,19 +1074,20 @@ RA_MSUB:
 	AttackFrontal:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
+		FacingTolerance: 0
 	SelectionDecorations:
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	Explodes:
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 
 RA_DD:
 	Inherits: ^ShipRA
@@ -1122,11 +1132,11 @@ RA_DD:
 	SelectionDecorations:
 	WithSpriteTurret:
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 
 RA_CA:
 	Inherits: ^ShipRA
@@ -1186,11 +1196,11 @@ RA_CA:
 	WithSpriteTurret@SECONDARY:
 		Turret: secondary
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 
 RA_PT:
 	Inherits: ^ShipRA
@@ -1232,11 +1242,11 @@ RA_PT:
 	SelectionDecorations:
 	WithSpriteTurret:
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 7c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 
 RA_LST:
 	Inherits: ^ShipRA
@@ -1270,7 +1280,7 @@ RA_LST:
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	WithCargoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
@@ -1306,8 +1316,8 @@ TREX:
 	Mobile:
 		Speed: 54
 	Selectable:
-		Bounds: 48,36,2,1
-		DecorationBounds: 52,38
+		Bounds: 2048, 1536, 85, 42
+		DecorationBounds: 2218, 1621
 	SelectionDecorations:
 	Buildable:
 		Description: Bipedal carnivore with a massive skull
@@ -1326,7 +1336,7 @@ TRIC:
 	Buildable:
 		Description: Quadruped with large bony frill and three horns
 	Selectable:
-		DecorationBounds: 34,24,0,2
+		DecorationBounds: 1450, 1024, 0, 85
 
 RAPT:
 	Inherits: ^DINO
@@ -1506,7 +1516,7 @@ TRAN:
 		Actor: TRAN.Husk
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 41,41
+		DecorationBounds: 1749, 1749
 	CaptureManager:
 	Capturable:
 		Types: chinook
@@ -1570,7 +1580,7 @@ HELI:
 		Actor: HELI.Husk
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 30,24
+		DecorationBounds: 1280, 1024
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
@@ -1644,7 +1654,7 @@ ORCA:
 		MoveSequence: move
 	SelectionDecorations:
 	Selectable:
-		DecorationBounds: 30,24
+		DecorationBounds: 1280, 1024
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
@@ -1692,6 +1702,7 @@ A10:
 		Repulsable: False
 	AttackBomber:
 		Armaments: bombs
+		FacingTolerance: 8
 	Armament@GUNS:
 		Name: gun
 		Weapon: Vulcan
@@ -1730,6 +1741,7 @@ E1:
 	Armament:
 		Weapon: Rifle
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		IdleSequences: idle1,idle2,idle3,idle4
 		DefaultAttackSequence: shoot
@@ -1760,6 +1772,7 @@ E2:
 	TakeCover:
 		ProneOffset: 300,0,-227
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: throw
 	Explodes:
@@ -1795,6 +1808,7 @@ E3:
 	TakeCover:
 		ProneOffset: 180,0,-200
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
@@ -1826,6 +1840,7 @@ E4:
 	TakeCover:
 		ProneOffset: 190,0,-198
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -1858,6 +1873,7 @@ E5:
 	TakeCover:
 		ProneOffset: 190,0,-190
 	AttackFrontal:
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -1965,6 +1981,7 @@ RMBO:
 		Weapon: Sniper
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	AttackMove:
 		Voice: Attack
 	WithInfantryBody:

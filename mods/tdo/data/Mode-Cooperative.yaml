@@ -78,8 +78,8 @@ World:
 		GameSpeed: default
 			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
 		GameSpeedDropdownLocked: False
-	-MPStartLocations:
-	-SpawnMPUnits:
+	-MapStartingLocations:
+	-SpawnStartingUnits:
 	MapCreeps:
 		CheckboxEnabled: False
 		CheckboxLocked: True

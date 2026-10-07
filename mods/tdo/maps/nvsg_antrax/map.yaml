@@ -986,4 +986,4 @@ Actors:
 		Owner: Neutral
 		Location: 64,10
 
-Rules: data/mode-NodVsGDI.yaml
+Rules: tdo|data/Mode-NodVsGDI.yaml

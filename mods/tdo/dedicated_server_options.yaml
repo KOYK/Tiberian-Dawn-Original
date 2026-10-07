@@ -19,10 +19,10 @@ World:
 			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
 		GameSpeedDropdownLocked: False
 			#Lock the speed?
-	MPStartLocations:
+	MapStartingLocations:
 		SeparateTeamSpawnsCheckboxEnabled: False
 			#players without spawn set, will spawn near allies?
-	SpawnMPUnits:
+	SpawnStartingUnits:
 		StartingUnitsClass: none
 			#starting units Classes are: MHQR, none(mcv only), light, heavy, 5(with MHQ), 10(with MHQ), 20(with MHQ), 30(with MHQ), 40(with MHQ), 50(with MHQ), Dino(MHQ With Dinosaurs). 
 		DropdownLocked: False

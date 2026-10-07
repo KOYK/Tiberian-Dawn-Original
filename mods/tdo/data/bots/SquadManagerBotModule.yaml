@@ -17,19 +17,27 @@ Player:
 		DangerScanRadius: 30
 		AttackScanRadius: 15
 		ProtectionScanRadius: 40
+		AirUnitsTypes: heli, orca
+		ProtectionTypes: fact, fact.gdi, fact.nod, nuke, nuk2, proc, silo, pyle, hand, spen, syrd, weap, afld, hpad, hq, hqnod, fix, eye, tmpl, gun, sam, obli, gtwr, atwr, miss, mhq, harv, mcv, mcv.nod, mcv.gdi, mhqr
 	SquadManagerBotModule@NodAndGDI:
 		RequiresCondition: enable-all-bot && factn && factg
 		SquadSize: 5
 		ExcludeFromSquadsTypes: harv, mcv, mcv.nod, mcv.gdi, mhqr, e6_mp, e6, e1.scout, e2.scout
 		ConstructionYardTypes: fact,fact.nod,fact.gdi 
+		AirUnitsTypes: heli, orca
+		ProtectionTypes: fact, fact.gdi, fact.nod, nuke, nuk2, proc, silo, pyle, hand, spen, syrd, weap, afld, hpad, hq, hqnod, fix, eye, tmpl, gun, sam, obli, gtwr, atwr, miss, mhq, harv, mcv, mcv.nod, mcv.gdi, mhqr
 	SquadManagerBotModule@Nod:
 		RequiresCondition: enable-all-bot && factn
 		SquadSize: 15
 		ExcludeFromSquadsTypes: harv,mcv.nod, mhqr, e6_mp, e6
 		ConstructionYardTypes: fact.nod
+		AirUnitsTypes: heli, orca
+		ProtectionTypes: fact, fact.gdi, fact.nod, nuke, nuk2, proc, silo, pyle, hand, spen, syrd, weap, afld, hpad, hq, hqnod, fix, eye, tmpl, gun, sam, obli, gtwr, atwr, miss, mhq, harv, mcv, mcv.nod, mcv.gdi, mhqr
 	SquadManagerBotModule@GDI:
 		RequiresCondition: enable-all-bot && factg
 		SquadSize: 10
 		ExcludeFromSquadsTypes: harv,mcv.gdi,mhqr, e6_mp, e6
 		ConstructionYardTypes: fact.gdi
+		AirUnitsTypes: heli, orca
+		ProtectionTypes: fact, fact.gdi, fact.nod, nuke, nuk2, proc, silo, pyle, hand, spen, syrd, weap, afld, hpad, hq, hqnod, fix, eye, tmpl, gun, sam, obli, gtwr, atwr, miss, mhq, harv, mcv, mcv.nod, mcv.gdi, mhqr
 		
