@@ -1352,7 +1352,6 @@ BRIK:
 	BlocksProjectiles:
 	Crushable:
 		CrushClasses: heavywall
-		-CrushSound:
 	SoundOnDamageTransition:
 		DestroyedSounds: crumble.aud
 	LineBuild:

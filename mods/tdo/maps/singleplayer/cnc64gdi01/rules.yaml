@@ -39,7 +39,7 @@ RMBO:
 
 OLDLST:
 	Inherits: LST
-	-WithRoof:
+	-WithIdleOverlay@ROOF:
 	-Selectable:
 	SelectionDecorations:
 	RejectsOrders:
