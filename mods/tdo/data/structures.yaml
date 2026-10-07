@@ -259,15 +259,10 @@ PROC:
 		Range: 1c0
 		ValidRelationships: Ally
 	Refinery:
-		DockAngle: 448
-		DockOffset: 0,2
-		IsDragRequired: True
-		DragOffset: -554,512,0
-		DragLength: 12
 		TickRate: 15
 		DiscardExcessResources: True
 		ShowTicks: False
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 1000
 	Selectable:
 		Bounds: 3072, 2389
@@ -288,7 +283,7 @@ PROC:
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: proc
 	SelectionDecorations:
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: Footprint
 		Weapon: BuildingExplodeRef
 		EmptyWeapon: BuildingExplodeRef
@@ -298,6 +293,13 @@ PROC:
 		Position: BottomLeft
 		RequiresSelection: true
 		PipCount: 10
+	DockHost:
+		Type: Unload
+		DockAngle: 448
+		IsDragRequired: True
+		DragOffset: -554,512,0
+		DragLength: 12
+		DockOffset: -1024,1024,0
 
 SILO:
 	Inherits: ^BaseBuilding
@@ -327,7 +329,7 @@ SILO:
 	-WithSpriteBody:
 	WithResourceLevelSpriteBody:
 		Sequence: stages
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 1500
 	-SpawnActorsOnSell:
 	Power:
@@ -1485,7 +1487,7 @@ HOSP:
 		Palette: staticterrain
 		HasMinibib: False
 	ProvidesPrerequisite@buildingname:
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 100
 BIO:
 	Inherits: ^TechBuilding

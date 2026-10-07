@@ -21,6 +21,8 @@ HARV:
 	Harvester:
 		SearchFromProcRadius: 32
 		SearchFromHarvesterRadius: 20
+	StoresResources:
+	DockClientManager:
 
 PROC:
 	Buildable:

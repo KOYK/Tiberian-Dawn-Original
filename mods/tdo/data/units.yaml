@@ -117,7 +117,7 @@ FTNK:
 	AttackFrontal:
 		FacingTolerance: 0
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: FlametankExplode
 		EmptyWeapon: FlametankExplode
 	SpawnActorOnDeath:
@@ -156,6 +156,8 @@ STNK:
 		CloakSound: trans1.aud
 		UncloakSound: trans1.aud
 		PauseOnCondition: cloak-force-disabled
+		CloakedPalette: cloak
+		CloakStyle: Palette
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -509,7 +511,7 @@ ARTY:
 		OwnerType: InternalName
 		EffectiveOwnerFromOwner: true
 		RequiresCondition: HusksEnabled
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ArtilleryShell
 		EmptyWeapon: UnitExplode
 		LoadedChance: 75
@@ -538,7 +540,6 @@ HARV:
 		DecorationBounds: 1536, 1536
 	Harvester:
 		Resources: Tiberium, BlueTiberium
-		Capacity: 20
 		BaleLoadDelay: 12
 		BaleUnloadDelay: 6
 		SearchFromProcRadius: 25
@@ -564,7 +565,7 @@ HARV:
 		RequiresCondition: HusksEnabled
 	WithHarvestAnimation:
 	WithDockingAnimation:
-	Explodes:
+	FireWarheadsOnDeath:
 		RequiresCondition: !no-tiberium
 		Weapon: TiberiumExplosion
 	SelectionDecorations:
@@ -577,13 +578,17 @@ HARV:
 		TargetTypes: Ground, Vehicle, harv
 	ProvidesPrerequisite@unitname:
 		Prerequisite: harv
-	WithHarvesterPipsDecoration:
+	WithStoresResourcesPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
 		PipCount: 7
 		ResourceSequences:
 			Tiberium: pip-green
 			BlueTiberium: pip-blue
+	StoresResources:
+		Capacity: 20
+		Resources: Tiberium, BlueTiberium
+	DockClientManager:
 
 MCV:
 	Inherits: ^Vehicle
@@ -992,8 +997,9 @@ RA_SS:
 		CloakSound: subshow1.aud
 		UncloakSound: subshow1.aud
 		CloakedCondition: underwater
-		Palette: submerged
+		CloakedPalette: submerged
 		PauseOnCondition: cloak-force-disabled
+		CloakStyle: Palette
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -1015,7 +1021,7 @@ RA_SS:
 		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 	Selectable:
@@ -1058,8 +1064,9 @@ RA_MSUB:
 		CloakSound: subshow1.aud
 		UncloakSound: subshow1.aud
 		CloakedCondition: underwater
-		Palette: submerged
+		CloakedPalette: submerged
 		PauseOnCondition: cloak-force-disabled
+		CloakStyle: Palette
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -1083,7 +1090,7 @@ RA_MSUB:
 		DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSubmarine
 		EmptyWeapon: UnitExplodeSubmarine
 	Selectable:
@@ -1775,7 +1782,7 @@ E2:
 		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: throw
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: GrenadierExplode
 		EmptyWeapon: GrenadierExplode
 		Chance: 50
@@ -1929,6 +1936,7 @@ E6:
 		PlayerExperience: 1
 	Captures@CAPTURESHUSK:
 		CaptureTypes: husk
+		ValidRelationships: Enemy, Neutral, Ally
 		PlayerExperience: 50
 	Captures@CHINOOK:
 		CaptureTypes: chinook

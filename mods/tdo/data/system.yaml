@@ -250,10 +250,10 @@ EditorWorld:
 				TerrainType: Gems
 				AllowedTerrainTypes: Clear, Road
 				MaxDensity: 12
-	EditorSelectionLayer:
 	LoadWidgetAtGameStart:
 	EditorCursorLayer:
 	EditorActionManager:
+	MarkerLayerOverlay:
 
 ^BasePlayer:
 	AlwaysVisible:
@@ -658,6 +658,8 @@ Player:
 		UncloakSound: trans1.aud
 		PauseOnCondition: cloak-force-disabled
 		RequiresCondition: cloak-crate-collected
+		CloakedPalette: cloak
+		CloakStyle: Palette
 	ExternalCondition@CLOAK:
 		Condition: cloak-crate-collected
 	GrantConditionOnDamageState@UNCLOAK:
@@ -731,7 +733,7 @@ Player:
 	DrawLineToTarget:
 	WithDamageOverlay:
 	WithFacingSpriteBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	Guard:
@@ -834,7 +836,7 @@ Player:
 	HiddenUnderFog:
 		Type: GroundPosition
 	ActorLostNotification:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: HeliExplode
 		EmptyWeapon: HeliExplode
 	AttackMove:
@@ -1147,7 +1149,7 @@ Player:
 	AttackMove:
 	DrawLineToTarget:
 	WithDamageOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 	Guard:
@@ -1193,7 +1195,7 @@ Player:
 	RepairableNear:
 		RepairActors: spen, syrd
 	WithDamageOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 	Guard:
@@ -1233,7 +1235,7 @@ Player:
 		DamagedSounds: xplos.aud
 		DestroyedSounds: crumble.aud
 	WithSpriteBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
@@ -1511,7 +1513,7 @@ Player:
 	Interactable:
 	Tooltip:
 		GenericName: Field
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
@@ -1752,7 +1754,6 @@ Player:
 	CaptureManager:
 	Capturable:
 		Types: husk
-		ValidRelationships: Enemy, Neutral, Ally
 	TransformOnCapture:
 		ForceHealthPercentage: 25
 	Tooltip:
@@ -1760,7 +1761,7 @@ Player:
 	WithColoredOverlay@IDISABLE:
 		Color: 000000B4
 	ScriptTriggers:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	-BodyOrientation:

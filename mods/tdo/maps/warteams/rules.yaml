@@ -15,12 +15,12 @@ World:
 		ParticleSize: 1, 2
 	MusicPlaylist:
 		BackgroundMusic: desolate
-	GlobalLightingPaletteEffect:
+	TintPostProcessEffect:
 		Red: 1.00
 		Green: 1.50
 		Blue: 1.15
 		Ambient: 0.90
-	FlashPaletteEffect@LIGHTNINGSTRIKE:
+	FlashPostProcessEffect@LIGHTNINGSTRIKE:
 		Type: LightningStrike
 		Color: BEFF00
 		Length: 30

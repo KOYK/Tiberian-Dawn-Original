@@ -96,6 +96,8 @@ HARV:
 	Harvester:
 		SearchFromProcRadius: 24
 		SearchFromHarvesterRadius: 24
+	StoresResources:
+	DockClientManager:
 
 FTNK:
 	Buildable:

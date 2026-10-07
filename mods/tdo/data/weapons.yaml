@@ -1026,7 +1026,7 @@ Atomic:
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
 		Size: 8
 		Delay: 6
-	Warhead@14FlashEffect: FlashPaletteEffect
+	Warhead@14FlashEffect: FlashEffect
 		Duration: 20
 
 IonCannon:

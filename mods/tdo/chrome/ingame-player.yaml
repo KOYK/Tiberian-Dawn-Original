@@ -33,7 +33,7 @@ Container@PLAYER_WIDGETS:
 			Order: Descending
 		Image@COMMAND_BAR_BACKGROUND:
 			X: 5
-			Y: WINDOW_BOTTOM - HEIGHT - 5
+			Y: WINDOW_HEIGHT - HEIGHT - 5
 			Width: 416
 			Height: 44
 			ImageCollection: sidebar-bits
@@ -41,7 +41,7 @@ Container@PLAYER_WIDGETS:
 		Container@COMMAND_BAR:
 			Logic: CommandBarLogic
 			X: 14
-			Y: WINDOW_BOTTOM - HEIGHT - 14
+			Y: WINDOW_HEIGHT - HEIGHT - 14
 			Width: 275
 			Height: 26
 			Children:
@@ -196,7 +196,7 @@ Container@PLAYER_WIDGETS:
 		Container@STANCE_BAR:
 			Logic: StanceSelectorLogic
 			X: 294
-			Y: WINDOW_BOTTOM - HEIGHT - 14
+			Y: WINDOW_HEIGHT - HEIGHT - 14
 			Width: 138
 			Height: 26
 			Children:
@@ -277,7 +277,7 @@ Container@PLAYER_WIDGETS:
 							ImageName: hold-fire
 		Image@SIDEBAR_BACKGROUND_TOP:
 			Logic: AddFactionSuffixLogic
-			X: WINDOW_RIGHT - 250
+			X: WINDOW_WIDTH - 250
 			Y: 10
 			Width: 238
 			Height: 291
@@ -411,7 +411,7 @@ Container@PLAYER_WIDGETS:
 					Logic: GameTimerLogic
 					X: 3
 					Y: 264
-					Width: PARENT_RIGHT
+					Width: PARENT_WIDTH
 					Height: 23
 					Align: Center
 					Font: TinyBold
@@ -427,7 +427,7 @@ Container@PLAYER_WIDGETS:
 					TooltipTemplate: SIMPLE_TOOLTIP
 				LabelWithTooltip@POWER:
 					Logic: IngamePowerCounterLogic
-					X: PARENT_RIGHT - WIDTH - 30
+					X: PARENT_WIDTH - WIDTH - 30
 					Y: 264
 					Width: 50
 					Height: 23
@@ -438,13 +438,13 @@ Container@PLAYER_WIDGETS:
 					TooltipTemplate: SIMPLE_TOOLTIP
 					Children:
 						Image@POWER_ICON:
-							X: PARENT_RIGHT + 4
+							X: PARENT_WIDTH + 4
 							Y: 3
 							ImageCollection: power-icons
 							ImageName: power-normal
 		Container@SIDEBAR_PRODUCTION:
 			Logic: ClassicProductionLogic
-			X: WINDOW_RIGHT - 250
+			X: WINDOW_WIDTH - 250
 			Y: 300
 			Width: 238
 			Height: 250
