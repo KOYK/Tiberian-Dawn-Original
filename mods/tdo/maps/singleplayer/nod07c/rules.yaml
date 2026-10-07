@@ -150,6 +150,8 @@ HPAD.IN:
 	-Sellable:
 	Demolishable:
 		-Condition:
+	ExternalCondition@DEMOLISH:
+		Condition: being-demolished
 	-Power:
 
 ORCA.IN:

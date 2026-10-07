@@ -24,5 +24,6 @@ TRAN:
 	RejectsOrders:
 	-Selectable:
 	RevealsShroud:
+		Type: CenterPosition
 		Range: 5c0
 	Interactable:

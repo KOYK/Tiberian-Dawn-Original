@@ -21,12 +21,12 @@ Players:
 		Name: Neutral
 		OwnsWorld: True
 		NonCombatant: True
-		Faction: random
+		Faction: Random
 		Color: A6A6BE
 	PlayerReference@Creeps:
 		Name: Creeps
 		NonCombatant: True
-		Faction: random
+		Faction: Random
 		Enemies: Nod_1, Nod_2, GDI_1, GDI_H
 	PlayerReference@GDI_1:
 		Name: GDI_1

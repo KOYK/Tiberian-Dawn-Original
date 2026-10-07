@@ -116,6 +116,7 @@ BRIDGEHUT:
 TRAN.Extraction:
 	Inherits: TRAN
 	RevealsShroud:
+		Type: CenterPosition
 		Range: 0c0
 	RejectsOrders:
 	-Selectable:
