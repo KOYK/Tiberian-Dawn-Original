@@ -1,7 +1,8 @@
 oldlst:
-	idle: lst
+	idle:
+		Filename: lst.shp
 		Start: 0
 		Facings: 1
 		ZOffset: -1024
-	icon: lsticnh.tem
-		AddExtension: False
+	icon:
+		Filename: lsticnh.tem

@@ -1908,7 +1908,7 @@ E6:
 		CustomPipType: yellow
 	RevealsShroud:
 		Range: 2c0
-	EngineerRepair:
+	InstantlyRepairs:
 	RepairsBridges:
 	CaptureManager:
 	GrantConditionOnPrerequisite@MULTIENGINEER:
@@ -1940,7 +1940,7 @@ E6_MP:
 	Inherits@OriginalActor: E6
 	RenderSprites:
 		Image: e6
-	-EngineerRepair:
+	-InstantlyRepairs:
 	Buildable:
 		Prerequisites: ~barracks, ~tl3, ~!EngineerSP
 		Description: Damages and captures enemy structures.\n  Unarmed

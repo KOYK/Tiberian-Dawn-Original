@@ -241,12 +241,6 @@ SoundFormats: Aud, Wav
 SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS, PngSheet
 
 SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
-	TilesetExtensions:
-		TEMPERAT: .tem
-		WINTER: .win
-		SNOW: .sno
-		DESERT: .des
-		JUNGLE: .jun
 
 ModelSequenceFormat: PlaceholderModelSequence
 

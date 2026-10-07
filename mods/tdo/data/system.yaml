@@ -1280,7 +1280,7 @@ Player:
 		UseDeathTypeSuffix: false
 	SpawnActorsOnSell:
 		ActorTypes: e6,e1,e1,e1,tc1,tc7
-	EngineerRepairable:
+	InstantlyRepairable:
 	Demolishable:
 		Condition: being-demolished
 	Sellable:
@@ -1481,7 +1481,7 @@ Player:
 		PlayerExperience: 1
 		RepairingNotification: Repairing
 		RepairBonuses: 100, 0
-	EngineerRepairable:
+	InstantlyRepairable:
 	RevealsShroud:
 		Range: 2c0
 	Tooltip:
@@ -1870,13 +1870,13 @@ CRATE:
 		Owner: Creeps
 		SelectionShares: 3
 		Prerequisites: PrerequisiteViceEnabled
-	GiveMcvCrateAction@Nod:
+	GiveBaseBuilderCrateAction@Nod:
 		SelectionShares: 0
 		NoBaseSelectionShares: 10
 		Units: mcv.nod
 		ValidFactions: nod
 		ExcludedActorTypes: pvice, vice, rapt, tric, trex, steg
-	GiveMcvCrateAction@GDI:
+	GiveBaseBuilderCrateAction@GDI:
 		SelectionShares: 0
 		NoBaseSelectionShares: 10
 		Units: mcv.gdi
