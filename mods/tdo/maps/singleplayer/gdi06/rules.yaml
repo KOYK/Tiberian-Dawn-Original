@@ -59,8 +59,6 @@ FLARE:
 
 OLDLST:
 	Inherits: LST
-	-WithIdleOverlay@ROOF:
-	-Selectable:
 	SelectionDecorations:
 	RejectsOrders:
 	Cargo:

@@ -283,7 +283,6 @@ BIO.Husk:
 
 OLDLST:
 	Inherits: LST
-	-Selectable:
 	SelectionDecorations:
 	RejectsOrders:
 	Interactable:
