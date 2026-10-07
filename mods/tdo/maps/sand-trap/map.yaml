@@ -1,0 +1,179 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Sand Trap
+
+Author: Westwood Studios
+
+Tileset: DESERT
+
+MapSize: 64,64
+
+Bounds: 3,3,57,58
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5, Multi6, Multi7
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi5:
+		Name: Multi5
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi6:
+		Name: Multi6
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi7:
+		Name: Multi7
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: split3
+		Location: 21,56
+		Owner: Neutral
+	Actor1: split3
+		Location: 19,20
+		Owner: Neutral
+	Actor2: split3
+		Location: 8,5
+		Owner: Neutral
+	Actor3: t18
+		Location: 3,31
+		Owner: Neutral
+	Actor4: t18
+		Location: 22,34
+		Owner: Neutral
+	Actor5: t18
+		Location: 26,37
+		Owner: Neutral
+	Actor6: t08
+		Location: 4,37
+		Owner: Neutral
+	Actor7: t08
+		Location: 7,38
+		Owner: Neutral
+	Actor8: t08
+		Location: 5,37
+		Owner: Neutral
+	Actor9: rock1
+		Location: 29,14
+		Owner: Neutral
+	Actor10: rock1
+		Location: 3,5
+		Owner: Neutral
+	Actor11: rock6
+		Location: 44,5
+		Owner: Neutral
+	Actor12: t08
+		Location: 53,42
+		Owner: Neutral
+	Actor13: t08
+		Location: 54,17
+		Owner: Neutral
+	Actor14: t08
+		Location: 53,55
+		Owner: Neutral
+	Actor15: t08
+		Location: 37,32
+		Owner: Neutral
+	Actor16: t08
+		Location: 39,33
+		Owner: Neutral
+	Actor17: t08
+		Location: 38,32
+		Owner: Neutral
+	Actor18: t08
+		Location: 46,31
+		Owner: Neutral
+	Actor19: rock1
+		Location: 3,12
+		Owner: Neutral
+	Actor20: rock1
+		Location: 38,30
+		Owner: Neutral
+	Actor21: t08
+		Location: 27,35
+		Owner: Neutral
+	Actor22: split3
+		Location: 7,44
+		Owner: Neutral
+	Actor23: split3
+		Location: 19,40
+		Owner: Neutral
+	Actor24: split3
+		Location: 44,54
+		Owner: Neutral
+	Actor25: split3
+		Location: 44,14
+		Owner: Neutral
+	Actor26: split3
+		Location: 41,34
+		Owner: Neutral
+	Actor27: split3
+		Location: 41,4
+		Owner: Neutral
+	Actor28: mpspawn
+		Location: 20,5
+		Owner: Neutral
+	Actor29: mpspawn
+		Location: 56,5
+		Owner: Neutral
+	Actor30: mpspawn
+		Location: 52,35
+		Owner: Neutral
+	Actor31: mpspawn
+		Location: 6,52
+		Owner: Neutral
+	Actor32: mpspawn
+		Location: 25,58
+		Owner: Neutral
+	Actor33: mpspawn
+		Location: 48,58
+		Owner: Neutral
+	Actor34: mpspawn
+		Location: 33,16
+		Owner: Neutral
+	Actor35: mpspawn
+		Location: 6,16
+		Owner: Neutral

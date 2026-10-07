@@ -1,0 +1,393 @@
+World:
+	Inherits: ^BaseWorld
+	CrateSpawner:
+		Minimum: 0
+		Maximum: 255
+		SpawnInterval: 3000
+		InitialSpawnDelay: 1500
+		CheckboxDisplayOrder: 1
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxLabel: Build near Allies
+		AllyBuildRadiusCheckboxDescription: Allies can build near each other bases.
+		BuildRadiusCheckboxLabel: Limit Build Area
+		BuildRadiusCheckboxDescription: Limits structure placement to areas around Construction Yards.
+		BuildRadiusCheckboxVisible: False
+		AllyBuildRadiusCheckboxVisible: True
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxDisplayOrder: 5
+		BuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxLocked: True
+		AllyBuildRadiusCheckboxEnabled: False
+		AllyBuildRadiusCheckboxLocked: False
+	MapOptions:
+		ShortGameCheckboxLabel: Short Game
+		ShortGameCheckboxDescription: If enabled, players with no Base buildings or MCV lose the game.
+		ShortGameCheckboxVisible: True
+		ShortGameCheckboxDisplayOrder: 0
+		TechLevelDropdownLabel: Tech Level
+		TechLevelDropdownDescription: Select Tech Level
+		TechLevelDropdownDisplayOrder: 0
+		GameSpeedDropdownLabel: Game Speed
+		GameSpeedDropdownDescription: You can't change speed while in-game
+		GameSpeedDropdownDisplayOrder: 0
+		GameSpeed: default
+		GameSpeedDropdownLocked: False
+		GameSpeedDropdownVisible: True
+		TechLevel: tl7
+		TechLevelDropdownLocked: False
+		TechLevelDropdownVisible: True
+		ShortGameCheckboxEnabled: False
+		ShortGameCheckboxLocked: False
+	MPStartLocations:
+		InitialExploreRange: 5c0
+		SeparateTeamSpawnsCheckboxLabel: Separate Team Spawns
+		SeparateTeamSpawnsCheckboxDescription: Teamed up players whith random starting location will spawn near allies
+		SeparateTeamSpawnsCheckboxEnabled: False
+		SeparateTeamSpawnsCheckboxLocked: False
+		SeparateTeamSpawnsCheckboxVisible: True
+		SeparateTeamSpawnsCheckboxDisplayOrder: 6
+	MapCreeps:
+		CheckboxLabel: Spawn Visceroids
+		CheckboxDescription: Spawns Evil Visceroids Over Tiberium!
+		CheckboxEnabled: True
+		CheckboxLocked: False
+		CheckboxVisible: False
+	ActorSpawnManager@Vice:
+		Minimum: 0
+		Maximum: 999
+			#this is buged, it wont spawn more actors after the specific number of actors are killed
+		SpawnInterval: 6000
+		Actors: vice
+		Owner: Creeps
+		Types: vice
+	SpawnMPUnits:
+		DropdownLabel: Unit Count
+		DropdownDescription: Set the starting units
+		DropdownVisible: True
+		DropdownDisplayOrder: 0
+		StartingUnitsClass: none
+		DropdownLocked: False
+	MPStartUnits@mhqR:
+		Class: MHQR
+		ClassName: Reinforcements
+		Factions: gdi, nod
+		BaseActor: mhqr
+		SupportActors: mhq_cashremover
+	MPStartUnits@mcv_only_gdi:
+		Class: none
+		ClassName: MCV Only
+		Factions: gdi
+		BaseActor: mcv.gdi
+	MPStartUnits@mcv_only_nod:
+		Class: none
+		ClassName: MCV Only
+		Factions: nod
+		BaseActor: mcv.nod
+	MPStartUnits@default_gdi_a:
+		Class: light
+		ClassName: Light Support
+		Factions: gdi
+		BaseActor: mcv.gdi
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,jeep
+	MPStartUnits@default_nod_a:
+		Class: light
+		ClassName: Light Support
+		Factions: nod
+		BaseActor: mcv.nod
+		SupportActors: e1,e1,e1,e1,e1,e1,e3,e3,bggy
+	MPStartUnits@heavy_nod_a:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: nod
+		BaseActor: mcv.nod
+		SupportActors: e1,e1,e1,e1,e3,e3,ltnk,ltnk,ftnk
+	MPStartUnits@heavy_nod_b:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: nod
+		BaseActor: mcv.nod
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,e3,ftnk,ftnk
+	MPStartUnits@heavy_gdi_a:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: gdi
+		BaseActor: mcv.gdi
+		SupportActors: e1,e1,e1,e1,e3,e3,jeep,mtnk,mtnk
+	MPStartUnits@heavy_gdi_b:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: gdi
+		BaseActor: mcv.gdi
+		SupportActors: e1,e1,e1,e1,e1,e2,e2,e2,e3,e3,apc,mtnk
+	MPStartUnits@mhq_Nod_5:
+		Class: 5
+		ClassName: MHQ With 5 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,ltnk,e1,e1,e3
+	MPStartUnits@mhq_Nod_10:
+		Class: 10
+		ClassName: MHQ With 10 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,e3,ltnk,bggy,e1
+	MPStartUnits@mhq_Nod_20:
+		Class: 20
+		ClassName: MHQ With 20 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1
+	MPStartUnits@mhq_Nod_30:
+		Class: 30
+		ClassName: MHQ With 30 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,bike,rmbo,arty,msam
+	MPStartUnits@mhq_Nod_40:
+		Class: 40
+		ClassName: MHQ With 40 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,stnk,rmbo,arty,msam,msam,bike,e5,e5,e5,e5,e5,rmbo,rmbo,rmbo
+	MPStartUnits@mhq_Nod_50:
+		Class: 50
+		ClassName: MHQ With 50 Units
+		Factions: nod
+		BaseActor: mhq
+		SupportActors: ltnk,bggy,e1,e3,e3,e3,ltnk,bggy,e1,arty,arty,bike,ltnk,ltnk,e1,e1,e1,e1,e1,ftnk,ftnk,stnk,e4,e4,bggy,bike,bike,rmbo,arty,msam,msam,bike,e5,e5,e5,e5,e5,rmbo,rmbo,rmbo,apc,apc,apc,mlrs,mlrs,mlrs,stnk,stnk,stnk,stnk
+	MPStartUnits@mhq_Dino:
+		Class: Dino
+		ClassName: MHQ With Dinosaurs
+		Factions: nod,gdi
+		BaseActor: mhq
+		SupportActors: tric,tric,tric,tric,trex,trex,trex,trex,steg,steg,steg,steg,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt,rapt
+	MPStartUnits@mhq_gdi_5:
+		Class: 5
+		ClassName: MHQ With 5 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,e2,e1,e1,e3
+	MPStartUnits@mhq_gdi_10:
+		Class: 10
+		ClassName: MHQ With 10 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e1,e2,e2,e3,mtnk,jeep,e1
+	MPStartUnits@mhq_gdi_20:
+		Class: 20
+		ClassName: MHQ With 20 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e1,e2,e2,e2,mtnk,jeep,e1,mlrs,mlrs,e3,mtnk,mtnk,e1,e1,e1,e1,e1
+	MPStartUnits@mhq_gdi_30:
+		Class: 30
+		ClassName: MHQ With 30 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e1,e3,e3,mtnk,jeep,e1,mlrs,mlrs,e3,mtnk,mtnk,e1,e1,e1,e1,e1,e3,e3,htnk,e1,e1,jeep,apc,apc,rmbo,mlrs,apc
+	MPStartUnits@mhq_gdi_40:
+		Class: 40
+		ClassName: MHQ With 40 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e3,e3,e3,mtnk,jeep,e1,mlrs,mlrs,e3,mtnk,mtnk,e1,e1,e1,e1,e1,htnk,htnk,htnk,e1,e1,jeep,mtnk,mtnk,rmbo,mlrs,msam,msam,mtnk,e2,e2,e2,e2,e2,rmbo,rmbo,rmbo
+	MPStartUnits@mhq_gdi_50:
+		Class: 50
+		ClassName: MHQ With 50 Units
+		Factions: gdi
+		BaseActor: mhq
+		SupportActors: mtnk,jeep,e1,e3,e3,e3,mtnk,jeep,e1,mlrs,mlrs,apc,mtnk,mtnk,e1,e1,e1,e1,e1,htnk,htnk,htnk,e1,e1,jeep,apc,apc,rmbo,mlrs,msam,msam,apc,e2,e2,e2,e2,e2,rmbo,rmbo,rmbo,apc,apc,apc,mlrs,mlrs,mlrs,jeep,jeep,mtnk,mtnk
+
+Player:
+	ProvidesTechPrerequisite@TL1:
+		Name: 1
+		Prerequisites: tl1
+		Id: tl1
+	ProvidesTechPrerequisite@TL2:
+		Name: 2
+		Prerequisites: tl1, tl2
+		Id: tl2
+	ProvidesTechPrerequisite@TL3:
+		Name: 3
+		Prerequisites: tl1, tl2, tl3
+		Id: tl3
+	ProvidesTechPrerequisite@TL4:
+		Name: 4
+		Prerequisites: tl1, tl2, tl3, tl4
+		Id: tl4
+	ProvidesTechPrerequisite@TL5:
+		Name: 5
+		Prerequisites: tl1, tl2, tl3, tl4, tl5
+		Id: tl5
+	ProvidesTechPrerequisite@TL6:
+		Name: 6
+		Prerequisites: tl1, tl2, tl3, tl4, tl5, tl6
+		Id: tl6
+	ProvidesTechPrerequisite@TL7:
+		Name: 7
+		Prerequisites: tl1, tl2, tl3, tl4, tl5, tl6, tl7
+		Id: tl7
+	ConquestVictoryConditions:
+		Objective: Command And Conquer
+	DeveloperMode:
+		CheckboxDisplayOrder: 8
+		CheckboxLabel: Cheats
+	PlayerResources:
+		DefaultCashDropdownLabel: Starting Credits
+		DefaultCashDropdownDescription: Set starting funds for all players.
+		InsufficientFundsNotificationDelay: 750
+		CashTickUpNotification: CashTickUp
+		CashTickDownNotification: CashTickDown
+		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000
+		DefaultCashDropdownVisible: True
+		DefaultCash: 5000
+		DefaultCashDropdownLocked: False
+		#InsufficientFundsNotification: 
+	Shroud:
+		FogCheckboxEnabled: False
+		FogCheckboxVisible: True
+		ExploredMapCheckboxEnabled: False
+		ExploredMapCheckboxVisible: True
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		ID: factundeploy
+		Label: Redeployable MCVs
+		Description: Allow undeploying Construction Yard
+		Enabled: True
+		DisplayOrder: 7
+		Prerequisites: global-factundeploy
+	LobbyPrerequisiteCheckbox@VICE:
+		ID: vice
+		Label: Visceroids
+		Description: Spawns Evil Visceroids Over Tiberium!
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteViceEnabled
+	LobbyPrerequisiteCheckbox@HUSKS:
+		ID: husks
+		Label: Husks
+		Description: Vehicles will turn into husks when they get destroyed
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteHusksEnabled
+	LobbyPrerequisiteCheckbox@LINEWALLS:
+		ID: linewallsmre
+		Label: Wall Line Build
+		Description: Allows more walls to be build in a line
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteLineWalls
+	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
+		ID: superweaponsni
+		Label: Super Weapons
+		Description: Allows the use of Nuclear Missile and Ion Cannon
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteSuperWeapons
+	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
+		ID: supplytruckmny
+		Label: Supply Truck
+		Description: Allows the use of Supply Trucks that can aid allies with money
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteSupplyTruck
+	LobbyPrerequisiteCheckbox@PRODUCTIONBAR:
+		ID: productionbarprgs
+		Label: Production Bars
+		Description: Shows loading bars over producing buildings
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteProductionBar
+	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
+		ID: singleplayermode
+		Label: Campaign Rules
+		Description: Use Singleplayer rules
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteSinglePlayer
+	LobbyPrerequisiteCheckbox@PUTSUX:
+		ID: putsuxl
+		Label: PATSUX
+		Description: Gives orcas obelisk's laser weapon, not recomended
+		Enabled: False
+		Locked: True
+		Visible: False
+		DisplayOrder: 10
+		Prerequisites: PrerequisitePUTSUX
+	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
+		ID: techb
+		Label: Tech buildings
+		Description: Enables ability to capture tech buildings
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: TechBuildingsEnabled
+	LobbyPrerequisiteCheckbox@ENGINEERSP:
+		ID: engineersprep
+		Label: Engineer Repair
+		Description: Enables snigleplayer ability of engineers to repair buildings
+		Enabled: False
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: EngineerSP
+	LobbyPrerequisiteCheckbox@GLOBALLPDAMAGE:
+		ID: lpdamage
+		Label: Low Power Damage
+		Description: Buildings get damaged while low on power
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: global-lpdamage
+	LobbyPrerequisiteCheckbox@REGROWTH:
+		ID: tregrowth
+		Label: Tiberium Regrowth
+		Description: Tiberium will regenerate
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: RegrowthOn
+	LobbyPrerequisiteCheckbox@EMPTYHELIPADS:
+		ID: emptypads
+		Label: Full Helipads
+		Description: Placed helipads spawn aircraft but they cost $1500
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: emptyhelipads
+	LobbyPrerequisiteCheckbox@MULTIENGINEER:
+		ID: multiengineerdm
+		Label: Multi Engineer
+		Description: Engineers damage enemy buildings before they can capture them
+		Enabled: True
+		Locked: False
+		Visible: True
+		DisplayOrder: 10
+		Prerequisites: PrerequisiteMultiEngineer
+#	#waiting for this https://github.com/OpenRA/OpenRA/issues/18040
+#	# LobbyPrerequisiteCheckbox@LOWCOSTMCV:
+#		# ID: lowcostmcv
+#		# Label: Low Cost MCV
+#		# Description: MCV cost less to build
+#		# Enabled: False
+#		# Locked: False
+#		# Visible: True
+#		# DisplayOrder: 10
+#		# Prerequisites: LowCostMCV

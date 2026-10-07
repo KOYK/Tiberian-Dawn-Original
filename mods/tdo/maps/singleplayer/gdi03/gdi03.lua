@@ -48,7 +48,7 @@ SendReinforcements = function()
 	Reinforcements.Reinforce(GDI, JeepReinforcements, { VehicleStart.Location, VehicleStop.Location })
 	Reinforcements.Reinforce(GDI, InfantryReinforcements, { InfantryStart.Location, InfantryStop.Location }, 5)
 	Trigger.AfterDelay(DateTime.Seconds(3), function()
-		Reinforcements.Reinforce(GDI, { "mcv" }, { VehicleStart.Location, MCVwaypoint.Location })
+		Reinforcements.Reinforce(GDI, { "mcv.gdi" }, { VehicleStart.Location, MCVwaypoint.Location })
 		InitialUnitsArrived = true
 	end)
 	Media.PlaySpeechNotification(GDI, "Reinforce")

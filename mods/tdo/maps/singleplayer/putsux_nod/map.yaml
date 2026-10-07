@@ -14,8 +14,8 @@ Players:
 		OwnsWorld: True
 		NonCombatant: True
 		Faction: nod
-	PlayerReference@Multi0:
-		Name: Multi0
+	PlayerReference@Nod_1:
+		Name: Nod_1
 		Playable: True
 		Required: True
 		LockFaction: True
@@ -25,11 +25,11 @@ Players:
 		LockSpawn: True
 		Spawn: 1
 		LockTeam: True
-		Allies: Neutral, Multi2
-		Enemies: Multi1, Creeps
-	PlayerReference@Multi1:
-		Name: Multi1
-		Bot: cabal
+		Allies: Neutral, Nod_2
+		Enemies: GDI_1, Creeps
+	PlayerReference@GDI_1:
+		Name: GDI_1
+		Bot: 3
 		Required: True
 		LockFaction: True
 		Faction: gdi
@@ -39,18 +39,18 @@ Players:
 		Spawn: 2
 		LockTeam: True
 		Allies: Creeps
-		Enemies: Multi0, Multi2
+		Enemies: Nod_1, Nod_2
 	PlayerReference@Creeps:
 		Name: Creeps
 		NonCombatant: True
 		Faction: gdi
 		LockColor: True
 		Color: F5D378
-		Allies: Multi1
-		Enemies: Multi0, Multi2
-	PlayerReference@Multi2:
-		Name: Multi2
-		Bot: cabal
+		Allies: GDI_1
+		Enemies: Nod_1, Nod_2
+	PlayerReference@Nod_2:
+		Name: Nod_2
+		Bot: 3
 		Required: True
 		LockFaction: True
 		Faction: nod
@@ -59,8 +59,8 @@ Players:
 		LockSpawn: True
 		Spawn: 3
 		LockTeam: True
-		Allies: Neutral, Multi0
-		Enemies: Multi1, Creeps
+		Allies: Neutral, Nod_1
+		Enemies: GDI_1, Creeps
 Actors:
 	Actor36: jeep
 		Owner: Creeps
@@ -87,7 +87,7 @@ Actors:
 		Owner: Neutral
 		Location: 10,7
 	Actor43: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 47,7
 	Actor44: htnk
@@ -101,11 +101,11 @@ Actors:
 		Facing: 0
 		Location: 50,7
 	Actor46: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 52,7
 	Actor48: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,8
 	Actor49: msam_singleplayer
@@ -114,7 +114,7 @@ Actors:
 		Facing: 0
 		Location: 41,8
 	Actor50: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 42,8
 	Actor51: msam_singleplayer
@@ -123,23 +123,23 @@ Actors:
 		Facing: 0
 		Location: 43,8
 	Actor52: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 44,8
 	Actor53: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 45,8
 	Actor54: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,8
 	Actor55: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 53,8
 	Actor56: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 54,8
 	Actor57: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 55,8
 	Actor58: msam_singleplayer
@@ -148,7 +148,7 @@ Actors:
 		Facing: 0
 		Location: 56,8
 	Actor59: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 57,8
 	Actor60: msam_singleplayer
@@ -157,65 +157,65 @@ Actors:
 		Facing: 0
 		Location: 58,8
 	Actor61: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,8
 	Actor62: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,9
 	Actor63: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 40,9
 	Actor64: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 41,9
 	Actor65: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 42,9
 	Actor66: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 43,9
 	Actor67: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 44,9
 	Actor68: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 45,9
 	Actor69: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,9
 	Actor70: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 53,9
 	Actor71: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 54,9
 	Actor72: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 55,9
 	Actor73: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 56,9
 	Actor74: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 57,9
 	Actor75: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 58,9
 	Actor76: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 59,9
 	Actor77: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,9
 	Actor78: split2
 		Owner: Neutral
 		Location: 19,10
 	Actor79: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,10
 	Actor80: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,10
 	Actor81: msam_singleplayer
@@ -224,7 +224,7 @@ Actors:
 		Facing: 0
 		Location: 41,10
 	Actor82: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 42,10
 	Actor83: msam_singleplayer
@@ -233,25 +233,25 @@ Actors:
 		Facing: 0
 		Location: 43,10
 	Actor84: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 44,10
 	Actor85: proc
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 44,10
 	Actor86: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 46,10
 	Actor87: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 53,10
 	Actor88: proc
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 53,10
 	Actor89: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 55,10
 	Actor90: msam_singleplayer
@@ -260,7 +260,7 @@ Actors:
 		Facing: 0
 		Location: 56,10
 	Actor91: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 57,10
 	Actor92: msam_singleplayer
@@ -269,227 +269,227 @@ Actors:
 		Facing: 0
 		Location: 58,10
 	Actor93: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,10
 	Actor94: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,10
 	Actor95: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,11
 	Actor96: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 41,11
 	Actor97: hq
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 57,11
 	Actor98: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,11
 	Actor99: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,12
 	Actor100: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,12
 	Actor101: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 48,12
 	Actor102: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 50,12
 	Actor103: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,12
 	Actor104: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,12
 	Actor105: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,13
 	Actor106: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,13
 	Actor107: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,14
 	Actor108: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,14
 	Actor109: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 41,14
 	Actor110: nuke
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 57,14
 	Actor111: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,14
 	Actor112: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,14
 	Actor113: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,15
 	Actor114: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 47,15
 	Actor115: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 52,15
 	Actor116: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,15
 	Actor117: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,16
 	Actor118: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,16
 	Actor119: weap
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 44,16
 	Actor120: weap
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 54,16
 	Actor121: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,16
 	Actor122: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,16
 	Actor123: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,17
 	Actor124: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 41,17
 	Actor125: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 57,17
 	Actor126: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,17
 	Actor127: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,18
 	Actor128: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,18
 	Actor129: hpad
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 47,18
 	Actor130: hpad
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 52,18
 	Actor131: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,18
 	Actor132: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,18
 	Actor133: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,19
 	Actor134: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,19
 	Actor135: split2
 		Owner: Neutral
 		Location: 8,20
 	Actor136: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,20
 	Actor137: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,20
 	Actor138: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 41,20
 	Actor139: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 43,20
 	Actor140: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 44,20
 	Actor141: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 45,20
 	Actor142: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,20
 	Actor143: fix
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 54,20
 	Actor144: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 57,20
 	Actor145: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,20
 	Actor146: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,20
 	Actor148: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,21
 	Actor149: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 43,21
 	Actor150: eye
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 44,21
 	Actor151: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,21
 	Actor152: hpad
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 47,21
 	Actor153: hpad
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 51,21
 	Actor154: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,21
 	Actor155: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,22
 	Actor156: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,22
 	Actor157: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 43,22
 	Actor158: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,22
 	Actor159: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,22
 	Actor160: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,22
 	Actor161: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,23
 	Actor162: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 41,23
 	Actor163: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 43,23
 	Actor164: moebius
 		Owner: Creeps
@@ -497,66 +497,66 @@ Actors:
 		Facing: 92
 		Location: 45,23
 	Actor165: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,23
 	Actor166: pyle
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 53,23
 	Actor167: pyle
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 56,23
 	Actor168: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,23
 	Actor169: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,24
 	Actor170: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,24
 	Actor171: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 43,24
 	Actor172: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 44,24
 	Actor173: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 45,24
 	Actor174: cycl
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,24
 	Actor175: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 47,24
 	Actor176: nuk2
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 51,24
 	Actor177: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,24
 	Actor178: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,24
 	Actor179: split2
 		Owner: Neutral
 		Location: 20,25
 	Actor180: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,25
 	Actor181: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,25
 	Actor182: split2
 		Owner: Neutral
 		Location: 4,26
 	Actor183: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,26
 	Actor184: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,26
 	Actor185: msam_singleplayer
@@ -565,7 +565,7 @@ Actors:
 		Facing: 127
 		Location: 41,26
 	Actor186: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 42,26
 	Actor187: msam_singleplayer
@@ -574,7 +574,7 @@ Actors:
 		Facing: 130
 		Location: 43,26
 	Actor188: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 44,26
 	Actor189: msam_singleplayer
@@ -583,11 +583,11 @@ Actors:
 		Facing: 132
 		Location: 45,26
 	Actor190: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 46,26
 	Actor191: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 53,26
 	Actor192: msam_singleplayer
@@ -596,7 +596,7 @@ Actors:
 		Facing: 128
 		Location: 54,26
 	Actor193: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 55,26
 	Actor194: msam_singleplayer
@@ -605,7 +605,7 @@ Actors:
 		Facing: 131
 		Location: 56,26
 	Actor195: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 57,26
 	Actor196: msam_singleplayer
@@ -614,62 +614,62 @@ Actors:
 		Facing: 131
 		Location: 58,26
 	Actor197: atwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,26
 	Actor198: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,26
 	Actor199: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 39,27
 	Actor200: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 40,27
 	Actor201: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 41,27
 	Actor202: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 42,27
 	Actor203: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 43,27
 	Actor204: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 44,27
 	Actor205: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 45,27
 	Actor206: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,27
 	Actor207: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 53,27
 	Actor208: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 54,27
 	Actor209: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 55,27
 	Actor210: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 56,27
 	Actor211: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 57,27
 	Actor212: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 58,27
 	Actor213: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 59,27
 	Actor214: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 60,27
 	Actor215: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 40,28
 	Actor216: msam_singleplayer
@@ -679,7 +679,7 @@ Actors:
 		Facing: 128
 		Location: 41,28
 	Actor217: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 42,28
 	Actor218: msam_singleplayer
@@ -688,23 +688,23 @@ Actors:
 		Facing: 128
 		Location: 43,28
 	Actor219: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 44,28
 	Actor220: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 45,28
 	Actor221: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 46,28
 	Actor222: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 53,28
 	Actor223: brik
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 54,28
 	Actor224: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 55,28
 	Actor225: msam_singleplayer
@@ -713,7 +713,7 @@ Actors:
 		Facing: 132
 		Location: 56,28
 	Actor226: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 57,28
 	Actor227: msam_singleplayer
@@ -722,7 +722,7 @@ Actors:
 		Facing: 131
 		Location: 58,28
 	Actor228: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 59,28
 	Actor229: htnk
@@ -741,11 +741,11 @@ Actors:
 		Facing: 132
 		Location: 44,29
 	Actor232: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 47,29
 	Actor233: gtwr
-		Owner: Multi1
+		Owner: GDI_1
 		TurretFacing: 92
 		Location: 52,29
 	Actor234: htnk
@@ -1478,11 +1478,11 @@ Actors:
 		Owner: Creeps
 		Location: 60,57
 	Actor440: stnk
-		Owner: Multi0
+		Owner: Nod_1
 		Facing: 0
 		Location: 9,58
 	Actor442: stnk
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 13,58
 		Facing: 0
 	Actor443: wood
@@ -1506,31 +1506,31 @@ Actors:
 		Owner: Creeps
 		Location: 60,58
 	Actor453: rmbo
-		Owner: Multi0
+		Owner: Nod_1
 		SubCell: 3
 		Facing: 92
 		TurretFacing: 92
 		Location: 11,59
 	Actor454: rmbo
-		Owner: Multi0
+		Owner: Nod_1
 		SubCell: 1
 		Facing: 92
 		TurretFacing: 92
 		Location: 11,59
 	Actor455: rmbo
-		Owner: Multi0
+		Owner: Nod_1
 		SubCell: 2
 		Facing: 92
 		TurretFacing: 92
 		Location: 11,59
 	Actor456: rmbo
-		Owner: Multi0
+		Owner: Nod_1
 		SubCell: 4
 		Facing: 255
 		TurretFacing: 17
 		Location: 11,59
 	Actor457: rmbo
-		Owner: Multi0
+		Owner: Nod_1
 		SubCell: 5
 		TurretFacing: 0
 		Facing: 255
@@ -1671,7 +1671,7 @@ Actors:
 		Owner: Creeps
 		Location: 60,65
 	Actor446: mcv.nod
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 11,61
 		Facing: 255
 	Actor451: split2
@@ -1699,31 +1699,31 @@ Actors:
 		Owner: Neutral
 		Location: 50,3
 	Actor505: boat
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 12,68
 		Facing: 92
 		TurretFacing: 38
 	Actor506: boat
-		Owner: Multi1
+		Owner: GDI_1
 		Location: 35,69
 		Facing: 92
 		TurretFacing: 92
 	Actor441: tran
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 11,58
 		Facing: 0
 	Actor450: ltnk
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 13,60
 		TurretFacing: 0
 		Facing: 255
 	Actor452: ltnk
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 9,60
 		TurretFacing: 0
 		Facing: 255
 	Actor458: stnk
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 11,56
 		Facing: 255
 	Actor508: rock1
@@ -1856,73 +1856,73 @@ Actors:
 	Actor549: hosp
 		Location: 51,63
 		Faction: nod
-		Owner: Multi1
+		Owner: GDI_1
 	Actor551: arty
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 14,60
 		Facing: 255
 	Actor554: arty
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 15,60
 		Facing: 255
 	Actor555: arty
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 8,60
 		Facing: 255
 	Actor558: arty
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 7,60
 		Facing: 255
 	Actor559: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 14,59
 		SubCell: 3
 		Facing: 92
 		TurretFacing: 92
 	Actor560: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 14,59
 		SubCell: 1
 		Facing: 92
 		TurretFacing: 92
 	Actor561: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 14,59
 		SubCell: 2
 		Facing: 92
 		TurretFacing: 92
 	Actor562: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 14,59
 		SubCell: 4
 		Facing: 92
 		TurretFacing: 92
 	Actor563: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 14,59
 		SubCell: 5
 		Facing: 92
 		TurretFacing: 92
 	Actor569: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 8,59
 		SubCell: 3
 		Facing: 92
 		TurretFacing: 92
 	Actor571: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 8,59
 		SubCell: 2
 		Facing: 92
 		TurretFacing: 92
 	Actor573: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 8,59
 		SubCell: 5
 		Facing: 92
 		TurretFacing: 92
 	Actor580: mhqr
-		Owner: Multi2
+		Owner: Nod_2
 		Location: 30,57
 		Facing: 92
 	Actor507: rmbo
@@ -1967,20 +1967,19 @@ Actors:
 		SubCell: 3
 		Facing: 92
 		TurretFacing: 92
-	Actor552: flare
-		Owner: Multi2
+	Actor552: inv_inf
+		Owner: Nod_2
 		Location: 30,57
 	Actor553: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 8,59
 		SubCell: 1
 		Facing: 92
 		TurretFacing: 92
 	Actor556: e3
-		Owner: Multi0
+		Owner: Nod_1
 		Location: 8,59
 		SubCell: 4
 		Facing: 92
 		TurretFacing: 92
-Rules: tdo|rules/campaign-tooltips.yaml, rules.yaml
-Sequences: sequences.yaml
+Rules: tdo|data/Mode-Cooperative.yaml

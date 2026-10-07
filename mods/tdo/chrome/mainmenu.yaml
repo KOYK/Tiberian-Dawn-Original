@@ -16,10 +16,17 @@ Container@MAINMENU:
 			Width: WINDOW_RIGHT + 30
 			Height: WINDOW_BOTTOM + 30
 		Image@LOGO:
-			X: WINDOW_RIGHT - 296
-			Y: 30
+			X: (WINDOW_RIGHT - WIDTH) / 2
+			Y: WINDOW_BOTTOM / 2 - HEIGHT / 2
+			Width: 802
+			Height: 595
 			ImageCollection: logos
 			ImageName: logo
+			Children:
+				VqaPlayer@PLAYER:
+					Width: 803
+					Height: 595
+					#yeah before you start stealing this idea too, be polite and place my name on your credits list. And what you used.
 		Label@VERSION_LABEL:
 			X: WINDOW_RIGHT - 296
 			Y: 296 - 20

@@ -1,10 +1,10 @@
 MapFormat: 11
 
-RequiresMod: cnc
+RequiresMod: tdo
 
 Title: Blank Shellmap
 
-Author: asshole
+Author: KOYK
 
 Tileset: DESERT
 
@@ -33,3 +33,5 @@ Rules:
 		MusicPlaylist:
 			BackgroundMusic: map1
 			DisableWorldSounds: true
+		LuaScript:
+			Scripts: intro.lua

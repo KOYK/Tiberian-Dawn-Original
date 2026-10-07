@@ -1,0 +1,19 @@
+#singleplayer maps
+#This file serves as a guide, to remind me or help any one who wants to fix singleplayer maps, what needs to be known.
+
+#this version is using maps from release-20200503
+
+#map.yaml target those rule files
+Rules: tdo|data/Mode-Singleplayer.yaml, rules.yaml
+
+#rules.yaml Now targets campaign-global.lua in this dir
+World:
+	LuaScript:
+		Scripts: tdo|data\scripts\campaign-global.lua
+
+#disabling -capturable trait is not needed any more, all defences are NOT capturable by default.
+
+#LUA and yaml needs to change all mcv actors into mcv.nod and mcv.gdi depending on faction.
+
+#health values need to re-adjusted example: commando health should be 300 instead of 30000
+#what said above needs to be fixed for weapon values aswell

@@ -1,3 +1,13 @@
+^LoadScreen:
+	Image: background.png
+	Image2x: background.png
+	Image3x: background.png
+
+^Dialog:
+	Image: dialog.png
+	Image2x: dialog-2x.png
+	Image3x: dialog-3x.png
+
 sidebar-gdi:
 	Image: chrome.png
 	Regions:
@@ -164,9 +174,9 @@ production-icons:
 		aircraft: 448, 0, 16, 16
 		aircraft-disabled: 448, 16, 16, 16
 		aircraft-alert: 448, 32, 16, 16
-		ship: 496, 48, 16, 16
-		ship-disabled: 496, 64, 16, 16
-		ship-alert: 496, 80, 16, 16
+		naval: 496, 48, 16, 16
+		naval-disabled: 496, 64, 16, 16
+		naval-alert: 496, 80, 16, 16
 
 order-icons:
 	Image: chrome.png
@@ -935,9 +945,14 @@ scrollheader-selected:
 		corner-br: 149, 509, 2, 2
 
 logos:
-	Image: loadscreen.png
+	Inherits: ^LoadScreen
 	Regions:
-		logo: 0, 0, 256, 256
+		logo: 0, 0, 1024, 1024
+
+loadscreen-stripe:
+	Inherits: ^LoadScreen
+	PanelRegion: 258, 0, 0, 0, 253, 256, 0, 0
+	PanelSides: Center
 
 mainmenu-border:
 	Image: dialog.png

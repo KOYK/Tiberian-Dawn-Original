@@ -1,0 +1,108 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Moosehead Barrens
+
+Author: Westwood Studios
+
+Tileset: DESERT
+
+MapSize: 64,64
+
+Bounds: 1,1,62,62
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: t08
+		Location: 41,45
+		Owner: Neutral
+	Actor1: t18
+		Location: 45,45
+		Owner: Neutral
+	Actor2: t18
+		Location: 41,41
+		Owner: Neutral
+	Actor3: split3
+		Location: 48,27
+		Owner: Neutral
+	Actor4: t08
+		Location: 40,15
+		Owner: Neutral
+	Actor5: t08
+		Location: 35,14
+		Owner: Neutral
+	Actor6: t18
+		Location: 33,13
+		Owner: Neutral
+	Actor7: t08
+		Location: 33,1
+		Owner: Neutral
+	Actor8: split3
+		Location: 44,7
+		Owner: Neutral
+	Actor9: split3
+		Location: 28,14
+		Owner: Neutral
+	Actor10: split3
+		Location: 9,29
+		Owner: Neutral
+	Actor11: split3
+		Location: 14,36
+		Owner: Neutral
+	Actor12: split3
+		Location: 29,36
+		Owner: Neutral
+	Actor13: split3
+		Location: 34,47
+		Owner: Neutral
+	Actor14: split3
+		Location: 58,45
+		Owner: Neutral
+	Actor16: mpspawn
+		Location: 58,4
+		Owner: Neutral
+	Actor17: mpspawn
+		Location: 8,5
+		Owner: Neutral
+	Actor19: mpspawn
+		Location: 59,60
+		Owner: Neutral
+	Actor21: mpspawn
+		Location: 6,60
+		Owner: Neutral

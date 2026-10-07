@@ -1,38 +1,44 @@
-Added bib to tech buildings.
-Added ability to build near owned tech buildings.
+Removed: beta hand of nod for now.
+*Added: original player color palettes and extra ones.
+Added: new faction descriptions from the game manual, for more lore feel.
+*Removed: player color restrictions from the game code (not sure if i would be able to support this on new engine versions, am no coder, and that was trial and error work).
+Fixed: nod AI not building com center and temple of nod.
+Balanced: AI when uses con.yards from both factions.
+Fixed: invisible aircraft.
+Fixed: aircraft units attacking as they go insteed of hovering still in air before attacking.
+Added: the AI will only deploy its mcv near tiberium trees and never near an allied con.yard.
+Fixed: aircraft not landing on idle.
+Removed: force landing from aircrafts.
+Added: new aircrafts will undock at creation from the helipad (to semi fix the problem with wrong spawn positioning on helipads).
+Added: TD background image in main menu.
+Added: Original Game Menu video to play in the TDO menu. I know, I always come up with cool pioneering ideas.
+Removed: Temporary snow tileset until ive get to fix some issues (do not try to make snow maps or  play on snow maps).
+Fixed: issue with airstrike notification missing.
+Changed: beacon sound
+Changed: chat sound
+Fixed: some* tooltips including temple of nod and apc.
+Removed: Text that shows how much tiberium is being deposit in the ref by harvesters.
+Fixed: MCV crate, now they spawn the correct mcv.
+Fixed: MCV crate, dinos and vice units wont get mcv.
+Fixed: dino death palettes.
+Changed: Lobby description of Helipad With Aircraft to Full Helipads.
+Changed: how Visceroids spawn (from tiberium tree and from crates) with lobby option enabled.
+Fixed: Crates will now stay for ever on the map, as it was in the original game.
+Fixed: Crates will now give a random number of money starting from 100 to 1400.
+Added: Crate with Ion cannon explosion.
+Fixed: Crate Nuke explosion to show the nuke animation.
+Fixed: Crate Ion Cannon explosion to show the Ion cannon animation.
+Added: One time super weapon bonus crates with Ion*, Nuke and Air strike, as it was in the original game. NOTE if you disable super weapons on the lobby, you wont be able to get those bonus crates.
+Fixed: Crate power up animations to show now.
+Removed: BIB from obelisk, turret, guard tower and adv.guard tower.
+Added: ra map compatibility (you will still need to do a small edit in the map file, read the manual)
 
-Changed the RotationStep on water to look like the original game.
-Made 2 new coop maps.
-Made 1 new multiplayer map.
-Added lobby option, Multi Engineers.
-Fixed lobby option, Singleplayer mode.
-Added A10 airstrike for Singleplayer rules.
-Changed mini map colors using the original game colors.
-Changed singleplayer mode rules, now chem warrior, chinook, commando, apc, Rocket Launcher, SSM units received special requirements in order to get them. In detail: chem warrior needs bio lab(in the original you dont get to train them in singleplayer) and only for nod, chinook is untrainable but I havent test this fully to see if you can train it in one of the singleplayer missions, commando is untrainable, APC and Rocket Launcher is a GDI only unit, SSM launcher needs tech center and only for nod.
-Removed PATSUX from skirmish lobby.
-Infantry or civilians now will come out of destroyed buildings some times.
-Added new coop palettes.
-Fixed a visual bug with con yard.
-Fixed bug with with player color on some civilian buildings.
-Fixed dublicate coms center.
-Removed "destroyed" and "burned" tooltip from civialian buildings and trees.
-Fixed Rocket Launcher to be more inaccurate.
-Added chance for crew escaping from destroyed vehicles.
-Added invisible production actors, that train units outside the map, to make life easy for map authors.
-Added dinos and vice to the AI production list, in order to better work with invisible production actors (it can be used for AI dino\vice based defence maps).
-Changed BuildTimeSpeedReduction to 100, 50, 31, 26, 19, 17 for now(#test shows that reduction can go for ever. coms center with around 14 con yards build time reduced to 3 seconds).
-Changed build speed of buildings to be close to the original as possible.(not fully implemented yet).
-Added 100 tiberium storage to hospital like the original game (no idea).
-Fixed Artillery aoe damage.
-Fixed Artillery to target actors when using force fire.
-Fixed Adv.guard tower to fire at air units.
-Changed Temple of nod and adv.com center are not longer capturable.
-Changed vehicles no longer crush walls (like in the original).
-Fixed* spectator missing textures (radar bar still missing texture).
-Fixed CTD caused by missing mute button.
-Added ION Cannon does more damage to Temple Of Nod if singleplayer rules are enabled.
-Fixed aircraft vision (on air and land) now aircraft can only reveal an area around them only when landed.
-Changed vision of all infantry based on the original.
-Changed vision of dinos based on the original.
-Fixed vision of some buildings based on the original.
-Fixed cloak detect range by 1 on HQ and EYE to cover the entire cell cyrcle around them.
+#143
+#137
+#138
+#136
+#135
+#134
+#133
+#125
+#109

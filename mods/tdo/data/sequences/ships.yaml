@@ -1,0 +1,107 @@
+lst:
+	idle: lstnew
+		UseClassicFacingFudge: True
+		Facings: 32
+	roof: lstnew2
+		UseClassicFacingFudge: True
+		Facings: 32
+	icon: lsticnh.tem
+		AddExtension: False
+
+oldlst:
+	idle: lst
+		Start: 0
+		Facings: 1
+		ZOffset: -1024
+	icon: lsticnh.tem
+		AddExtension: False
+
+boat:
+	left:
+		Facings: 32
+	damaged-left:
+		Start: 32
+		Facings: 32
+	critical-left:
+		Start: 64
+		Facings: 32
+	wake-left: wake
+		Start: 6
+		Length: 6
+		Offset: 1,2
+		Tick: 120
+	right:
+		Start: 96
+		Facings: 32
+	damaged-right:
+		Start: 128
+		Facings: 32
+	critical-right:
+		Start: 160
+		Facings: 32
+	wake-right: wake
+		Length: 6
+		Offset: -1,2
+		Tick: 120
+	icon: boaticnh.tem
+		AddExtension: False
+
+wake:
+	wake: wake
+		Length: 12
+
+ra_ss:
+	idle:
+		Facings: 16
+	icon: ssicon.shp
+		AddExtension: False
+
+ra_ca:
+	idle:
+		Facings: 16
+	turret: turr
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: caicon.shp
+		AddExtension: False
+
+ra_dd:
+	idle:
+		Facings: 16
+	turret: ssam
+		Facings: 32
+	icon: ddicon.shp
+		AddExtension: False
+
+ra_pt:
+	idle:
+		Facings: 16
+	turret: mgun
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: pticon.shp
+		AddExtension: False
+
+ra_lst:
+	idle:
+	open:
+		Start: 1
+		Length: 4
+		Tick: 150
+	close:
+		Frames: 4, 3, 2, 1
+		Length: 4
+		Tick: 150
+	unload:
+		Start: 4
+		ZOffset: -511
+	icon: ra_lsticon.shp
+		AddExtension: False
+
+ra_msub:
+	idle:
+		Facings: 16
+	icon: msubicon.shp
+		AddExtension: False

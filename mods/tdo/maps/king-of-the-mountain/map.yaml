@@ -1,0 +1,285 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: King of the Mountain
+
+Author: Westwood Studios
+
+Tileset: TEMPERAT
+
+MapSize: 64,64
+
+Bounds: 2,2,60,60
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: tc04
+		Location: 44,5
+		Owner: Neutral
+	Actor1: tc01
+		Location: 53,50
+		Owner: Neutral
+	Actor2: t01
+		Location: 13,48
+		Owner: Neutral
+	Actor3: t03
+		Location: 48,41
+		Owner: Neutral
+	Actor4: t05
+		Location: 44,46
+		Owner: Neutral
+	Actor5: t02
+		Location: 42,55
+		Owner: Neutral
+	Actor6: t08
+		Location: 53,43
+		Owner: Neutral
+	Actor7: tc01
+		Location: 58,56
+		Owner: Neutral
+	Actor8: tc05
+		Location: 59,55
+		Owner: Neutral
+	Actor9: t14
+		Location: 60,57
+		Owner: Neutral
+	Actor10: tc04
+		Location: 44,52
+		Owner: Neutral
+	Actor11: t16
+		Location: 28,47
+		Owner: Neutral
+	Actor12: tc01
+		Location: 29,47
+		Owner: Neutral
+	Actor13: tc03
+		Location: 17,60
+		Owner: Neutral
+	Actor14: tc02
+		Location: 15,60
+		Owner: Neutral
+	Actor15: tc01
+		Location: 2,44
+		Owner: Neutral
+	Actor16: t16
+		Location: 2,43
+		Owner: Neutral
+	Actor17: tc03
+		Location: 2,40
+		Owner: Neutral
+	Actor18: tc02
+		Location: 2,21
+		Owner: Neutral
+	Actor19: tc01
+		Location: 32,58
+		Owner: Neutral
+	Actor20: t08
+		Location: 33,60
+		Owner: Neutral
+	Actor21: t07
+		Location: 35,54
+		Owner: Neutral
+	Actor22: tc01
+		Location: 32,52
+		Owner: Neutral
+	Actor23: tc03
+		Location: 34,53
+		Owner: Neutral
+	Actor24: t16
+		Location: 16,51
+		Owner: Neutral
+	Actor25: tc02
+		Location: 16,52
+		Owner: Neutral
+	Actor26: tc03
+		Location: 23,53
+		Owner: Neutral
+	Actor27: tc04
+		Location: 23,50
+		Owner: Neutral
+	Actor28: tc05
+		Location: 24,51
+		Owner: Neutral
+	Actor29: split2
+		Location: 30,32
+		Owner: Neutral
+	Actor30: split3
+		Location: 34,31
+		Owner: Neutral
+	Actor31: split2
+		Location: 24,27
+		Owner: Neutral
+	Actor32: split3
+		Location: 25,36
+		Owner: Neutral
+	Actor33: split2
+		Location: 39,37
+		Owner: Neutral
+	Actor34: split3
+		Location: 40,26
+		Owner: Neutral
+	Actor35: tc05
+		Location: 56,5
+		Owner: Neutral
+	Actor36: tc02
+		Location: 21,25
+		Owner: Neutral
+	Actor37: tc01
+		Location: 21,38
+		Owner: Neutral
+	Actor38: t14
+		Location: 26,40
+		Owner: Neutral
+	Actor39: tc02
+		Location: 9,25
+		Owner: Neutral
+	Actor40: tc03
+		Location: 9,27
+		Owner: Neutral
+	Actor41: tc04
+		Location: 10,37
+		Owner: Neutral
+	Actor42: t15
+		Location: 11,38
+		Owner: Neutral
+	Actor43: t10
+		Location: 23,18
+		Owner: Neutral
+	Actor44: t10
+		Location: 44,36
+		Owner: Neutral
+	Actor45: t07
+		Location: 43,36
+		Owner: Neutral
+	Actor46: t11
+		Location: 42,37
+		Owner: Neutral
+	Actor47: t05
+		Location: 51,40
+		Owner: Neutral
+	Actor48: tc03
+		Location: 41,44
+		Owner: Neutral
+	Actor49: t01
+		Location: 23,42
+		Owner: Neutral
+	Actor50: t02
+		Location: 53,32
+		Owner: Neutral
+	Actor51: tc02
+		Location: 39,14
+		Owner: Neutral
+	Actor52: t06
+		Location: 40,11
+		Owner: Neutral
+	Actor53: t12
+		Location: 29,15
+		Owner: Neutral
+	Actor54: t08
+		Location: 28,16
+		Owner: Neutral
+	Actor55: tc04
+		Location: 3,2
+		Owner: Neutral
+	Actor56: tc03
+		Location: 58,14
+		Owner: Neutral
+	Actor57: tc04
+		Location: 56,19
+		Owner: Neutral
+	Actor58: tc03
+		Location: 47,28
+		Owner: Neutral
+	Actor59: tc01
+		Location: 27,18
+		Owner: Neutral
+	Actor60: t02
+		Location: 31,18
+		Owner: Neutral
+	Actor61: t01
+		Location: 16,29
+		Owner: Neutral
+	Actor62: t05
+		Location: 28,42
+		Owner: Neutral
+	Actor63: t07
+		Location: 55,31
+		Owner: Neutral
+	Actor64: t06
+		Location: 51,23
+		Owner: Neutral
+	Actor65: t08
+		Location: 34,23
+		Owner: Neutral
+	Actor66: t02
+		Location: 21,17
+		Owner: Neutral
+	Actor67: t02
+		Location: 25,6
+		Owner: Neutral
+	Actor68: tc02
+		Location: 16,12
+		Owner: Neutral
+	Actor69: tc04
+		Location: 25,15
+		Owner: Neutral
+	Actor70: t16
+		Location: 26,16
+		Owner: Neutral
+	Actor71: t14
+		Location: 2,7
+		Owner: Neutral
+	Actor72: t08
+		Location: 27,2
+		Owner: Neutral
+	Actor73: t07
+		Location: 16,20
+		Owner: Neutral
+	Actor75: mpspawn
+		Location: 47,13
+		Owner: Neutral
+	Actor76: mpspawn
+		Location: 56,53
+		Owner: Neutral
+	Actor79: mpspawn
+		Location: 11,55
+		Owner: Neutral
+	Actor81: mpspawn
+		Location: 11,11
+		Owner: Neutral

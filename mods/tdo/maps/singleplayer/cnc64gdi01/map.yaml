@@ -713,6 +713,6 @@ Actors:
 		Owner: Nod
 		Location: 26,14
 
-Rules: tdo|rules/campaign-maprules.yaml, tdo|rules/campaign-tooltips.yaml, tdo|rules/campaign-palettes.yaml, rules.yaml
+Rules: tdo|data/Mode-Singleplayer.yaml, rules.yaml
 
 Sequences: sequences.yaml

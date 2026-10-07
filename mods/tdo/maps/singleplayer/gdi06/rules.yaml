@@ -1,6 +1,6 @@
 World:
 	LuaScript:
-		Scripts: campaign-global.lua, gdi06.lua
+		Scripts: tdo|data\scripts\campaign-global.lua, gdi06.lua
 	MusicPlaylist:
 		BackgroundMusic: rain-ambient
 		StartingMusic: rain
@@ -79,17 +79,17 @@ RMBO:
 		EnableStances: false
 		InitialStance: ReturnFire
 	Health:
-		HP: 15000
+		HP: 150
 
 RMBO.easy:
 	Inherits: RMBO
 	Health:
-		HP: 30000
+		HP: 300
 	SelfHealing:
-		Step: 500
+		Step: 5
 		Delay: 10
-		HealIfBelow: 50
-		DamageCooldown: 200
+		HealIfBelow: 5
+		DamageCooldown: 2
 	RenderSprites:
 		Image: RMBO
 

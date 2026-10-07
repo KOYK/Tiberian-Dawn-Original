@@ -1,0 +1,147 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: Desert Madness
+
+Author: Westwood Studios
+
+Tileset: DESERT
+
+MapSize: 64,64
+
+Bounds: 1,4,62,57
+
+Visibility: Lobby
+
+Categories: Conquest
+Rules: tdo|data/Mode-Multiplayer.yaml
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: split3
+		Location: 4,37
+		Owner: Neutral
+	Actor1: split3
+		Location: 34,47
+		Owner: Neutral
+	Actor2: split3
+		Location: 56,20
+		Owner: Neutral
+	Actor3: split3
+		Location: 37,6
+		Owner: Neutral
+	Actor4: split3
+		Location: 9,10
+		Owner: Neutral
+	Actor5: split3
+		Location: 3,23
+		Owner: Neutral
+	Actor6: split3
+		Location: 13,54
+		Owner: Neutral
+	Actor7: split3
+		Location: 58,57
+		Owner: Neutral
+	Actor8: split3
+		Location: 51,42
+		Owner: Neutral
+	Actor9: split3
+		Location: 33,30
+		Owner: Neutral
+	Actor10: rock6
+		Location: 24,47
+		Owner: Neutral
+	Actor11: rock3
+		Location: 41,27
+		Owner: Neutral
+	Actor12: rock1
+		Location: 43,6
+		Owner: Neutral
+	Actor13: t09
+		Location: 41,21
+		Owner: Neutral
+	Actor14: t09
+		Location: 53,5
+		Owner: Neutral
+	Actor15: t09
+		Location: 57,33
+		Owner: Neutral
+	Actor16: t09
+		Location: 53,43
+		Owner: Neutral
+	Actor17: t09
+		Location: 39,53
+		Owner: Neutral
+	Actor18: t08
+		Location: 21,57
+		Owner: Neutral
+	Actor19: t08
+		Location: 60,36
+		Owner: Neutral
+	Actor20: t08
+		Location: 46,30
+		Owner: Neutral
+	Actor21: t08
+		Location: 52,24
+		Owner: Neutral
+	Actor22: t08
+		Location: 27,5
+		Owner: Neutral
+	Actor23: t08
+		Location: 12,23
+		Owner: Neutral
+	Actor24: t08
+		Location: 13,33
+		Owner: Neutral
+	Actor25: t18
+		Location: 3,19
+		Owner: Neutral
+	Actor26: t18
+		Location: 26,55
+		Owner: Neutral
+	Actor27: t18
+		Location: 55,31
+		Owner: Neutral
+	Actor30: mpspawn
+		Location: 3,6
+		Owner: Neutral
+	Actor32: mpspawn
+		Location: 5,58
+		Owner: Neutral
+	Actor33: mpspawn
+		Location: 57,52
+		Owner: Neutral
+	Actor34: mpspawn
+		Location: 59,8
+		Owner: Neutral

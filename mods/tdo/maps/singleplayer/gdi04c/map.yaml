@@ -742,6 +742,6 @@ Actors:
 		Location: 28,47
 		Owner: Neutral
 
-Rules: tdo|rules/campaign-maprules.yaml, tdo|rules/campaign-tooltips.yaml, tdo|rules/campaign-palettes.yaml, rules.yaml
+Rules: tdo|data/Mode-Singleplayer.yaml, rules.yaml
 
 Weapons: weapons.yaml

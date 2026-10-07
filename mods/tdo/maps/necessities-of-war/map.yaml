@@ -1,0 +1,66 @@
+MapFormat: 11
+
+RequiresMod: tdo
+
+Title: necessities of war
+
+Author: KOYK
+
+Tileset: TEMPERAT
+
+MapSize: 42,62
+
+Bounds: 1,1,40,60
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+
+Actors:
+	Actor0: gun
+		Owner: Neutral
+		TurretFacing: 96
+		Location: 3,30
+	Actor1: gun
+		Owner: Neutral
+		TurretFacing: 96
+		Location: 9,30
+	Actor2: gun
+		Owner: Neutral
+		TurretFacing: 96
+		Location: 21,35
+	Actor3: gun
+		Owner: Neutral
+		TurretFacing: 96
+		Location: 32,42
+	Actor4: gun
+		Owner: Neutral
+		TurretFacing: 96
+		Location: 31,36
+	Actor5: gun
+		Owner: Neutral
+		TurretFacing: 96
+		Location: 39,38
+	Actor6: arty
+		Owner: Neutral
+		Location: 6,27
+		Facing: 128
+	Actor7: arty
+		Owner: Neutral
+		Facing: 96
+		Location: 38,36
+	Actor8: arty
+		Owner: Neutral
+		Location: 12,28
+		Facing: 130

@@ -1,0 +1,295 @@
+##############################
+# Rules for Nod VS GDI play  #
+##############################
+
+^Palettes:
+	-PlayerColorPalette:
+	IndexedPlayerPalette:
+		BasePalette: player
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			Neutral: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Creeps: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi0: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi1: 2, 119, 118, 135, 136, 138, 183, 199, 118, 135, 136, 137, 138, 136, 114, 183
+			Multi2: 24, 25, 26, 27, 29, 31, 46, 199, 26, 27, 28, 29, 30, 31, 43, 47
+			Multi3: 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79
+			Nod: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Multi4: 127, 126, 125, 124, 122, 46, 120, 47, 125, 124, 123, 122, 42, 121, 120, 120
+			Multi5: 5, 165, 166, 167, 159, 142, 140, 199, 166, 167, 157, 3, 159, 143, 142, 141
+			Multi6: 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255
+			Multi7: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111
+			Multi8: 240, 241, 242, 243, 244, 245, 246, 183, 248, 249, 250, 251, 253, 254, 255, 1
+			Multi9: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+	IndexedPlayerPalette@units:
+		BasePalette: player
+		BaseName: player-units
+		RemapIndex: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+		PlayerIndex:
+			Neutral: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			Creeps: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+			GDI: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi0: 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191
+			Multi1: 48, 49, 50, 51, 52, 53, 54, 183, 56, 57, 58, 59, 60, 61, 62, 63
+			Multi2: 24, 25, 26, 27, 29, 31, 46, 199, 26, 27, 28, 29, 30, 31, 43, 47
+			Multi3: 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79
+			Nod: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Multi4: 161, 200, 201, 202, 204, 205, 206, 12, 201, 202, 203, 204, 205, 115, 198, 114
+			Multi5: 5, 165, 166, 167, 159, 142, 140, 199, 166, 167, 157, 3, 159, 143, 142, 141
+			Multi6: 224, 225, 226, 227, 228, 229, 230, 183, 232, 233, 234, 235, 236, 237, 238, 183
+			Multi7: 80, 81, 82, 83, 84, 85, 86, 183, 88, 89, 90, 91, 92, 93, 94, 95
+			Multi8: 240, 241, 242, 243, 244, 245, 246, 183, 248, 249, 250, 251, 253, 254, 255, 1
+			Multi9: 192, 164, 132, 155, 133, 197, 183, 12, 163, 132, 155, 133, 134, 197, 154, 198
+
+World:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxEnabled: False
+			#Build on allied base
+		AllyBuildRadiusCheckboxLocked: True
+		AllyBuildRadiusCheckboxVisible: False
+	MapOptions:
+		ShortGameCheckboxEnabled: False
+			#die if you lose all buildings
+		ShortGameCheckboxVisible: False
+		TechLevel: tl7
+			#Tech Levels are: tl1, tl2, tl3, tl4, tl5, tl6, tl7
+		TechLevelDropdownLocked: False
+			#True means players wont be able to change Tech Level
+		GameSpeed: default
+			#Speeds are: Slowest,Slower,default(Normal),Fast,Faster,Fastest
+		GameSpeedDropdownLocked: False
+			#Lock the speed?
+	MPStartLocations:
+	MapCreeps:
+		CheckboxEnabled: False
+			#Spawn Visceroids on map?
+		CheckboxLocked: True
+		CheckboxVisible: False
+	SpawnMPUnits:
+
+Player:
+	DeveloperMode:
+		CheckboxEnabled: false
+			#enable cheats?
+		CheckboxLocked: false
+			#force cheats checkbox status?
+	PlayerResources:
+		SelectableCash: 0, 500, 1000, 1500, 2000, 2500, 5000, 10000, 15000, 20000, 25000, 50000, 100000
+		DefaultCashDropdownVisible: True
+		DefaultCash: 5000
+		DefaultCashDropdownLocked: False
+	Shroud:
+		FogCheckboxEnabled: False
+			#fog of war? meh dont do it, let it be off
+		FogCheckboxLocked: True
+		FogCheckboxVisible: False
+		ExploredMapCheckboxEnabled: False
+			#the dakness
+		ExploredMapCheckboxLocked: True
+		ExploredMapCheckboxVisible: False
+	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
+		Enabled: False
+			#Allow undeploying Construction Yard?
+		Locked: True
+			#can the admin player change this?
+		Visible: False
+	LobbyPrerequisiteCheckbox@HUSKS:
+		Enabled: False
+			#enable husks that can be captured and repaired?
+		Locked: True
+			#can the admin player change this?
+		Visible: False
+	LobbyPrerequisiteCheckbox@LINEWALLS:
+		Enabled: False
+			#Allows more walls to be build in a line
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SUPERWEAPONS:
+		Description: Allows the use of Nuclear Missile and Ion Cannon
+		Enabled: True
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SUPPLYTRUCK:
+		Description: Allows the use of Supply Trucks that can aid allies with money
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@PRODUCTIONBAR:
+		Description: Shows loading bars over producing buildings
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@SINGLEPLAYER:
+		Description: Campaign Color theme, Tech level, AI Boost, GDI Airstrike, Capturable Chinook
+		Enabled: True
+		Locked: True
+			#can the admin player change this?
+	LobbyPrerequisiteCheckbox@PUTSUX:
+		Description: Gives orcas obelisk's laser weapon, not recomended
+		Enabled: False
+		Locked: False
+			#can the admin player change this?
+		Visible: False
+	LobbyPrerequisiteCheckbox@TECHBUILDINGS:
+		Description: Enables ability to capture tech buildings
+		Enabled: True
+		Locked: False
+	LobbyPrerequisiteCheckbox@ENGINEERSP:
+		Description: Enables snigleplayer ability of engineers to repair buildings
+		Enabled: True
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@GLOBALLPDAMAGE:
+		Description: Buildings get damaged while low on power
+		Enabled: True
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@REGROWTH:
+		Description: Tiberium will regenerate
+		Enabled: True
+		Locked: True
+		Visible: False
+	LobbyPrerequisiteCheckbox@MULTIENGINEER:
+		Enabled: False
+		Locked: True
+		Visible: False
+
+^GenericTooltipNames:
+	Tooltip:
+		GenericStancePrefix: True
+		NeutralPrefix: Civilian
+		AllyPrefix: Friendly
+		EnemyPrefix: Enemy
+		GenericVisibility: Neutral, Enemy
+		ShowOwnerRow: false
+
+^Vehicle:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player-units
+
+^Tank:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player-units
+
+^Helicopter:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player-units
+
+^Infantry:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player-units
+	WithDeathAnimation:
+		DeathSequencePalette: player-units
+
+^CommonHuskDefaults:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player-units
+
+C17:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player-units
+
+HARV:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player
+
+MCV:
+	Inherits@ToolTip: ^GenericTooltipNames
+	RenderSprites:
+		PlayerPalette: player
+
+HARV.Husk:
+	RenderSprites:
+		PlayerPalette: player
+
+MCV.Husk:
+	RenderSprites:
+		PlayerPalette: player
+
+
+^Plane:
+	Inherits@ToolTip: ^GenericTooltipNames
+
+^Ship:
+	Inherits@ToolTip: ^GenericTooltipNames
+
+^Building:
+	Tooltip:
+		GenericVisibility: Enemy
+		ShowOwnerRow: false
+
+^Wall:
+	Tooltip:
+		ShowOwnerRow: false
+
+^CivBuilding:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^CivBuildingHusk:
+	Tooltip:
+		GenericVisibility: Enemy, Neutral
+		ShowOwnerRow: false
+
+^TechBuilding:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: false
+
+^CommonHuskDefaults:
+	Tooltip:
+		GenericVisibility: Enemy, Ally, Neutral
+		GenericStancePrefix: false
+		ShowOwnerRow: false
+
+^DINO:
+	Tooltip:
+		ShowOwnerRow: false
+
+MISS:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO:
+	Tooltip:
+		GenericVisibility: None
+		ShowOwnerRow: False
+
+ARCO.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+V19.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+HOSP.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+BIO.Husk:
+	Tooltip:
+		GenericVisibility: None
+
+OLDLST:
+	Inherits: LST
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	RejectsOrders:
+	Interactable:
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PipCount: 5
+		PassengerFacing: 0

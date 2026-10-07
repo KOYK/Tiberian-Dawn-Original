@@ -1,0 +1,2162 @@
+#Nyerguds Told me that the HP values of the structures only, have duble the HP that it is shown on the exported data, So if Nuke has 200HP its actually 400HP
+
+BARRACKS:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Infantry Production
+	Buildable:
+		Description: Infantry Production
+
+VEHICLEPRODUCTION:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Vehicle Production
+	Buildable:
+		Description: Vehicle Production
+
+ANYPOWER:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Description: Power Plant
+
+ANYHQ:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: a communications center
+	Buildable:
+		Description: a communications center
+
+ADVHQ:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: a technology center
+	Buildable:
+		Description: a technology center
+
+#===========================================================
+#							BASE-BUILDINGS
+#===========================================================
+
+FACT:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 72,48
+	Valued:
+		Cost: 5000
+	Tooltip:
+		Name: Construction Yard
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 800
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 3c0
+	Production:
+		Produces: Building, Defense
+	ProximityExternalCondition@NoBotDeploy:
+		Condition: NearBotBase
+		Range: 10c0
+		ValidStances: Ally
+		AffectsParent: False
+	Transforms:
+		RequiresCondition: factundeploy && !build-incomplete
+		PauseOnCondition: being-demolished
+		IntoActor: mcv
+		Offset: 1,1
+		Facing: 108
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	BaseBuilding:
+	WithBuildingBib:
+		Palette: staticterrain
+	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: 0
+	ProvidesPrerequisite@buildingname:
+	Buildable:
+		Description: Builds structures
+	GrantConditionOnPrerequisite@ProductionBar:
+		Condition: ProductionBarEnabled
+		Prerequisites: PrerequisiteProductionBar
+	ProductionBar:
+		ProductionType: Building
+		Color: FFFFFF
+		RequiresCondition: ProductionBarEnabled
+#waiting for this https://github.com/OpenRA/OpenRA/issues/18040
+#	# GrantConditionOnPrerequisite:
+#		# Prerequisites: LowCostMCV
+#		# Condition: LowCostMCVcon
+#	# ProductionCostMultiplier:
+#		# Prerequisites: LowCostMCV
+#		# Multiplier: 50
+#		# Queue: Building
+#	# Sellable@LOWCOSTMCV:
+#		# RefundPercent: 25
+#		# RequiresCondition: !build-incomplete && !being-demolished && LowCostMCVcon
+#	# Sellable@COSTMCV:
+#		# RequiresCondition: !build-incomplete && !being-demolished && !LowCostMCVcon
+#		# RefundPercent: 50
+
+FACT.GDI:
+	Inherits: FACT
+	RenderSprites:
+		Image: fact
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	Tooltip:
+		Name: GDI Construction Yard
+	ProvidesPrerequisite@GDI:
+		Prerequisite: GDIConstructionYard
+	ProvidesPrerequisite@Fact:
+		Prerequisite: fact
+	Transforms:
+		IntoActor: mcv.gdi
+
+FACT.NOD:
+	Inherits: FACT
+	RenderSprites:
+		Image: fact
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	Tooltip:
+		Name: Nod Construction Yard
+	ProvidesPrerequisite@Nod:
+		Prerequisite: NodConstructionYard
+	ProvidesPrerequisite@Fact:
+		Prerequisite: fact
+	Transforms:
+		IntoActor: mcv.nod
+
+NUKE:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~fact, ~tl1
+		Queue: Building
+		BuildDuration: 330
+		Description: Generates power
+		BuildDurationModifier: 70
+	Building:
+		Footprint: x_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 400
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 2c0
+	WithBuildingBib:
+		Palette: staticterrain
+	Power:
+		Amount: 100
+	ScalePowerWithHealth:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1
+
+NUK2:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Advanced Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Buildable:
+		BuildPaletteOrder: 80
+		Prerequisites: ~fact, ~anypower, ~tl5
+		Queue: Building
+		Description: Provides more power, cheaper than the\nstandard Power Plant
+		BuildDurationModifier: 110
+	Building:
+		Footprint: x_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 600
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 2c0
+	WithBuildingBib:
+		Palette: staticterrain
+	Power:
+		Amount: 200
+	ScalePowerWithHealth:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,tc1,tc7
+
+PROC:
+	Inherits: ^BaseBuilding
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 853
+	HitShape@TOP:
+		Type: Rectangle
+			TopLeft: -512, -1450
+			BottomRight: 896, -512
+	Valued:
+		Cost: 2000
+	ExternalCondition@DockInProcess:
+		Condition: dockinprocess
+	Sellable:
+		RequiresCondition: !dockinprocess && !build-incomplete && !being-demolished
+	Tooltip:
+		Name: Tiberium Refinery
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~anypower, ~tl1
+		Queue: Building
+		Description: Processes raw Tiberium\ninto useable resources
+		BuildDurationModifier: 32
+	Building:
+		Footprint: _x_ xxx === ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 900
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 4c0
+	ProximityExternalCondition@DOCKED:
+		Condition: docked
+		Range: 1c0
+		ValidStances: Ally
+	Refinery:
+		DockAngle: 112
+		DockOffset: 0,2
+		IsDragRequired: True
+		DragOffset: -554,512,0
+		DragLength: 12
+		TickRate: 15
+		DiscardExcessResources: True
+		ShowTicks: False
+	StoresResources:
+		PipColor: Green
+		PipCount: 10
+		Capacity: 1000
+	Selectable:
+		Bounds: 72,56
+		DecorationBounds: 73,72
+	CustomSellValue:
+		Value: 500
+	FreeActor:
+		Actor: HARV
+		SpawnOffset: 1,2
+		Facing: 64
+		RequiresCondition: !build-incomplete && !being-demolished
+	WithBuildingBib:
+		Palette: staticterrain
+	WithResourceLevelOverlay:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: proc
+	SelectionDecorations:
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplodeRef
+		EmptyWeapon: BuildingExplodeRef
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1
+
+SILO:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x1Shape
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Tiberium Silo
+	Buildable:
+		BuildPaletteOrder: 35
+		Prerequisites: ~proc, ~tl1
+		Queue: Building
+		Description: Stores processed Tiberium
+		BuildDuration: 200
+	Building:
+		Footprint: xx ==
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 300
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 2c0
+	WithBuildingBib:
+		Palette: staticterrain
+	-WithSpriteBody:
+	WithResourceLevelSpriteBody:
+		Sequence: stages
+	StoresResources:
+		PipCount: 10
+		PipColor: Green
+		Capacity: 1500
+	-SpawnActorsOnSell:
+	Power:
+		Amount: -10
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	SelectionDecorations:
+	-AcceptsDeliveredCash:
+	Selectable:
+		Bounds: 48,24
+		DecorationBounds: 49,30
+
+PYLE:
+	Inherits: ^BaseBuilding
+	Inherits@BuildingType: ^ProductionBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 640
+	Valued:
+		Cost: 300
+	PrimaryBuilding:
+		ProductionQueues: Infantry, Soldier
+	Production:
+		Produces: Infantry, Soldier
+	Tooltip:
+		Name: Barracks
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: ~anypower, ~GDIConstructionYard, ~tl1
+		Queue: Building
+		Description: Trains infantry
+		BuildDurationModifier: 76
+	ProductionBar:
+		ProductionType: Infantry
+		Color: 3AA730
+		RequiresCondition: ProductionBarEnabled
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 800
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+		Palette: staticterrain
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -426,85,0
+		ExitCell: 0,1
+		ProductionTypes: Soldier, Infantry
+	Exit@2:
+		SpawnOffset: 298,298,0
+		ExitCell: 1,1
+		ProductionTypes: Soldier, Infantry
+	GrantExternalConditionToProduced:
+		Condition: produced
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@barracks:
+		Prerequisite: barracks
+	ProvidesPrerequisite@buildingname:
+	Selectable:
+		Bounds: 48,42,0,-5
+	SpawnActorsOnSell:
+		ActorTypes: e1,tc1
+
+HAND:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@BuildingType: ^ProductionBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 300
+	Production:
+		Produces: Infantry, Soldier
+	PrimaryBuilding:
+		ProductionQueues: Infantry, Soldier
+	Tooltip:
+		Name: Hand of Nod
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: ~anypower, ~NodConstructionYard, ~tl1
+		Queue: Building
+		Description: Trains infantry
+		BuildDurationModifier: 76
+	ProductionBar:
+		ProductionType: Infantry
+		Color: 3AA730
+		RequiresCondition: ProductionBarEnabled
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 800
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+		Palette: staticterrain
+	RallyPoint:
+		Path: 1,2
+	Exit@1:
+		SpawnOffset: 512,1024,0
+		ExitCell: 1,2
+		ProductionTypes: Soldier, Infantry
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@barracks:
+		Prerequisite: barracks
+	ProvidesPrerequisite@buildingname:
+	Selectable:
+		Bounds: 48,48
+		DecorationBounds: 48,68,0,-10
+	SelectionDecorations:
+	SpawnActorsOnSell:
+		ActorTypes: e1,tc1
+
+
+SPEN:
+	Inherits@Defaults: ^NavalBuilding
+	Buildable:
+		Prerequisites: ~proc, ~NodConstructionYard, ~tl2, ~disabled
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Nod Naval Base
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -598
+			BottomRight: 1536, 598
+	HitShape@TOPANDBOTTOM:
+		TargetableOffsets: 811,0,0, -811,0,0
+		Type: Rectangle
+			TopLeft: -555, -1110
+			BottomRight: 555, 1110
+
+SYRD:
+	Inherits@Defaults: ^NavalBuilding
+	Buildable:
+		Prerequisites: ~proc, ~GDIConstructionYard, ~tl2, ~disabled
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: GDI Naval Base
+	HitShape:
+		TargetableOffsets: 768,0,0, 768,-1024,0, 768,1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1152
+			BottomRight: 1536, 598
+	HitShape@BOTTOM:
+		TargetableOffsets: -768,0,0
+		Type: Rectangle
+			TopLeft: -512, 598
+			BottomRight: 512, 1110
+
+WEAP:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^3x2Shape
+	Inherits@BuildingType: ^ProductionBuilding
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 512
+	Valued:
+		Cost: 2000
+	Production:
+		Produces: Vehicle
+	PrimaryBuilding:
+		ProductionQueues: Vehicle
+	Tooltip:
+		Name: Weapons Factory
+	ProvidesPrerequisite@vehicleproduction:
+		Prerequisite: vehicleproduction
+	Buildable:
+		BuildPaletteOrder: 40
+		Prerequisites: ~proc, ~GDIConstructionYard, ~tl2
+		Queue: Building
+		Description: Produces vehicles
+		BuildDurationModifier: 116
+	ProductionBar:
+		ProductionType: Vehicle
+		Color: 3AA730
+		RequiresCondition: ProductionBarEnabled
+	Building:
+		Footprint: xxx === ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 72,48
+		DecorationBounds: 72,64,0,-16
+	SelectionDecorations:
+	Health:
+		HP: 400
+	Armor:
+		Type: 2
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+		Palette: staticterrain
+	WithProductionDoorOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: build-top
+	RallyPoint:
+		Path: 0,2
+	Exit@1:
+		SpawnOffset: -512,-512,0
+		ExitCell: 0,1
+		ExitDelay: 3
+		ProductionTypes: Vehicle
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1
+
+AFLD:
+	Inherits: ^BaseBuilding
+	Inherits@BuildingType: ^ProductionBuilding
+	Selectable:
+		Bounds: 96,48
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
+		Type: Rectangle
+			TopLeft: -2048, -1024
+			BottomRight: 2048, 1024
+	Valued:
+		Cost: 2000
+	PrimaryBuilding:
+		ProductionQueues: Vehicle
+	Tooltip:
+		Name: Airstrip
+	ProvidesPrerequisite@vehicleproduction:
+		Prerequisite: vehicleproduction
+	Buildable:
+		BuildPaletteOrder: 40
+		Prerequisites: ~proc, ~NodConstructionYard, ~tl2
+		Queue: Building
+		Description: Provides a dropzone\nfor vehicle reinforcements
+		BuildDurationModifier: 116
+	ProductionBar:
+		ProductionType: Vehicle
+		Color: 3AA730
+		RequiresCondition: ProductionBarEnabled
+	Building:
+		Footprint: XXXX xxxx ====
+		Dimensions: 4,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 5c0
+	RallyPoint:
+		Path: 4,2
+	Exit@1:
+		SpawnOffset: -1024,0,0
+		ExitCell: 3,1
+		ProductionTypes: Vehicle
+	ProductionAirdrop:
+		ActorType: c17
+		Produces: Vehicle
+	WithBuildingBib:
+		Palette: staticterrain
+	WithIdleOverlay@DISH:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-dish
+	WithDeliveryAnimation:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,tc1
+
+HPAD:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Inherits@BuildingType: ^ProductionBuilding
+	Selectable:
+		Bounds: 48,48
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
+	Valued:
+		Cost: 1500
+	ProductionCostMultiplier:
+		Multiplier: 20
+		Prerequisites: !emptyhelipads
+	ProductionTimeMultiplier:
+		Multiplier: 22
+		Prerequisites: emptyhelipads
+	GrantConditionOnPrerequisite@EMPTYHELIPADS:
+		Prerequisites: emptyhelipads
+		Condition: ConEmptyHelipads
+	PrimaryBuilding:
+		ProductionQueues: Aircraft
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~barracks, ~tl6
+		Queue: Building
+		Description: Produces and rearms helicopters
+		BuildDurationModifier: 70
+	ProductionBar:
+		ProductionType: Aircraft
+		Color: 00FFDF
+		RequiresCondition: ProductionBarEnabled
+	ProvidesPrerequisite@NodHelipad:
+		RequiresCondition: NodHelipad
+		Prerequisite: OwnerNod
+	ProvidesPrerequisite@GDIHelipad:
+		RequiresCondition: GDIHelipad
+		Prerequisite: OwnerGDI
+	GrantConditionOnFaction@Nod:
+		Condition: NodHelipad
+		Factions: nod
+		ResetOnOwnerChange: false
+	GrantConditionOnFaction@GDI:
+		Condition: GDIHelipad
+		Factions: gdi
+		ResetOnOwnerChange: false
+	FreeActor@Apache:
+		Actor: heli
+		Facing: 224
+		SpawnOffset: 0,0
+		RequiresCondition: NodHelipad && ConEmptyHelipads && !build-incomplete
+	FreeActor@Orca:
+		Actor: orca
+		Facing: 224
+		SpawnOffset: 0,0
+		RequiresCondition: GDIHelipad && ConEmptyHelipads && !build-incomplete
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+		Palette: staticterrain
+	Health:
+		HP: 800
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 3c0
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		ProductionTypes: Aircraft
+	ExternalCondition@OCCUPIEDSTATUS:
+		Condition: occupied
+	ProductionFromMapEdge@UNOCCUPIED:
+		Produces: Aircraft
+		PauseOnCondition: !occupied 
+	Production@OCCUPIED:
+		Produces: Aircraft
+		PauseOnCondition: occupied
+	Reservable:
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,tc1,tc7
+
+HQ:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Communications Center
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	Buildable:
+		BuildPaletteOrder: 70
+		Prerequisites: ~proc, ~tl2, ~GDIConstructionYard
+		Queue: Building
+		Description: Provides radar.\nUnlocks higher-tech units and buildings.\nRequires power to operate.
+		BuildDurationModifier: 115
+		#BuildDuration: 1900
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 48,40,0,9
+		DecorationBounds: 48,53,0,-4
+	SelectionDecorations:
+	WithSpriteBody:
+		PauseOnCondition: lowpower
+	Health:
+		HP: 1000
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 10c0
+	WithBuildingBib:
+		Palette: staticterrain
+	ProvidesRadar:
+		RequiresCondition: !lowpower
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 2c0
+		RequiresCondition: !lowpower
+	GrantConditionOnFaction@GDI:
+		Condition: ConGDI
+		Factions: gdi
+		ResetOnOwnerChange: False
+	AirstrikePower:
+		PauseOnCondition: lowpower
+		Prerequisites: ~PrerequisiteSuperWeapons, ~PrerequisiteSinglePlayer
+		Icon: airstrike
+		ChargeInterval: 6000
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: Air Strike
+		LongDesc: Deploy an aerial napalm strike.\nBurns buildings and infantry along a line.
+		EndChargeSpeechNotification: AirstrikeReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: EnemyPlanesApproaching
+		UnitType: a10
+		DisplayBeacon: True
+		BeaconPoster: airstrike
+		BeaconPosterPalette: beaconposter
+		DisplayRadarPing: True
+		CameraActor: camera
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: False
+		SupportPowerPaletteOrder: 10
+		RequiresCondition: ConGDI
+	SupportPowerChargeBar:
+	Power:
+		Amount: -40
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1
+
+HQNod:
+	Inherits@OriginalActor: HQ
+	Tooltip:
+		Name: Communications Center
+	Buildable:
+		Prerequisites: ~proc, ~tl2, ~NodConstructionYard, ~!GDIConstructionYard
+	RenderSprites:
+		Image: hq
+
+FIX:
+	Inherits: ^BaseBuilding
+	HitShape:
+		TargetableOffsets: 840,0,0, 598,-640,0, 598,640,0, -1060,0,0, -768,-640,0, -768,640,0
+		Type: Polygon
+			Points: -1536,-256, -341,-940, 341,-940, 1536,-256, 1536,341, 341,1110, -341,1110, -1536,341
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Repair Bay
+	ProximityExternalCondition:
+		Condition: OnPad
+		Range: 1c0
+		ValidStances: Ally
+		AffectsParent: False
+	Sellable:
+		RefundPercent: 30
+		RequiresCondition: !Repairing && !build-incomplete && !being-demolished
+	ExternalCondition@REPAIRING:
+		Condition: Repairing
+	Buildable:
+		BuildPaletteOrder: 60
+		Prerequisites: ~anypower, ~tl5
+		Queue: Building
+		Description: Repairs vehicles
+		BuildDurationModifier: 118
+	Building:
+		Footprint: _+_ +++ =+= ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 72,56
+		DecorationBounds: 73,72
+	SelectionDecorations:
+	Health:
+		HP: 800
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 3c0
+	WithBuildingBib:
+		Palette: staticterrain
+	WithResupplyAnimation:
+		RequiresCondition: !build-incomplete
+	Reservable:
+	RepairsUnits:
+		ValuePercentage: 40
+		HpPerStep: 4
+		Interval: 30
+		PlayerExperience: 1
+		StartRepairingNotification: Repairing
+	RallyPoint:
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,tc1,tc7
+
+EYE:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 2800
+	Tooltip:
+		Name: Advanced Communications Center
+	ProvidesPrerequisite@anyhq:
+		Prerequisite: anyhq
+	ProvidesPrerequisite@advhq:
+		Prerequisite: advhq
+	Buildable:
+		BuildPaletteOrder: 100
+		Prerequisites: ~anyhq, ~tl7, ~GDIConstructionYard
+		Queue: Building
+		Description: Provides radar and Orbital Ion Cannon support power.\nUnlocks higher-tech units and buildings.\nRequires power to operate.
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 48,40,0,9
+		DecorationBounds: 48,53,0,-4
+	SelectionDecorations:
+	WithSpriteBody:
+		PauseOnCondition: lowpower
+	Health:
+		HP: 1000
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 10c0
+	WithBuildingBib:
+		Palette: staticterrain
+	ProvidesRadar:
+		RequiresCondition: !lowpower
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 2c0
+		RequiresCondition: !lowpower
+	IonCannonPower:
+		PauseOnCondition: lowpower
+		Prerequisites: ~PrerequisiteSuperWeapons
+		Icon: ioncannon
+		Cursor: ioncannon
+		ChargeInterval: 6750
+		Description: Ion Cannon
+		LongDesc: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		BeginChargeSpeechNotification: IonCannonCharging
+		EndChargeSpeechNotification: IonCannonReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OnFireSound: ion1.aud
+		DisplayRadarPing: True
+		CameraActor: camera.small
+	SupportPowerChargeBar:
+	Power:
+		Amount: -200
+	-Capturable:
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1,tc1,tc7
+
+TMPL:
+	Inherits: ^BaseBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Temple of Nod
+	ProvidesPrerequisite@anyhq:
+		Prerequisite: anyhq
+	ProvidesPrerequisite@advhq:
+		Prerequisite: advhq
+	Buildable:
+		BuildPaletteOrder: 100
+		Prerequisites: ~anyhq, ~tl7, ~NodConstructionYard
+		Queue: Building
+		Description: Provides Nuclear Strike support power.\nUnlocks higher-tech units and buildings.\nRequires power to operate.
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 72,48
+		DecorationBounds: 72,68,0,-12
+	SelectionDecorations:
+	Health:
+		HP: 2000
+	GrantConditionOnPrerequisite@IONCANNONVULNERABLE:
+		Condition: singleplayer
+		Prerequisites: PrerequisiteSinglePlayer
+	Armor@Normal:
+		Type: 2
+	Armor@IonCannonPower:
+		Type: IonCannonVulnerable
+		RequiresCondition: singleplayer
+	RevealsShroud:
+		Range: 4c0
+	NukePower:
+		PauseOnCondition: lowpower
+		Prerequisites: ~PrerequisiteSuperWeapons
+		Icon: abomb
+		Cursor: nuke
+		ChargeInterval: 9000
+		Description: Nuclear Strike
+		LongDesc: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
+		EndChargeSpeechNotification: NuclearWeaponAvailable
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		LaunchSpeechNotification: NuclearWeaponLaunched
+		IncomingSpeechNotification: NuclearWarheadApproaching
+		MissileWeapon: atomic
+		MissileDelay: 11
+		SpawnOffset: 3c0,0,-1c512
+		DisplayBeacon: True
+		BeaconPoster: atomic
+		BeaconPosterPalette: beaconposter
+		DisplayRadarPing: True
+		CameraRange: 10c0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	WithBuildingBib:
+		Palette: staticterrain
+	WithNukeLaunchAnimation:
+		RequiresCondition: !build-incomplete
+	WithNukeLaunchOverlay:
+		RequiresCondition: !build-incomplete
+		Sequence: smoke
+	SupportPowerChargeBar:
+	Power:
+		Amount: -150
+	-Capturable:
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1,tc1,tc7
+
+#===========================================================
+#							BASE-DEFENSE
+#===========================================================
+
+GUN:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Selectable:
+		Bounds: 24,24
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Turret
+	Buildable:
+		BuildPaletteOrder: 45
+		Prerequisites: ~barracks, ~NodConstructionYard, ~tl2
+		Queue: Building
+		BuildDuration: 1440
+		BuildDurationModifier: 45
+		Description: Basic Anti-Tank base defense.\n  Strong vs Tanks, vehicles\n  Weak vs Infantry
+	Building:
+	Health:
+		HP: 400
+	Armor:
+		Type: 3
+	RevealsShroud:
+		Range: 5c0
+	#WithBuildingBib:
+	#	HasMinibib: true
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 56
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Armament:
+		Weapon: TurretCannon
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+	WithMuzzleOverlay:
+	-WithDeathAnimation:
+	DetectCloaked:
+		Range: 1c0
+	Power:
+		Amount: -20
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1
+
+SAM:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@shape: ^2x1Shape
+	Selectable:
+		Bounds: 48,24
+	HitShape:
+		Type: Rectangle
+			TopLeft: -768,-512
+			BottomRight: 768,512
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: SAM Site
+	Buildable:
+		BuildPaletteOrder: 50
+		Prerequisites: ~hand, ~NodConstructionYard, ~tl6
+		Queue: Building
+		BuildDuration: 1700
+		BuildDurationModifier: 45
+		Description: Anti-Aircraft base defense.\n  Strong vs Aircraft\n  Cannot target Ground units.
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: 3
+	RevealsShroud:
+		Range: 3c0
+	Turreted:
+		TurnSpeed: 10
+		InitialFacing: 0
+		RealignDelay: -1
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Armament:
+		Weapon: SAMMissile
+		MuzzleSequence: muzzle
+	AttackPopupTurreted:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: lowpower
+		ClosedDamageMultiplier: 50
+	WithMuzzleOverlay:
+	-RenderDetectionCircle:
+	Power:
+		Amount: -20
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1
+
+OBLI:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Obelisk of Light
+	Buildable:
+		BuildPaletteOrder: 60
+		Prerequisites: ~anyhq, ~tl4, ~NodConstructionYard
+		Queue: Building
+		BuildDuration: 3120
+		BuildDurationModifier: 40
+		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs all Ground units\n  Cannot target Aircraft
+	Selectable:
+		Bounds: 24,24
+		DecorationBounds: 22,44,0,-10
+	SelectionDecorations:
+	Health:
+		HP: 400
+	Armor:
+		Type: 2
+	RevealsShroud:
+		Range: 5c0
+	#WithBuildingBib:
+	#	HasMinibib: true
+	-WithSpriteBody:
+	WithChargeSpriteBody:
+		Sequence: active
+	Armament:
+		Weapon: LASER
+		LocalOffset: 0,-85,1280
+	AttackCharges:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: lowpower
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	-SpawnActorsOnSell:
+	DetectCloaked:
+		Range: 1c0
+		RequiresCondition: !lowpower
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,tc1
+
+GTWR:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Selectable:
+		Bounds: 24,24
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Guard Tower
+	Buildable:
+		BuildPaletteOrder: 40
+		Prerequisites: ~barracks, ~GDIConstructionYard, ~tl2
+		Queue: Building
+		BuildDuration: 1440
+		BuildDurationModifier: 40
+		Description: Basic defensive structure.\n  Strong vs Infantry\n  Weak vs Tanks
+	Building:
+	Health:
+		HP: 400
+	Armor:
+		Type: 1
+	RevealsShroud:
+		Range: 3c0
+	#WithBuildingBib:
+	#	HasMinibib: true
+	Armament:
+		Weapon: Chaingun
+		LocalOffset: 256,0,256
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+	BodyOrientation:
+		QuantizedFacings: 8
+	DetectCloaked:
+		Range: 1c0
+	WithMuzzleOverlay:
+	Turreted:
+		TurnSpeed: 255
+	Power:
+		Amount: -10
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1
+
+ATWR:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Advanced Guard Tower
+	Buildable:
+		BuildPaletteOrder: 60
+		Prerequisites: ~anyhq, ~tl4, ~GDIConstructionYard
+		Queue: Building
+		BuildDuration: 2880
+		BuildDurationModifier: 40
+		Description: All-purpose defensive structure.\n  Strong vs Aircraft, Tanks\n  Weak vs Infantry
+	Selectable:
+		Bounds: 24,24
+		DecorationBounds: 22,48,0,-12
+	SelectionDecorations:
+	Health:
+		HP: 600
+	Armor:
+		Type: 2
+	RevealsShroud:
+		Range: 4c0
+	#WithBuildingBib:
+	#	HasMinibib: true
+	Turreted:
+		TurnSpeed: 255
+		Offset: 128,128,384
+	Armament@PRIMARY:
+		Weapon: TowerMissile
+		LocalOffset: 256,128,0, 256,-128,0
+		LocalYaw: -100,100
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: lowpower
+	BodyOrientation:
+		QuantizedFacings: 8
+	DetectCloaked:
+		Range: 1c0
+		RequiresCondition: !lowpower
+	Power:
+		Amount: -20
+	SpawnActorsOnSell:
+		ActorTypes: e1,e1,e1,e1,e1
+
+#===========================================================
+#							WALLS
+#===========================================================
+
+SBAG:
+	Inherits: ^Wall
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 25
+	Tooltip:
+		Name: Sandbag Barrier
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl2
+		Queue: Building
+		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+		BuildDuration: 200
+	LineBuild:
+		NodeTypes: sandbag
+	LineBuildNode:
+		Types: sandbag
+	WithWallSpriteBody:
+		Type: sandbag
+	ProximityExternalCondition@SELLABLE:
+		Condition: NearWall
+		Range: 1c255
+	ConditionManager:
+	AppearsOnMapPreview:
+		Terrain: WallSand
+	RadarColorFromTerrain:
+		Terrain: WallSand
+SBAG_LINE:
+	Inherits@OriginalActor: SBAG
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: sbag
+	Buildable:
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl2
+	AppearsOnMapPreview:
+		Terrain: WallSand
+	RadarColorFromTerrain:
+		Terrain: WallSand
+
+CYCL:
+	Inherits: ^Wall
+	Valued:
+		Cost: 75
+	CustomSellValue:
+		Value: 37
+	Tooltip:
+		Name: Chain Link Barrier
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl5
+		Queue: Building
+		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+		BuildDuration: 200
+	LineBuild:
+		NodeTypes: chain
+	LineBuildNode:
+		Types: chain
+	WithWallSpriteBody:
+		Type: chain
+	ProximityExternalCondition@SELLABLE:
+		Condition: NearWall
+		Range: 1c255
+	ConditionManager:
+	AppearsOnMapPreview:
+		Terrain: WallFence
+	RadarColorFromTerrain:
+		Terrain: WallFence
+CYCL_LINE:
+	Inherits@OriginalActor: CYCL
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: cycl
+	Buildable:
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl5
+	AppearsOnMapPreview:
+		Terrain: WallFence
+	RadarColorFromTerrain:
+		Terrain: WallFence
+
+BRIK:
+	Inherits: ^Wall
+	Valued:
+		Cost: 100
+	CustomSellValue:
+		Value: 50
+	Tooltip:
+		Name: Concrete Barrier
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: ~fact, ~!PrerequisiteLineWalls, ~tl7
+		Queue: Building
+		BuildDurationModifier: 40
+		Description: Stops infantry and most tanks.\nBlocks some projectiles.
+		BuildDuration: 300
+	Health:
+		HP: 500
+	BlocksProjectiles:
+	Crushable:
+		CrushClasses: heavywall
+		-CrushSound:
+	SoundOnDamageTransition:
+		DestroyedSounds: crumble.aud
+	LineBuild:
+		NodeTypes: concrete
+	LineBuildNode:
+		Types: concrete
+	WithWallSpriteBody:
+		Type: concrete
+BRIK_LINE:
+	Inherits@OriginalActor: BRIK
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: brik
+	Buildable:
+		Prerequisites: ~fact, ~PrerequisiteLineWalls, ~tl7
+
+BARB:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Barbwire Fence
+	LineBuild:
+		NodeTypes: barbwire
+	LineBuildNode:
+		Types: barbwire
+	WithWallSpriteBody:
+		Type: barbwire
+	Valued:
+		Cost: 25
+	CustomSellValue:
+		Value: 12
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
+		Queue: Building
+		Description: Stops infantry.\nCan be crushed by tanks.
+		BuildDuration: 200
+	AppearsOnMapPreview:
+		Terrain: WallChain
+	RadarColorFromTerrain:
+		Terrain: WallChain
+BARB_LINE:
+	Inherits@OriginalActor: BARB
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: barb
+	Buildable:
+		Prerequisites: ~disabled, ~PrerequisiteLineWalls, ~tl3
+	AppearsOnMapPreview:
+		Terrain: WallChain
+	RadarColorFromTerrain:
+		Terrain: WallChain
+
+WOOD:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Wooden Fence
+	LineBuild:
+		NodeTypes: woodfence
+	LineBuildNode:
+		Types: woodfence
+	WithWallSpriteBody:
+		Type: woodfence
+	Valued:
+		Cost: 25
+	CustomSellValue:
+		Value: 12
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~disabled, ~!PrerequisiteLineWalls, ~tl2
+		Queue: Building
+		Description: Stops infantry.\nCan be crushed by tanks.
+		BuildDuration: 200
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+WOOD_LINE:
+	Inherits@OriginalActor: WOOD
+	Inherits@LineBuild: ^LineBuild
+	RenderSprites:
+		Image: wood
+	Buildable:
+		Prerequisites: ~disabled, ~PrerequisiteLineWalls, ~tl1
+	AppearsOnMapPreview:
+		Terrain: CivBuild
+	RadarColorFromTerrain:
+		Terrain: CivBuild
+#Added walls for map authors
+
+#===========================================================
+#							TECH-BUILDINGS
+#===========================================================
+
+V19:
+	Inherits: ^TechBuilding
+	Selectable:
+		Bounds: 24,24
+	CashTrickler:
+		Amount: 700
+		Interval: 750
+		ShowTicks: false
+		InitialDelay: 750
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 400
+	Tooltip:
+		Name: Oil Derrick
+		AllyPrefix: Oil Derrick
+	SpawnActorOnDeath:
+		Actor: V19.Husk
+
+HOSP:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+		Priority: 0
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 400
+	Tooltip:
+		Name: Hospital
+		AllyPrefix: Hospital
+	SpawnActorOnDeath:
+		Actor: HOSP.Husk
+	WithBuildingBib:
+		Palette: staticterrain
+		HasMinibib: False
+	ProvidesPrerequisite@buildingname:
+	StoresResources:
+		PipCount: 0
+		PipColor: Green
+		Capacity: 100
+BIO:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 48,48
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 600
+	Tooltip:
+		Name: Biolab
+		AllyPrefix: Biolab
+	Exit@1:
+		SpawnOffset: 0,-426,0
+		ExitCell: 0,-1
+	Production:
+		Produces: Biolab
+	ProductionQueue:
+		Type: Biolab
+		Group: Infantry
+		LowPowerModifier: 30000
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Biolab
+	RallyPoint:
+		Path: -1,-1
+	SpawnActorOnDeath:
+		Actor: BIO.Husk
+	WithBuildingBib:
+		Palette: staticterrain
+		HasMinibib: False
+	ProvidesPrerequisite@buildingname:
+
+MISS:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 72,48
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: Technology Center
+		AllyPrefix: Technology Center
+	Health:
+		HP: 400
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	Valued:
+		Cost: 2000
+	WithBuildingBib:
+		Palette: staticterrain
+		HasMinibib: False
+	WithMakeAnimation:
+	SpawnActorOnDeath:
+		Actor: MISS.Husk
+	ProvidesPrerequisite@buildingname:
+	GrantRandomCondition:
+		Conditions: SecretTechA, SecretTechB
+	ProvidesPrerequisite@SecretTechA:
+		RequiresPrerequisites: TechBuildingsEnabled
+		Prerequisite: !PrerequisiteSinglePlayer
+		ResetOnOwnerChange: False
+		RequiresCondition: SecretTechA
+		#Factions: 
+	ProvidesPrerequisite@SecretTechB:
+		RequiresPrerequisites: TechBuildingsEnabled
+		Prerequisite: !PrerequisiteSinglePlayer
+		ResetOnOwnerChange: False
+		RequiresCondition: SecretTechB
+		#Factions: 
+
+#===========================================================
+#							INVISIBLE-FACTORIES
+#===========================================================
+
+INV_DINO:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Dino 
+
+INV_VICE:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Viceroid
+
+INV_INF:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Infantry
+
+INV_VEH:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Vehicles
+	Production:
+		Produces: Vehicle
+	ProductionFromMapEdge:
+		Produces: Vehicle
+
+INV_AIR:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Aircraft
+	Production:
+		Produces: Aircraft
+	ProductionFromMapEdge:
+		Produces: Aircraft
+
+INV_SEA:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Naval
+	Production:
+		Produces: Naval
+	ProductionFromMapEdge:
+		Produces: Naval
+
+INV_STR:
+	Inherits@PARENT: ^InvisibleFactory
+	EditorOnlyTooltip:
+		Name: Invisible factory Structure
+	Production:
+		Produces: Building, Defense
+	ProvidesPrerequisite@GDI:
+		Prerequisite: GDIConstructionYard
+	ProvidesPrerequisite@Nod:
+		Prerequisite: NodConstructionYard
+	ProvidesPrerequisite@Fact:
+		Prerequisite: fact
+#I Need to seperate this into 2 actors, one for nod one for gdi
+
+# PROVIDE_TECH.INSERTTECHNAMEHERE:
+# ProvidesPrerequisite@1:
+# Prerequisite: hand
+# ProvidesPrerequisite@2:
+# Prerequisite: anypower
+# ProvidesPrerequisite@3:
+# Prerequisite: pyle
+# ProvidesPrerequisite@4:
+# Prerequisite: weap
+# ProvidesPrerequisite@5:
+# Prerequisite: afld
+# ProvidesPrerequisite@6:
+# Prerequisite: hpad
+# ProvidesPrerequisite@7:
+# Prerequisite: anyhq
+# ProvidesPrerequisite@8:
+# Prerequisite: fix
+# ProvidesPrerequisite@9:
+# Prerequisite: advhq
+# ProvidesPrerequisite@10:
+# Prerequisite: vehicleproduction
+# ProvidesPrerequisite@11:
+# Prerequisite: barracks
+# ProvidesPrerequisite@12:
+# Prerequisite: tmpl
+# ProvidesPrerequisite@13:
+# Prerequisite: eye
+
+#===========================================================
+#							CIVILIAN-BUILDINGS
+#===========================================================
+
+V01:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -768, -597
+			BottomRight: 896, 683
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Church
+	SpawnActorOnDeath:
+		Actor: V01.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+
+V02:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 597
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V02.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Han's and Gretel's
+
+V03:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
+		Type: Rectangle
+			TopLeft: -1024, -597
+			BottomRight: 1024, 597
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V03.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Hewitt's House
+
+V04:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
+		Type: Rectangle
+			TopLeft: -683, -432
+			BottomRight: 683, 683
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V04.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Ricktor's House
+
+V05:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V05.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Gretchkin's house
+
+V06:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V06.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: The Barn
+
+V07:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V07.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Damon's Pub
+
+V08:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V08.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Fran's House
+
+V09:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V09.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Music Factory
+
+V10:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V10.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Toymaker's
+
+V11:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V11.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Ludwig's House
+
+V12:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V12.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Haystacks
+
+V13:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V13.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Haystacks
+
+V14:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V14.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Wheat Field
+
+V15:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V15.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Fallow Field
+
+V16:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V16.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Corn Field
+
+V17:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V17.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Celery Field
+
+V18:
+	Inherits: ^CivField
+	SpawnActorOnDeath:
+		Actor: V18.Husk
+	MapEditorData:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Potato Field
+
+ARCO:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: ARCO.Husk
+	Health:
+		HP: 200
+	Tooltip:
+		Name: Oil Pump
+		ShowOwnerRow: True
+
+#===========================================================
+#							CIVILIAN-BUILDINGS-DESERT
+#===========================================================
+
+V20:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 896
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	RevealsShroud:
+		Range: 2c0
+	SpawnActorOnDeath:
+		Actor: V20.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Sala's House
+
+V21:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 840,-512,0, 420,0,0, 840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 0
+	HitShape@WELL:
+		TargetableOffsets: -770,512,0
+		Type: Rectangle
+			TopLeft: 0, 0
+			BottomRight: 1024, 598
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V21.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Abdul's House
+	RevealsShroud:
+		Range: 2c0
+
+V22:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V22.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Pablo's Wicked Pub
+	RevealsShroud:
+		Range: 2c0
+
+V23:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V23.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Village Well
+	RevealsShroud:
+		Range: 2c0
+
+V24:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -630,-512,0, 0,0,0, -630,256,0, 420,-512,0
+		Type: Rectangle
+			TopLeft: -1024, -683
+			BottomRight: 640, 853
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SpawnActorOnDeath:
+		Actor: V24.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Camel Trader
+	RevealsShroud:
+		Range: 2c0
+
+V25:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,-128,0, 420,512,0
+		Type: Rectangle
+			TopLeft: -683, -683
+			BottomRight: 1024, 512
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Church
+	SpawnActorOnDeath:
+		Actor: V25.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	RevealsShroud:
+		Range: 2c0
+
+V26:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V26.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Ali's House
+	RevealsShroud:
+		Range: 2c0
+
+V27:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V27.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Trader Ted's
+	RevealsShroud:
+		Range: 2c0
+
+V28:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V28.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Menelik's House
+	RevealsShroud:
+		Range: 2c0
+
+V29:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V29.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Prestor John's House
+	RevealsShroud:
+		Range: 2c0
+
+V30:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V30.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Village Well
+	RevealsShroud:
+		Range: 2c0
+
+V31:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V31.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Witch Doctor's Hut
+	RevealsShroud:
+		Range: 2c0
+
+V32:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V32.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Rikitikitembo's Hut
+	RevealsShroud:
+		Range: 2c0
+
+V33:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	SpawnActorOnDeath:
+		Actor: V33.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Roarke's Hut
+	RevealsShroud:
+		Range: 2c0
+
+V34:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V34.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Mubasa's Hut
+	RevealsShroud:
+		Range: 2c0
+
+V35:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V35.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Aksum's Hut
+	RevealsShroud:
+		Range: 2c0
+
+V36:
+	Inherits: ^CivBuilding
+	SpawnActorOnDeath:
+		Actor: V36.Husk
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: Mambo's Hut
+	RevealsShroud:
+		Range: 2c0
+
+V37:
+	Inherits: ^CivBuilding
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
+	SpawnActorOnDeath:
+		Actor: V37.Husk
+	Building:
+		Footprint: __xx_ ___xx
+		Dimensions: 5,2
+	Health:
+		HP: 600
+	MapEditorData:
+		RequireTilesets: DESERT
+	Tooltip:
+		Name: The Studio
+	RevealsShroud:
+		Range: 2c0
